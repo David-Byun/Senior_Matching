@@ -1,0 +1,191 @@
+CREATE SEQUENCE cart_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE;
+
+create table CART
+(
+    ID        NUMBER not null
+        primary key,
+    MEMBER_ID NUMBER,
+    ITEM_ID   NUMBER,
+    CNT       NUMBER,
+    RDATE     TIMESTAMP(6)
+);
+
+DROP TABLE cart;
+
+SELECT * FROM cart;
+
+CREATE SEQUENCE item_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE;
+
+CREATE TABLE ITEM (
+                      id NUMBER PRIMARY KEY,
+                      register_id NUMBER,
+                      name VARCHAR2(150),
+                      img VARCHAR2(600),
+                      review VARCHAR2(1000),
+                      price NUMBER,
+                      item_size VARCHAR2(5),
+                      color VARCHAR2(5),
+                      rdate DATE,
+                      udate DATE,
+                      is_valid VARCHAR2(1)
+);
+
+DROP TABLE ITEM;
+
+SELECT * FROM ITEM;
+
+CREATE SEQUENCE review_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE;
+
+CREATE TABLE REVIEW (
+                        id NUMBER PRIMARY KEY,
+                        user_id NUMBER,
+                        item_id NUMBER,
+                        title VARCHAR2(100),
+                        review VARCHAR2(300),
+                        rate NUMBER
+);
+
+SELECT * FROM REVIEW;
+
+INSERT INTO review VALUES (review_seq.NEXTVAL,101,1,'좋아요','좋은 상품이예요 모두 구매해주세요',5);
+INSERT INTO review VALUES (review_seq.NEXTVAL,101,2,'좋아요','좋은 상품이에요 모두 구매해주세요',4);
+INSERT INTO review VALUES (review_seq.NEXTVAL,101,3,'보통이','보통이예요',3);
+INSERT INTO review VALUES (review_seq.NEXTVAL,201,4,'보통이','보통이예요',2);
+INSERT INTO review VALUES (review_seq.NEXTVAL,201,5,'보통이','보통이예요',1);
+INSERT INTO review VALUES (review_seq.NEXTVAL,201,6,'좋아요','좋은 상품이에요 모두 구매해주세요',5);
+INSERT INTO review VALUES (review_seq.NEXTVAL,201,7,'좋아요','좋은 상품이에요 모두 구매해주세요',4);
+INSERT INTO review VALUES (review_seq.NEXTVAL,201,8,'보통이','보통이예요',3);
+INSERT INTO review VALUES (review_seq.NEXTVAL,201,9,'보통이','보통이예요',2);
+INSERT INTO review VALUES (review_seq.NEXTVAL,201,10,'보통이','보통이예요',1);
+INSERT INTO review VALUES (review_seq.NEXTVAL,301,4,'좋아요','좋은 상품이에요 모두 구매해주세요',5);
+INSERT INTO review VALUES (review_seq.NEXTVAL,301,5,'좋아요','좋은 상품이에요 모두 구매해주세요',4);
+INSERT INTO review VALUES (review_seq.NEXTVAL,301,1,'보통이','보통이예요',3);
+INSERT INTO review VALUES (review_seq.NEXTVAL,301,2,'보통이','보통이예요',2);
+INSERT INTO review VALUES (review_seq.NEXTVAL,301,3,'보통이','보통이예요',1);
+INSERT INTO review VALUES (review_seq.NEXTVAL,301,11,'보통이','보통이예요',1);
+
+DROP TABLE REVIEW;
+
+
+SELECT register_id, AVG(rate)
+FROM item I LEFT JOIN review R
+ON register_id = item_id
+GROUP BY register_id;
+
+
+CREATE SEQUENCE member_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE;
+
+
+CREATE TABLE MEMBER (
+                        id NUMBER ,
+                        member_id VARCHAR2(45) PRIMARY KEY,
+                        name VARCHAR2(15),
+                        password VARCHAR2(150),
+                        rdate DATE,
+                        valid NUMBER(1)
+);
+
+                            
+DROP TABLE MEMBER;
+
+SELECT * FROM MEMBER;
+
+CREATE SEQUENCE adm_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE;
+
+CREATE TABLE ADM
+(
+    id  NUMBER PRIMARY KEY,
+    adminId VARCHAR2(30),
+    pwd VARCHAR2(60),
+    lev NUMBER
+);
+
+
+
+
+/**************************************************/
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (1, 1, 'product2', 'product-2.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'L', 'Black', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (2, 1, 'product2', 'product-2.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'L', 'Black', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (3, 2, 'product3', 'product-3.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Blue', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (4, 2, 'product4', 'product-4.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'L', 'White', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (5, 2, 'product5', 'product-5.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (6, 2, 'product6', 'product-6.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (7, 3, 'product7', 'product-7.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'M', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (8, 3, 'product8', 'product-8.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (9, 3, 'product9', 'product-9.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (10, 4, 'product10', 'product-10.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (11, 4, 'product11', 'product-11.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (12, 4, 'product12', 'product-12.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (13, 5, 'product13', 'product-13.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (14, 5, 'product14', 'product-14.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (15, 6, 'product15', 'product-15.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (16, 6, 'product15', 'product-15.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (17, 7, 'product15', 'product-15.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (18, 9, 'product15', 'product-15.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (19, 10, 'product15', 'product-15.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (20, 11, 'product15', 'product-15.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (21, 9, 'product15', 'product-15.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, review, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (22, 8, 'product15', 'product-15.jpg','좋은 상품이에요 모두 구매해주세요', 3000, 'XL', 'Red', SYSDATE, 1);
+
+/***************************************************************************************/
+
+SELECT * FROM Item;

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kbstar.mapper.ReserveMapper">
+
+    <select id="findByUserId" parameterType="int" resultType="Item">
+        select R.id as Id
+             , I.name AS name
+             , I.img AS Img
+             , I.price AS Price
+             , U.id AS memberId
+        from Reserve R
+                 left join ITEM I on R.item_id = I.id
+                 left join MEMBER U on R.member_id = U.id
+        where U.id = #{memberId}
+    </select>
+    <insert id="insert" parameterType="reserve">
+        INSERT INTO reserve VALUES (reserve_seq.NEXTVAL ,#{memberId},#{itemId})
+    </insert>
+    <select id="selectall" resultType="reserve">
+        SELECT * FROM reserve
+    </select>
+</mapper>

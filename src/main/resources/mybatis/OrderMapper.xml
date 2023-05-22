@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kbstar.mapper.OrderMapper">
+    <insert id="insert" parameterType="Order">
+        INSERT INTO ORDER_TB (id, member_id, price, rdate, name, zipcode, addr, tel, cnt)
+        VALUES (order_seq.NEXTVAL, #{memberId}, #{price}, SYSDATE, #{name}, #{zipcode}, #{addr, jdbcType=VARCHAR}, #{tel}, #{cnt})
+    </insert>
+    <select id="getOrder" parameterType="int" resultType="order" >
+        SELECT *
+        FROM ORDER_TB
+        WHERE member_id = #{memberId}
+    </select>
+</mapper>

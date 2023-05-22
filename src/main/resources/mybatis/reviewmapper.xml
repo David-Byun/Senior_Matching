@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kbstar.mapper.ReviewMapper">
+
+    <select id="rateAll" resultType="ReviewRate">
+        SELECT I.register_id AS itemId , AVG(r.rate) AS rate
+        FROM item I LEFT JOIN review r
+                              ON I.register_id = r.item_id
+        GROUP BY I.register_id
+    </select>
+
+    <select id="rate" resultType="ReviewRate">
+        SELECT I.register_id AS itemId , AVG(r.rate) AS rate
+        FROM item I LEFT JOIN review r
+        ON I.register_id = r.item_id
+        GROUP BY I.register_id
+        HAVING I.register_id = #{itemID}
+    </select>
+
+    <select id="search" parameterType="reviewSearch" resultType="review">
+        SELECT * FROM review
+        <where>
+            <if test="itemId != null and itemId != 0 ">
+                itemId = #{itemId}
+            </if>
+            <if test="rate != null and rate != 0 ">
+                AND rate &gt; #{rate}
+            </if>
+        </where>
+    </select>
+    <insert id="insert" parameterType="review">
+        INSERT INTO review
+        VALUES (review_seq.NEXTVAL,#{userId},#{itemId},#{title},#{review},#{rate})
+    </insert>
+
+    <select id="select" parameterType="Integer" resultType="review">
+        SELECT * FROM review WHERE id=#{id}
+    </select>
+
+    <select id="selectall" resultType="review">
+        SELECT * FROM review
+    </select>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM member WHERE member_id=#{memberId}
+    </delete>
+
+    <select id="getByItemId" parameterType="Integer" resultType="review">
+        SELECT * FROM review WHERE item_id=#{itemId}
+    </select>
+
+</mapper>
