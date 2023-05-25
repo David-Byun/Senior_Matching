@@ -2,7 +2,7 @@ package com.kbstar.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.kbstar.dto.Item;
-import com.kbstar.dto.Review;
+import com.kbstar.dto.ItemReview;
 import com.kbstar.dto.ReviewRate;
 import com.kbstar.service.ItemService;
 import com.kbstar.service.ReviewService;
@@ -51,7 +51,7 @@ public class ItemController {
     @GetMapping("/{id}/detail")
     public String shopDetail(@PathVariable Integer id, Model model) throws Exception {
         Item item = itemService.getItemById(id);
-        List<Review> itemReview = reviewService.getByItemId(id);
+        List<ItemReview> itemReview = reviewService.getByItemId(id);
         model.addAttribute("item", item);
         model.addAttribute("itemReview", itemReview);
         model.addAttribute("center", "shop-details");

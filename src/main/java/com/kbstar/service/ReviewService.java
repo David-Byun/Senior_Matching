@@ -1,7 +1,7 @@
 package com.kbstar.service;
 
 
-import com.kbstar.dto.Review;
+import com.kbstar.dto.ItemReview;
 import com.kbstar.dto.ReviewRate;
 import com.kbstar.dto.ReviewSearch;
 import com.kbstar.mapper.ReviewMapper;
@@ -13,14 +13,14 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class ReviewService implements ShopService<Integer, Review>{
+public class ReviewService implements ShopService<Integer, ItemReview>{
 
     @Autowired
     ReviewMapper reviewMapper;
 
     @Override
-    public void register(Review review) throws Exception {
-        reviewMapper.insert(review);
+    public void register(ItemReview itemReview) throws Exception {
+        reviewMapper.insert(itemReview);
     }
 
     @Override
@@ -29,21 +29,21 @@ public class ReviewService implements ShopService<Integer, Review>{
     }
 
     @Override
-    public void modify(Review review) throws Exception {
-        reviewMapper.update(review);
+    public void modify(ItemReview itemReview) throws Exception {
+        reviewMapper.update(itemReview);
     }
 
     @Override
-    public Review get(Integer k) throws Exception {
+    public ItemReview get(Integer k) throws Exception {
         return reviewMapper.select(k);
     }
 
     @Override
-    public List<Review> get() throws Exception {
+    public List<ItemReview> get() throws Exception {
         return reviewMapper.selectall();
     }
 
-    public List<Review> search(ReviewSearch rs) throws Exception {
+    public List<ItemReview> search(ReviewSearch rs) throws Exception {
         return reviewMapper.search(rs);
     }
 
@@ -55,7 +55,7 @@ public class ReviewService implements ShopService<Integer, Review>{
         return reviewMapper.rateAll();
     }
 
-    public List<Review> getByItemId(Integer k) throws  Exception{
+    public List<ItemReview> getByItemId(Integer k) throws  Exception{
         return reviewMapper.getByItemId(k);
     }
 }

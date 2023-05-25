@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <meta http-equiv="Content-Type" review="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" itemReview="text/html; charset=UTF-8">
     <title>Insert title here</title>
 </head>
 <body>

@@ -1,6 +1,6 @@
 package com.kbstar.controller;
 
-import com.kbstar.dto.Review;
+import com.kbstar.dto.ItemReview;
 import com.kbstar.service.ReviewService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -130,7 +130,7 @@ public class MainController {
 
     @RequestMapping("/reviewall")
     public String reviewall(Model model) {
-        List<Review> list = null;
+        List<ItemReview> list = null;
         try {
             list = reviewService.get();
         } catch (Exception e) {

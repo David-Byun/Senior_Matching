@@ -1,8 +1,6 @@
 package com.kbstar.review;
 
-import com.kbstar.dto.Member;
-import com.kbstar.dto.Review;
-import com.kbstar.service.MemberService;
+import com.kbstar.dto.ItemReview;
 import com.kbstar.service.ReviewService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -20,7 +18,7 @@ class InsertTests {
     ReviewService service;
     @Test
     void contextLoads() {
-        Review test = new Review(999, 888, "굿", "짱", 5);
+        ItemReview test = new ItemReview(999, 888, "굿", "짱", 5);
         try {
             service.register(test);
             log.info("=================test================="+test.toString());

@@ -59,25 +59,25 @@
                                     <th>결제</th>
                                 </tr>
                             </thead>
-                            <c:forEach var="order" items="${orders}">
+                            <c:forEach var="orderMall" items="${orderMalls}">
                             <tbody>
                                     <tr>
                                         <td class="cart__close">${loginmember.name}</td>
-                                        <td class="cart__close">${order.zipcode}</td>
-                                        <td class="cart__close">${order.addr}</td>
-                                        <td class="cart__close">${order.tel}</td>
+                                        <td class="cart__close">${orderMall.zipcode}</td>
+                                        <td class="cart__close">${orderMall.addr}</td>
+                                        <td class="cart__close">${orderMall.tel}</td>
                                         <c:choose>
                                             <c:when test="${mycoupon == 1000}">
-                                                <td class="cart__close"><fmt:formatNumber value="${order.price - mycoupon}" pattern="#,###,###원" /></td>
+                                                <td class="cart__close"><fmt:formatNumber value="${orderMall.price - mycoupon}" pattern="#,###,###원" /></td>
                                             </c:when>
                                             <c:otherwise>
-                                                <td class="cart__close"><fmt:formatNumber value="${order.price}" pattern="#,###,###원" /></td>
+                                                <td class="cart__close"><fmt:formatNumber value="${orderMall.price}" pattern="#,###,###원" /></td>
                                             </c:otherwise>
                                         </c:choose>
-                                        <td class="cart__close"><fmt:formatNumber value="${order.cnt}" pattern="#,###,###개" /></td>
-                                        <td class="cart__close"><fmt:formatDate value="${order.rdate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                                        <td class="cart__close"><fmt:formatNumber value="${orderMall.cnt}" pattern="#,###,###개" /></td>
+                                        <td class="cart__close"><fmt:formatDate value="${orderMall.rdate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                                         <td>
-                                            <form method="post" action="/kakaoPay?price=${order.price}&cnt=${order.cnt}">
+                                            <form method="post" action="/kakaoPay?price=${orderMall.price}&cnt=${orderMall.cnt}">
                                             <button type="submit" class="btn btn-warning" id="kakaoBtn"><i class="fa-solid fa-comment" style="color: black"></i></button>
                                             </form>
                                         </td>

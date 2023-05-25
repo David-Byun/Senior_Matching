@@ -1,6 +1,6 @@
 package com.kbstar.service;
 
-import com.kbstar.dto.Order;
+import com.kbstar.dto.OrderMall;
 import com.kbstar.mapper.OrderMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,11 +13,11 @@ public class OrderService {
 
     private final OrderMapper mapper;
 
-    public void insert(Order order) {
-        mapper.insert(order);
+    public void insert(OrderMall orderMall) {
+        mapper.insert(orderMall);
     }
 
-    public List<Order> getOrder(int memberId) {
+    public List<OrderMall> getOrder(int memberId) {
         return mapper.getOrder(memberId);
     }
 }

@@ -45,7 +45,7 @@
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-9">
-                        <div class="tab-review">
+                        <div class="tab-itemReview">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__pic__item">
                                     <img src="/uimg/${item.img}" alt="">
@@ -153,7 +153,7 @@
     </section>
     <!-- Shop Details Section End -->
 
-<%--review section begin--%>
+<%--itemReview section begin--%>
 <!-- Shopping Cart Section Begin -->
 <section class="shopping-cart spad">
     <div class="container">
@@ -192,7 +192,7 @@
                             </td>
                             <td class="product__cart__item">
                                 <div class="product__cart__item__text">
-                                    <h6>${obj.review}</h6>
+                                    <h6>${obj.itemReview}</h6>
                                 </div>
                             </td>
 
@@ -214,7 +214,7 @@
 </section>
 <!-- Shopping Cart Section End -->
 
-<%--review section end--%>
+<%--itemReview section end--%>
 
     <!-- Related Section Begin -->
     <section class="related spad">

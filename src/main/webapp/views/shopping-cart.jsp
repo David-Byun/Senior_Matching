@@ -187,7 +187,7 @@
                             <li>쿠폰 <span id="totalCou">0원</span></li>
                             <li>Total <span id="totalSum"><fmt:formatNumber value="${total}" pattern="#,###,###원"/></span></li>
                         </ul>
-                        <a href="/order/${loginmember.id}" class="primary-btn" role="button">주문하기</a>
+                        <a href="/orderMall/${loginmember.id}" class="primary-btn" role="button">주문하기</a>
                     </div>
                 </div>
             </div>

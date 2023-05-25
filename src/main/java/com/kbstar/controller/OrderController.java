@@ -2,7 +2,7 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Item;
 import com.kbstar.dto.Member;
-import com.kbstar.dto.Order;
+import com.kbstar.dto.OrderMall;
 import com.kbstar.service.CartService;
 import com.kbstar.service.OrderService;
 import lombok.RequiredArgsConstructor;
@@ -32,18 +32,18 @@ public class OrderController {
     }
 
     @PostMapping("/orderImpl")
-    public String orderImpl(Order order, HttpSession session) {
+    public String orderImpl(OrderMall orderMall, HttpSession session) {
         Member user = (Member) session.getAttribute("loginmember");
-        order.setMemberId(user.getId());
-        orderService.insert(order);
+        orderMall.setMemberId(user.getId());
+        orderService.insert(orderMall);
         cartService.deleteCart(user.getId());
         session.setAttribute("mycart", 0);
         return "redirect:/order/confirm/" + user.getId();
     }
     @GetMapping("/confirm/{memberId}")
     public String confirmOrder(Model model, @PathVariable int memberId) {
-        List<Order> orders = orderService.getOrder(memberId);
-        model.addAttribute("orders", orders);
+        List<OrderMall> orderMalls = orderService.getOrder(memberId);
+        model.addAttribute("orders", orderMalls);
         model.addAttribute("center", "orderDetail");
         return "index";
     }

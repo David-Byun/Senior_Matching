@@ -8,21 +8,21 @@
 
     <select id="rateAll" resultType="ReviewRate">
         SELECT I.register_id AS itemId , AVG(r.rate) AS rate
-        FROM item I LEFT JOIN review r
+        FROM item I LEFT JOIN ITEM_REVIEW r
                               ON I.register_id = r.item_id
         GROUP BY I.register_id
     </select>
 
     <select id="rate" resultType="ReviewRate">
         SELECT I.register_id AS itemId , AVG(r.rate) AS rate
-        FROM item I LEFT JOIN review r
+        FROM item I LEFT JOIN ITEM_REVIEW r
         ON I.register_id = r.item_id
         GROUP BY I.register_id
-        HAVING I.register_id = #{itemID}
+        HAVING I.register_id = #{itemId}
     </select>
 
-    <select id="search" parameterType="reviewSearch" resultType="review">
-        SELECT * FROM review
+    <select id="search" parameterType="reviewSearch" resultType="itemReview">
+        SELECT * FROM ITEM_REVIEW
         <where>
             <if test="itemId != null and itemId != 0 ">
                 itemId = #{itemId}
@@ -32,25 +32,25 @@
             </if>
         </where>
     </select>
-    <insert id="insert" parameterType="review">
-        INSERT INTO review
-        VALUES (review_seq.NEXTVAL,#{userId},#{itemId},#{title},#{review},#{rate})
+    <insert id="insert" parameterType="itemReview">
+        INSERT INTO ITEM_REVIEW
+        VALUES (ITEM_REVIEW_SEQ.NEXTVAL,#{userId},#{itemId},#{title},#{review},#{rate})
     </insert>
 
-    <select id="select" parameterType="Integer" resultType="review">
-        SELECT * FROM review WHERE id=#{id}
+    <select id="select" parameterType="Integer" resultType="itemReview">
+        SELECT * FROM ITEM_REVIEW WHERE id=#{id}
     </select>
 
-    <select id="selectall" resultType="review">
-        SELECT * FROM review
+    <select id="selectall" resultType="itemReview">
+        SELECT * FROM ITEM_REVIEW
     </select>
 
     <delete id="delete" parameterType="String">
         DELETE FROM member WHERE member_id=#{memberId}
     </delete>
 
-    <select id="getByItemId" parameterType="Integer" resultType="review">
-        SELECT * FROM review WHERE item_id=#{itemId}
+    <select id="getByItemId" parameterType="Integer" resultType="itemReview">
+        SELECT * FROM ITEM_REVIEW WHERE item_id=#{itemId}
     </select>
 
 </mapper>

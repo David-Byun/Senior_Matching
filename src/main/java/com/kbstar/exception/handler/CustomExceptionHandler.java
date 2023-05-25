@@ -1,6 +1,5 @@
 package com.kbstar.exception.handler;
 
-import com.kbstar.exception.ChatException;
 import com.kbstar.exception.ContentException;
 import com.kbstar.exception.UserException;
 import lombok.extern.slf4j.Slf4j;
@@ -30,14 +29,6 @@ public class CustomExceptionHandler {
 
     @ExceptionHandler({ContentException.class})
     public String handleContentException(ContentException e, Model model) {
-        log.info("=================== error =====================", e);
-        model.addAttribute("error", e.getMessage());
-        model.addAttribute("center", "404");
-        return "index";
-    }
-
-    @ExceptionHandler({ChatException.class})
-    public String handleChatException(ChatException e, Model model) {
         log.info("=================== error =====================", e);
         model.addAttribute("error", e.getMessage());
         model.addAttribute("center", "404");

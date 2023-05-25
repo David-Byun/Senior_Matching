@@ -1,6 +1,6 @@
 package com.kbstar.mapper;
 
-import com.kbstar.dto.Review;
+import com.kbstar.dto.ItemReview;
 import com.kbstar.dto.ReviewRate;
 import com.kbstar.dto.ReviewSearch;
 import com.kbstar.frame.ShopMapper;
@@ -11,12 +11,12 @@ import java.util.List;
 
 @Mapper
 @Repository
-public interface ReviewMapper extends ShopMapper<Integer, Review> {
+public interface ReviewMapper extends ShopMapper<Integer, ItemReview> {
 
-    List<Review> search(ReviewSearch rs);
+    List<ItemReview> search(ReviewSearch rs);
 
     List<ReviewRate> rate(Integer k);
     List<ReviewRate> rateAll();
 
-    List<Review> getByItemId(Integer k);
+    List<ItemReview> getByItemId(Integer k);
 }

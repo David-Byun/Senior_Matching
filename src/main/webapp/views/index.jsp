@@ -36,7 +36,7 @@
 <body>
 <script>
     $(function () {
-        $('#logout').on("click", () => {swal("로그아웃 하시겠습니까"); location.href = "/logout"});
+        $('#logout').on("click", () => {location.href = "/logout"});
     })
 </script>
 <!-- Page Preloder -->
@@ -89,7 +89,7 @@
                                 </c:when>
                                 <c:otherwise>
                                     <a href="/chatbot">챗봇문의</a>
-                                    <a href="/review">리뷰</a>
+                                    <a href="/itemReview">리뷰</a>
                                     <a href="/faq">자주하는 질문</a>
                                     <a href="#" id="logout">로그아웃</a>
                                 </c:otherwise>
@@ -117,8 +117,8 @@
                                 <li><a href="/about">회사 정보</a></li>
                                 <c:if test="${loginmember != null}">
                                     <li><a href="/cart/${loginmember.id}">장바구니</a></li>
-                                    <li><a href="/order/${loginmember.id}">주문</a></li>
-                                    <li><a href="/order/confirm/${loginmember.id}">주문내역</a></li>
+                                    <li><a href="/orderMall/${loginmember.id}">주문</a></li>
+                                    <li><a href="/orderMall/confirm/${loginmember.id}">주문내역</a></li>
                                 </c:if>
                                 <li><a href="/blog">블로그</a></li>
                             </ul>
@@ -128,7 +128,7 @@
                         <li><a href="#">후기</a>
                             <ul class="dropdown">
                                 <c:if test="${loginmember != null}">
-                                    <li><a href="/review">후기 작성</a></li>
+                                    <li><a href="/itemReview">후기 작성</a></li>
                                 </c:if>
                                 <li><a href="/reviewall">후기 검색</a></li>
                             </ul>

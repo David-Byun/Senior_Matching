@@ -80,7 +80,7 @@
                             <td>${obj.userId}</td>
                             <td>${obj.itemId}</td>
                             <td>${obj.title}</td>
-                            <td>${obj.review}</td>
+                            <td>${obj.itemReview}</td>
                             <td>${obj.rate}</td>
                         </tr>
                     </c:forEach>

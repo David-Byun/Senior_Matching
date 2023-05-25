@@ -19,7 +19,7 @@
                                         <input type="text" placeholder="title" id="title" name="title" style="color: black">
                                     </div>
                                     <div class="col-lg-8 text-center">
-                                        <textarea type="text" placeholder="review" id="review" name="review" style="color: black"></textarea>
+                                        <textarea type="text" placeholder="itemReview" id="itemReview" name="itemReview" style="color: black"></textarea>
                                     </div>
                                     </br>
                                     <div class="col-lg-4 col-md-4">

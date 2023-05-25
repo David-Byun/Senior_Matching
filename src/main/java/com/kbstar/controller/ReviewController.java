@@ -1,7 +1,6 @@
 package com.kbstar.controller;
 
-import com.kbstar.dto.Review;
-import com.kbstar.dto.ReviewRate;
+import com.kbstar.dto.ItemReview;
 import com.kbstar.dto.ReviewSearch;
 import com.kbstar.service.ReviewService;
 import lombok.extern.slf4j.Slf4j;
@@ -28,21 +27,21 @@ public class ReviewController {
 
 
     @RequestMapping("/reviewimpl")
-    public String reviewimpl(@Valid Review review, Model model, HttpSession session) throws Exception {
+    public String reviewimpl(@Valid ItemReview itemReview, Model model, HttpSession session) throws Exception {
         try {
-            reviewService.register(review);
+            reviewService.register(itemReview);
         } catch (Exception e) {
             e.printStackTrace();
             throw new Exception("가입 오류");
         }
-        model.addAttribute("rreview", review);
+        model.addAttribute("rreview", itemReview);
         return "redirect:/shop";
     }
 
     @RequestMapping("/reviewsearch")
     public String reviewsearch(Model model, ReviewSearch rs) throws Exception {
 
-        List<Review> list = null;
+        List<ItemReview> list = null;
         try {
             list = reviewService.search(rs);
         } catch (Exception e) {

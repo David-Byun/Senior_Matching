@@ -39,7 +39,7 @@ public class MemberController {
         try {
             member.setPassword(encoder.encode(member.getPassword()));
             memberService.register(member);
-            signinMember = memberService.get(member.getMemberId());
+            signinMember = memberService.get(member.getEmail());
             session.setMaxInactiveInterval(100000);
             session.setAttribute("loginmember",signinMember);
             return "redirect:/";
@@ -60,11 +60,11 @@ public class MemberController {
     }
 
     @RequestMapping("/loginimpl")
-    public String loginimpl(Model model, String memberId, String password, HttpSession session) {
+    public String loginimpl(Model model, String email, String password, HttpSession session) {
         String nextPage = "loginfail";
         Member member = null;
         try {
-            member = memberService.get(memberId);
+            member = memberService.get(email);
             List<Item> items = cartService.myCart(member.getId());
             if (!items.isEmpty()) {
                 session.setAttribute("mycart", 1);

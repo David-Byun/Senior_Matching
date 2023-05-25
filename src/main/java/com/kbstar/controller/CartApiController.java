@@ -1,11 +1,10 @@
 package com.kbstar.controller;
 
-import com.kbstar.dto.Order;
+import com.kbstar.dto.OrderMall;
 import com.kbstar.service.CartService;
 import com.kbstar.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,8 +27,8 @@ public class CartApiController {
     @PostMapping("/delete")
     public ResponseEntity<String> deleteItem(int memberId, int itemId, HttpSession session) {
         cartService.deleteItem(memberId, itemId);
-        List<Order> order = orderService.getOrder(memberId);
-        if (order.isEmpty()) {
+        List<OrderMall> orderMall = orderService.getOrder(memberId);
+        if (orderMall.isEmpty()) {
             session.setAttribute("mycart", 0);
         }
         return ResponseEntity.ok().body("item delete complete");

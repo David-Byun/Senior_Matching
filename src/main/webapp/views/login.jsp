@@ -54,7 +54,7 @@
                                 <div class="col-lg-10">
                                     <div class="checkout__input" >
                                         <p>ID<span>*</span></p>
-                                        <input type="text" id="memberId" name="memberId">
+                                        <input type="text" id="memberId" name="email">
                                     </div>
                                     <div class="checkout__input" >
                                         <p>Password<span>*</span></p>

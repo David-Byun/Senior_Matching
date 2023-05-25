@@ -1,9 +1,7 @@
 package com.kbstar.reserve;
 
 import com.kbstar.dto.Reserve;
-import com.kbstar.dto.Review;
 import com.kbstar.service.ReserveService;
-import com.kbstar.service.ReviewService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

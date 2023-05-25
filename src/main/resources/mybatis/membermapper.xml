@@ -7,15 +7,15 @@
 <mapper namespace="com.kbstar.mapper.MemberMapper">
 
     <insert id="insert" parameterType="member">
-        INSERT INTO member
-        VALUES (member_seq.NEXTVAL,#{memberId},#{name},#{password},SYSDATE,1)
+        INSERT INTO member (id, email, name, password, valid)
+        VALUES (member_seq.NEXTVAL,#{email},#{name},#{password},1)
     </insert>
     <update id="update" parameterType="member">
-        UPDATE member SET name=#{name},password=#{password} WHERE member_id=#{memberId}
+        UPDATE member SET name=#{name},password=#{password} WHERE email=#{email}
     </update>
 
     <select id="select" parameterType="String" resultType="member">
-        SELECT * FROM member WHERE member_id=#{memberId}
+        SELECT * FROM member WHERE email=#{email}
     </select>
 
     <select id="selectall" resultType="member">
@@ -23,7 +23,7 @@
     </select>
 
     <delete id="delete" parameterType="String">
-        DELETE FROM member WHERE member_id=#{memberId}
+        DELETE FROM member WHERE id=#{id}
     </delete>
 
 </mapper>
