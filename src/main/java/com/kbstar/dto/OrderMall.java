@@ -17,7 +17,6 @@ public class OrderMall {
     private int price;
     private Date rdate;
     private String name;
-    private String zipcode;
     private String addr;
     private String tel;
     private int cnt;
