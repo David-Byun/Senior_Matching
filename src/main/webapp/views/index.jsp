@@ -8,12 +8,6 @@
     <meta name="description" content="Male_Fashion Template">
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-    <script src="https://cdn.WebRTC-Experiment.com/getScreenId.js"></script>
-    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>봄생봄사 쇼핑몰</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -101,7 +95,11 @@
                                     <a href="/faq">자주하는 질문</a>
                                     <a href="#" id="logout">로그아웃</a>
                                 </c:otherwise>
+
                             </c:choose>
+                            <c:if test="${loginmate != null}">
+                                <a href="/mate/profile/${loginmate}">메이트 프로필</a>
+                            </c:if>
                             <a href="/faq">FAQs</a>
                         </div>
                     </div>
@@ -148,6 +146,7 @@
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
+                    <a href="/mate/profile/${loginmate.id}"><i class="fa-solid fa-user"></i></a>
                     <a href="/memberdetail" class="search-switch"><i class="fa-solid fa-edit" style="color:black"></i></a>
                     <a href="/reserve/${loginmember.id}">
                         <c:choose>
@@ -265,9 +264,6 @@
 <script src="/js/mixitup.min.js"></script>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/main.js"></script>
-<script src="/js/rtc.js"></script>
-<script src="/js/rtc1.js"></script>
-<script src="/js/web.js"></script>
 </body>
 
 </html>

@@ -10,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
@@ -30,6 +31,15 @@ public class MateController {
         return "index";
     }
 
+    @GetMapping("/mate/profile/{id}")
+    public String mateProfile(Model model, HttpSession session, @PathVariable String id) throws Exception {
+        Mate mate = service.get(id);
+        model.addAttribute("loginmate", mate);
+        model.addAttribute("center", "mateProfile");
+        return "index";
+    }
+
+
     @RequestMapping("/mate/login")
     public String mateLogin(Model model, HttpSession session) {
         model.addAttribute("center", "mateLogin");
@@ -47,7 +57,7 @@ public class MateController {
             service.register(mate);
             signMate = service.get(mate.getEmail());
             session.setMaxInactiveInterval(100000);
-            session.setAttribute("loginmember",signMate);
+            session.setAttribute("loginmate",signMate);
             return "redirect:/";
         } catch (Exception e) {
             e.printStackTrace();

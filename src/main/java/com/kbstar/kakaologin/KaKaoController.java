@@ -1,7 +1,6 @@
 package com.kbstar.kakaologin;
 
 import com.kbstar.dto.Member;
-import com.kbstar.service.MateService;
 import com.kbstar.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

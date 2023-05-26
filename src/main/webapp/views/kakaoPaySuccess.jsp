@@ -42,7 +42,7 @@
                                     <td class="cart__close">${info.partner_order_id}</td>
                                     <td class="cart__close">${info.item_name}</td>
                                     <td class="cart__close">${info.quantity}</td>
-                                    <td class="cart__close">${info.amount.total}</td>
+                                    <td class="cart__close"><fmt:formatNumber value="${info.amount.total}" pattern="#,###,###원" /></td>
                                     <td class="cart__close">${info.payment_method_type}</td>
                                     <td class="cart__close">카카오 결제</td>
                                 </tr>
