@@ -70,6 +70,9 @@
                     </div>
             </div>
             <!-- 카카오 로그인 -->
+            <a class="p-2"  href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=83870487fd008580bcea50427296f384&redirect_uri=http://localhost:8083/member/kakao">
+                <img src="/img/kakao_login_medium_narrow.png" style="height:60px">
+            </a>
 
         </div>
     </section>

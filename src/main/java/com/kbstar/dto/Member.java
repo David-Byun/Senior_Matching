@@ -27,6 +27,7 @@ public class Member {
     private Date rdate;
     private int valid;
 
+    @Builder
     public Member(String email, String name, String password) {
         this.email = email;
         this.name = name;

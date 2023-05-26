@@ -95,6 +95,10 @@
                         </div>
                     </div>
             </div>
+            <!-- 카카오 회원가입 -->
+            <a class="p-2"  href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=83870487fd008580bcea50427296f384&redirect_uri=http://localhost:8083/member/kakao">
+                카카오 계정으로 회원가입
+            </a>
         </div>
     </section>
     <!-- Checkout Section End -->

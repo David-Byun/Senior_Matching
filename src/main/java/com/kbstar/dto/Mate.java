@@ -25,4 +25,11 @@ public class Mate {
         this.jobPeriod = jobPeriod;
         this.license = license;
     }
+
+    @Builder
+    public Mate(String email, String name, String password) {
+        this.email = email;
+        this.name = name;
+        this.password = password;
+    }
 }
