@@ -165,4 +165,10 @@ public class MainController {
         model.addAttribute("center", "goldenlife");
         return "index";
     }
+    
+        @RequestMapping("/matereviews")
+    public String matereviews(Model model) {
+        model.addAttribute("center", "matereviews");
+        return "index";
+    }
 }
