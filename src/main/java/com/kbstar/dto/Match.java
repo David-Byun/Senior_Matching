@@ -14,6 +14,7 @@ import java.util.Date;
 @Setter
 public class Match {
     private int id;
+    private int memberId;
     private int mateId;
     private Date startDate;
     private Date endDate;

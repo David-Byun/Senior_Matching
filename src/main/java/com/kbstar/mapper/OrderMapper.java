@@ -6,8 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Mapper
-@Repository
 public interface OrderMapper {
 
     void insert(OrderMall orderMall);

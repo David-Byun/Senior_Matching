@@ -258,6 +258,8 @@ create table ITEM_REVIEW
 create table MATCH
 (
     ID              NUMBER,
+    MEMBER_ID       NUMBER,
+    /*** member_id 추가 0526****/
     MATE_ID         NUMBER,
     START_DATE      DATE,
     END_DATE        DATE,

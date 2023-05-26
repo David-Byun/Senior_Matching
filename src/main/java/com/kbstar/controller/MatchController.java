@@ -2,9 +2,12 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Item;
 import com.kbstar.dto.Reserve;
+import com.kbstar.mapper.OrderMatchMapper;
+import com.kbstar.service.OrderMatchService;
 import com.kbstar.service.ReserveService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,27 +24,7 @@ import java.util.List;
 @RequestMapping("/match")
 public class MatchController {
 
-    private final //OrderMatchService 만들자리 ;
-
-    @PostMapping("/order")
-    public void addReserve(int memberId, int itemId, HttpSession session) {
-        Reserve reserve = new Reserve(memberId, itemId);
-        try {
-            reserveService.register(reserve);
-            session.setAttribute("myreserve", 1);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("찜 리스트에 추가를 실패했습니다.");
-        }
-    }
-
-    @GetMapping("/{memberId}")
-    public String myReserve(@PathVariable int memberId, Model model) throws Exception {
-        List<Item> myReserve = reserveService.myReserve(memberId);
-        model.addAttribute("myReserve", myReserve);
-        model.addAttribute("center", "shopping-reserve");
-        return "index";
-    }
-
+    @Autowired
+    private final OrderMatchService orderMatchService;
 
 }
