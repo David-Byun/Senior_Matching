@@ -29,9 +29,9 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/match")
+    @RequestMapping("/ordermatch")
     public String match(Model model, HttpSession session) {
-        model.addAttribute("center", "match");
+        model.addAttribute("center", "ordermatch");
         return "index";
     }
 

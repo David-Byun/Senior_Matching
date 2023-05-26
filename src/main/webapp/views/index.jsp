@@ -123,7 +123,7 @@
                                 <li><a href="/blog">블로그</a></li>
                             </ul>
                         </li>
-                        <li><a href="/match">매칭</a></li>
+                        <li><a href="/ordermatch">매칭</a></li>
                         <li><a href="/shop">몰</a></li>
                         <li><a href="#">후기</a>
                             <ul class="dropdown">
