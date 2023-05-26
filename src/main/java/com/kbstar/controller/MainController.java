@@ -18,6 +18,12 @@ public class MainController {
     @Autowired
     ReviewService reviewService;
 
+    @RequestMapping("/test1")
+    public String test1(Model model, HttpSession session) {
+        model.addAttribute("center", "test1");
+        return "index";
+    }
+
     @RequestMapping("/")
     public String main(Model model, HttpSession session) {
         if ((session.getAttribute("mycart") == null)) {

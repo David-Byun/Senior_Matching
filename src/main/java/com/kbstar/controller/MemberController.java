@@ -6,6 +6,7 @@ import com.kbstar.exception.ErrorCode;
 import com.kbstar.exception.UserException;
 import com.kbstar.service.CartService;
 import com.kbstar.service.MemberService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,24 +21,21 @@ import java.util.List;
 
 @Controller
 @Slf4j
+@RequiredArgsConstructor
 public class MemberController {
 
-    @Autowired
-    MemberService memberService;
-
-    @Autowired
-    CartService cartService;
-
-
-    @Autowired
-    private BCryptPasswordEncoder encoder;
+    private final MemberService memberService;
+    private final CartService cartService;
+    private final BCryptPasswordEncoder encoder;
 
     @Valid
     @RequestMapping("/signinimpl")
     public String signinimpl(@Valid Member member, Model model, HttpSession session) throws Exception {
         Member signinMember = null;
+        System.out.println("member = " + member.toString());
         try {
             member.setPassword(encoder.encode(member.getPassword()));
+            System.out.println("member.getEmail() = " + member.getEmail());
             memberService.register(member);
             signinMember = memberService.get(member.getEmail());
             session.setMaxInactiveInterval(100000);
