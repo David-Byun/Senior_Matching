@@ -142,7 +142,7 @@
                             </ul>
                         </li>
                         <li><a href="/contact">문의</a></li>
-                        <li><a href="/contact">요양소</a></li>
+                        <li><a href="/goldenlife">요양소</a></li>
                     </ul>
                 </nav>
             </div>
