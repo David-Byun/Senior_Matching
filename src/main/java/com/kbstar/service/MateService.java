@@ -1,6 +1,8 @@
 package com.kbstar.service;
 
+import com.kbstar.dto.Mate;
 import com.kbstar.dto.Member;
+import com.kbstar.mapper.MateMapper;
 import com.kbstar.mapper.MemberMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +12,14 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class MemberService implements ShopService<String, Member>{
+public class MateService implements ShopService<String, Mate>{
 
     @Autowired
-    MemberMapper mapper;
+    MateMapper mapper;
 
     @Override
-    public void register(Member member) throws Exception {
-        mapper.insert(member);
+    public void register(Mate mate) throws Exception {
+        mapper.insert(mate);
     }
 
     @Override
@@ -26,17 +28,17 @@ public class MemberService implements ShopService<String, Member>{
     }
 
     @Override
-    public void modify(Member member) throws Exception {
-        mapper.update(member);
+    public void modify(Mate mate) throws Exception {
+        mapper.update(mate);
     }
 
     @Override
-    public Member get(String k) throws Exception {
+    public Mate get(String k) throws Exception {
         return mapper.select(k);
     }
 
     @Override
-    public List<Member> get() throws Exception {
+    public List<Mate> get() throws Exception {
         return mapper.selectall();
     }
 
