@@ -159,4 +159,16 @@ public class MainController {
         model.addAttribute("center", "memberdetail");
         return "index";
     }
+    
+        @RequestMapping("/goldenlife")
+    public String goldenlife(Model model) {
+        model.addAttribute("center", "goldenlife");
+        return "index";
+    }
+    
+        @RequestMapping("/matereviews")
+    public String matereviews(Model model) {
+        model.addAttribute("center", "matereviews");
+        return "index";
+    }
 }

@@ -131,16 +131,16 @@
                         </li>
                         <li><a href="/match">매칭</a></li>
                         <li><a href="/shop">몰</a></li>
-                        <li><a href="#">후기</a>
+                        <li><a href="/matereviews">후기</a>
                             <ul class="dropdown">
                                 <c:if test="${loginmember != null}">
                                     <li><a href="/itemReview">후기 작성</a></li>
                                 </c:if>
-                                <li><a href="/reviewall">후기 검색</a></li>
+                                <li><a href="/matereviews">후기 검색</a></li>
                             </ul>
                         </li>
                         <li><a href="/contact">문의</a></li>
-                        <li><a href="/contact">요양소</a></li>
+                        <li><a href="/goldenlife">요양소</a></li>
                     </ul>
                 </nav>
             </div>
