@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="si-social">
                                     <a href="#"><i class="fa-sharp fa-solid fa-comment"></i></a>
-                                    <a href="#"><i class="fas fa-video"></i></a>
+                                    <a href="/chat"><i class="fas fa-video"></i></a>
                                 </div>
                                 <div class="rating">
                                     <i class="fa fa-star-o"></i>

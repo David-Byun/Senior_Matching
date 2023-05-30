@@ -18,9 +18,9 @@ public class MainController {
     @Autowired
     ReviewService reviewService;
 
-    @RequestMapping("/test1")
+    @RequestMapping("/chat")
     public String test1(Model model, HttpSession session) {
-        model.addAttribute("center", "test1");
+        model.addAttribute("center", "chat");
         return "index";
     }
 

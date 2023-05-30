@@ -10,24 +10,24 @@
 // 웹 소켓 연결 정보
         const socket = new WebSocket("wss://" + window.location.host + "/signal");
 
+        console.log("소켓 연결 완료" + socket);
+
 // UI elements
         const videoButtonOff = document.querySelector('#video_off');
         const videoButtonOn = document.querySelector('#video_on');
         const audioButtonOff = document.querySelector('#audio_off');
         const audioButtonOn = document.querySelector('#audio_on');
-// const localRoom = document.querySelector('input#id').value;
-        const localRoom = 1;
         const exitButton = document.querySelector('#exit');
+        const localRoom = document.querySelector('input#id').value;
         const localVideo = document.getElementById('local_video');
         const remoteVideo = document.getElementById('remote_video');
 // const localUserName = localStorage.getItem("uuid");
-// const localUserName = document.querySelector("#uuid").value
-        const localUserName = 22;
+        const localUserName = document.querySelector("#uuid").value
 
-        $(function () {
-            $('#view_on').click(() => startScreenShare);
-            $('#view_off').click(() => stopScreenShare);
-        })
+
+        document.querySelector('#view_on').addEventListener('click', startScreenShare);
+        document.querySelector('#view_off').addEventListener('click', stopScreenShare);
+
 
 // WebRTC STUN servers
 // WebRTC STUN 서버 정보
@@ -295,16 +295,7 @@
          * 다른 peer 와 연결되었을 때 remote_video show 상태로로, 끊졌을때는 remote_video 를 hide 상태로 변경
          * **/
         function handleICEConnectionStateChangeEvent(){
-            let status = myPeerConnection.iceConnectionState;
-
-            if(status === "connected"){
-                log("status : "+status)
-                $("#remote_video").show();
-            }else if(status === "disconnected"){
-                log("status : "+status)
-
-                $("#remote_video").hide();
-            }
+            $('#remote_video').show();
         }
 
 // add MediaStream to local video element and to the Peer
@@ -590,6 +581,7 @@
             })
         }
     })
+
 </script>
 <main role="main" class="container-fluid">
     <h1>ChatForYOU with WebRTC</h1>
@@ -630,7 +622,7 @@
                         </div>
                     </div>
 
-                    <a href="/">
+                    <a href="/chat">
                         <button type="button" class="btn btn-outline-danger" id="exit" name="exit">
                             Exit Room
                         </button>
