@@ -9,11 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.kbstar</groupId>
-    <artifactId>clone0511</artifactId>
+    <artifactId>Senior</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>clone0511</name>
-    <description>clone0511</description>
+    <name>Senior</name>
+    <description>Senior</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -29,6 +29,19 @@
             <artifactId>spring-websocket</artifactId>
             <version>4.0.4.RELEASE</version>
         </dependency>
+<!--        화상채팅 모듈-->
+        <dependency>
+            <groupId>com.corundumstudio.socketio</groupId>
+            <artifactId>netty-socketio</artifactId>
+            <version>1.7.23</version>
+        </dependency>
+<!--        화상채팅 이후 배포 단계에서 발생 에러 수정-->
+        <dependency>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itext</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
