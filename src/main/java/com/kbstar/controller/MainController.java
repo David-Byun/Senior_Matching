@@ -24,6 +24,11 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/first")
+    public String test1() {
+        return "first";
+    }
+
     @RequestMapping("/")
     public String main(Model model, HttpSession session) {
         if ((session.getAttribute("mycart") == null)) {

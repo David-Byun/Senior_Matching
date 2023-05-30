@@ -4,6 +4,26 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBWbLdjemTbpsGckTlyDqaATpbI_0usdHw",
+            authDomain: "woowa-turkey.firebaseapp.com",
+            databaseURL: "https://woowa-turkey.firebaseio.com",
+            projectId: "woowa-turkey",
+            storageBucket: "",
+            messagingSenderId: "732784692174",
+            appId: "1:732784692174:web:555e23a165bac677"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
     <meta charset="UTF-8">
     <meta name="description" content="Male_Fashion Template">
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
@@ -75,8 +95,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-7">
-                    <div class="header__top__left">
-                        <p>구입 후 30일까지 환불가능</p>
+                    <div class="header__top__links">
+                        <a href="/mate/signin">메이트 가입</a>
+                        <a href="/mate/login">메이트 로그인</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-5">
@@ -86,8 +107,7 @@
                                 <c:when test="${loginmember == null}">
                                     <a href="/login">시니어 로그인</a>
                                     <a href="/signin">시니어 가입</a>
-                                    <a href="/mate/signin">메이트 가입</a>
-                                    <a href="/mate/login">메이트 로그인</a>
+
                                 </c:when>
                                 <c:otherwise>
                                     <a href="/chatbot">챗봇문의</a>
@@ -118,17 +138,6 @@
                 <nav class="header__menu mobile-menu">
                     <ul>
                         <li class="active"><a href="/">홈</a></li>
-                        <li><a href="#">메뉴</a>
-                            <ul class="dropdown">
-                                <li><a href="/about">회사 정보</a></li>
-                                <c:if test="${loginmember != null}">
-                                    <li><a href="/cart/${loginmember.id}">장바구니</a></li>
-                                    <li><a href="/orderMall/${loginmember.id}">주문</a></li>
-                                    <li><a href="/orderMall/confirm/${loginmember.id}">주문내역</a></li>
-                                </c:if>
-                                <li><a href="/blog">블로그</a></li>
-                            </ul>
-                        </li>
                         <li><a href="/match">매칭</a></li>
                         <li><a href="/shop">몰</a></li>
                         <li><a href="/matereviews">후기</a>

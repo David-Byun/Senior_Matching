@@ -7,10 +7,10 @@
                 <div class="row">
                     <div class="col-xl-5 col-lg-7 col-md-8">
                         <div class="hero__text">
-                            <h6>여름 상품</h6>
-                            <h2>FW 시즌 상품 2030</h2>
-                            <p>최고의 품질 최고의 상품을 구매해보세요!</p>
-                            <a href="/shop" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                            <h6>보호자가 필요하신가요?</h6>
+                            <h2>지금 바로 신청해보세요!</h2>
+                            <p>언제 어디서나 케어를 받을 수 있어요.</p>
+                            <a href="/match" class="primary-btn">메이트 찾기<span class="arrow_right"></span></a>
                             <div class="hero__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -27,10 +27,10 @@
                 <div class="row">
                     <div class="col-xl-5 col-lg-7 col-md-8">
                         <div class="hero__text">
-                            <h6>섬머 시즌 Collection</h6>
-                            <h2>Fall - Winter Collections 2030</h2>
-                            <p>럭셔리 에센셜을 만드는 전문 레이블. 탁월한 품질에 대한 확고한 의지로 윤리적으로 제작된 제품</p>
-                            <a href="/shop" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                            <h6>건강식품이 필요하시다고요?</h6>
+                            <h2>각종 건강식품 20% 할인!</h2>
+                            <p>최고 품질로 최고의 만족도를 드려요.</p>
+                            <a href="/shop" class="primary-btn">건강식품 사러가기 <span class="arrow_right"></span></a>
                             <div class="hero__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -56,8 +56,8 @@
                         <img src="/img/senior/slider-1.jpg" alt="">
                     </div>
                     <div class="banner__item__text">
-                        <h2>2023 시즌 상품</h2>
-                        <a href="/shop">Shop now</a>
+                        <h2>친구 같이</h2>
+                        <a href="/match">메이트 찾기</a>
                     </div>
                 </div>
             </div>
@@ -67,8 +67,8 @@
                         <img src="/img/senior/slider-2.jpg" alt="">
                     </div>
                     <div class="banner__item__text">
-                        <h2>Accessories</h2>
-                        <a href="/shop">Shop now</a>
+                        <h2>가족 같이</h2>
+                        <a href="/match">메이트 찾기</a>
                     </div>
                 </div>
             </div>
@@ -78,8 +78,8 @@
                         <img src="/img/senior/slider-3.jpg" alt="">
                     </div>
                     <div class="banner__item__text">
-                        <h2>신발 2030 시즌</h2>
-                        <a href="/shop">Shop now</a>
+                        <h2>따뜻한 인생</h2>
+                        <a href="/match">메이트 찾기</a>
                     </div>
                 </div>
             </div>
@@ -428,77 +428,3 @@
     </div>
 </section>
 <!-- Categories Section End -->
-
-<!-- Instagram Section Begin -->
-<section class="instagram spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="instagram__pic">
-                    <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-1.jpg"></div>
-                    <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-2.jpg"></div>
-                    <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-3.jpg"></div>
-                    <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-4.jpg"></div>
-                    <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-5.jpg"></div>
-                    <div class="instagram__pic__item set-bg" data-setbg="/img/instagram/instagram-6.jpg"></div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="instagram__text">
-                    <h2>Instagram</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
-                    <h3>#Male_Fashion</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Instagram Section End -->
-
-<!-- Latest Blog Section Begin -->
-<section class="latest spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <span>Latest News</span>
-                    <h2>Fashion New Trends</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="/img/blog/blog-1.jpg"></div>
-                    <div class="blog__item__text">
-                        <span><img src="/img/icon/calendar.png" alt=""> 16 February 2020</span>
-                        <h5>What Curling Irons Are The Best Ones</h5>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="/img/blog/blog-2.jpg"></div>
-                    <div class="blog__item__text">
-                        <span><img src="/img/icon/calendar.png" alt=""> 21 February 2020</span>
-                        <h5>Eternity Bands Do Last Forever</h5>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="/img/blog/blog-3.jpg"></div>
-                    <div class="blog__item__text">
-                        <span><img src="/img/icon/calendar.png" alt=""> 28 February 2020</span>
-                        <h5>The Health Benefits Of Sunglasses</h5>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Latest Blog Section End -->

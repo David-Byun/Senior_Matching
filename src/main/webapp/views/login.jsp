@@ -28,10 +28,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Log In</h4>
+                        <h4>시니어 로그인</h4>
                         <div class="breadcrumb__links">
                             <a href="/">Home</a>
-                            <span>Log In</span>
+                            <span>시니어 로그인</span>
                         </div>
                     </div>
                 </div>
@@ -48,16 +48,16 @@
                         <div class="col-lg-8 col-md-10">
                             <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have no ID? <a href="/signin">Click
                             here</a> to join us</h6>
-                            <h6 class="checkout__title">LOGIN FORM</h6>
+                            <h6 class="checkout__title">시니어 로그인</h6>
                             <form id="login_form" name="login_form" action="/loginimpl" method="post">
                             <div class="row">
                                 <div class="col-lg-10">
                                     <div class="checkout__input" >
-                                        <p>ID<span>*</span></p>
+                                        <p>아이디<span>*</span></p>
                                         <input type="text" id="memberId" name="email">
                                     </div>
                                     <div class="checkout__input" >
-                                        <p>Password<span>*</span></p>
+                                        <p>비밀번호<span>*</span></p>
                                         <input type="password" id="password" name="password">
                                     </div>
                                 </div>

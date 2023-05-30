@@ -54,19 +54,19 @@
                             <div class="row">
                                 <div class="col-lg-10">
                                     <div class="checkout__input" >
-                                        <p>ID<span>*</span></p>
+                                        <p>아이디<span>*</span></p>
                                         <input type="text" id="email" name="email" placeholder="Enter Email Id">
                                     </div>
                                     <div class="checkout__input" >
-                                        <p>Name<span>*</span></p>
+                                        <p>이름<span>*</span></p>
                                         <input type="text" id="name" name="name" placeholder="Enter Name">
                                     </div>
                                     <div class="checkout__input" >
-                                        <p>Password<span>*</span></p>
+                                        <p>비밀번호<span>*</span></p>
                                         <input type="password" id="password" name="password" placeholder="Enter password ( over 5 letters )">
                                     </div>
                                     <div class="checkout__input" >
-                                        <p>Password Check<span>*</span></p>
+                                        <p>비밀번호 확인<span>*</span></p>
                                         <input type="password" id="valid_password" placeholder="Enter password ( checking... )">
                                     </div>
                                     <div class="checkout__input" >
@@ -83,13 +83,13 @@
                                     </div>
                                     <div class="checkout__input">
                                             <div class="alert alert-danger" id="alert" style="display: none">
-                                                <strong>Wrong!</strong> Please check your password again!
+                                                <strong>Wrong!</strong> 아이디 혹은 비밀번호를 다시 확인해주세요!
                                             </div>
                                     </div>
                                 </div>
                             </div>
                                 <div class="checkout__input__checkbox">
-                                    <button type="submit" class="btn btn-primary" id="signin_btn">Sign In</button>
+                                    <button type="submit" class="btn btn-primary" id="signin_btn">가입하기</button>
                                 </div>
                             </form>
                         </div>
