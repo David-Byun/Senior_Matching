@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.util.Date;
 
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -14,11 +15,20 @@ import java.util.Date;
 public class OrderMatch {
     private int id;
     private int memberId;
-    private Date startDate;
-    private Date endDate;
+    private String startDate;
+    private String endDate;
     private String service;
     private String area;
     private String objectGender;
     private String objectBirth;
-    private Date Rdate;
+    private String Rdate;
+
+    public OrderMatch(String startDate, String endDate, String service, String area, String objectGender, String objectBirth) {
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.service = service;
+        this.area = area;
+        this.objectGender = objectGender;
+        this.objectBirth = objectBirth;
+    }
 }

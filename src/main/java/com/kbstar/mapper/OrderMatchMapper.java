@@ -1,5 +1,6 @@
 package com.kbstar.mapper;
 
+import com.kbstar.dto.MatchSearch;
 import com.kbstar.dto.Mate;
 import com.kbstar.dto.OrderMatch;
 import com.kbstar.frame.ShopMapper;
@@ -15,5 +16,5 @@ public interface OrderMatchMapper extends ShopMapper<Integer, OrderMatch> {
     //findByMemberId
     List<OrderMatch>  findByMemberId(int memberId);
     //findByDate
-    List<Mate> findByDate(Date startDate,Date endDate);
+    List<Mate> findByDate(MatchSearch ms);
 }

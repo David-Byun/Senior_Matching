@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kbstar.mapper.OrderMatchMapper">
+
+
+    <select id="findByMemberId" parameterType="Integer" resultType="orderMatch">
+        SELECT * FROM orderMatch WHERE member_id=#{memberId}
+    </select>
+
+    <select id="findByDate" parameterType="MatchSearch" resultType="mate">
+        <![CDATA[
+        SELECT m.ID AS id, m.NAME AS name, m.JOB_PERIOD AS jobPeriod, m.LICENSE AS license, m.IMG AS img
+        FROM MATE m
+        JOIN MATCH ch
+        ON m.ID = ch.MATE_ID
+        WHERE ( ch.START_DATE < #{startDate} AND ch.END_DATE < #{startDate})
+        OR ch.START_DATE > #{endDate}
+        ]]>
+    </select>
+
+
+    <insert id="insert" parameterType="orderMatch">
+        INSERT INTO order_match (id, member_id, start_date, end_date, service, area, object_gender, object_birth, rdate)
+        VALUES (order_match_seq.NEXTVAL, #{memberId}, #{startDate}, #{endDate}, #{service}, #{area},#{objectGender},#{objectBirth}, SYSDATE)
+    </insert>
+
+    <select id="select" parameterType="String" resultType="orderMatch">
+        SELECT * FROM orderMatch WHERE id=#{id}
+    </select>
+
+    <select id="selectall" resultType="orderMatch">
+        SELECT * FROM orderMatch
+    </select>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM orderMatch WHERE id=#{id}
+    </delete>
+
+</mapper>

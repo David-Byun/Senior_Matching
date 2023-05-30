@@ -1,5 +1,7 @@
 package com.kbstar.service;
 
+import com.kbstar.dto.MatchSearch;
+import com.kbstar.dto.Mate;
 import com.kbstar.dto.OrderMatch;
 import com.kbstar.mapper.OrderMatchMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -45,5 +47,7 @@ public class OrderMatchService implements ShopService<Integer, OrderMatch> {
         return orderMatchMapper.findByMemberId(k);
     }
 
-    public List<Mate>
+    public List<Mate> myMateByDate(MatchSearch ms)throws Exception{
+        return orderMatchMapper.findByDate(ms);
+    }
 }

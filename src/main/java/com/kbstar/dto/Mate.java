@@ -25,4 +25,12 @@ public class Mate {
         this.jobPeriod = jobPeriod;
         this.license = license;
     }
+
+    public Mate(int id, String name, String img, int jobPeriod, String license) {
+        this.id = id;
+        this.name = name;
+        this.img = img;
+        this.jobPeriod = jobPeriod;
+        this.license = license;
+    }
 }
