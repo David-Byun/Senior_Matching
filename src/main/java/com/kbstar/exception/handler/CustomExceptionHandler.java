@@ -34,4 +34,12 @@ public class CustomExceptionHandler {
         model.addAttribute("center", "404");
         return "index";
     }
+
+    @ExceptionHandler({RuntimeException.class})
+    public String RuntimeException(ContentException e, Model model) {
+        log.info("=================== error =====================", e);
+        model.addAttribute("error", e.getMessage());
+        model.addAttribute("center", "404");
+        return "index";
+    }
 }
