@@ -1,4 +1,4 @@
-package com.kbstar.chat;
+package com.kbstar.video;
 
 import com.corundumstudio.socketio.SocketIOServer;
 import org.springframework.beans.factory.annotation.Value;

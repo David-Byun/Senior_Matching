@@ -1,4 +1,4 @@
-package com.kbstar.chat;
+package com.kbstar.video;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
