@@ -39,7 +39,7 @@
                                     <span>Helper</span>
                                 </div>
                                 <div class="si-social">
-                                    <a href="#"><i class="fa-sharp fa-solid fa-comment"></i></a>
+                                    <a href="/callchat"><i class="fa-sharp fa-solid fa-comment"></i></a>
                                     <a href="/chat"><i class="fas fa-video"></i></a>
                                 </div>
                                 <div class="rating">

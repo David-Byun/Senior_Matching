@@ -29,6 +29,11 @@ public class MainController {
         return "first";
     }
 
+    @RequestMapping("/callchat")
+    public String callchat() {
+        return "callchat";
+    }
+
     @RequestMapping("/")
     public String main(Model model, HttpSession session) {
         if ((session.getAttribute("mycart") == null)) {

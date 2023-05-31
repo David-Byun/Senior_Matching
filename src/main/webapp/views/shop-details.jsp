@@ -190,11 +190,7 @@
                                     <h6>${obj.title}</h6>
                                 </div>
                             </td>
-                            <td class="product__cart__item">
-                                <div class="product__cart__item__text">
-                                    <h6>${obj.itemReview}</h6>
-                                </div>
-                            </td>
+
 
                         <tr>
                             </c:forEach>
