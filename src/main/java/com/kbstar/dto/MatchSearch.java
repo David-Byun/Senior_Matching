@@ -12,5 +12,4 @@ import lombok.Setter;
 public class MatchSearch {
     private String startDate;
     private String endDate;
-
 }

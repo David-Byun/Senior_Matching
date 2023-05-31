@@ -18,6 +18,7 @@ public class OrderMatchService implements ShopService<Integer, OrderMatch> {
 
     @Autowired
     public OrderMatchMapper orderMatchMapper;
+
     @Override
     public void register(OrderMatch orderMatch) throws Exception {
         orderMatchMapper.insert(orderMatch);

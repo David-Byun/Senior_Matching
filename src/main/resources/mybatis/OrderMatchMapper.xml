@@ -22,22 +22,24 @@
         ]]>
     </select>
 
-
     <insert id="insert" parameterType="orderMatch">
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            SELECT order_match_seq.CURRVAL FROM DUAL
+        </selectKey>
         INSERT INTO order_match (id, member_id, start_date, end_date, service, area, object_gender, object_birth, rdate)
         VALUES (order_match_seq.NEXTVAL, #{memberId}, #{startDate}, #{endDate}, #{service}, #{area},#{objectGender},#{objectBirth}, SYSDATE)
     </insert>
 
-    <select id="select" parameterType="String" resultType="orderMatch">
-        SELECT * FROM orderMatch WHERE id=#{id}
+    <select id="select" parameterType="Integer" resultType="orderMatch">
+        SELECT * FROM order_match WHERE id=#{id}
     </select>
 
     <select id="selectall" resultType="orderMatch">
-        SELECT * FROM orderMatch
+        SELECT * FROM order_match
     </select>
 
-    <delete id="delete" parameterType="String">
-        DELETE FROM orderMatch WHERE id=#{id}
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM order_match WHERE id=#{id}
     </delete>
 
 </mapper>

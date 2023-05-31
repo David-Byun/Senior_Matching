@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kbstar.mapper.MatchMapper">
+
+
+    <insert id="matchInserted" parameterType="OrderMatch">
+        INSERT INTO MATCH
+        (id ,member_id, mate_id, start_date, end_date, service, area, object_gender, object_birth, status, price,payment,pay_date)
+        VALUES
+        (match_seq.NEXTVAL,#{memberId},null,#{startDate},#{endDate},#{service},#{area},#{objectGender},#{objectBirth},'매칭대기',null,null,null)
+    </insert>
+
+    <select id="select" parameterType="String" resultType="Match">
+        SELECT * FROM Match WHERE id=#{id}
+    </select>
+
+    <select id="selectall" resultType="Match">
+        SELECT * FROM Match
+    </select>
+
+</mapper>
