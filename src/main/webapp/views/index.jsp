@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<spring:eval expression="@environment.getProperty('firebase.apiKey')" var="apiKey"/>
-<spring:eval expression="@environment.getProperty('firebase.authDomain')" var="authDomain"/>
-<spring:eval expression="@environment.getProperty('firebase.projectId')" var="projectId"/>
-<spring:eval expression="@environment.getProperty('firebase.storageBucket')" var="storageBucket"/>
-<spring:eval expression="@environment.getProperty('firebase.messagingSenderId')" var="messagingSenderId"/>
-<spring:eval expression="@environment.getProperty('firebase.appId')" var="appId"/>
-<spring:eval expression="@environment.getProperty('firebase.measurementId')" var="measurementId"/>
+<%--firebase 관련 키 변수화 셋팅--%>
+<%--<spring:eval expression="@environment.getProperty('firebase.apiKey')" var="apiKey"/>--%>
+<%--<spring:eval expression="@environment.getProperty('firebase.authDomain')" var="authDomain"/>--%>
+<%--<spring:eval expression="@environment.getProperty('firebase.projectId')" var="projectId"/>--%>
+<%--<spring:eval expression="@environment.getProperty('firebase.storageBucket')" var="storageBucket"/>--%>
+<%--<spring:eval expression="@environment.getProperty('firebase.messagingSenderId')" var="messagingSenderId"/>--%>
+<%--<spring:eval expression="@environment.getProperty('firebase.appId')" var="appId"/>--%>
+<%--<spring:eval expression="@environment.getProperty('firebase.measurementId')" var="measurementId"/>--%>
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
@@ -58,21 +59,21 @@
 <script>
     $(function () {
         let firebaseConfig = {
-            apiKey: "<c:out value='${apiKey}' />",
-            authDomain: "<c:out value='${authDomain}' />",
-            projectId: "<c:out value='${projectId}' />",
-            storageBucket: "<c:out value='${storageBucket}' />",
-            messagingSenderId: "<c:out value='${messagingSenderId}' />",
-            appId: "<c:out value='${appId}' />",
-            measurementId: "<c:out value='${measurementId}' />"
-
-            // apiKey: "AIzaSyCfchQsojha5qRfexQ7faKMa0p4ebjH260",
-            // authDomain: "nwitter-4c3ea.firebaseapp.com",
-            // projectId: "nwitter-4c3ea",
-            // storageBucket: "nwitter-4c3ea.appspot.com",
-            // messagingSenderId: "613082594223",
-            // appId: "1:613082594223:web:54d455061bff28bb9c0d5a",
-            // measurementId: "G-KH0RN141KL"
+            //cloud 게시시 키 변수 셋팅으로 진행 예정
+            <%--apiKey: "<c:out value='${apiKey}' />",--%>
+            <%--authDomain: "<c:out value='${authDomain}' />",--%>
+            <%--projectId: "<c:out value='${projectId}' />",--%>
+            <%--storageBucket: "<c:out value='${storageBucket}' />",--%>
+            <%--messagingSenderId: "<c:out value='${messagingSenderId}' />",--%>
+            <%--appId: "<c:out value='${appId}' />",--%>
+            <%--measurementId: "<c:out value='${measurementId}' />"--%>
+             apiKey: "AIzaSyCfchQsojha5qRfexQ7faKMa0p4ebjH260",
+             authDomain: "nwitter-4c3ea.firebaseapp.com",
+             projectId: "nwitter-4c3ea",
+             storageBucket: "nwitter-4c3ea.appspot.com",
+             messagingSenderId: "613082594223",
+             appId: "1:613082594223:web:54d455061bff28bb9c0d5a",
+             measurementId: "G-KH0RN141KL"
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
