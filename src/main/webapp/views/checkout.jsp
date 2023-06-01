@@ -26,7 +26,6 @@
         <div class="container">
             <div class="checkout__form">
                 <form action="/order/orderImpl" method="post">
-                    <input type="hidden" value="${loginmember.id}" name="memberId">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click
