@@ -427,7 +427,7 @@
                             <p>Seconds</p>
                         </div>
                     </div>
-                    <a href="#" class="primary-btn">바로 구매하세요!</a>
+                    <a href="/shop" class="primary-btn">바로 구매하세요!</a>
                 </div>
             </div>
         </div>
