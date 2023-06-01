@@ -14,6 +14,9 @@ import java.util.List;
 @Repository
 public interface MatchMapper extends ShopMapper<Integer, Match> {
 
+    List<Match> findByMemberId(int memberId);
+    List<Match> findByMateId(int mateId);
+
     //1단계 ( status:매칭대기, id 부터 status 까지 )
     void matchInserted(OrderMatch om);
     //2단계 ( status:매칭완료 or 매칭취소(거절) )

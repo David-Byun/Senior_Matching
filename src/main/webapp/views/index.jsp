@@ -131,7 +131,23 @@
                                 <li><a href="/blog">블로그</a></li>
                             </ul>
                         </li>
-                        <li><a href="/ordermatch">매칭</a></li>
+                        <li><a href="#">매칭</a>
+                            <ul class="dropdown">
+                                <li><a href="/ordermatch">매칭신청</a></li>
+                                <li><a href="/ordermatchlist">매칭내역</a></li>
+                                <li><a href="/matchofferlist">매칭신청확인</a></li>
+                                <li><a href="/matchofferlist">매칭내역</a></li>
+<%--                                <c:if test="${loginmember != null}">--%>
+<%--                                    <li><a href="/ordermatch">매칭신청</a></li>--%>
+<%--                                    <li><a href="#">매칭내역</a></li>--%>
+<%--                                </c:if>--%>
+<%--                                <c:if test="${loginmate != null}">--%>
+<%--                                    <li><a href="#">매칭신청확인</a></li>--%>
+<%--                                    <li><a href="#">매칭내역</a></li>--%>
+<%--                                </c:if>--%>
+                            </ul>
+                        </li>
+
                         <li><a href="/shop">몰</a></li>
                         <li><a href="#">후기</a>
                             <ul class="dropdown">

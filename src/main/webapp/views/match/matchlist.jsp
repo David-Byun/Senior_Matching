@@ -45,12 +45,11 @@
                                         <a href="#"><i class="fa-sharp fa-solid fa-comment"></i></a>
                                         <a href="#"><i class="fas fa-video"></i></a>
                                         <form id="matchForm" action="/matchoffer" method="POST">
-                                            <input type="hidden" name="memberId" value="${loginmember}">
+<%--                                            <input type="hidden" name="memberId" value="${loginmember}">--%>
                                             <input type="hidden" name="mateId" value="${obj.id}">
                                             <input type="hidden" name="omId" value="${omId}">
                                             <a href="#" onclick="document.getElementById('matchForm').submit(); return false;"><i class="fas fa-arrow-circle-up"></i></a>
                                         </form>
-<%--                                        <a href="/matchimpl"><i class="fas fa-arrow-circle-up"></i></a>--%>
                                     </div>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>

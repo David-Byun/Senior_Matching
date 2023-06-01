@@ -19,20 +19,28 @@ public class MatchService {
         mapper.matchInserted(om);
     }
 
+    public void update(Match match) throws Exception{
+        mapper.update(match);
+    }
     public Match IsmatchOk(Integer k) throws Exception {
         return mapper.IsmatchOk(k);
     }
     public Match matchPaid(Integer k) throws Exception {
         return mapper.matchPaid(k);
     }
-
-
     public Match get(Integer k) throws Exception {
         return mapper.select(k);
     }
 
-
     public List<Match> get() throws Exception {
         return mapper.selectall();
+    }
+
+    public List<Match> findByMemberId(Integer k) throws Exception {
+        return mapper.findByMemberId(k);
+    }
+
+    public List<Match> findByMateId(Integer k) throws Exception {
+        return mapper.findByMateId(k);
     }
 }

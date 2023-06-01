@@ -1,20 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-option">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__text">
-                        <h4>Log In</h4>
-                        <div class="breadcrumb__links">
-                            <a href="/">Home</a>
-                            <span>Log In</span>
-                        </div>
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>간병인 매칭</h4>
+                    <div class="breadcrumb__links">
+                        <a href="/">홈</a>
+                        <a href="/ordermatch">간병인 매칭</a>
+                        <span>간병인 매칭</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     <!-- Breadcrumb Section End -->
 
     <!-- Checkout Section Begin -->
