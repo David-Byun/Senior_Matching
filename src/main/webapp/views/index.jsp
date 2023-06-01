@@ -150,15 +150,18 @@
             <div class="row">
                 <div class="col-lg-6 col-md-7">
                     <div class="header__top__links">
-                        <a href="/mate/signin">메이트 가입</a>
-                        <a href="/mate/login">메이트 로그인</a>
+                        <c:if test="${loginmember == null && loginmate == null}">
+                            <a href="/mate/signin">메이트 가입</a>
+                            <a href="/mate/login">메이트 로그인</a>
+                        </c:if>
+
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-5">
                     <div class="header__top__right">
                         <div class="header__top__links">
                             <c:choose>
-                                <c:when test="${loginmember == null}">
+                                <c:when test="${loginmember == null && loginmate == null}">
                                     <a href="/login">시니어 로그인</a>
                                     <a href="/signin">시니어 가입</a>
 
@@ -166,10 +169,11 @@
                                 <c:otherwise>
                                     <a href="/chatbot">챗봇문의</a>
                                     <a href="/itemReview">리뷰</a>
-                                    <a href="#" id="logout">로그아웃</a>
                                 </c:otherwise>
-
                             </c:choose>
+                                <c:if test="${loginmember != null || loginmate != null}">
+                                    <a href="#" id="logout">로그아웃</a>
+                                </c:if>
                             <a href="/faq">FAQs</a>
                         </div>
                     </div>

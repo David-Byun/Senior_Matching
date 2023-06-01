@@ -5,10 +5,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Member Info</h4>
+                        <h4>회원정보</h4>
                         <div class="breadcrumb__links">
-                            <a href="/">Home</a>
-                            <span>Member Info</span>
+                            <a href="/">홈</a>
+                            <span>회원정보</span>
                         </div>
                     </div>
                 </div>
@@ -23,23 +23,23 @@
             <div class="checkout__form">
                     <div class="row">
                         <div class="col-lg-8 col-md-10">
-                            <h6 class="coupon__code"><span class="icon_tag_alt"></span> Want to Shop? <a href="#">Click
+                            <h6 class="coupon__code"><span class="icon_tag_alt"></span><a href="#">Click
                             here</a></h6>
-                            <h6 class="checkout__title">Member Info Form</h6>
+                            <h6 class="checkout__title">비밀번호 변경</h6>
                             <form id="memberdetail_form" name="memberdetail_form" action="/memberdetailUpdate" method="post">
                             <div class="row">
                                 <div class="col-lg-10">
                                     <div class="checkout__input" >
                                         <p>ID<span>*</span></p>
-                                        <input type="text" id="memberId" name="memberId" value="${loginmember.memberId}" readonly>
+                                        <input type="text" id="email" name="email" value="${loginmember.email}" readonly>
                                     </div>
                                     <div class="checkout__input" >
                                         <p>Name<span>*</span></p>
-                                        <input type="text" id="name" name="name" value="${loginmember.name}">
+                                        <input type="text" id="name" name="name" value="${loginmember.name}" readonly>
                                     </div>
                                     <div class="checkout__input" >
                                         <p>New Password<span>*</span></p>
-                                        <input type="password" id="password" name="password">
+                                        <input type="password" id="password" name="password" />
                                     </div>
                                 </div>
                             </div>

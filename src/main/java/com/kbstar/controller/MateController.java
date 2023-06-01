@@ -82,8 +82,8 @@ public class MateController {
         try {
             mate = service.get(email);
             if (mate != null && encoder.matches(password, mate.getPassword())) {
-                session.setMaxInactiveInterval(100000);// 한 session의 제한시간
-                session.setAttribute("loginmate", mate); //session에 logincust라는 이름으로 cust를 넣어줌 --> login을 메모리에 제한시간만큼 유지
+                session.setMaxInactiveInterval(100000);
+                session.setAttribute("loginmate", mate);
             }
         } catch (Exception e) {
             e.printStackTrace();

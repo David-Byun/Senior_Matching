@@ -1,9 +1,10 @@
 package com.kbstar.controller;
 
 import com.kbstar.dto.ItemReview;
+import com.kbstar.firebase.FirebaseInit;
 import com.kbstar.service.ReviewService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +14,11 @@ import java.util.List;
 
 @Slf4j
 @Controller
+@RequiredArgsConstructor
 public class MainController {
 
-    @Autowired
-    ReviewService reviewService;
+    private final ReviewService reviewService;
+    private final FirebaseInit init;
 
     @RequestMapping("/chat")
     public String test1(Model model, HttpSession session) {
@@ -36,6 +38,7 @@ public class MainController {
 
     @RequestMapping("/")
     public String main(Model model, HttpSession session) {
+        init.init();
         if ((session.getAttribute("mycart") == null)) {
             session.setAttribute("mycart", 0);
         }
@@ -164,12 +167,6 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/memberdetail")
-    public String memberdetail(Model model) {
-        model.addAttribute("center", "memberdetail");
-        return "index";
-    }
-    
         @RequestMapping("/goldenlife")
     public String goldenlife(Model model) {
         model.addAttribute("center", "goldenlife");
