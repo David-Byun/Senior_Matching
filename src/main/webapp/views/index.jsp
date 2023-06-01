@@ -192,9 +192,15 @@
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="/">홈</a></li>
+                        <li><a href="/">홈</a></li>
                         <li><a href="/match">매칭</a></li>
-                        <li><a href="/shop">몰</a></li>
+                        <li><a href="/shop">몰</a>
+                        <c:if test="${loginmember != null}">
+                            <ul class="dropdown">
+                                <li><a href="/order/confirm/${loginmember.id}">주문내역</a></li>
+                            </ul>
+                        </c:if>
+                        </li>
                         <li><a href="/matereviews">후기</a>
                             <ul class="dropdown">
                                 <c:if test="${loginmember != null}">

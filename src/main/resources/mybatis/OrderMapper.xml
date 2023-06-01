@@ -5,7 +5,7 @@
 <mapper namespace="com.kbstar.mapper.OrderMapper">
     <insert id="insert" parameterType="orderMall">
         INSERT INTO ORDER_MALL (id, member_id, price, rdate, name, addr, tel, cnt)
-        VALUES (order_seq.NEXTVAL, #{memberId}, #{price}, SYSDATE, #{name}, #{addr, jdbcType=VARCHAR}, #{tel}, #{cnt})
+        VALUES (ORDER_MALL_SEQ.NEXTVAL, #{memberId}, #{price}, SYSDATE, #{name}, #{addr, jdbcType=VARCHAR}, #{tel}, #{cnt})
     </insert>
     <select id="getOrder" parameterType="int" resultType="orderMall" >
         SELECT *

@@ -70,8 +70,8 @@
                                         <input type="password" id="valid_password" placeholder="Enter password ( checking... )">
                                     </div>
 
-                                    <div class="checkout__input" >
-                                        <select class="form-select mb-3" aria-label="Default select example" name="area">
+                                    <div class="checkout__input">
+                                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="area">
                                             <option selected>가능 지역을 선택해주세요</option>
                                             <option value="성동구">성동구</option>
                                             <option value="강남구">강남구</option>
@@ -81,8 +81,9 @@
                                         </select>
                                     </div>
                                     <div class="checkout__input">
-                                        <select class="form-select mb-3" aria-label="Default select example" name="jobPeriod">
+                                        <select class="form-select form-select-lg mb-3" aria-label="Default select example" name="jobPeriod">
                                             <option selected>경력을 선택해주세요</option>
+                                            <option value="0">0년</option>
                                             <option value="1">1년</option>
                                             <option value="2">2년</option>
                                             <option value="3">3년</option>

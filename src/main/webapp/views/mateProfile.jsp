@@ -91,7 +91,7 @@
                                     </a>
                                 </c:otherwise>
                             </c:choose>
-                            <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark" id="update_btn"
+                            <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark" id="update_btn"
                                     style="z-index: 1;">
                                 회원정보 수정
                             </button>

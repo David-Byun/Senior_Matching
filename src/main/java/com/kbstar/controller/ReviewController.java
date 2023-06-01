@@ -23,7 +23,6 @@ public class ReviewController {
 
     @Autowired
     private BCryptPasswordEncoder encoder;
-    String dir = "/review";
 
 
     @RequestMapping("/reviewimpl")
