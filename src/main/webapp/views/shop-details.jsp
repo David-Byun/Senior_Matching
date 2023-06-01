@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<link rel="stylesheet" href="/css/review.css" type="text/css">
     <!-- Shop Details Section Begin -->
     <section class="shop-details">
-        <div class="product__details__pic">
+        <div class="product__details__pic" style="margin: 0 auto">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__breadcrumb">
-                            <a href="./index.jsp">Home</a>
-                            <a href="./shop.jsp">Shop</a>
-                            <span>Product Details</span>
+                            <a href="./index.jsp">홈</a>
+                            <a href="./shop.jsp">몰</a>
+                            <span>상품</span>
                         </div>
                     </div>
                 </div>
@@ -55,17 +56,6 @@
                                 <div class="product__details__pic__item">
                                     <img src="/uimg/${item.img}" alt="">
                                 </div>
-<%--                            </div>--%>
-<%--                            <div class="tab-pane" id="tabs-3" role="tabpanel">--%>
-<%--                                <div class="product__details__pic__item">--%>
-<%--                                    <img src="${item.img}" alt="">--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                            <div class="tab-pane" id="tabs-4" role="tabpanel">--%>
-<%--                                <div class="product__details__pic__item">--%>
-<%--                                    <img src="${item.img}" alt="">--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
                         </div>
                     </div>
                 </div>
@@ -88,41 +78,6 @@
                             </div>
                             <h3><fmt:formatNumber value="${item.price}" pattern="#,###,###원" /> <span><fmt:formatNumber value="100000" pattern="#,###,###원" /></span></h3>
                             <p>${item.content}</p>
-                            <div class="product__details__option">
-                                <div class="product__details__option__size">
-                                    <span>Size:</span>
-                                    <label for="xxl">xxl
-                                        <input type="radio" id="xxl" name="color">
-                                    </label>
-                                    <label for="xl">xl
-                                        <input type="radio" id="xl" name="color">
-                                    </label>
-                                    <label for="l">l
-                                        <input type="radio" id="l" name="color">
-                                    </label>
-                                    <label for="sm">s
-                                        <input type="radio" id="sm" name="color">
-                                    </label>
-                                </div>
-                                <div class="product__details__option__color">
-                                    <span>Color:</span>
-                                    <label class="c-1" for="sp-1">
-                                        <input type="radio" id="sp-1">
-                                    </label>
-                                    <label class="c-2" for="sp-2">
-                                        <input type="radio" id="sp-2">
-                                    </label>
-                                    <label class="c-3" for="sp-3">
-                                        <input type="radio" id="sp-3">
-                                    </label>
-                                    <label class="c-4" for="sp-4">
-                                        <input type="radio" id="sp-4">
-                                    </label>
-                                    <label class="c-9" for="sp-9">
-                                        <input type="radio" id="sp-9">
-                                    </label>
-                                </div>
-                            </div>
                             <div class="product__details__cart__option">
                                 <div class="quantity">
                                     <div class="pro-qty">
@@ -132,90 +87,72 @@
                                 <a class="primary-btn btn" role="button" id="cartAdd" style="color: whitesmoke" aria-disabled="true">add to cart</a>
                             </div>
                             </form>
-                            <div class="product__details__btns__option">
-                                <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>
-                                <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a>
-                            </div>
+
                             <div class="product__details__last__option">
                                 <h5><span>Guaranteed Safe Checkout</span></h5>
                                 <img src="/img/shop-details/details-payment.png" alt="">
-                                <ul>
-                                    <li><span>SKU:</span> 3812912</li>
-                                    <li><span>Categories:</span> Clothes</li>
-                                    <li><span>Tag:</span> Clothes, Skin, Body</li>
-                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            </div>
         </div>
     </section>
     <!-- Shop Details Section End -->
-
-<%--itemReview section begin--%>
-<!-- Shopping Cart Section Begin -->
-<section class="shopping-cart spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="shopping__cart__table">
-                    <c:set var="total" value="0"/>
-                    <c:set var="qnt" value="0"/>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>일련번호</th>
-                            <th>구매자</th>
-                            <th>제목</th>
-                            <th>내용</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach var="obj" items="${itemReview}">
-                        <tr id="cart${obj.id}">
-                            <td class="product__cart__item">
-                                <div class="product__cart__item__text">
-                                    <h6>${obj.id}</h6>
-                                </div>
-                            </td>
-                            <td class="product__cart__item">
-                                <div class="product__cart__item__text">
-                                    <h6>${obj.userId}</h6>
-                                </div>
-                            </td>
-                            <td class="product__cart__item">
-                                <div class="product__cart__item__text">
-                                    <h6>${obj.title}</h6>
-                                </div>
-                            </td>
-
-
-                        <tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <%--                <div class="col-lg-4">--%>
-            <%--                        <div class="col-lg-10 col-md-10 col-sm-10">--%>
-            <%--                            <div class="continue__btn update__btn">--%>
-            <%--                                <a href="#"><i class="fa fa-spinner"></i> ALL to Cart</a>--%>
-            <%--                            </div>--%>
-            <%--                        </div>--%>
-            <%--                </div>--%>
+<div class="container" style="margin: 0 auto">
+    <div id="reviews" class="review-section">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h4 class="m-0">리뷰</h4>
         </div>
+    <div class="review-list">
+        <ul>
+            <c:forEach var="obj" items="${itemReview}">
+            <li>
+                <div class="d-flex">
+
+                        <div class="left">
+                            <span>
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="profile-pict-img img-fluid" alt="" />
+                            </span>
+                        </div>
+                        <div class="right">
+                            <h4>
+                                ${obj.userId}
+                                <span class="gig-rating text-body-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
+                                        <path
+                                                fill="currentColor"
+                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"
+                                        ></path>
+                                    </svg>
+                                    ${obj.rate}
+                                </span>
+                            </h4>
+                            <div class="country d-flex align-items-center">
+                                <span>
+                                    <img class="country-flag img-fluid" src="https://bootdey.com/img/Content/avatar/avatar6.png" />
+                                </span>
+                                <div class="country-name font-accent">${obj.title}</div>
+                            </div>
+                            <div class="review-description">
+                                <p>
+                                   ${obj.review}
+                                </p>
+                            </div>
+                            <span class="publish py-3 d-inline-block w-100">Published 4 weeks ago</span>
+                        </div>
+
+                </div>
+            </li>
+            </c:forEach>
+        </ul>
     </div>
-</section>
-<!-- Shopping Cart Section End -->
-
-<%--itemReview section end--%>
-
+</div>
     <!-- Related Section Begin -->
     <section class="related spad">
-        <div class="container">
-            <div class="row">
+        <div class="container" >
+            <div class="row" >
                 <div class="col-lg-12">
                     <h3 class="related-title">Related Product</h3>
                 </div>
@@ -232,7 +169,7 @@
                             </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6>Piqué Biker Jacket</h6>
+                            <h6>비타민</h6>
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
@@ -241,7 +178,7 @@
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
-                            <h5>$67.24</h5>
+                            <h5>35,000원</h5>
                             <div class="product__color__select">
                                 <label for="pc-1">
                                     <input type="radio" id="pc-1">
@@ -266,7 +203,7 @@
                             </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6>Piqué Biker Jacket</h6>
+                            <h6>오메가3</h6>
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
@@ -275,7 +212,7 @@
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
-                            <h5>$67.24</h5>
+                            <h5>20,000원</h5>
                             <div class="product__color__select">
                                 <label for="pc-4">
                                     <input type="radio" id="pc-4">
@@ -301,7 +238,7 @@
                             </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6>Multi-pocket Chest Bag</h6>
+                            <h6>심장약</h6>
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star"></i>
@@ -310,7 +247,7 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
-                            <h5>$43.48</h5>
+                            <h5>30,000원</h5>
                             <div class="product__color__select">
                                 <label for="pc-7">
                                     <input type="radio" id="pc-7">
@@ -335,7 +272,7 @@
                             </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6>Diagonal Textured Cap</h6>
+                            <h6>건강식품 세트</h6>
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
@@ -344,7 +281,7 @@
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
-                            <h5>$60.9</h5>
+                            <h5>40,000원</h5>
                             <div class="product__color__select">
                                 <label for="pc-10">
                                     <input type="radio" id="pc-10">
