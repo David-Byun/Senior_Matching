@@ -16,47 +16,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 col-md-3">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="/img/shop-details/thumb-1.png">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="/img/shop-details/thumb-2.png">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="/img/shop-details/thumb-3.png">
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="/img/shop-details/thumb-4.png">
-                                        <i class="fa fa-play"></i>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-md-9">
-                        <div class="tab-itemReview">
-                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="tab-itemReview" >
+                            <div class="tab-pane active">
                                 <div class="product__details__pic__item">
                                     <img src="/uimg/${item.img}" alt="">
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tabs-2" role="tabpanel">
-                                <div class="product__details__pic__item">
-                                    <img src="/uimg/${item.img}" alt="">
-                                </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -154,13 +120,13 @@
         <div class="container" >
             <div class="row" >
                 <div class="col-lg-12">
-                    <h3 class="related-title">Related Product</h3>
+                    <h3 class="related-title">관련 상품</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-1.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/m1.jpeg">
                             <span class="label">New</span>
                             <ul class="product__hover">
                                 <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
@@ -168,13 +134,13 @@
                                 <li><a href="#"><img src="/img/icon/search.png" alt=""></a></li>
                             </ul>
                         </div>
-                        <div class="product__item__text">
+                        <div class="product__item__text sale">
                             <h6>비타민</h6>
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
@@ -194,8 +160,8 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-2.jpg">
+                    <div class="product__item sale">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/m3.jpeg">
                             <ul class="product__hover">
                                 <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
                                 <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
@@ -206,11 +172,11 @@
                             <h6>오메가3</h6>
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
                             </div>
                             <h5>20,000원</h5>
                             <div class="product__color__select">
@@ -229,7 +195,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                     <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-3.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/m4.jpeg">
                             <span class="label">Sale</span>
                             <ul class="product__hover">
                                 <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
@@ -263,8 +229,8 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/img/product/product-4.jpg">
+                    <div class="product__item sale">
+                        <div class="product__item__pic set-bg" data-setbg="/img/product/m5.jpeg">
                             <ul class="product__hover">
                                 <li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
                                 <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
@@ -275,9 +241,9 @@
                             <h6>건강식품 세트</h6>
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
