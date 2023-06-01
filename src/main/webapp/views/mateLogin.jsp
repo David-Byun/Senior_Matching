@@ -54,17 +54,17 @@
                             <div class="row">
                                 <div class="col-lg-10">
                                     <div class="checkout__input" >
-                                        <p>ID<span>*</span></p>
+                                        <p>아이디<span>*</span></p>
                                         <input type="text" id="email" name="email">
                                     </div>
                                     <div class="checkout__input" >
-                                        <p>Password<span>*</span></p>
+                                        <p>패스워드<span>*</span></p>
                                         <input type="password" id="password" name="password">
                                     </div>
                                 </div>
                             </div>
                                 <div class="checkout__input__checkbox">
-                                    <button type="submit" class="btn btn-primary" id="login_btn">Log In</button>
+                                    <button type="submit" class="btn btn-primary" id="login_btn">로그인</button>
                                 </div>
                             </form>
                         </div>

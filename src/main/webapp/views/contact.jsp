@@ -163,7 +163,7 @@
                     <div class="container" id="map03">
                         <div class="section-title">
                             <span>Location</span>
-                            <h2>Location</h2>
+                            <h2>위치</h2>
                         </div>
                         <div id="map"></div>
                         <br>
@@ -181,7 +181,7 @@
                         <div class="section-title">
                             <span>Information</span>
                             <h2>연락처</h2>
-                            <p>고급스러운 디자인과 좋은 품질로, 저희는 세심한 주의를 기울입니다.</p>
+                            <p>당신의 편안한 인생을 위해 24시간 언제든지 연락주세요.</p>
                         </div>
                         <ul>
                             <li>
