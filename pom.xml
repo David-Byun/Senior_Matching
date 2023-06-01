@@ -29,7 +29,14 @@
             <artifactId>spring-websocket</artifactId>
             <version>4.0.4.RELEASE</version>
         </dependency>
-<!--        화상채팅 모듈-->
+        <!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-admin -->
+        <dependency>
+            <groupId>com.google.firebase</groupId>
+            <artifactId>firebase-admin</artifactId>
+            <version>6.8.1</version>
+        </dependency>
+
+        <!--        화상채팅 모듈-->
         <dependency>
             <groupId>com.corundumstudio.socketio</groupId>
             <artifactId>netty-socketio</artifactId>
