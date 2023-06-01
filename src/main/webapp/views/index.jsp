@@ -25,7 +25,7 @@
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>봄생봄사 쇼핑몰</title>
+    <title>봄생봄사 메이트 매칭</title>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
@@ -124,9 +124,9 @@
 <div class="offcanvas-menu-wrapper">
     <div class="offcanvas__option">
         <div class="offcanvas__links">
-            <a href="/login">Log in</a>
-            <a href="/signin">Sign in</a>
-            <a href="/faq">FAQs</a>
+            <a href="/login">로그인</a>
+            <a href="/signin">회원가입</a>
+            <a href="/faq">자주 하는 질문</a>
             <a href="#">${loginmember.name}님</a>
         </div>
     </div>
@@ -134,11 +134,10 @@
         <a href="#" class="search-switch"><img src="/img/icon/search.png" alt=""></a>
         <a href="#"><img src="/img/icon/heart.png" alt=""></a>
         <a href="#"><img src="/img/icon/cart.png" alt=""> <span>0</span></a>
-        <div class="price">$0.00</div>
     </div>
     <div id="mobile-menu-wrap"></div>
     <div class="offcanvas__text">
-        <p>구입 후 30일까지 환불가능</p>
+        <p>당신의 행복한 인생을 위해!</p>
     </div>
 </div>
 
