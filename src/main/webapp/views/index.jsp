@@ -209,7 +209,9 @@
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
-                    <a href="/mate/profile/${loginmate.id}"><i class="fa-solid fa-user"></i></a>
+                    <c:if test="${loginmate != null}">
+                        <a href="/mate/profile/${loginmate.id}"><i class="fa-solid fa-user"></i></a>
+                    </c:if>
                     <a href="/memberdetail" class="search-switch"><i class="fa-solid fa-edit" style="color:black"></i></a>
                     <a href="/reserve/${loginmember.id}">
                         <c:choose>

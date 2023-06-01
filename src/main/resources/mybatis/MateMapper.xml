@@ -10,9 +10,8 @@
         VALUES (MATE_SEQ.NEXTVAL, #{email}, #{name}, #{password}, #{jobPeriod}, #{license}, 1)
     </insert>
     <update id="update" parameterType="mate">
-        UPDATE mate SET name=#{name}, password=#{password} WHERE email=#{email}
+        UPDATE mate SET img=#{img}, job_period=#{jobPeriod}, license=#{license}, area=#{area} WHERE email=#{email}
     </update>
-
     <select id="select" parameterType="String" resultType="mate">
         SELECT * FROM mate WHERE email=#{email}
     </select>
@@ -21,7 +20,7 @@
         SELECT * FROM mate
     </select>
 
-    <delete id="delete" parameterType="String">
-        DELETE FROM mate WHERE id=#{id}
-    </delete>
+    <update id="delete" parameterType="String">
+        UPDATE mate SET valid=0 WHERE id=#{id}
+    </update>
 </mapper>
