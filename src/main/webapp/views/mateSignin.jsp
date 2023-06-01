@@ -69,17 +69,37 @@
                                         <p>비밀번호 확인<span>*</span></p>
                                         <input type="password" id="valid_password" placeholder="Enter password ( checking... )">
                                     </div>
+
                                     <div class="checkout__input" >
-                                        <p>가능 지역<span>*</span></p>
-                                        <input type="text" id="area" name="area" placeholder="가능 지역">
+                                        <select class="form-select mb-3" aria-label="Default select example" name="area">
+                                            <option selected>가능 지역을 선택해주세요</option>
+                                            <option value="성동구">성동구</option>
+                                            <option value="강남구">강남구</option>
+                                            <option value="서대문구">서대문구</option>
+                                            <option value="마포구">마포구</option>
+                                            <option value="강서구">강서구</option>
+                                        </select>
+                                    </div>
+                                    <div class="checkout__input">
+                                        <select class="form-select mb-3" aria-label="Default select example" name="jobPeriod">
+                                            <option selected>경력을 선택해주세요</option>
+                                            <option value="1">1년</option>
+                                            <option value="2">2년</option>
+                                            <option value="3">3년</option>
+                                            <option value="4">4년</option>
+                                            <option value="5">5년 이상</option>
+                                        </select>
                                     </div>
                                     <div class="checkout__input" >
-                                        <p>경력<span>*</span></p>
-                                        <input type="text" id="jopPeriod" name="jopPeriod" placeholder="가능 지역">
-                                    </div>
-                                    <div class="checkout__input" >
-                                        <p>자격증<span>*</span></p>
-                                        <input type="text" id="license" name="license" placeholder="자격증">
+                                        <select class="form-select mb-3" aria-label="Default select example" name="license">
+                                            <option selected>보유 자격증을 선택해주세요</option>
+                                            <option value="간호사">간호사</option>
+                                            <option value="의사">의사</option>
+                                            <option value="요양보호사">요양보호사</option>
+                                            <option value="장애인활동지원사">장애인활동지원사</option>
+                                            <option value="물리치료사">물리치료사</option>
+                                            <option value="사회복지사">사회복지사</option>
+                                        </select>
                                     </div>
                                     <div class="checkout__input">
                                             <div class="alert alert-danger" id="alert" style="display: none">
@@ -88,7 +108,7 @@
                                     </div>
                                 </div>
                             </div>
-                                <div class="checkout__input__checkbox">
+                                <div class="checkout__input__checkbox" style="margin-top: 20px">
                                     <button type="submit" class="btn btn-primary" id="signin_btn">가입하기</button>
                                 </div>
                             </form>
