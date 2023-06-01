@@ -14,7 +14,7 @@
 <body>
 <section class="main-content">
     <div class="container">
-        <h1 class="text-center text-uppercase mb-5">Frequently Asked Questions</h1>
+        <h1 class="text-center text-uppercase mb-5">자주 묻는 질문</h1>
         <br>
         <br>
         <div class="row flex-center">
@@ -24,12 +24,11 @@
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <div class="circle-icon"> <i class="fa fa-question"></i> </div>
-                                <span>결제 수단을 변경하고 싶은데, 어떻게 해야 되나요?</span> </button>
+                                <span>메이트 신청 자격은 어떻게 되나요 ?</span> </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>이미 결제한 주문 건의 경우 결제 수단을 변경하기는 어렵습니다.</strong>
-                                결제 수단을 변경하시고자 하는 경우에는 기존 결제한 주문 건을 취소하시고 다시 구매하는 방법이 있습니다.
+                                <strong>만 18세 이상이면 신청할 수 있으며, 자세한 사항은 담당자에게 문의 부탁드립니다.</strong>
                             </div>
                         </div>
                     </div>

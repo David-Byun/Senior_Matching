@@ -7,7 +7,7 @@
 <mapper namespace="com.kbstar.mapper.MateMapper">
     <insert id="insert" parameterType="mate">
         INSERT INTO mate (id, email, name, password, job_period, license, valid)
-        VALUES (mate_seq.NEXTVAL, #{email}, #{name}, #{password}, #{jobPeriod}, #{license}, 1)
+        VALUES (MATE_SEQ.NEXTVAL, #{email}, #{name}, #{password}, #{jobPeriod}, #{license}, 1)
     </insert>
     <update id="update" parameterType="mate">
         UPDATE mate SET name=#{name}, password=#{password} WHERE email=#{email}
