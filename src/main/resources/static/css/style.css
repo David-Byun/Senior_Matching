@@ -1941,15 +1941,15 @@ ol {
 
 .footer {
 	background: #111111;
-	padding-top: 70px;
+	padding-top: 15px;
 }
 
 .footer__about {
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 .footer__about .footer__logo {
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 .footer__about .footer__logo a {
@@ -1958,11 +1958,11 @@ ol {
 
 .footer__about p {
 	color: #b7b7b7;
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 .footer__widget {
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 .footer__widget h6 {
@@ -1971,7 +1971,7 @@ ol {
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 .footer__widget ul li {
@@ -4315,3 +4315,4 @@ ol {
 		font-size: 1.1em;
 	}
 }
+
