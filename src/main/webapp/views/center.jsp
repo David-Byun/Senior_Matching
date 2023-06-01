@@ -94,9 +94,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <ul class="filter__controls">
-                    <li class="active" data-filter="*">Best Sellers</li>
-                    <li data-filter=".new-arrivals">New Arrivals</li>
-                    <li data-filter=".hot-sales">Hot Sales</li>
+                    <li class="active" data-filter="*">베스트셀러</li>
+                    <li data-filter=".new-arrivals">신상품</li>
+                    <li data-filter=".hot-sales">할인중인 상품</li>
                 </ul>
             </div>
         </div>
@@ -112,7 +112,7 @@
                         </ul>
                     </div>
                     <div class="product__item__text">
-                        <h6>Piqué Biker Jacket</h6>
+                        <h6>루테인</h6>
                         <a href="#" class="add-cart">+ Add To Cart</a>
                         <div class="rating">
                             <i class="fa fa-star-o"></i>
@@ -121,7 +121,7 @@
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
                         </div>
-                        <h5>$67.24</h5>
+                        <h5>40,000원</h5>
                         <div class="product__color__select">
                             <label for="pc-1">
                                 <input type="radio" id="pc-1">
@@ -146,7 +146,7 @@
                         </ul>
                     </div>
                     <div class="product__item__text">
-                        <h6>Piqué Biker Jacket</h6>
+                        <h6>멀티비타민</h6>
                         <a href="#" class="add-cart">+ Add To Cart</a>
                         <div class="rating">
                             <i class="fa fa-star-o"></i>
@@ -155,7 +155,7 @@
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
                         </div>
-                        <h5>$67.24</h5>
+                        <h5>35,000원</h5>
                         <div class="product__color__select">
                             <label for="pc-4">
                                 <input type="radio" id="pc-4">
@@ -181,7 +181,7 @@
                         </ul>
                     </div>
                     <div class="product__item__text">
-                        <h6>Multi-pocket Chest Bag</h6>
+                        <h6>아스피린</h6>
                         <a href="#" class="add-cart">+ Add To Cart</a>
                         <div class="rating">
                             <i class="fa fa-star"></i>
@@ -190,7 +190,7 @@
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-o"></i>
                         </div>
-                        <h5>$43.48</h5>
+                        <h5>35,000원</h5>
                         <div class="product__color__select">
                             <label for="pc-7">
                                 <input type="radio" id="pc-7">
