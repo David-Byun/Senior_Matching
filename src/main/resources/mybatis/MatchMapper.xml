@@ -25,11 +25,15 @@
     </select>
 
     <select id="findByMemberId" resultType="Match">
-        SELECT id, mate_id,start_date,end_date,service,area,object_gender,object_birth,status FROM MATCH m WHERE member_id=#{memberId}
+        SELECT id, mate_id,start_date,end_date,service,area,object_gender,object_birth,status
+        FROM MATCH m
+        WHERE member_id=#{memberId}
     </select>
 
     <select id="findByMateId" resultType="Match">
-        SELECT id, mate_id,start_date,end_date,service,area,object_gender,object_birth,status FROM MATCH WHERE mate_id=#{mateId}
+        SELECT id, mate_id, start_date, end_date,service,area,object_gender,object_birth,status
+        FROM MATCH
+        WHERE mate_id=#{mateId}
     </select>
 
 </mapper>

@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Controller
 @Slf4j
@@ -96,9 +94,9 @@ public class MatchController {
 
 //        Mate user = (Mate) session.getAttribute("loginmate");
 //        int mateId = user.getId();
-
         int mateId = 2000;
         List<Match> list = matchService.findByMateId(mateId);
+
         model.addAttribute("mlist",list);
         model.addAttribute("center", dir+"listformate");
         return "index";
@@ -109,12 +107,19 @@ public class MatchController {
         System.out.println("id =====* " + id);
         Match match = matchService.get(id);
         match.setStatus("매칭완료");
-        System.out.println("match.getStatus() = " + match.getStatus());
-        System.out.println("match.getStatus() = " + match.getStartDate());
         matchService.update(match);
-        System.out.println("match.getStatus() = " + match.getStatus());
-        System.out.println("match.getStatus() = " + match.getStartDate());
         return "redirect:/listformate";
     }
+
+    @RequestMapping("/payformatch/{id}")
+    public String payformatch(Model model, HttpSession session,@PathVariable int id) throws Exception {
+        System.out.println("id =====* " + id);
+        Match match = matchService.get(id);
+        match.setStatus("결제완료");
+        matchService.update(match);
+        return "redirect:/listformate";
+    }
+
+
 
     }

@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <script>
@@ -6,9 +7,6 @@
             window.location.href = "/yestomatch/"+id;
         }
 </script>
-
-</script>
-
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-option">
     <div class="container">

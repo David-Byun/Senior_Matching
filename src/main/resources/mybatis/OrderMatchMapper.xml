@@ -17,8 +17,8 @@
         FROM MATE m
         JOIN MATCH ch
         ON m.ID = ch.MATE_ID
-        WHERE ( ch.START_DATE < #{startDate} AND ch.END_DATE < #{startDate} )
-        OR ch.START_DATE > #{endDate}
+        WHERE ( TO_DATE(ch.START_DATE, 'YYYY-MM-DD') < TO_DATE(#{startDate}, 'YYYY-MM-DD')  AND TO_DATE(ch.END_DATE, 'YYYY-MM-DD') < TO_DATE(#{startDate}, 'YYYY-MM-DD') )
+        OR TO_DATE(ch.START_DATE, 'YYYY-MM-DD') > TO_DATE(#{endDate}, 'YYYY-MM-DD')
         ]]>
     </select>
 
