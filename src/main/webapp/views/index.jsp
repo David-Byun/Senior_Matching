@@ -193,7 +193,7 @@
                         <li><a href="/">홈</a></li>
                         <li><a href="#">매칭</a>
                             <ul class="dropdown">
-                                <li><a href="/order">매칭신청</a></li>
+                                <li><a href="/match">매칭신청</a></li>
                                 <li><a href="/listformember">매칭내역</a></li>
                                 <li><a href="/listformate">새로운매칭신청확인(향후개발)</a></li>
                                 <li><a href="/listformate">매칭내역</a></li>

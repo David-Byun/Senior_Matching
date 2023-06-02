@@ -1,6 +1,5 @@
 package com.kbstar.controller;
 
-import com.kbstar.dto.Item;
 import com.kbstar.dto.Mate;
 import com.kbstar.exception.ErrorCode;
 import com.kbstar.exception.UserException;

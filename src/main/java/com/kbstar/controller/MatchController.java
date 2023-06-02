@@ -14,6 +14,7 @@ import java.util.*;
 
 @Controller
 @Slf4j
+@RequestMapping
 public class MatchController {
 
     @Autowired
@@ -30,9 +31,9 @@ public class MatchController {
 
     String dir = "match/";
 
-    @RequestMapping("/order")
+    @RequestMapping("/match")
     public String order(Model model, HttpSession session) {
-        model.addAttribute("center", dir+"order");
+        model.addAttribute("center", dir + "order");
         return "index";
     }
 

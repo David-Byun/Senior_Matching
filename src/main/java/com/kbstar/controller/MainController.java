@@ -48,8 +48,8 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/match")
-    public String match(Model model, HttpSession session) {
+    @RequestMapping("/match1")
+    public String match1(Model model, HttpSession session) {
         model.addAttribute("center", "match");
         return "index";
     }
