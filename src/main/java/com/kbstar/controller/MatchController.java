@@ -41,9 +41,7 @@ public class MatchController {
     public String orderImpl(OrderMatch orderMatch, MatchSearch ms, HttpSession session, Model model) throws Exception {
 //        Member user = (Member) session.getAttribute("loginmember");
 //        orderMatch.setMemberId(user.getId());
-
         int memberId = 1000;
-
         orderMatch.setMemberId(memberId);
         orderMatchService.register(orderMatch);
         int omId = orderMatch.getId();
@@ -85,10 +83,9 @@ public class MatchController {
 
     @RequestMapping("/listformate")
     public String listformate(Model model, HttpSession session) throws Exception {
-
+//
 //        Mate user = (Mate) session.getAttribute("loginmate");
 //        int mateId = user.getId();
-
         int mateId = 2000;
         List<Match> list = matchService.findByMateId(mateId);
         model.addAttribute("mlist",list);
