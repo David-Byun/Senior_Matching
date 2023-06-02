@@ -289,7 +289,7 @@
                     <h6>메이트 서비스</h6>
                     <ul>
                         <li><a href="#">메이트 결제 확인</a></li>
-                        <li><a href="#">메이트 이력 확인</a></li>
+                        <li><a href="/listformember">메이트 이력 확인</a></li>
                     </ul>
                 </div>
             </div>
