@@ -157,12 +157,12 @@ create table MATE_INFO
 CREATE TABLE ORDER_MATCH (
                              ID             NUMBER,
                              MEMBER_ID      NUMBER,
-                             START_DATE     DATE,
-                             END_DATE       DATE,
+                             START_DATE     VARCHAR2(20),
+                             END_DATE       VARCHAR2(20),
                              SERVICE        VARCHAR2(20),
                              AREA           VARCHAR2(20),
                              OBJECT_GENDER  VARCHAR2(10),
-                             OBJECT_BIRTH   DATE,
+                             OBJECT_BIRTH   VARCHAR2(20),
                              RDATE          DATE
 );
 
@@ -258,17 +258,18 @@ create table ITEM_REVIEW
 create table MATCH
 (
     ID              NUMBER,
+    MEMBER_ID       NUMBER,
     MATE_ID         NUMBER,
-    START_DATE      DATE,
-    END_DATE        DATE,
+    START_DATE      VARCHAR2(20),
+    END_DATE        VARCHAR2(20),
     SERVICE         VARCHAR2(20),
     AREA            VARCHAR2(20),
     OBJECT_GENDER   VARCHAR2(20),
-    OBJECT_BIRTH    DATE,
+    OBJECT_BIRTH    VARCHAR2(20),
     STATUS          VARCHAR2(20),
     PRICE           NUMBER,
     PAYMENT         VARCHAR2(10),
-    PAY_DATE        DATE
+    PAY_DATE        DATE 
 );
 
 create table RESERVATION
