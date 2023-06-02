@@ -34,7 +34,7 @@
     </select>
     <insert id="insert" parameterType="itemReview">
         INSERT INTO ITEM_REVIEW
-        VALUES (ITEM_REVIEW_SEQ.NEXTVAL,#{userId},#{itemId},#{title},#{review},#{rate})
+        VALUES (ITEM_REVIEW_SEQ.NEXTVAL,#{memberId},#{itemId},#{title},#{review},#{rate})
     </insert>
 
     <select id="select" parameterType="Integer" resultType="itemReview">

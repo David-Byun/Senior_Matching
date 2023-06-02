@@ -9,14 +9,14 @@ import lombok.*;
 @ToString
 public class ItemReview {
     private int id;
-    private int userId;
+    private int memberId;
     private int itemId;
     private String title;
     private String review;
     private int rate;
 
-    public ItemReview(int userId, int itemId, String title, String review, int rate) {
-        this.userId = userId;
+    public ItemReview(int memberId, int itemId, String title, String review, int rate) {
+        this.memberId = memberId;
         this.itemId = itemId;
         this.title = title;
         this.review = review;

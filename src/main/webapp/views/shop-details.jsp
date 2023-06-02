@@ -85,7 +85,7 @@
                         </div>
                         <div class="right">
                             <h4>
-                                ${obj.userId}
+                                ${obj.memberId}
                                 <span class="gig-rating text-body-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
                                         <path
@@ -121,7 +121,7 @@
     <div class="container">
             <form action="/reviewimpl" method="post" name="review_form" id="review_form">
 
-                    <input type="number" placeholder="userId(Number..)" id="userId" name="userId" value="${loginmember.id}" style="display: none">
+                    <input type="number" placeholder="userId(Number..)" id="memberId" name="memberId" value="${loginmember.id}" style="display: none">
                     <input type="text" placeholder="itemId(Number..)" id="itemId" name="itemId" style="display: none" value="${item.id}">
                 <div class="row">
                     <div class="col-md-9">
