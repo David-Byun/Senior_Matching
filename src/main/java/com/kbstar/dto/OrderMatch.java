@@ -21,15 +21,6 @@ public class OrderMatch {
     private String objectBirth;
     private String Rdate;
 
-    public OrderMatch(int i, int i1, String startDate, String endDate, String service, String area, String objectGender, String objectBirth) {
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.service = service;
-        this.area = area;
-        this.objectGender = objectGender;
-        this.objectBirth = objectBirth;
-    }
-
     public OrderMatch(int memberId, String startDate, String endDate, String service, String area, String objectGender, String objectBirth) {
         this.memberId = memberId;
         this.startDate = startDate;

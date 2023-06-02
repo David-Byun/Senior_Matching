@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import java.util.Date;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -27,17 +26,6 @@ public class Match {
     private String payment;
     private String payDate;
 
-    public Match(int id, int memberId, String startDate, String endDate, String service, String area, String objectGender, String objectBirth, String status) {
-        this.id = id;
-        this.memberId = memberId;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.service = service;
-        this.area = area;
-        this.objectGender = objectGender;
-        this.objectBirth = objectBirth;
-        this.status = status;
-    }
 
     public Match(OrderMatch om) {
         this.memberId = om.getMemberId();

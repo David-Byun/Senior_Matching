@@ -1,20 +1,15 @@
 package com.kbstar.controller;
 
 import com.kbstar.dto.*;
-
 import com.kbstar.service.MatchService;
 import com.kbstar.service.OrderMatchService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import javax.servlet.http.HttpSession;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
@@ -43,8 +38,6 @@ public class MatchController {
 
     @RequestMapping("/orderimpl")
     public String orderImpl(OrderMatch orderMatch, MatchSearch ms, HttpSession session, Model model) throws Exception {
-// ordermatch 신청서 입력 및 내용에 따라 맞는 mate 리스트 추출해서 보여주기
-
 //        Member user = (Member) session.getAttribute("loginmember");
 //        orderMatch.setMemberId(user.getId());
 
@@ -63,7 +56,7 @@ public class MatchController {
 
     @RequestMapping("/offer")
     public String offer(Integer omId, HttpSession session,Integer mateId, Model model)throws Exception{
-        // 추천된 mate 리스트에서 하나를 선택해서 match 테이블에 데이터 입력
+
         OrderMatch om = orderMatchService.get(omId);
         Match match = new Match(om);
         matchService.register(match);
@@ -94,9 +87,9 @@ public class MatchController {
 
 //        Mate user = (Mate) session.getAttribute("loginmate");
 //        int mateId = user.getId();
+
         int mateId = 2000;
         List<Match> list = matchService.findByMateId(mateId);
-
         model.addAttribute("mlist",list);
         model.addAttribute("center", dir+"listformate");
         return "index";

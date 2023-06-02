@@ -153,18 +153,18 @@ create table MATE_INFO
     RATE         NUMBER
 );
 
-
 CREATE TABLE ORDER_MATCH (
                              ID             NUMBER,
                              MEMBER_ID      NUMBER,
-                             START_DATE     DATE,
-                             END_DATE       DATE,
+                             START_DATE     VARCHAR2(20),
+                             END_DATE       VARCHAR2(20),
                              SERVICE        VARCHAR2(20),
                              AREA           VARCHAR2(20),
                              OBJECT_GENDER  VARCHAR2(10),
-                             OBJECT_BIRTH   DATE,
+                             OBJECT_BIRTH   VARCHAR2(20),
                              RDATE          DATE
 );
+
 
 CREATE TABLE ORDER_MALL (
                             ID  NUMBER,
@@ -259,14 +259,13 @@ create table MATCH
 (
     ID              NUMBER,
     MEMBER_ID       NUMBER,
-    /*** member_id 추가 0526****/
     MATE_ID         NUMBER,
-    START_DATE      DATE,
-    END_DATE        DATE,
+    START_DATE      VARCHAR2(20),
+    END_DATE        VARCHAR2(20),
     SERVICE         VARCHAR2(20),
     AREA            VARCHAR2(20),
     OBJECT_GENDER   VARCHAR2(20),
-    OBJECT_BIRTH    DATE,
+    OBJECT_BIRTH    VARCHAR2(20),
     STATUS          VARCHAR2(20),
     PRICE           NUMBER,
     PAYMENT         VARCHAR2(10),
@@ -358,3 +357,50 @@ VALUES (21, 9, 'product15', 'product-15.jpg',3000, 'XL', 'Red', SYSDATE, 1);
 
 INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
 VALUES (22, 8, 'product15', 'product-15.jpg',3000, 'XL', 'Red', SYSDATE, 1);
+
+/*************샘플 데이터 메이트 *******************/
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID)
+VALUES (2000,'a@naver.com','김우기','1234','관악구',3,'요양보호사','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2001,'a@naver.com','전소연','1234','관악구',3,'요양보호사','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2002,'a@naver.com','김미연','1234','관악구',3,'요양보호사','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2003,'a@naver.com','뱀뱀','1234','관악구',3,'요양보호사','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2004,'a@naver.com','백종원','1234','관악구',3,'요양보호사','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2005,'a@naver.com','이시언','1234','관악구',3,'요양보호사','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2006,'a@naver.com','안보현','1234','관악구',3,'장애인보호사','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2007,'a@naver.com','곽튜브','1234','강남구',3,'장애인보호사','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2008,'a@naver.com','빠니보틀','1234','강남구',3,'장애인보호사','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2009,'a@naver.com','원지','1234','강남구',3,'장애인보호사','a.jpg','1');
+
+INSERT INTO MATE (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2010,'a@naver.com','다나카','1234','강남구',3,'장애인보호사','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2011,'a@naver.com','주현영','1234','강남구',3,'사회복지사2급','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2012,'a@naver.com','닝닝','1234','영등포구',3,'사회복지사2급','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2013,'a@naver.com','미미','1234','영등포구',3,'사회복지사2급','a.jpg','1');
+
+INSERT INTO Mate (ID,EMAIL,NAME,PASSWORD,AREA,JOB_PERIOD,LICENSE,IMG,VALID) VALUES
+    (2014,'a@naver.com','카리나','1234','영등포구',3,'사회복지사2급','a.jpg','1');

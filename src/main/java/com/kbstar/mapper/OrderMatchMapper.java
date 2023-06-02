@@ -12,9 +12,6 @@ import java.util.List;
 @Mapper
 @Repository
 public interface OrderMatchMapper extends ShopMapper<Integer, OrderMatch> {
-
-    //findByMemberId
     List<OrderMatch> findByMemberId(int memberId);
-    //findByDate
     List<Mate> findByDate(MatchSearch ms);
 }

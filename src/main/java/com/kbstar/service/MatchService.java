@@ -1,12 +1,10 @@
 package com.kbstar.service;
 
 import com.kbstar.dto.Match;
-import com.kbstar.dto.OrderMatch;
 import com.kbstar.mapper.MatchMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -18,28 +16,18 @@ public class MatchService {
     public void register(Match match) throws Exception {
         mapper.matchInserted(match);
     }
-
     public void update(Match match) throws Exception{
         mapper.update(match);
-    }
-    public Match IsmatchOk(Integer k) throws Exception {
-        return mapper.IsmatchOk(k);
-    }
-    public Match matchPaid(Integer k) throws Exception {
-        return mapper.matchPaid(k);
     }
     public Match get(Integer k) throws Exception {
         return mapper.select(k);
     }
-
     public List<Match> get() throws Exception {
         return mapper.selectall();
     }
-
     public List<Match> findByMemberId(Integer k) throws Exception {
         return mapper.findByMemberId(k);
     }
-
     public List<Match> findByMateId(Integer k) throws Exception {
         return mapper.findByMateId(k);
     }
