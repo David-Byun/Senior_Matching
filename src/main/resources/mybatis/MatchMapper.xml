@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kbstar.mapper.MatchMapper">
+
+    <insert id="matchInserted" parameterType="Match">
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            SELECT match_seq.CURRVAL FROM DUAL
+        </selectKey>
+        INSERT INTO MATCH (id,member_id,mate_id,start_date,end_date, service, area, object_gender, object_birth, status, price,payment,pay_date)
+        VALUES(match_seq.NEXTVAL,#{memberId},null,#{startDate},#{endDate},#{service},#{area},#{objectGender},#{objectBirth},'매칭대기',null,null,null)
+    </insert>
+
+   <update id="update" parameterType="Match">
+       UPDATE MATCH
+       SET mate_id = #{mateId}, status=#{status}
+       WHERE id = #{id}
+   </update>
+
+    <select id="select" parameterType="Integer" resultType="Match">
+        SELECT * FROM Match WHERE id=#{id}
+    </select>
+
+    <select id="findByMemberId" resultType="Match">
+        SELECT id, mate_id,start_date,end_date,service,area,object_gender,object_birth,status
+        FROM MATCH m
+        WHERE member_id=#{memberId}
+    </select>
+
+    <select id="findByMateId" resultType="Match">
+        SELECT id, mate_id, start_date, end_date,service,area,object_gender,object_birth,status
+        FROM MATCH
+        WHERE mate_id=#{mateId}
+    </select>
+
+</mapper>
