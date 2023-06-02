@@ -26,11 +26,6 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/first")
-    public String test1() {
-        return "first";
-    }
-
     @RequestMapping("/callchat")
     public String callchat() {
         return "callchat";
@@ -45,12 +40,6 @@ public class MainController {
         if ((session.getAttribute("myreserve") == null)) {
             session.setAttribute("myreserve", 0);
         }
-        return "index";
-    }
-
-    @RequestMapping("/match1")
-    public String match1(Model model, HttpSession session) {
-        model.addAttribute("center", "match");
         return "index";
     }
 
@@ -105,23 +94,6 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/about")
-    public String about(Model model) {
-        model.addAttribute("center","about");
-        return "index";
-    }
-
-    @RequestMapping("/blog-details")
-    public String blogdetails(Model model) {
-        model.addAttribute("center","blog-details");
-        return "index";
-    }
-    
-    @RequestMapping("/blog")
-    public String blog(Model model) {
-        model.addAttribute("center","blog");
-        return "index";
-    }
 
     @RequestMapping("/shop-details")
     public String shopdetails(Model model) {
