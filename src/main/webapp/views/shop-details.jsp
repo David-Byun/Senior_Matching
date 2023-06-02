@@ -116,6 +116,8 @@
         </ul>
     </div>
 </div>
+<%--    리뷰 달기 부분--%>
+    <c:if test="${loginmember != null}">
     <div class="container">
             <form action="/reviewimpl" method="post" name="review_form" id="review_form">
 
@@ -153,6 +155,7 @@
             </form>
         </div>
     </div>
+    </c:if>
 <%--    리뷰 END--%>
     <!-- Related Section Begin -->
     <section class="related spad">

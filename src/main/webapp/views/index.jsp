@@ -168,7 +168,6 @@
                                 </c:when>
                                 <c:otherwise>
                                     <a href="/chatbot">챗봇문의</a>
-                                    <a href="/itemReview">리뷰</a>
                                 </c:otherwise>
                             </c:choose>
                                 <c:if test="${loginmember != null || loginmate != null}">
