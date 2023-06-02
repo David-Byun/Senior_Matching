@@ -38,4 +38,14 @@ public class Match {
         this.objectBirth = objectBirth;
         this.status = status;
     }
+
+    public Match(OrderMatch om) {
+        this.memberId = om.getMemberId();
+        this.startDate = om.getStartDate();
+        this.endDate = om.getEndDate();
+        this.service = om.getService();
+        this.area = om.getService();
+        this.objectGender = om.getObjectGender();
+        this.objectBirth = om.getObjectBirth();
+    }
 }

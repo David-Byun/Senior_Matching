@@ -6,11 +6,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>간병인 매칭</h4>
+                    <h4>매칭 내역</h4><span>*회원용</span>
                     <div class="breadcrumb__links">
                         <a href="/">홈</a>
-                        <a href="/ordermatch">간병인 매칭</a>
-                        <span>간병인 매칭</span>
+                        <a href="#">매칭</a>
+                        <span>매칭 내역</span>
                     </div>
                 </div>
             </div>

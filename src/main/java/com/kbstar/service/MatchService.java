@@ -15,8 +15,8 @@ public class MatchService {
     @Autowired
     MatchMapper mapper;
 
-    public void register(OrderMatch om) throws Exception {
-        mapper.matchInserted(om);
+    public void register(Match match) throws Exception {
+        mapper.matchInserted(match);
     }
 
     public void update(Match match) throws Exception{

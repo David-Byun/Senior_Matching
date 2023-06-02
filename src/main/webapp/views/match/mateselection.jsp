@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>간병인 매칭</h4>
+                    <h4>신규 매칭 요청</h4>
                     <div class="breadcrumb__links">
                         <a href="/">홈</a>
                         <a href="/match/ordermatch">간병인 매칭</a>
@@ -44,7 +44,7 @@
                                     <div class="si-social">
                                         <a href="#"><i class="fa-sharp fa-solid fa-comment"></i></a>
                                         <a href="#"><i class="fas fa-video"></i></a>
-                                        <form id="matchForm" action="/matchoffer" method="POST">
+                                        <form id="matchForm" action="/offer" method="POST">
 <%--                                            <input type="hidden" name="memberId" value="${loginmember}">--%>
                                             <input type="hidden" name="mateId" value="${obj.id}">
                                             <input type="hidden" name="omId" value="${omId}">

@@ -133,10 +133,10 @@
                         </li>
                         <li><a href="#">매칭</a>
                             <ul class="dropdown">
-                                <li><a href="/ordermatch">매칭신청</a></li>
-                                <li><a href="/ordermatchlist">매칭내역</a></li>
-                                <li><a href="/matchofferlist">매칭신청확인</a></li>
-                                <li><a href="/matchofferlist">매칭내역</a></li>
+                                <li><a href="/order">매칭신청</a></li>
+                                <li><a href="/listformember">매칭내역</a></li>
+                                <li><a href="/listformate">새로운매칭신청확인(향후개발)</a></li>
+                                <li><a href="/listformate">매칭내역</a></li>
 <%--                                <c:if test="${loginmember != null}">--%>
 <%--                                    <li><a href="/ordermatch">매칭신청</a></li>--%>
 <%--                                    <li><a href="#">매칭내역</a></li>--%>

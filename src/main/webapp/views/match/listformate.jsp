@@ -3,7 +3,7 @@
 
 <script>
         function acceptMatchOffer(id) {
-            window.location.href = "/yestomatchoffer/"+id;
+            window.location.href = "/yestomatch/"+id;
         }
 </script>
 
@@ -15,11 +15,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>간병인 매칭</h4>
+                    <h4>매칭 내역</h4><span>*메이트용</span>
                     <div class="breadcrumb__links">
                         <a href="/">홈</a>
-                        <a href="/ordermatch">간병인 매칭</a>
-                        <span>간병인 매칭</span>
+                        <a href="#">매칭</a>
+                        <span>매칭 내역</span>
                     </div>
                 </div>
             </div>
@@ -55,12 +55,11 @@
                         <td>${obj.area}</td>
                         <td>${obj.objectGender}</td>
                         <td>${obj.objectBirth}</td>
-                        <td><a href="#" data-toggle="modal" data-target="#myModal">${obj.status}</a></td>
+                        <td><a href="#" data-toggle="modal" data-target="#myModal${obj.id}">${obj.status}</a></td>
                     </tr>
                     </tbody>
-
                     <!-- Modal Begins-->
-                    <div id="myModal" class="modal fade" role="dialog">
+                    <div id="myModal${obj.id}" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <!-- Modal content-->
                             <div class="modal-content">
@@ -69,7 +68,10 @@
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
                                 <div class="modal-body">
-                                    <p> 매칭을 수락하시겠습니까 ?</p>
+                                    <p> [확인요망] </p>
+                                    <p> ${obj.startDate}에 시작하여 ${obj.endDate}에 종료되는 </p>
+                                    <p> ${obj.id}번 매칭 건 </p>
+                                    <p> 수락하시겠습니까 ?</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" onclick="acceptMatchOffer(${obj.id})" id="yes" name="yes" class="btn btn-primary">수락</button>

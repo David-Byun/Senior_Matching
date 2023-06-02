@@ -93,11 +93,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>간병인 매칭</h4>
+                    <h4>매칭 신청</h4>
                     <div class="breadcrumb__links">
                         <a href="/">홈</a>
-                        <a href="/ordermatch">간병인 매칭</a>
-                        <span>간병인 매칭</span>
+                        <a href="#">매칭</a>
+                        <span>매칭 신청</span>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                     <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have no ID? <a href="#">Click
                         here</a> to join us</h6>
                     <h4 class="checkout__title">매칭 신청서</h4>
-                    <form id="order_match_form" name="order_match_form" action="/ordermatchimpl" method="post">
+                    <form id="order_match_form" name="order_match_form" action="/orderimpl" method="post">
 <%--                        <input type="hidden" id="name" name="name" value="${loginmember}">--%>
                         <div class="row">
                             <div class="col-lg-10">
