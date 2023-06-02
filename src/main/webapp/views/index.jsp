@@ -203,7 +203,7 @@
                         <li><a href="/matereviews">후기</a>
                             <ul class="dropdown">
                                 <c:if test="${loginmember != null}">
-                                    <li><a href="/itemReview">후기 작성</a></li>
+                                    <li><a href="/review">후기 작성</a></li>
                                 </c:if>
                                 <li><a href="/matereviews">후기 검색</a></li>
                             </ul>
