@@ -222,7 +222,7 @@
                             </ul>
                         </li>
                         <li><a href="/contact">문의</a></li>
-                        <li><a href="/goldenlife">병원예약</a></li>
+                        <li><a href="/goldenlife">진료예약</a></li>
                     </ul>
                 </nav>
             </div>
