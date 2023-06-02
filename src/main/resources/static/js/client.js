@@ -51,15 +51,25 @@ function toggleTrack(trackType) {
   icon.classList.toggle("bi-mic-mute-fill", trackType === "audio" && !enabled);
 }
 
+// 비밀번호 입력 후 입장시
+// btnConnect.onclick = () => {
+//   if (roomNameInput.value === "") {
+//     alert("Room can not be null!");
+//   } else {
+//     roomName = roomNameInput.value;
+//     socket.emit("joinRoom", roomName);
+//     divRoomConfig.classList.add("d-none");
+//     roomDiv.classList.remove("d-none");
+//   }
+// };
+
 btnConnect.onclick = () => {
-  if (roomNameInput.value === "") {
-    alert("Room can not be null!");
-  } else {
-    roomName = roomNameInput.value;
+
+    roomName = 1;
     socket.emit("joinRoom", roomName);
     divRoomConfig.classList.add("d-none");
     roomDiv.classList.remove("d-none");
-  }
+
 };
 
 const handleSocketEvent = (eventName, callback) => socket.on(eventName,

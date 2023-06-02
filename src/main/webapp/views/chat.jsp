@@ -28,13 +28,14 @@
     <div
             id="remoteVideoContainer"
             style="
-          width: 600px;
-          height: 450px;
+          width: 1000px;
+          height: 600px;
           display: flex;
           align-items: center;
           justify-content: center;
           background-color: #363636;
         "
+
     >
         <video
                 id="remoteVideo"
@@ -53,29 +54,39 @@
     </div>
 
     <video
-            muted
             id="localVideo"
             autoplay
             style="
           width: 200px;
           height: 200px;
           position: absolute;
-          bottom: 20px;
-          right: 20px;
+          top: 30%;
+          right: 20%;
         "
     ></video>
 </div>
 
-<div id="roomConfig" class="d-flex justify-content-center mb-3">
-    <div class="input-group input-group-lg" style="max-width: 400px">
-        <input
-                id="roomName"
-                type="text"
-                class="form-control form-control-lg"
-                placeholder="Enter room"
-        />
-        <button id="btnConnect" class="btn btn-primary btn-lg" type="button">
-            Connect
+<%--Default roomName 1 옵션--%>
+
+<div class="col-lg-12 col-md-12">
+<div class="container" id="map03">
+    <div class="section-title">
+        <button id="btnConnect" class="btn btn-outline-success" style="margin: 0 auto" type="button">
+            상담요청
         </button>
     </div>
 </div>
+<%--입장번호 입력시--%>
+<%--<div id="roomConfig" class="d-flex justify-content-center mb-3">--%>
+<%--    <div class="input-group input-group-lg" style="max-width: 400px">--%>
+<%--        <input--%>
+<%--                id="roomName"--%>
+<%--                type="text"--%>
+<%--                class="form-control form-control-lg"--%>
+<%--                placeholder="Enter room"--%>
+<%--        />--%>
+<%--        <button id="btnConnect" class="btn btn-primary btn-lg" type="button">--%>
+<%--            상담요청--%>
+<%--        </button>--%>
+<%--    </div>--%>
+<%--</div>--%>
