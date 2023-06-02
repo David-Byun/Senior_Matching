@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kbstar.mapper.OrderMatchMapper">
+
+
+    <select id="findByMemberId" parameterType="Integer" resultType="orderMatch">
+        SELECT * FROM orderMatch WHERE member_id=#{memberId}
+    </select>
+
+    <select id="findByDate" parameterType="MatchSearch" resultType="mate">
+        <![CDATA[
+        SELECT m.ID AS id, m.NAME AS name, m.JOB_PERIOD AS jobPeriod, m.LICENSE AS license, m.IMG AS img
+        FROM MATE m
+        JOIN MATCH ch
+        ON m.ID = ch.MATE_ID
+        WHERE ( TO_DATE(ch.START_DATE, 'YYYY-MM-DD') < TO_DATE(#{startDate}, 'YYYY-MM-DD')  AND TO_DATE(ch.END_DATE, 'YYYY-MM-DD') < TO_DATE(#{startDate}, 'YYYY-MM-DD') )
+        OR TO_DATE(ch.START_DATE, 'YYYY-MM-DD') > TO_DATE(#{endDate}, 'YYYY-MM-DD')
+        ]]>
+    </select>
+
+    <insert id="insert" parameterType="orderMatch">
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            SELECT order_match_seq.CURRVAL FROM DUAL
+        </selectKey>
+        INSERT INTO order_match (id, member_id, start_date, end_date, service, area, object_gender, object_birth, rdate)
+        VALUES (order_match_seq.NEXTVAL, #{memberId}, #{startDate}, #{endDate}, #{service}, #{area},#{objectGender},#{objectBirth}, SYSDATE)
+    </insert>
+
+    <select id="select" parameterType="Integer" resultType="orderMatch">
+        SELECT * FROM order_match WHERE id=#{id}
+    </select>
+
+    <select id="selectall" resultType="orderMatch">
+        SELECT * FROM order_match
+    </select>
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM order_match WHERE id=#{id}
+    </delete>
+
+</mapper>
