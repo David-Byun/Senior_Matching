@@ -158,7 +158,7 @@
                        autocomplete="off" class="form-control" />
             </div>
             <div class="form-group">
-                <button type="submit" class="accent username-submit">상담시작</button>
+                <button type="submit" class="accent username-submit" style="background-color: #ff85af">상담시작</button>
             </div>
         </form>
     </div>
@@ -167,7 +167,7 @@
 <div id="chat-page" class="hidden">
     <div class="chat-container">
         <div class="chat-header">
-            <h2>봄생봄사 1:1 채팅</h2>
+            <h2>봄생봄사 1:1 상담</h2>
         </div>
         <div class="connecting">대기중...</div>
         <ul id="messageArea">
