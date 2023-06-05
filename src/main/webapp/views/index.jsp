@@ -174,6 +174,7 @@
                                     <a href="#" id="logout">로그아웃</a>
                                 </c:if>
                             <a href="/faq">FAQs</a>
+                            <a href="/websocket">챗봇문의</a>
                         </div>
                     </div>
                 </div>
