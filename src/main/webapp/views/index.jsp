@@ -221,7 +221,7 @@
                                 <li><a href="/matereviews">후기 검색</a></li>
                             </ul>
                         </li>
-                        <li><a href="/contact">문의</a></li>
+                        <li><a href="/contact">위치</a></li>
                         <li><a href="/goldenlife">진료예약</a></li>
                     </ul>
                 </nav>
