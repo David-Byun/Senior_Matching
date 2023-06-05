@@ -133,9 +133,9 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/chatbot")
+    @RequestMapping("/websocket")
     public String chatbot(Model model) {
-        model.addAttribute("center", "chatbot");
+        model.addAttribute("center", "websocket");
         return "index";
     }
 
