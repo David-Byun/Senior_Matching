@@ -13,6 +13,14 @@ CREATE SEQUENCE ORDER_SEQ --시퀀스이름 WDRL_SEQ
     NOCYCLE --순한하지않음
     NOCACHE; --메모리에 시퀀스값 미리할당
 
+CREATE SEQUENCE TOKEN_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+
 CREATE SEQUENCE MATE_REVIEW_SEQ
     INCREMENT BY 1
     START WITH 1
@@ -232,6 +240,14 @@ create table MATE_REVIEW (
     MEMBER_ID number,
     RDATE SYSDATE
 );
+
+CREATE TABLE TOKEN (
+                       id NUMBER,
+                       token VARCHAR2(300),
+                       rdate DATE DEFAULT SYSDATE
+);
+
+
 /*************샘플 데이터 *******************/
 
 INSERT INTO review VALUES (review_seq.NEXTVAL,101,1,'좋아요','좋은 상품이예요 모두 구매해주세요',5);
