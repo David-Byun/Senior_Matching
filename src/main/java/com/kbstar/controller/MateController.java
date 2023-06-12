@@ -1,6 +1,8 @@
 package com.kbstar.controller;
 
 import com.kbstar.dto.Mate;
+import com.kbstar.dto.MateReview;
+import com.kbstar.dto.MateReviewDto;
 import com.kbstar.exception.ErrorCode;
 import com.kbstar.exception.UserException;
 import com.kbstar.service.MateService;
@@ -13,11 +15,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -31,6 +35,38 @@ public class MateController {
     @Value("${uploadimgdir}")
     String uploadimgdir;
 
+    @GetMapping("/review/{mateId}")
+    public String mateReview(Model model, @PathVariable("mateId") int mateId) {
+        List<MateReviewDto> mateReviewList = service.findByMateId(mateId);
+        Mate foundMate = service.findById(mateId);
+        int sum = 0;
+        int avg = 0;
+        for (MateReviewDto mate : mateReviewList) {
+            sum = mate.getRate() + sum;
+        }
+        if (sum != 0) {
+            avg = Math.round(sum) / mateReviewList.size();
+        }
+        model.addAttribute("mateReviewList", mateReviewList);
+        model.addAttribute("mate", foundMate);
+        model.addAttribute("avg", avg);
+        model.addAttribute("countReview", mateReviewList.size());
+        return "match/matereview";
+    }
+
+    @GetMapping("/all")
+    public String allMate(Model model) throws Exception {
+        List<Mate> mates = service.get();
+        model.addAttribute("mates", mates);
+        return "match/allmate";
+    }
+
+
+    @PostMapping("/review")
+    public String registerMateReview(MateReview mateReview) {
+        service.registerMateReview(mateReview);
+        return "redirect:/mate/review/" + mateReview.getMateId();
+    }
 
     @RequestMapping("/signin")
     public String mateSignin(Model model, HttpSession session) {

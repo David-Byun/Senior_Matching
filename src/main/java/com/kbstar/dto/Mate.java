@@ -20,17 +20,19 @@ public class Mate {
 
     private MultipartFile imgName;
 
-    public Mate(String email, String name, String password,String area, int jobPeriod, String license) {
+    public Mate(String email, String img, String area, int jobPeriod, String license) {
         this.email = email;
-        this.name = name;
-        this.password = password;
+        this.img = img;
         this.area = area;
         this.jobPeriod = jobPeriod;
         this.license = license;
     }
 
-    public Mate(String email, String img, String area, int jobPeriod, String license, String valid) {
+    public Mate(int id, String email, String name, String password, String img, String area, int jobPeriod, String license) {
+        this.id = id;
         this.email = email;
+        this.name = name;
+        this.password = password;
         this.img = img;
         this.area = area;
         this.jobPeriod = jobPeriod;

@@ -1,6 +1,8 @@
 package com.kbstar.service;
 
 import com.kbstar.dto.Mate;
+import com.kbstar.dto.MateReview;
+import com.kbstar.dto.MateReviewDto;
 import com.kbstar.mapper.MateMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,4 +42,16 @@ public class MateService implements ShopService<String, Mate>{
         return mapper.selectall();
     }
 
+    public List<MateReviewDto> findByMateId(int mateId) {
+        return mapper.findByMateId(mateId);
+    }
+
+
+    public Mate findById(int mateId) {
+        return mapper.findById(mateId);
+    }
+
+    public void registerMateReview(MateReview mateReview) {
+        mapper.register(mateReview);
+    }
 }

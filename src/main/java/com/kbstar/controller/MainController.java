@@ -115,7 +115,7 @@ public class MainController {
 
     @RequestMapping("/reviewmate")
     public String reviewmate(Model model) {
-        return "match/reviewmate";
+        return "matereview";
     }
 
     @RequestMapping("/review")
@@ -152,8 +152,7 @@ public class MainController {
     
     @RequestMapping("/matereviews")
     public String matereviews(Model model) {
-        model.addAttribute("center", "matereviews");
-        return "index";
+        return "match/matereview";
     }
 
     @RequestMapping("/receipt")

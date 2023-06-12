@@ -16,11 +16,32 @@
         SELECT * FROM mate WHERE email=#{email}
     </select>
 
+
+    <insert id="register" parameterType="mateReview">
+        INSERT INTO MATE_REVIEW (id, rate, content, mate_id, member_id)
+        VALUES (MATE_REVIEW_SEQ.NEXTVAL, #{rate}, #{content}, #{mateId}, #{memberId})
+    </insert>
+
     <select id="selectall" resultType="mate">
         SELECT * FROM mate
     </select>
 
+    <select id="findById" resultType="mate">
+        SELECT * FROM mate WHERE id=#{mateId}
+    </select>
     <update id="delete" parameterType="String">
         UPDATE mate SET valid=0 WHERE id=#{id}
     </update>
+
+    <select id="findByMateId" resultType="MateReviewDto">
+        SELECT r.rate,
+               r.content,
+               u.name,
+               u.email,
+               r.rdate
+        FROM mate_review r
+                 LEFT JOIN member u ON r.member_id = u.id
+                 LEFT JOIN mate m ON r.mate_id = m.id
+        WHERE mate_id = #{mateId}
+    </select>
 </mapper>
