@@ -198,6 +198,7 @@
                                 <li><a href="/listformember">매칭내역</a></li>
                                 <li><a href="/listformate">새로운매칭신청확인(향후개발)</a></li>
                                 <li><a href="/listformate">매칭내역</a></li>
+
 <%--                                <c:if test="${loginmember != null}">--%>
 <%--                                    <li><a href="/match">매칭신청</a></li>--%>
 <%--                                    <li><a href="/listformember">매칭내역(멤버기준)</a></li>--%>
@@ -214,12 +215,12 @@
                             </ul>
                         </c:if>
                         </li>
-                        <li><a href="/matereviews">후기</a>
+                        <li><a href="/mate/all">후기</a>
                             <ul class="dropdown">
                                 <c:if test="${loginmember != null}">
-                                    <li><a href="/review">후기 작성</a></li>
+                                    <li><a href="/mate/all">메이트 리스트</a></li>
                                 </c:if>
-                                <li><a href="/matereviews">후기 검색</a></li>
+
                             </ul>
                         </li>
                         <li><a href="/contact">위치</a></li>

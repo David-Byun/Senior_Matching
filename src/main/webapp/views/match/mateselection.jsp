@@ -29,9 +29,11 @@
                     <div class="speaker-item">
                         <div class="row">
                             <div class="col-lg-6">
+                                <a href="/mate/review/${obj.id}">
                                 <div class="si-pic">
                                     <img src="/uimg/${obj.img}" alt="">
                                 </div>
+                                </a>
                             </div>
                             <div class="col-lg-6">
                                 <div class="si-text">
