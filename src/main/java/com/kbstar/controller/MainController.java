@@ -113,6 +113,11 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/reviewmate")
+    public String reviewmate(Model model) {
+        return "match/reviewmate";
+    }
+
     @RequestMapping("/review")
     public String review(Model model) {
         model.addAttribute("center","review");
