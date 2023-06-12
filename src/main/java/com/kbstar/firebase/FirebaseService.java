@@ -18,7 +18,6 @@ public class FirebaseService {
     }
 
     public List<FirebaseToken> getAllTokens() {
-        firebaseMapper.getAll();
-
+        return firebaseMapper.getAll();
     }
 }
