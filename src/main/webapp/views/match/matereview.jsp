@@ -12,7 +12,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -211,7 +211,7 @@
                             <img class="w-100 h-60" src="https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_1280.jpg" alt="Image">
                         </c:when>
                         <c:otherwise>
-                            <img class="w-100 h-60" src="${mate.img}" alt="Image">
+                            <img class="w-100 h-60" src="/uimg/${mate.img}" alt="Image">
                         </c:otherwise>
                     </c:choose>
                 </div>
@@ -223,24 +223,23 @@
                 <h3>${mate.name}</h3>
                 <h4>${mate.email}</h4>
                 <div class="d-flex mt-3">
-<%--                    별점 및 리뷰수 변수 지정 후에 노출 필요--%>
                     <div class="text-primary mr-2">
                         <c:set var="fullStars" value="${avg / 1}" />
                         <c:set var="halfStars" value="${5 - avg}" />
 
                         <c:if test="${avg > 0}">
                             <c:forEach begin="0" end="${fullStars-1}">
-                                <small class="fas fa-star"></small>
+                                <small class="fas fa-star" style="color:#FAD00E"></small>
                             </c:forEach>
                         </c:if>
 
                         <c:if test="${avg % 1 != 0}">
-                            <small class="fas fa-star-half-alt"></small>
+                            <small class="fas fa-star-half-alt" style="color:#FAD00E"></small>
                             <c:set var="halfStars" value="${halfStars - 1}" />
                         </c:if>
 
                         <c:forEach begin="0" end="${halfStars-1}">
-                            <small class="far fa-star"></small>
+                            <small class="far fa-star" style="color:#FAD00E"></small>
                         </c:forEach>
                     </div>
 
@@ -293,11 +292,11 @@
                                         <h6>${review.name} / ${review.email}<small> - <i>${review.rdate}</i></small></h6>
                                         <div class="text-primary mb-2">
 <%--                                            리뷰개수만큼 fas fa-star 그리고 나머지는 빈 별로 채우기--%>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                            <i class="far fa-star"></i>
+                                            <i class="fas fa-star" style="color:#FAD00E"></i>
+                                            <i class="fas fa-star" style="color:#FAD00E"></i>
+                                            <i class="fas fa-star" style="color:#FAD00E"></i>
+                                            <i class="fas fa-star-half-alt" style="color:#FAD00E"></i>
+                                            <i class="far fa-star" style="color:#FAD00E"></i>
                                         </div>
                                         <p>${review.content}</p>
                                     </div>
@@ -309,7 +308,7 @@
                                 <h4 class="mb-4">리뷰 남기기</h4>
                                 <div class="d-flex my-3">
                                     <fieldset>
-                                        <span class="text-primary">별점을 선택해주세요</span>
+                                        <span class="text-warning" >별점을 선택해주세요</span>
                                         <input type="radio" name="rate" value="5" id="rate1"><label
                                             for="rate1">★</label>
                                         <input type="radio" name="rate" value="4" id="rate2"><label
@@ -328,7 +327,7 @@
                                     <input type="hidden" name="mateId" value="${mate.id}">
                                     <input type="hidden" name="memberId" value="${loginmember.id}">
                                     <div class="form-group mb-0">
-                                        <input type="submit" value="리뷰 등록" class="btn btn-primary px-3">
+                                        <input type="submit" value="리뷰 등록" class="btn btn-warning px-3" style="color: white">
                                     </div>
                                 </form>
                             </div>

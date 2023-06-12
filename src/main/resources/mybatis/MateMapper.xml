@@ -23,11 +23,11 @@
     </insert>
 
     <select id="selectall" resultType="mate">
-        SELECT * FROM mate
+        SELECT * FROM mate WHERE valid=1
     </select>
 
     <select id="findById" resultType="mate">
-        SELECT * FROM mate WHERE id=#{mateId}
+        SELECT * FROM mate WHERE id=#{mateId} and valid = 1
     </select>
     <update id="delete" parameterType="String">
         UPDATE mate SET valid=0 WHERE id=#{id}

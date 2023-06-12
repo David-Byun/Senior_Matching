@@ -39,14 +39,16 @@ public class MateController {
     public String mateReview(Model model, @PathVariable("mateId") int mateId) {
         List<MateReviewDto> mateReviewList = service.findByMateId(mateId);
         Mate foundMate = service.findById(mateId);
+        System.out.println("foundMate = " + foundMate.toString());
         int sum = 0;
         int avg = 0;
         for (MateReviewDto mate : mateReviewList) {
             sum = mate.getRate() + sum;
         }
         if (sum != 0) {
-            avg = Math.round(sum) / mateReviewList.size();
+            avg = Math.round(sum / mateReviewList.size());
         }
+        System.out.println("foundMate = " + foundMate.getImg());
         model.addAttribute("mateReviewList", mateReviewList);
         model.addAttribute("mate", foundMate);
         model.addAttribute("avg", avg);

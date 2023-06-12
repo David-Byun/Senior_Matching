@@ -187,7 +187,7 @@
                                 </c:when>
                                 <c:otherwise>
                                             <div class="si-pic">
-                                                <img src="${mate.img}" alt="">
+                                                <img src="/uimg/${mate.img}" alt="">
                                             </div>
                                 </c:otherwise>
 
@@ -198,8 +198,11 @@
                             <div class="col-lg-6">
                                 <div class="si-text">
                                     <div class="si-title">
+                                        <a href="/mate/review/${mate.id}">
                                         <h4>${mate.name}</h4>
+                                        </a>
                                         <span>${mate.email}</span>
+
                                     </div>
                                     <div class="si-social">
                                         <a href="#"><i class="fa fa-facebook"></i></a>
