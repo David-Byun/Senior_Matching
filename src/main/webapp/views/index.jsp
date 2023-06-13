@@ -67,14 +67,15 @@
             <%--messagingSenderId: "<c:out value='${messagingSenderId}' />",--%>
             <%--appId: "<c:out value='${appId}' />",--%>
             <%--measurementId: "<c:out value='${measurementId}' />"--%>
-             apiKey: "AIzaSyCfchQsojha5qRfexQ7faKMa0p4ebjH260",
-             authDomain: "nwitter-4c3ea.firebaseapp.com",
-             projectId: "nwitter-4c3ea",
-             storageBucket: "nwitter-4c3ea.appspot.com",
-             messagingSenderId: "613082594223",
-             appId: "1:613082594223:web:54d455061bff28bb9c0d5a",
-             measurementId: "G-KH0RN141KL"
+            apiKey: "AIzaSyCfchQsojha5qRfexQ7faKMa0p4ebjH260",
+            authDomain: "nwitter-4c3ea.firebaseapp.com",
+            projectId: "nwitter-4c3ea",
+            storageBucket: "nwitter-4c3ea.appspot.com",
+            messagingSenderId: "613082594223",
+            appId: "1:613082594223:web:54d455061bff28bb9c0d5a",
+            measurementId: "G-KH0RN141KL"
         };
+
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
 
@@ -84,13 +85,18 @@
         // RequestPermission 첫 어플 시작 시 알림 허용 or 불허를 사용자에게 안내합니다.
         // 허용하지 않을 시 알람 메시지는 가지 않습니다.
         messaging.requestPermission()
-            .then(function() {
+            .then(function () {
                 // 알람이 허용되었을 때 토큰을 반환합니다.
                 // 해당 토큰을 통해 FCM 특정 사용자에게 메시지를 보낼 수 있습니다.
                 return messaging.getToken();
             })
-            .then(async function(token) {
+            .then(async function (token) {
                 console.log(token);
+                $.ajax({
+                    method:'post',
+                    url:'/token',
+                    data : {token : token}
+                })
                 // 해당 onMessage는 데이터메시지로, 포그라운드인 상태에서
                 // FCM 메시지를 전송하는 경우 콘솔에 표기하도록 작성된 코드입니다.
 
@@ -111,8 +117,10 @@
                     })
                 })
             })
-        $('#logout').on("click", () => {location.href = "/logout"});
-    })
+        $('#logout').on("click", () => {
+            location.href = "/logout"
+        });
+    });
 </script>
 <!-- Page Preloder -->
 <div id="preloder">
@@ -174,6 +182,7 @@
                                     <a href="#" id="logout">로그아웃</a>
                                 </c:if>
                             <a href="/faq">FAQs</a>
+                            <a href="/websocket">챗봇문의</a>
                         </div>
                     </div>
                 </div>
@@ -197,6 +206,7 @@
                                 <li><a href="/listformember">매칭내역</a></li>
                                 <li><a href="/listformate">새로운매칭신청확인(향후개발)</a></li>
                                 <li><a href="/listformate">매칭내역</a></li>
+
 <%--                                <c:if test="${loginmember != null}">--%>
 <%--                                    <li><a href="/match">매칭신청</a></li>--%>
 <%--                                    <li><a href="/listformember">매칭내역(멤버기준)</a></li>--%>
@@ -213,12 +223,12 @@
                             </ul>
                         </c:if>
                         </li>
-                        <li><a href="/matereviews">후기</a>
+                        <li><a href="/mate/all">후기</a>
                             <ul class="dropdown">
                                 <c:if test="${loginmember != null}">
-                                    <li><a href="/review">후기 작성</a></li>
+                                    <li><a href="/mate/all">메이트 리스트</a></li>
                                 </c:if>
-                                <li><a href="/matereviews">후기 검색</a></li>
+
                             </ul>
                         </li>
                         <li><a href="/contact">위치</a></li>

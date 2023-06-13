@@ -113,6 +113,11 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/reviewmate")
+    public String reviewmate(Model model) {
+        return "matereview";
+    }
+
     @RequestMapping("/review")
     public String review(Model model) {
         model.addAttribute("center","review");
@@ -133,9 +138,9 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/chatbot")
+    @RequestMapping("/websocket")
     public String chatbot(Model model) {
-        model.addAttribute("center", "chatbot");
+        model.addAttribute("center", "websocket");
         return "index";
     }
 
@@ -147,8 +152,7 @@ public class MainController {
     
     @RequestMapping("/matereviews")
     public String matereviews(Model model) {
-        model.addAttribute("center", "matereviews");
-        return "index";
+        return "match/matereview";
     }
 
     @RequestMapping("/receipt")
