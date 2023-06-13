@@ -19,6 +19,9 @@ public class MatchService {
     public void update(Match match) throws Exception{
         mapper.update(match);
     }
+    public void updateafterpay(Match match) throws Exception{
+        mapper.updateafterpay(match);
+    }
     public Match get(Integer k) throws Exception {
         return mapper.select(k);
     }

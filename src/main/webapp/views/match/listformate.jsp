@@ -2,6 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+
 <script>
         function acceptMatchOffer(id) {
             window.location.href = "/yestomatch/"+id;
@@ -53,7 +54,16 @@
                         <td>${obj.area}</td>
                         <td>${obj.objectGender}</td>
                         <td>${obj.objectBirth}</td>
-                        <td><a href="#" data-toggle="modal" data-target="#myModal${obj.id}">${obj.status}</a></td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${obj.status == '매칭대기'}">
+                                    <a href="#" data-toggle="modal" data-target="#myModal${obj.id}">${obj.status}</a>
+                                </c:when>
+                                <c:otherwise>
+                                    ${obj.status}
+                                </c:otherwise>
+                            </c:choose>
+                        </td>
                     </tr>
                     </tbody>
                     <!-- Modal Begins-->

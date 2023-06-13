@@ -24,7 +24,7 @@ public class Match {
     private String status;
     private int price;
     private String payment;
-    private String payDate;
+    private Date payDate;
 
 
     public Match(OrderMatch om) {

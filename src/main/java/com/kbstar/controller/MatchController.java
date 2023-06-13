@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
@@ -66,7 +67,6 @@ public class MatchController {
         return "index";
     }
 
-
     @RequestMapping("/listformember")
     public String listformember(Model model, HttpSession session) throws Exception {
 
@@ -74,8 +74,8 @@ public class MatchController {
 //        int memberId = user.getId();
 
         int memberId = 1000;
-
         List<Match> list = matchService.findByMemberId(memberId);
+
         model.addAttribute("mlist",list);
         model.addAttribute("center", dir+"listformember");
         return "index";
@@ -86,7 +86,7 @@ public class MatchController {
 //
 //        Mate user = (Mate) session.getAttribute("loginmate");
 //        int mateId = user.getId();
-        int mateId = 2000;
+        int mateId = 2001;
         List<Match> list = matchService.findByMateId(mateId);
         model.addAttribute("mlist",list);
         model.addAttribute("center", dir+"listformate");
@@ -104,11 +104,32 @@ public class MatchController {
 
     @RequestMapping("/payformatch/{id}")
     public String payformatch(Model model, HttpSession session,@PathVariable int id) throws Exception {
-        System.out.println("id =====* " + id);
         Match match = matchService.get(id);
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date endDate = dateFormat.parse(match.getEndDate());
+        Date startDate = dateFormat.parse(match.getStartDate());
+        long differenceInMillis = endDate.getTime() - startDate.getTime();
+        int daysDifference = (int) (differenceInMillis / (1000 * 60 * 60 * 24));
+        int totalAmount = daysDifference * 30000;
+
+        match.setPrice(totalAmount);
+        match.setPayment("card");
+        Date currentDate = new Date();
+        match.setPayDate(currentDate);
         match.setStatus("결제완료");
-        matchService.update(match);
-        return "redirect:/listformate";
+
+        matchService.updateafterpay(match);
+
+
+
+        int memberId = 1000;
+
+        List<Match> list = matchService.findByMemberId(memberId);
+        model.addAttribute("mlist",list);
+
+
+        return "redirect:/listformember";
     }
 
 
