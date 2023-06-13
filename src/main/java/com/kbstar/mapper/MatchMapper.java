@@ -18,4 +18,5 @@ public interface MatchMapper extends ShopMapper<Integer, Match> {
     List<Match> findByMemberId(int memberId);
     List<Match> findByMateId(int mateId);
     void matchInserted(Match match);
+    void updateafterpay(Match match);
 }
