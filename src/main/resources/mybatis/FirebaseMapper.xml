@@ -6,4 +6,7 @@
     <insert id="register" parameterType="FirebaseToken">
         INSERT INTO TOKEN (id, token, rdate) VALUES (TOKEN_SEQ.NEXTVAL, #{token}, SYSDATE)
     </insert>
+    <select id="findByToken" resultType="FirebaseToken">
+        SELECT * FROM TOKEN WHERE TOKEN = #{token}
+    </select>
 </mapper>
