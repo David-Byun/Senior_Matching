@@ -64,12 +64,6 @@ public class MateController {
     }
 
 
-    @PostMapping("/review")
-    public String registerMateReview(MateReview mateReview) {
-        service.registerMateReview(mateReview);
-        return "redirect:/mate/review/" + mateReview.getMateId();
-    }
-
     @RequestMapping("/signin")
     public String mateSignin(Model model, HttpSession session) {
         model.addAttribute("center", "mateSignin");
