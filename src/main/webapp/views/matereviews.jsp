@@ -10,7 +10,7 @@
                 <div class="blog__hero__text">
                     <h2>Review Form</h2>
                     <div class="blog__details__comment">
-                        <form action="/reviewimpl" method="post" name="review_form" id="review_form">
+                        <form action="/matereviewimpl" method="post" name="review_form" id="review_form">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4">
                                     <input type="text" placeholder="Id(Number..)" id="Id" name="Id" value="${loginmember.id}" style="color: black">
@@ -23,9 +23,6 @@
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <textarea type="text" placeholder="content" id="content" name="content" style="color: black"></textarea>
-                                </div>
-                                <div class="col-lg-12 text-center">
-                                    <textarea type="image" placeholder="img" id="img" name="img" style="color: black"></textarea>
                                 </div>
                                 </br>
                                 <div class="col-lg-8 col-md-4">
