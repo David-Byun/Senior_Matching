@@ -1,11 +1,8 @@
 package com.kbstar.controller;
 
-import com.kbstar.dto.ItemReview;
 import com.kbstar.dto.MateReview;
 import com.kbstar.dto.MateReviewSearch;
-import com.kbstar.dto.ReviewSearch;
 import com.kbstar.service.MateReviewService;
-import com.kbstar.service.ReviewService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

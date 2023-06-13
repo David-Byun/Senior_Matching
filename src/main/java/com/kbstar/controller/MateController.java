@@ -56,6 +56,12 @@ public class MateController {
         return "match/matereview";
     }
 
+    @PostMapping("/review")
+    public String register(MateReview mateReview) {
+        service.registerMateReview(mateReview);
+        return "redirect:/mate/review/" + mateReview.getMateId();
+    }
+
     @GetMapping("/all")
     public String allMate(Model model) throws Exception {
         List<Mate> mates = service.get();
@@ -78,13 +84,11 @@ public class MateController {
         return "index";
     }
 
-
     @RequestMapping("/login")
     public String mateLogin(Model model, HttpSession session) {
         model.addAttribute("center", "mateLogin");
         return "index";
     }
-
 
     @Valid
     @RequestMapping("/signinimpl")
