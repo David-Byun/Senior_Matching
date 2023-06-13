@@ -174,12 +174,9 @@
                                     <a href="/signin">시니어 가입</a>
 
                                 </c:when>
-                                <c:otherwise>
-                                    <a href="/chatbot">챗봇문의</a>
-                                </c:otherwise>
                             </c:choose>
                                 <c:if test="${loginmember != null || loginmate != null}">
-                                    <a href="#" id="logout">로그아웃</a>
+                                    <a href="/logout" id="logout">로그아웃</a>
                                 </c:if>
                             <a href="/faq">FAQs</a>
                             <a href="/websocket">챗봇문의</a>
