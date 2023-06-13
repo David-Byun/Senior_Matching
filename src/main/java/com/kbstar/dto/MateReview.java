@@ -1,6 +1,15 @@
 package com.kbstar.dto;
 
-public class MateReview extends OrderMatch {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class MateReview {
     private int id;
     private int rate;
     private String content;
