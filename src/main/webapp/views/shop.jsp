@@ -203,7 +203,7 @@
                                         </c:if>
                                     </c:forEach>
 
-                                    <h5><fmt:formatNumber value="${c.price}" type="number" pattern="$#,###,###" /> </h5>
+                                    <h5><fmt:formatNumber value="${c.price}" type="number" pattern="#,###,###원" /> </h5>
                                     <div class="product__color__select">
                                         <label for="pc-4">
                                             <input type="radio" id="pc-4">
