@@ -3,14 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=877b72a4084b62dd3183b611e21359eb"></script>
-    <!-- Map Begin -->
-    <style>
-        #map03 > #map {
-            width : 1120px;
-            height : 400px;
-            border : 2px solid greenyellow;
-        }
-    </style>
+
     <script>
         let map03 = {
             map:null,
