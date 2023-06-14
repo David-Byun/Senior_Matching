@@ -48,7 +48,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <%--카카오맵api --%>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e8baa2c2fda88e720d607644c62ab5ae"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -222,12 +221,6 @@
                         </c:if>
                         </li>
                         <li><a href="/mate/all">후기</a>
-                            <ul class="dropdown">
-                                <c:if test="${loginmember != null}">
-                                    <li><a href="/mate/all">메이트 리스트</a></li>
-                                </c:if>
-
-                            </ul>
                         </li>
                         <li><a href="/contact">위치</a></li>
                         <li><a href="/goldenlife">진료예약</a></li>

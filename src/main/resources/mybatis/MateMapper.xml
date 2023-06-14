@@ -48,16 +48,17 @@
     <select id="findAllMates" resultType="MateReviewAllDto">
         SELECT m.ID AS id,
                COALESCE(AVG(r.RATE), 0) AS avgRate,
+               COUNT(r.RATE) AS sum,
                m.NAME AS name,
-               m.email as email,
+               m.email AS email,
                m.JOB_PERIOD AS jobPeriod,
                m.LICENSE AS license,
                m.IMG AS img,
                m.AREA AS area
-        FROM MATE_REVIEW r
-                 JOIN MEMBER u ON r.MEMBER_ID = u.ID
-                 RIGHT JOIN MATE m ON r.MATE_ID = m.ID
+        FROM MATE m
+                 LEFT JOIN MATE_REVIEW r ON r.MATE_ID = m.ID
+                 LEFT JOIN MEMBER u ON r.MEMBER_ID = u.ID
         GROUP BY m.ID, m.NAME, m.email, m.JOB_PERIOD, m.LICENSE, m.IMG, m.AREA
-        ORDER BY avgRate desc
+        ORDER BY avgRate DESC
     </select>
 </mapper>

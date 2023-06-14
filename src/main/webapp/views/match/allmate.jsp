@@ -105,11 +105,6 @@
                             </c:if>
                         </li>
                         <li><a href="/mate/all">후기</a>
-                            <ul class="dropdown">
-                                <c:if test="${loginmember != null}">
-                                    <li><a href="/mate/all">메이트 리스트</a></li>
-                                </c:if>
-                            </ul>
                         </li>
 
                         <li><a href="/contact">위치</a></li>
@@ -224,7 +219,7 @@
                                                     <small class="far fa-star" style="color:#FAD00E"></small>
                                                 </c:forEach>
                                             </div>
-
+                                            <small class="pt-1" style="color: darkgray">(리뷰 ${mate.sum}개)</small>
                                         </div>
                                     </div>
                                     <div class="si-social">

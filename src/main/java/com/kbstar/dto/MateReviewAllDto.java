@@ -8,6 +8,7 @@ import lombok.Data;
 public class MateReviewAllDto {
     private int id;
     private int avgRate;
+    private int sum;
     private String name;
     private String email;
     private int jobPeriod;
