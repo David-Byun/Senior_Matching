@@ -48,7 +48,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <%--카카오맵api --%>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e8baa2c2fda88e720d607644c62ab5ae"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -104,7 +103,8 @@
                     Swal.fire({
                         title: payload.notification.title,
                         text: payload.notification.body,
-                        imageUrl: 'https://unsplash.it/400/200',
+                        imageUrl : 'https://help.miricanvas.com/hc/article_attachments/4403560627353/_____________4_.png',
+                        // imageUrl: 'https://unsplash.it/400/200',
                         imageWidth: 400,
                         imageHeight: 200,
                         imageAlt: 'Custom image',
@@ -174,12 +174,9 @@
                                     <a href="/signin">시니어 가입</a>
 
                                 </c:when>
-                                <c:otherwise>
-                                    <a href="/chatbot">챗봇문의</a>
-                                </c:otherwise>
                             </c:choose>
                                 <c:if test="${loginmember != null || loginmate != null}">
-                                    <a href="#" id="logout">로그아웃</a>
+                                    <a href="/logout" id="logout">로그아웃</a>
                                 </c:if>
                             <a href="/faq">FAQs</a>
                             <a href="/websocket">챗봇문의</a>
@@ -224,12 +221,6 @@
                         </c:if>
                         </li>
                         <li><a href="/mate/all">후기</a>
-                            <ul class="dropdown">
-                                <c:if test="${loginmember != null}">
-                                    <li><a href="/mate/all">메이트 리스트</a></li>
-                                </c:if>
-
-                            </ul>
                         </li>
                         <li><a href="/contact">위치</a></li>
                         <li><a href="/goldenlife">진료예약</a></li>
@@ -298,7 +289,7 @@
                 <div class="footer__widget">
                     <h6>메이트 서비스</h6>
                     <ul>
-                        <li><a href="#">메이트 결제 확인</a></li>
+                        <li><a href="/mate/all">메이트 리스트 보기</a></li>
                         <li><a href="/listformember">메이트 이력 확인</a></li>
                     </ul>
                 </div>

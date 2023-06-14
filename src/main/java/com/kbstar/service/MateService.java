@@ -2,6 +2,7 @@ package com.kbstar.service;
 
 import com.kbstar.dto.Mate;
 import com.kbstar.dto.MateReview;
+import com.kbstar.dto.MateReviewAllDto;
 import com.kbstar.dto.MateReviewDto;
 import com.kbstar.mapper.MateMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -54,4 +55,9 @@ public class MateService implements ShopService<String, Mate>{
     public void registerMateReview(MateReview mateReview) {
         mapper.register(mateReview);
     }
+
+    public List<MateReviewAllDto> findAllMates() {
+        return mapper.findAllMates();
+    }
+
 }

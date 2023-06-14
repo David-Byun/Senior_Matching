@@ -1,4 +1,4 @@
-const LOCAL_IP_ADDRESS = "172.16.20.74"; // 배포버전
+const LOCAL_IP_ADDRESS = "127.0.0.1"; // 배포버전
 
 const getElement = id => document.getElementById(id);
 const [btnConnect, btnToggleVideo, btnToggleAudio, divRoomConfig, roomDiv, roomNameInput, localVideo, remoteVideo] = ["btnConnect",

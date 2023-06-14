@@ -38,7 +38,7 @@ public class MailController {
 
         //메일 내용
         String recipient = mail; //메일을 발송할 이메일 주소를 기재해 줍니다.
-        String subject = question.getName() + " : 제품 관련 문의 드립니다.";    //메일 발송시 제목을 작성
+        String subject = question.getName() + " : 관련 문의 드립니다.";    //메일 발송시 제목을 작성
         String body = question.getMsg(); //메일 발송시 내용 작성
 
         Properties props = System.getProperties();

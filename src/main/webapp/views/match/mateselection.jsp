@@ -132,7 +132,7 @@
                                 <div class="product__item__pic set-bg" data-setbg="/uimg/${c.img}" style="cursor:pointer;" >
                                     <ul class="product__hover">
                                         <li><a href="/callchat"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
-                                        <li><a href="/chat"><i class="fas fa-video"></i></a></li>
+                                        <li><a href="https://172.16.20.74"><i class="fas fa-video"></i></a></li>
 <%--                                        <li><a href="#"><img id="add-reserve" class="add-reserve" role="button" aria-pressed="true" data-item-id="${c.id}" src="/img/icon/heart.png" alt=""><span>Reserve</span></a></li>--%>
 <%--                                        <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a>--%>
 <%--                                        </li>--%>

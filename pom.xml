@@ -17,6 +17,7 @@
     <properties>
         <java.version>11</java.version>
     </properties>
+
     <dependencies>
 <!--        push 모듈-->
         <dependency>
@@ -124,8 +125,6 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>1.2</version> <!--0613추가-->
-
         </dependency>
         <!-- logback추가-->
         <dependency>

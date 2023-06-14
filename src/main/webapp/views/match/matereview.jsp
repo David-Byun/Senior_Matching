@@ -136,11 +136,6 @@
                             </c:if>
                         </li>
                         <li><a href="/mate/all">후기</a>
-                            <ul class="dropdown">
-                                <c:if test="${loginmember != null}">
-                                    <li><a href="/mate/all">메이트 리스트</a></li>
-                                </c:if>
-                            </ul>
                         </li>
                         <li><a href="/contact">위치</a></li>
                         <li><a href="/goldenlife">진료예약</a></li>
