@@ -17,6 +17,7 @@
     <properties>
         <java.version>11</java.version>
     </properties>
+
     <dependencies>
 <!--        push 모듈-->
         <dependency>
@@ -24,26 +25,11 @@
             <artifactId>firebase-admin</artifactId>
             <version>6.8.1</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework</groupId>-->
-<!--            <artifactId>spring-websocket</artifactId>-->
-<!--            <version>4.0.4.RELEASE</version>-->
-<!--        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-admin -->
-
-        <!--        화상채팅 모듈-->
         <dependency>
             <groupId>com.corundumstudio.socketio</groupId>
             <artifactId>netty-socketio</artifactId>
             <version>1.7.23</version>
         </dependency>
-<!--        화상채팅 이후 배포 단계에서 발생 에러 수정-->
-        <dependency>
-            <groupId>com.lowagie</groupId>
-            <artifactId>itext</artifactId>
-            <version>4.2.0</version>
-        </dependency>
-<!--        암호화-->
         <dependency>
             <groupId>com.github.ulisesbocchio</groupId>
             <artifactId>jasypt-spring-boot-starter</artifactId>
@@ -56,7 +42,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
-            <version>4.0.3.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -66,7 +51,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-websocket</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
@@ -170,27 +154,6 @@
             <artifactId>stomp-websocket</artifactId>
             <version>2.3.3</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>bootstrap</artifactId>
-            <version>3.3.7</version>
-        </dependency>
-
-        <!-- Apache PDFBox for PDF generation -->
-        <dependency>
-            <groupId>org.apache.pdfbox</groupId>
-            <artifactId>pdfbox</artifactId>
-            <version>2.0.26</version>
-        </dependency>
-
-        <!-- Apache PDFBox fontbox for font support -->
-        <dependency>
-            <groupId>org.apache.pdfbox</groupId>
-            <artifactId>fontbox</artifactId>
-            <version>2.0.26</version>
-        </dependency>
-
 
     </dependencies>
 

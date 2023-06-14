@@ -205,13 +205,13 @@
 
                                     </div>
                                     <div class="si-social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a href="/callchat"><i class="fa fa-comment"></i></a>
+                                        <a href="https://172.16.20.74"><i class="fa fa-video-camera"></i></a>
                                     </div>
                                     <p>가능 지역 : ${mate.area}</p>
                                     <p>보유 자격증 : ${mate.license}</p>
                                     <p>경력 : ${mate.jobPeriod}년</p>
+
                                 </div>
                             </div>
                         </div>
