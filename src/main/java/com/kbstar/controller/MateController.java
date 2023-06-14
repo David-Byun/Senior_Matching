@@ -2,6 +2,7 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Mate;
 import com.kbstar.dto.MateReview;
+import com.kbstar.dto.MateReviewAllDto;
 import com.kbstar.dto.MateReviewDto;
 import com.kbstar.exception.ErrorCode;
 import com.kbstar.exception.UserException;
@@ -63,8 +64,8 @@ public class MateController {
     }
 
     @GetMapping("/all")
-    public String allMate(Model model) throws Exception {
-        List<Mate> mates = service.get();
+    public String allMate(Model model) {
+        List<MateReviewAllDto> mates = service.findAllMates();
         model.addAttribute("mates", mates);
         return "match/allmate";
     }

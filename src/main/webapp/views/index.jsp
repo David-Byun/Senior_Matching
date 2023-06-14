@@ -104,7 +104,8 @@
                     Swal.fire({
                         title: payload.notification.title,
                         text: payload.notification.body,
-                        imageUrl: 'https://unsplash.it/400/200',
+                        imageUrl : 'https://help.miricanvas.com/hc/article_attachments/4403560627353/_____________4_.png',
+                        // imageUrl: 'https://unsplash.it/400/200',
                         imageWidth: 400,
                         imageHeight: 200,
                         imageAlt: 'Custom image',

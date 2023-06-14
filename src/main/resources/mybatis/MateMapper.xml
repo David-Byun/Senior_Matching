@@ -44,4 +44,20 @@
                  LEFT JOIN mate m ON r.mate_id = m.id
         WHERE mate_id = #{mateId}
     </select>
+
+    <select id="findAllMates" resultType="MateReviewAllDto">
+        SELECT m.ID AS id,
+               COALESCE(AVG(r.RATE), 0) AS avgRate,
+               m.NAME AS name,
+               m.email as email,
+               m.JOB_PERIOD AS jobPeriod,
+               m.LICENSE AS license,
+               m.IMG AS img,
+               m.AREA AS area
+        FROM MATE_REVIEW r
+                 JOIN MEMBER u ON r.MEMBER_ID = u.ID
+                 RIGHT JOIN MATE m ON r.MATE_ID = m.ID
+        GROUP BY m.ID, m.NAME, m.email, m.JOB_PERIOD, m.LICENSE, m.IMG, m.AREA
+        ORDER BY avgRate desc
+    </select>
 </mapper>

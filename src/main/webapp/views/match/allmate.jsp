@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -202,11 +204,32 @@
                                         <h4>${mate.name}</h4>
                                         </a>
                                         <span>${mate.email}</span>
+                                        <div class="d-flex mt-2">
+                                            <div class="text-primary mr-2">
+                                                <c:set var="fullStars" value="${mate.avgRate / 1}" />
+                                                <c:set var="halfStars" value="${5 - mate.avgRate}" />
 
+                                                <c:if test="${mate.avgRate > 0}">
+                                                    <c:forEach begin="0" end="${fullStars-1}">
+                                                        <small class="fas fa-star" style="color:#FAD00E"></small>
+                                                    </c:forEach>
+                                                </c:if>
+
+                                                <c:if test="${mate.avgRate % 1 != 0}">
+                                                    <small class="fas fa-star-half-alt" style="color:#FAD00E"></small>
+                                                    <c:set var="halfStars" value="${halfStars - 1}" />
+                                                </c:if>
+
+                                                <c:forEach begin="0" end="${halfStars-1}">
+                                                    <small class="far fa-star" style="color:#FAD00E"></small>
+                                                </c:forEach>
+                                            </div>
+
+                                        </div>
                                     </div>
                                     <div class="si-social">
                                         <a href="/callchat"><i class="fa fa-comment"></i></a>
-                                        <a href="https://172.16.20.74"><i class="fa fa-video-camera"></i></a>
+                                        <a href="https://172.16.20.74" target='_blank'><i class="fa fa-video-camera"></i></a>
                                     </div>
                                     <p>가능 지역 : ${mate.area}</p>
                                     <p>보유 자격증 : ${mate.license}</p>

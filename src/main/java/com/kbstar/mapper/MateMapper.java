@@ -2,6 +2,7 @@ package com.kbstar.mapper;
 
 import com.kbstar.dto.Mate;
 import com.kbstar.dto.MateReview;
+import com.kbstar.dto.MateReviewAllDto;
 import com.kbstar.dto.MateReviewDto;
 import com.kbstar.frame.ShopMapper;
 import org.apache.ibatis.annotations.Mapper;
@@ -19,4 +20,5 @@ public interface MateMapper extends ShopMapper<String, Mate> {
     void register(MateReview mateReview);
 
 
+    List<MateReviewAllDto> findAllMates();
 }
