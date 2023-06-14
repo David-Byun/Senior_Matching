@@ -124,6 +124,8 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
+            <version>1.2</version> <!--0613추가-->
+
         </dependency>
         <!-- logback추가-->
         <dependency>
@@ -189,6 +191,21 @@
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>fontbox</artifactId>
             <version>2.0.26</version>
+        </dependency>
+
+
+        <!-- JSoup -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.14.3</version>
+        </dependency>
+
+        <!-- PDF Generation Library (Replace with your chosen library) -->
+        <dependency>
+            <groupId>org.xhtmlrenderer</groupId>
+            <artifactId>flying-saucer-pdf</artifactId>
+            <version>9.1.20</version>
         </dependency>
 
 

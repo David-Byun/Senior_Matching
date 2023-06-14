@@ -141,7 +141,13 @@
     function payMatchOffer(id) {
         window.location.href = "/payformatch/"+id;
     }
+
+    // Function to show the popup
+    function showPopup() {
+      window.open("popup.jsp");
+    }
 </script>
+
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-option">
     <div class="container">
@@ -197,7 +203,8 @@
                                     <a href="#" data-toggle="modal" data-target="#myModal${obj.id}">${obj.status}</a>
                                 </c:when>
                                 <c:when test="${obj.status == '결제완료'}">
-                                    <a href="#" data-toggle="modal" data-target="#myReceipt${obj.id}">${obj.status}</a>
+                                    <button href="#" class="btn-success" data-toggle="modal" data-target="#myReceipt${obj.id}">${obj.status}</button>
+<%--                                    <button onclick="showPopup()" class="btn-success">${obj.status}</button>--%>
                                 </c:when>
                                 <c:otherwise>
                                     ${obj.status}
@@ -246,7 +253,9 @@
             </div>
         </div>
         <!-- Modal Ends-->
-        <!-- Modal Begins-->
+
+
+<%--        <!-- Modal Begins-->--%>
         <div id="myReceipt${obj.id}" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -272,7 +281,7 @@
                                                             <a href="#" class="btn btn-primary">
                                                                 <i class="fa fa-envelope"></i> 메일 전송
                                                             </a>
-                                                            <a href="/generate-pdf" class="btn btn-success">
+                                                            <a href="/generate-pdf" class="btn btn-success" id="generatePdf" name="generatePdf">
                                                                 <i class="fa fa-download"></i> PDF 다운
                                                             </a>
                                                         </div>
@@ -361,11 +370,6 @@
                         </div>
                     </div>
                         <%--</c:forEach>--%>
-
-
-
-
-
                 </div>
             </div>
         </div>

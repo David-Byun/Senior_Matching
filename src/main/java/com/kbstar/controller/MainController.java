@@ -7,9 +7,15 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Slf4j
@@ -54,62 +60,62 @@ public class MainController {
     @RequestMapping("/shop")
     public String shop(Model model, Integer k) {
 
-        model.addAttribute("center","shop");
+        model.addAttribute("center", "shop");
         return "index";
     }
 
     @RequestMapping("/contact")
     public String contact(Model model) {
-        model.addAttribute("center","contact");
+        model.addAttribute("center", "contact");
         return "index";
     }
 
     @RequestMapping("/signin")
     public String signin(Model model) {
-        model.addAttribute("center","signin");
+        model.addAttribute("center", "signin");
         return "index";
     }
 
     @RequestMapping("/login")
     public String login(Model model) {
-        model.addAttribute("center","login");
+        model.addAttribute("center", "login");
         return "index";
     }
 
     @RequestMapping("/checkout")
     public String checkout(Model model) {
-        model.addAttribute("center","checkout");
+        model.addAttribute("center", "checkout");
         return "index";
     }
 
     @RequestMapping("/cart")
     public String cart(Model model) {
-        model.addAttribute("center","shopping-cart");
+        model.addAttribute("center", "shopping-cart");
         return "index";
     }
 
     @RequestMapping("/reserve")
     public String reserve(Model model) {
-        model.addAttribute("center","shopping-reserve");
+        model.addAttribute("center", "shopping-reserve");
         return "index";
     }
 
 
     @RequestMapping("/shop-details")
     public String shopdetails(Model model) {
-        model.addAttribute("center","shop-details");
+        model.addAttribute("center", "shop-details");
         return "index";
     }
 
     @RequestMapping("/shopping-cart")
     public String shoppingcart(Model model) {
-        model.addAttribute("center","shopping-cart");
+        model.addAttribute("center", "shopping-cart");
         return "index";
     }
 
     @RequestMapping("/faq")
     public String faq(Model model) {
-        model.addAttribute("center","faq");
+        model.addAttribute("center", "faq");
         return "index";
     }
 
@@ -120,7 +126,7 @@ public class MainController {
 
     @RequestMapping("/review")
     public String review(Model model) {
-        model.addAttribute("center","review");
+        model.addAttribute("center", "review");
         return "index";
     }
 
@@ -132,8 +138,8 @@ public class MainController {
         } catch (Exception e) {
             throw new RuntimeException("리뷰 목록을 불러오지 못하였습니다.");
         }
-        model.addAttribute("center","reviewall");
-        model.addAttribute("reviewlist",list);
+        model.addAttribute("center", "reviewall");
+        model.addAttribute("reviewlist", list);
 
         return "index";
     }
@@ -149,16 +155,11 @@ public class MainController {
         model.addAttribute("center", "goldenlife");
         return "index";
     }
-    
+
     @RequestMapping("/matereviews")
     public String matereviews(Model model) {
         return "match/matereview";
     }
 
-    @RequestMapping("/receipt")
-    public String receipt(Model model) {
-        model.addAttribute("center", "receipt");
-        return "index";
-    }
 
 }

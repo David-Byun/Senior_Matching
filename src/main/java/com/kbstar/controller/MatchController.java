@@ -9,7 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -133,5 +139,22 @@ public class MatchController {
     }
 
 
-
-    }
+//    @RequestMapping("/receipt")
+//    public String receipt(HttpServletRequest request, Model model) {
+//
+//
+//
+//        ServletContext context = request.getSession().getServletContext();
+//        String jspPath = context.getRealPath("/views/match/receipt.jsp");
+//        try {
+//            String jspContent = Files.readString(Paths.get(jspPath));
+//            model.addAttribute("jspContent", jspContent);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+////        String jspContent = "/views/match/receipt.jsp"; // Set the path of the JSP file
+////        model.addAttribute("jspContent", jspContent);
+//
+//        return "match/popup";
+//    }
+}

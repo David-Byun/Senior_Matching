@@ -2,6 +2,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<c:set var="requestObject" value="${requestScope.requestObject}"/>
+
 <style>
   /*body{margin-top:20px;*/
   /*  color: #2e323c;*/
@@ -137,104 +139,109 @@
   }
 </style>
 
-<c:set var="requestObject" value="${requestScope.requestObject}"/>
 
-<%--<c:forEach var="x" items="${mlist}">--%>
-<div class="container">
-  <div class="row gutters">
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-      <div class="card">
-        <div class="card-body p-0">
-          <div class="invoice-container">
-            <div class="invoice-header">
-              <!-- Row start -->
-              <div class="row gutters">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                  <div class="custom-actions-btns mb-5">
-                    <a href="#" class="btn btn-primary">
-                      <i class="fa fa-envelope"></i> 메일 전송
-                    </a>
-                    <a href="#" class="btn btn-success">
-                      <i class="fa fa-download"></i> PDF 다운
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Row end -->
-              <!-- Row start -->
-              <div class="row gutters">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                  <a href="index.html" class="invoice-logo">
-                    봄생봄사
-                  </a>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                  <address class="text-right">
-                    대한미국 서울특별시  <br>
-                    성동구 아차산로 111 <br>
-                    +82 982-314-0958
-                  </address>
-                </div>
-              </div>
-              <!-- Row end -->
-              <!-- Row start -->
-              <div class="row gutters">
-                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                  <div class="invoice-details">
-                    <address>
-                      **결제자명 loginmember로 수정 **
-                      <br>
-                      결제수단 : ${requestObject.payment}
-                    </address>
-                  </div>
-                </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                  <div class="invoice-details">
-                    <div class="invoice-num">
-                      <div> 매칭번호 : ${requestObject.id}</div>
-                      <div><fmt:formatDate value="${requestObject.payDate}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
+<!-- Modal Begins-->
+<div id="myReceipt${obj.id}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="container">
+        <div class="row gutters">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+              <div class="card-body p-0">
+                <div class="invoice-container">
+                  <div class="invoice-header">
+                    <!-- Row start -->
+                    <div class="row gutters">
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="custom-actions-btns mb-5">
+                          <a href="#" class="btn btn-primary">
+                            <i class="fa fa-envelope"></i> 메일 전송
+                          </a>
+                          <a href="/generate-pdf" class="btn btn-success" id="generatePdf" name="generatePdf">
+                            <i class="fa fa-download"></i> PDF 다운
+                          </a>
+                        </div>
+                      </div>
                     </div>
+                    <!-- Row end -->
+                    <!-- Row start -->
+                    <div class="row gutters">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                        <a href="index.html" class="invoice-logo">
+                          봄생봄사
+                        </a>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6">
+                        <address class="text-right">
+                          대한미국 서울특별시  <br>
+                          성동구 아차산로 111 <br>
+                          +82 982-314-0958
+                        </address>
+                      </div>
+                    </div>
+                    <!-- Row end -->
+                    <!-- Row start -->
+                    <div class="row gutters">
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="invoice-details">
+                          <address>
+                            **결제자명 loginmember로 수정 **
+                            <br>
+                            결제수단 : ${obj.payment}
+                          </address>
+                        </div>
+                      </div>
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="invoice-details">
+                          <div class="invoice-num">
+                            <div> 매칭번호 : ${obj.id}</div>
+                            <div><fmt:formatDate value="${obj.payDate}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Row end -->
+                  </div>
+                  <div class="invoice-body">
+                    <!-- Row start -->
+                    <div class="row gutters">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="table-responsive">
+                          <table class="table custom-table m-0">
+                            <thead>
+                            <tr>
+                              <th>서비스명</th>
+                              <th>일별 가격</th>
+                              <th>일수</th>
+                              <th>총 결제금액</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                              <td>
+                                ${obj.service}
+                                <p class="m-0 text-muted" style="font-size: small">
+                                  ${obj.startDate} ~ <br>
+                                  ${obj.endDate}
+                                </p>
+                              </td>
+                              <td>30,000원</td>
+                              <td>9</td>
+                              <td>${obj.price}원</td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Row end -->
+                  </div>
+                  <div class="invoice-footer">
+                    봄생 봄사를 이용해주셔서 감사드립니다.
                   </div>
                 </div>
               </div>
-              <!-- Row end -->
-            </div>
-            <div class="invoice-body">
-              <!-- Row start -->
-              <div class="row gutters">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                  <div class="table-responsive">
-                    <table class="table custom-table m-0">
-                      <thead>
-                      <tr>
-                        <th>서비스명</th>
-                        <th>일별 가격</th>
-                        <th>일수</th>
-                        <th>총 결제금액</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr>
-                        <td>
-                          ${requestObject.service}
-                          <p class="m-0 text-muted" style="font-size: small">
-                            ${requestObject.startDate} ~ <br>
-                                ${requestObject.endDate}
-                          </p>
-                        </td>
-                        <td>30,000원</td>
-                        <td>9</td>
-                        <td>${requestObject.price}원</td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <!-- Row end -->
-            </div>
-            <div class="invoice-footer">
-              봄생 봄사를 이용해주셔서 감사드립니다.
             </div>
           </div>
         </div>
@@ -242,4 +249,4 @@
     </div>
   </div>
 </div>
-<%--</c:forEach>--%>
+<!-- Modal Ends-->
