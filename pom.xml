@@ -44,6 +44,12 @@
             <artifactId>itext</artifactId>
             <version>4.2.0</version>
         </dependency>
+<!--        SMS 인증 -->
+        <dependency>
+            <groupId>net.nurigo</groupId>
+            <artifactId>javaSDK</artifactId>
+            <version>2.2</version>
+        </dependency>
 <!--        암호화-->
         <dependency>
             <groupId>com.github.ulisesbocchio</groupId>
