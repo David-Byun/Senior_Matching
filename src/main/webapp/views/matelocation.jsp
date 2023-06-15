@@ -8,7 +8,7 @@
         $(function(){
 
             $('#closeBtn').click(function () {
-                $("#myModal").modal('hide');
+                $("#modalCenter").modal('hide');
             })
             //**********************Map(지도)*********************
             var mapContainer = document.querySelector('#map03 > #map'), // 지도를 표시할 div
@@ -50,6 +50,14 @@
                 {
                     title: 2004,
                     latlng: new kakao.maps.LatLng(37.5456155, 127.0484245),
+                },
+                {
+                    title: 2005,
+                    latlng: new kakao.maps.LatLng(37.5456155, 127.0464245),
+                },
+                {
+                    title: 2006,
+                    latlng: new kakao.maps.LatLng(37.5446155, 127.0434245),
                 }
             ];
 
@@ -93,7 +101,7 @@
                             $('#matename').text(res.name);
                             $('#matearea').text("가능지역 : "+res.area);
                             $('#mateimg').attr("src", "/uimg/"+res.img);
-                            $("#myModal").modal('show');
+                            $("#modalCenter").modal('show');
                         }
                     })
                 });
@@ -103,13 +111,13 @@
     <!-- Contact Section Begin -->
     <section class="contact spad">
         <div class="container">
-
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <div class="container" id="map03">
                         <div class="section-title">
                             <span>Search</span>
                             <h2>내 주변 메이트 찾기</h2>
+                            <p>근처 메이트를 클릭해보세요!</p>
                         </div>
                         <div id="map"></div>
                         <br>
@@ -121,47 +129,12 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="contact__text">
-                        <div class="section-title">
-                            <span>Information</span>
-                            <h2>연락처</h2>
-                            <p>당신의 편안한 인생을 위해 24시간 언제든지 연락주세요.</p>
-                        </div>
-                        <ul>
-                            <li>
-                                <h4>대한민국</h4>
-                                <p>서울 성동구 아차산로 111 <br/>+82 982-314-0958</p>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="contact__form">
-                        <form action="/sendEmail" method="post">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <input type="text" placeholder="제목 또는 닉네임" name="name" style="color: black">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="text" placeholder="이메일" value="고객센터" disabled style="color: black">
-                                </div>
-                                <div class="col-lg-12">
-                                    <textarea placeholder="Message" name="msg" style="color: black"></textarea>
-                                    <button type="submit" class="site-btn">메시지 보내기</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
+
 <div class="m-4">
-    <div id="myModal" class="modal fade" tabindex="-1">
-        <div class="modal-dialog">
+    <div id="modalCenter" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="d-flex align-items-center mb-4 pt-2">
