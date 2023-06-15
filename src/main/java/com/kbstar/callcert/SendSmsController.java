@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import java.util.Random;
 
 @RequestMapping("/sendSMS")
@@ -24,6 +25,7 @@ public class SendSmsController {
             String ran = Integer.toString(rand.nextInt(10));
             numStr+=ran;
         }
+        System.out.println("numStr = " + numStr);
         sendSmsService.certifiedPhoneNumber(phoneNumber, numStr);
         return numStr;
     }
