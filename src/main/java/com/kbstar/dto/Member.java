@@ -11,6 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Setter
 @Getter
+@Builder
 @ToString
 public class Member {
     private int id;

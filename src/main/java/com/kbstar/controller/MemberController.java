@@ -2,6 +2,7 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Item;
 import com.kbstar.dto.Member;
+import com.kbstar.dto.SeniorSignInDto;
 import com.kbstar.exception.ErrorCode;
 import com.kbstar.exception.UserException;
 import com.kbstar.service.CartService;
@@ -29,7 +30,8 @@ public class MemberController {
 
     @Valid
     @RequestMapping("/signinimpl")
-    public String signinimpl(@Valid Member member, Model model, HttpSession session) throws Exception {
+    public String signinimpl(@Valid SeniorSignInDto seniorSignInDto, Model model, HttpSession session) throws Exception {
+        Member member = seniorSignInDto.toEntity();
         Member signinMember = null;
         System.out.println("member = " + member.toString());
         try {
