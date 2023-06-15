@@ -38,6 +38,11 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/chatgpt")
+    public String chatgpt() {
+        return "chatgpt";
+    }
+
 
     @RequestMapping("/callchat")
     public String callchat() {

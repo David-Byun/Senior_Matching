@@ -6,7 +6,6 @@
 
     <script>
         $(function(){
-
             $('#closeBtn').click(function () {
                 $("#modalCenter").modal('hide');
             })
