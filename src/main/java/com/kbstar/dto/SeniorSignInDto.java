@@ -24,10 +24,10 @@ public class SeniorSignInDto {
     private String password;
     private String disease;
     private String birth;
-    private String addr;
-    private String mainAddress;
-    private String detailAddress;
-    private String extraAddress;
+    private String sample6_postcode;
+    private String sample6_address;
+    private String sample6_detailAddress;
+    private String sample6_extraAddress;
 
     public Member toEntity() {
         return Member.builder()
@@ -36,7 +36,7 @@ public class SeniorSignInDto {
                 .password(password)
                 .disease(disease)
                 .birth(birth)
-                .addr(mainAddress + "/" + detailAddress + "/" + extraAddress)
+                .addr(sample6_postcode + "/" + sample6_address + "/" + sample6_detailAddress + "/" + sample6_extraAddress)
                 .build();
     }
 
