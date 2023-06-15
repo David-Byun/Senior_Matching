@@ -32,6 +32,13 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/matelocation")
+    public String matelocation(Model model) {
+        model.addAttribute("center", "matelocation");
+        return "index";
+    }
+
+
     @RequestMapping("/callchat")
     public String callchat() {
         return "callchat";

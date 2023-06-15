@@ -15,6 +15,7 @@
             //map 생성
             map = new kakao.maps.Map(mapContainer, mapOption);
 
+            var id = '';
             //*********************Controller(컨트롤러)*********************
             // 지도종류컨트롤 : 일반지도 or 스카이뷰지도
             var mapTypeControl = new kakao.maps.MapTypeControl();
@@ -31,19 +32,23 @@
             var positions = [
                 {
                     title: '이혜린 메이트',
-                    latlng: new kakao.maps.LatLng(37.5456285, 127.0501575)
+                    latlng: new kakao.maps.LatLng(37.5456285, 127.0501575),
+                    id : 2001
                 },
                 {
                     title: '양호우 메이트',
-                    latlng: new kakao.maps.LatLng(37.5455185, 127.0485565)
+                    latlng: new kakao.maps.LatLng(37.5455185, 127.0485565),
+                    id : 2002
                 },
                 {
                     title: '김철민 메이트',
-                    latlng: new kakao.maps.LatLng(37.5455415, 127.0526375)
+                    latlng: new kakao.maps.LatLng(37.5455415, 127.0526375),
+                    id : 2003
                 },
                 {
                     title: '고이빈 메이트',
-                    latlng: new kakao.maps.LatLng(37.5456155, 127.0484245)
+                    latlng: new kakao.maps.LatLng(37.5456155, 127.0484245),
+                    id : 2004
                 }
             ];
 
@@ -63,8 +68,10 @@
                     map: map, // 마커를 표시할 지도
                     position: positions[i].latlng, // 마커를 표시할 위치
                     title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                    id : positions[i].id,
                     image : markerImage // 마커 이미지
                 });
+
             }
         });
     </script>
@@ -76,8 +83,8 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="container" id="map03">
                         <div class="section-title">
-                            <span>Location</span>
-                            <h2>사무실 위치</h2>
+                            <span>Search</span>
+                            <h2>내 주변 메이트 찾기</h2>
                         </div>
                         <div id="map"></div>
                         <br>

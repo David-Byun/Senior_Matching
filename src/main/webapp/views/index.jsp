@@ -237,7 +237,11 @@
                         </li>
                         <li><a href="/mate/all">후기</a>
                         </li>
-                        <li><a href="/contact">위치</a></li>
+                        <li><a href="/contact">위치</a>
+                            <ul class="dropdown">
+                                <li><a href="/matelocation">근처 메이트 찾기</a></li>
+                                <li><a href="/contact">사무실 위치 및 연락</a></li>
+                            </ul>
                         <li><a href="/goldenlife">진료예약</a></li>
                     </ul>
                 </nav>
