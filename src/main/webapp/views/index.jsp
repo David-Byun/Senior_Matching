@@ -136,11 +136,17 @@
 <div class="offcanvas-menu-wrapper">
     <div class="offcanvas__option">
         <div class="offcanvas__links">
-            <a href="/login">로그인</a>
-            <a href="/signin">회원가입</a>
-            <a href="/faq">자주 하는 질문</a>
-            <a href="#">${loginmember.name}님</a>
+            <c:choose>
+                <c:when test="${loginmember == null}">
+                    <a href="/login">로그인</a><a href="/signin"> 회원가입</a>
+                </c:when>
+                <c:otherwise>
+                    <a href="#">${loginmember.name}님</a>
+                    <a href="/logout">로그아웃</a>
+                </c:otherwise>
+            </c:choose>
         </div>
+
     </div>
     <div class="offcanvas__nav__option">
         <a href="#" class="search-switch"><img src="/img/icon/search.png" alt=""></a>
@@ -150,6 +156,11 @@
     <div id="mobile-menu-wrap"></div>
     <div class="offcanvas__text">
         <p>당신의 행복한 인생을 위해!</p>
+    </div>
+    <div class="offcanvas__links" style="margin-top: 10px">
+        <p style="font-size: 13px">메이트 : <a href="/login">로그인</a><a href="/signin"> 회원가입</a></p>
+
+
     </div>
 </div>
 

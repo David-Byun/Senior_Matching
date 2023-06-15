@@ -1244,6 +1244,12 @@ ol {
 	height: 225px;
 }
 
+#map03 > #map {
+	width : 1120px;
+	height : 400px;
+	border : 2px solid greenyellow;
+}
+
 .shop__sidebar__categories ul li,
 .shop__sidebar__price ul li,
 .shop__sidebar__brand ul li {
@@ -1393,6 +1399,7 @@ ol {
 	background: #111111;
 	color: #ffffff;
 }
+
 
 .shop__sidebar__accordion .card-heading a:after,
 .shop__sidebar__accordion .card-heading>a.active[aria-expanded=false]:after {
@@ -4271,6 +4278,11 @@ ol {
 
 
 @media screen and (max-width: 730px) {
+
+	#map03 > #map {
+		width: 330px;
+		padding-right: 10px;
+	}
 
 	.chat-container {
 		margin-left: 10px;

@@ -112,5 +112,45 @@ public class KakaoPay {
         }
         return null;
     }
+
+    public KakaoPayApprovalVO kakaoPayMate(String pg_token, int price) {
+
+        log.info("KakaoPayInfoVO............................................");
+        log.info("-----------------------------");
+
+        RestTemplate restTemplate = new RestTemplate();
+
+        // 서버로 요청할 Header
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", "KakaoAK " + key);
+        headers.add("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
+        headers.add("Content-Type", MediaType.APPLICATION_FORM_URLENCODED_VALUE + ";charset=UTF-8");
+
+        // 서버로 요청할 Body
+        MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+        params.add("cid", "TC0ONETIME");
+        params.add("tid", kakaoPayReadyVO.getTid());
+        params.add("partner_order_id", "50");
+        params.add("partner_user_id", "gorany");
+        params.add("pg_token", pg_token);
+        params.add("total_amount", String.valueOf(price));
+
+        HttpEntity<MultiValueMap<String, String>> body = new HttpEntity<>(params, headers);
+
+        try {
+            kakaoPayApprovalVO = restTemplate.postForObject(new URI(HOST + "/v1/payment/approve"), body, KakaoPayApprovalVO.class);
+            log.info("" + kakaoPayApprovalVO);
+
+            return kakaoPayApprovalVO;
+
+        } catch (RestClientException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
 
