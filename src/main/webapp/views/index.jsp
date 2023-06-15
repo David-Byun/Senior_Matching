@@ -194,7 +194,6 @@
                                     <a href="/logout" id="logout">로그아웃</a>
                                 </c:if>
                             <a href="/faq">FAQs</a>
-                            <a href="/websocket">챗봇문의</a>
                         </div>
                     </div>
                 </div>
@@ -242,7 +241,7 @@
                                 <li><a href="/matelocation">근처 메이트 찾기</a></li>
                                 <li><a href="/contact">사무실 위치 및 연락</a></li>
                             </ul>
-                        <li><a href="/goldenlife">진료예약</a></li>
+                        <li><a href="/chatgpt">문의</a></li>
                     </ul>
                 </nav>
             </div>

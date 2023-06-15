@@ -38,7 +38,7 @@
             <form>
                 <div class="form-group">
                     <div class="input-group clearfix">
-                        <input type="text" id="input" placeholder="Type a message..."
+                        <input type="text" id="input" placeholder="질문을 해보세요"
                                autocomplete="off" class="form-control" />
                         <button type="button" id="chatBtn" class="btn btn-warning"><i class="fa-solid fa-circle-arrow-up" style="font-size: 20px"></i></button>
                     </div>
