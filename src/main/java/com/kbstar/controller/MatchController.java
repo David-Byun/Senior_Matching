@@ -89,7 +89,6 @@ public class MatchController {
 
     @RequestMapping("/listformate")
     public String listformate(Model model, HttpSession session) throws Exception {
-//
 //        Mate user = (Mate) session.getAttribute("loginmate");
 //        int mateId = user.getId();
         int mateId = 2001;
@@ -127,34 +126,12 @@ public class MatchController {
 
         matchService.updateafterpay(match);
 
-
-
         int memberId = 1000;
 
         List<Match> list = matchService.findByMemberId(memberId);
         model.addAttribute("mlist",list);
 
-
         return "redirect:/listformember";
     }
 
-
-//    @RequestMapping("/receipt")
-//    public String receipt(HttpServletRequest request, Model model) {
-//
-//
-//
-//        ServletContext context = request.getSession().getServletContext();
-//        String jspPath = context.getRealPath("/views/match/receipt.jsp");
-//        try {
-//            String jspContent = Files.readString(Paths.get(jspPath));
-//            model.addAttribute("jspContent", jspContent);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-////        String jspContent = "/views/match/receipt.jsp"; // Set the path of the JSP file
-////        model.addAttribute("jspContent", jspContent);
-//
-//        return "match/popup";
-//    }
 }

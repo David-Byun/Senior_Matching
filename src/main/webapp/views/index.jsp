@@ -53,6 +53,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
 <%--    push 발송 관련--%>
+
+<%--    캘린더--%>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
 </head>
 <body>
 <script>
