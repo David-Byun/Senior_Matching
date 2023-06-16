@@ -32,6 +32,7 @@ public class MemberController {
     @RequestMapping("/signinimpl")
     public String signinimpl(@Valid SeniorSignInDto seniorSignInDto, Model model, HttpSession session) throws Exception {
         Member member = seniorSignInDto.toEntity();
+        member.setValid(1);
         Member signinMember = null;
         System.out.println("member = " + member.toString());
         try {

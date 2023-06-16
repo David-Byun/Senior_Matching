@@ -186,11 +186,11 @@
                                     </div>
                                     <div class="checkout__input" >
                                         <p>주소<span>*</span></p>
-                                        <input type="text" id="sample6_postcode" placeholder="우편번호">
+                                        <input type="text" id="sample6_postcode" placeholder="우편번호" name="postcode">
                                         <input type="button" value="우편번호 찾기" id="addressBtn" style="color: whitesmoke; background-color:#F27DBB "><br>
-                                        <input type="text" id="sample6_address" placeholder="주소"><br>
-                                        <input type="text" id="sample6_detailAddress" placeholder="상세주소">
-                                        <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+                                        <input type="text" id="sample6_address" placeholder="주소" name="address"><br>
+                                        <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="detailAddress">
+                                        <input type="text" id="sample6_extraAddress" placeholder="참고항목" name="extraAddress">
                                     </div>
                                     <div class="checkout__input">
                                             <div class="alert alert-danger" id="alertpassword" style="display: none">

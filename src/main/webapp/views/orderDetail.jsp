@@ -6,7 +6,6 @@
     let kakaoPay = {
         init : function () {
             $('#kakaoBtn').on('click', function () {
-                alert("클릭");
                 let total = ${total};
                 let qnt = ${qnt};
                 $.ajax({

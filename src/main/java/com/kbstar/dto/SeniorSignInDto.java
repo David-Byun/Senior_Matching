@@ -22,21 +22,21 @@ public class SeniorSignInDto {
     private String name;
 
     private String password;
-    private String disease;
     private String birth;
-    private String sample6_postcode;
-    private String sample6_address;
-    private String sample6_detailAddress;
-    private String sample6_extraAddress;
+    private String tel;
+    private String postcode;
+    private String address;
+    private String detailAddress;
+    private String extraAddress;
 
     public Member toEntity() {
         return Member.builder()
                 .email(email)
                 .name(name)
                 .password(password)
-                .disease(disease)
                 .birth(birth)
-                .addr(sample6_postcode + "/" + sample6_address + "/" + sample6_detailAddress + "/" + sample6_extraAddress)
+                .tel(tel)
+                .addr(postcode + "/" + address + "/" + detailAddress)
                 .build();
     }
 

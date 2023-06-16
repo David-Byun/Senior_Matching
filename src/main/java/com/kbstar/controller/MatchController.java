@@ -119,7 +119,7 @@ public class MatchController {
         int totalAmount = daysDifference * 30000;
 
         match.setPrice(totalAmount);
-        match.setPayment("card");
+        match.setPayment("카카오페이");
         Date currentDate = new Date();
         match.setPayDate(currentDate);
         match.setStatus("결제완료");

@@ -136,16 +136,16 @@
         margin: .3rem 0 .3rem .3rem;
     }
 </style>
-
 <script>
-    function payMatchOffer(id) {
-        window.location.href = "/payformatch/"+id;
+
+    function showPopup() {
+        window.open("popup.jsp");
     }
 
-    // Function to show the popup
-    function showPopup() {
-      window.open("popup.jsp");
-    }
+
+    function payMatchOffer(price) {
+         window.location.href = "/kakaoPayImpl?price="+price;
+     }
 </script>
 
 <!-- Breadcrumb Section Begin -->
@@ -241,14 +241,19 @@
                             <c:set var="daysDifference" value="${((endDate.time - startDate.time) / (1000 * 60 * 60 * 24))}" />
                             <c:set var="totalAmount" value="${daysDifference * 30000}" />
                             <fmt:formatNumber value="${totalAmount}" type="number" />
+
                         </p>
                         <p> 결제하시겠습니까 ?</p>
                     </div>
+                    <form method="post" action="/kakaoPayImpl">
                     <div class="modal-footer">
-                        <button type="button" onclick="payMatchOffer(${obj.id})" id="yes" name="yes" class="btn btn-primary">결제</button>
-                        <button type="button" class="btn btn-danger">거절</button>
+                        <input type="number" value="${totalAmount}" name="price" id="matePay" style="display: none" />
+                        <input type="number" value="${obj.id}" name="id" id="mateid" style="display: none" />
+                        <button type="submit" class="btn btn-primary">결제</button>
+                        <button type="button" class="btn btn-danger" onclick="closePopup()">거절</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -351,7 +356,7 @@
                                                                     </td>
                                                                     <td>30,000원</td>
                                                                     <td>9</td>
-                                                                    <td>${obj.price}원</td>
+                                                                    <td><fmt:formatNumber value="${obj.price}" pattern="#,###,###원" /></td>
                                                                 </tr>
                                                                 </tbody>
                                                             </table>

@@ -18,6 +18,7 @@ public class SampleController {
     @Setter(onMethod_ = @Autowired)
     private KakaoPay kakaopay;
 
+    private int payId;
 
     @GetMapping("/kakaoPay")
     public String kakaoPayGet(Model model) {
@@ -33,6 +34,25 @@ public class SampleController {
         return "redirect:" + kakaopay.kakaoPayReady(price, cnt);
     }
 
+    @PostMapping("/kakaoPayImpl")
+    public String kakaoPayImpl(String price, HttpSession session, int id) {
+        payId = id;
+        log.info("========price===========" + price);
+        log.info("kakaoPay post............................................");
+        System.out.println("====================== id ==================== " + id);
+        return "redirect:" + kakaopay.kakaoPayReadyImpl((int) Double.parseDouble(price));
+    }
+
+    @GetMapping("/kakaoPaySuccessImpl")
+    public String kakaoPaySuccessImpl(@RequestParam("pg_token") String pg_token, Model model, int price) {
+        log.info("========price===========" + price);
+
+        log.info("kakaoPaySuccess get............................................");
+        log.info("kakaoPaySuccess pg_token : " + pg_token);
+        kakaopay.kakaoPayInfoImpl(pg_token, price);
+        return "redirect:/payformatch/"+payId;
+    }
+
     @GetMapping("/kakaoPaySuccess")
     public String kakaoPaySuccess(@RequestParam("pg_token") String pg_token, Model model, int price, int cnt) {
         log.info("========price===========" + price);
@@ -43,5 +63,7 @@ public class SampleController {
         model.addAttribute("center", "kakaoPaySuccess");
         return "index";
     }
+
+
 }
 

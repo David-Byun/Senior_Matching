@@ -7,8 +7,8 @@
 <mapper namespace="com.kbstar.mapper.MemberMapper">
 
     <insert id="insert" parameterType="member">
-        INSERT INTO member (id, email, name, password, valid)
-        VALUES (member_seq.NEXTVAL,#{email},#{name},#{password},#{dea}1)
+        INSERT INTO member (id, email, name, password, valid, birth, addr, tel)
+        VALUES (member_seq.NEXTVAL,#{email},#{name},#{password}, #{valid}, #{birth}, #{addr}, #{tel})
     </insert>
     <update id="update" parameterType="member">
         UPDATE member SET name=#{name},password=#{password} WHERE email=#{email}

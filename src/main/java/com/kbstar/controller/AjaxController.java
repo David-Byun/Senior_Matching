@@ -5,7 +5,10 @@ import com.kbstar.service.MateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
@@ -16,8 +19,10 @@ public class AjaxController {
     private final MateService mateService;
 
     @PostMapping("/profile")
-    public Mate mateProfile(@RequestParam int id, Model model) throws Exception {
+    public Mate mateProfile(@RequestParam int id, Model model) {
         Mate mate = mateService.findById(id);
         return mate;
     }
+
+
 }

@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -20,7 +19,7 @@ public class Member {
     private String email;
     @NotEmpty
     private String name;
-
+    private String tel;
     private String password;
     private String disease;
     private String birth;
@@ -33,5 +32,16 @@ public class Member {
         this.email = email;
         this.name = name;
         this.password = password;
+    }
+
+    public Member(int id, String email, String name, String password, String birth, String addr,int valid, String tel) {
+        this.id = id;
+        this.email = email;
+        this.name = name;
+        this.password = password;
+        this.birth = birth;
+        this.addr = addr;
+        this.valid = valid;
+        this.tel = tel;
     }
 }
