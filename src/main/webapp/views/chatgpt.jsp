@@ -3,6 +3,26 @@
 
 <link rel="stylesheet" href="/css/gpt.css" type="text/css">
 <script>
+
+    function callAPI() {
+        let question = document.querySelector('#input').value;
+        let template = '<div class="line"><span class="chat-box mine" style="color:#3d3d3d">'+question+'</span></div>';
+        document.querySelector('.chat-content').insertAdjacentHTML('beforeend', template);
+        $.ajax({
+            type:'POST',
+            url: '/chat-gpt/question',
+            data: question,
+            cache:false,
+            success : function (response) {
+                let template = '<div class="line"><p style="margin-left:15px">GPT : <span class="chat-box">'+ response + '</span></p></div>';
+                document.querySelector('.chat-content').insertAdjacentHTML('beforeend', template);
+                $('#input').val('');
+            },
+            fail: function (response) {
+                console.log(response);
+            }
+        })
+    }
     $(function () {
         $('#chatBtn').click(function () {
             let question = document.querySelector('#input').value;
@@ -23,6 +43,9 @@
                 }
             })
         })
+        if (window.event.keyCode == 13) {
+            callAPI()
+        }
     })
 </script>
     <div id="chat-page">

@@ -60,7 +60,29 @@
 </head>
 <body>
 <script>
+
     $(function () {
+        let web = null;
+        function getBrowserName ()
+        {
+            //agent에 브라우저 종류 삽입
+            var agent = navigator.userAgent.toLowerCase();
+            if(  (navigator.appName == 'Netscape'
+                && navigator.userAgent.search('Trident') != -1
+                || (agent.indexOf("msie") != -1)  )){
+
+                return "ie";
+            } else if ( agent.indexOf("chrome") != -1 ) {
+
+                return "chrome";
+            } else if ( agent.indexOf("safari") != -1 ) {
+
+                return "safari";
+            } else if ( agent.indexOf("firefox") != -1 ) {
+
+                return "firefox";
+            }
+        }
         let firebaseConfig = {
             //cloud 게시시 키 변수 셋팅으로 진행 예정
             <%--apiKey: "<c:out value='${apiKey}' />",--%>
@@ -78,7 +100,8 @@
             appId: "1:613082594223:web:54d455061bff28bb9c0d5a",
             measurementId: "G-KH0RN141KL"
         };
-
+        web = getBrowserName();
+        console.log(web);
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
 
@@ -98,7 +121,7 @@
                 $.ajax({
                     method:'post',
                     url:'/token',
-                    data : {token : token}
+                    data : {token : token, web : web}
                 })
                 // 해당 onMessage는 데이터메시지로, 포그라운드인 상태에서
                 // FCM 메시지를 전송하는 경우 콘솔에 표기하도록 작성된 코드입니다.

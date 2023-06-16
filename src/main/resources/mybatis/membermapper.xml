@@ -8,7 +8,7 @@
 
     <insert id="insert" parameterType="member">
         INSERT INTO member (id, email, name, password, valid)
-        VALUES (member_seq.NEXTVAL,#{email},#{name},#{password},1)
+        VALUES (member_seq.NEXTVAL,#{email},#{name},#{password},#{dea}1)
     </insert>
     <update id="update" parameterType="member">
         UPDATE member SET name=#{name},password=#{password} WHERE email=#{email}

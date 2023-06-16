@@ -18,12 +18,10 @@ public class FirebaseConroller {
     private final FirebaseService firebaseService;
 
     @PostMapping("/token")
-    public void putToken(@RequestParam String token) {
-        Optional<FirebaseToken> byToken = firebaseService.findByToken(token);
-        if (byToken.isPresent()) {
-            if (byToken.get().getToken() == token) {
-                firebaseService.register(token);
-            }
+    public void putToken(FirebaseToken firebaseToken) {
+        Optional<FirebaseToken> byToken = firebaseService.findByToken(firebaseToken.getToken());
+        if (byToken.isEmpty()) {
+            firebaseService.register(firebaseToken);
         }
     }
 }

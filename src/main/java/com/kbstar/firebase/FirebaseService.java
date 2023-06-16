@@ -12,9 +12,9 @@ import java.util.Optional;
 public class FirebaseService {
 
     private final FirebaseMapper firebaseMapper;
-    public void register(String token) {
+    public void register(FirebaseToken firebaseToken) {
 
-        firebaseMapper.register(token);
+        firebaseMapper.register(firebaseToken);
     }
 
     public Optional<FirebaseToken> findByToken(String token) {

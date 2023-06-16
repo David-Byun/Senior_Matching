@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kbstar.mapper.FirebaseMapper">
     <insert id="register" parameterType="FirebaseToken">
-        INSERT INTO TOKEN (id, token, rdate) VALUES (TOKEN_SEQ.NEXTVAL, #{token}, SYSDATE)
+        INSERT INTO TOKEN (id, token, web, rdate) VALUES (TOKEN_SEQ.NEXTVAL, #{token}, #{web}, SYSDATE)
     </insert>
     <select id="findByToken" resultType="FirebaseToken">
         SELECT * FROM TOKEN WHERE TOKEN = #{token}

@@ -7,7 +7,7 @@ import java.util.Optional;
 
 @Mapper
 public interface FirebaseMapper {
-    void register(String token);
+    void register(FirebaseToken firebaseToken);
 
     Optional<FirebaseToken> findByToken(String token);
 }
