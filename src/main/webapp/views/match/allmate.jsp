@@ -64,6 +64,7 @@
 
     </div>
 </div>
+
 <!-- Header Section Begin -->
 <header class="header">
     <div class="header__top">
@@ -87,15 +88,11 @@
                                     <a href="/signin">시니어 가입</a>
 
                                 </c:when>
-                                <c:otherwise>
-                                    <a href="/chatbot">챗봇문의</a>
-                                </c:otherwise>
                             </c:choose>
                             <c:if test="${loginmember != null || loginmate != null}">
-                                <a href="#" id="logout">로그아웃</a>
+                                <a href="/logout" id="logout">로그아웃</a>
                             </c:if>
                             <a href="/faq">FAQs</a>
-                            <a href="/websocket">챗봇문의</a>
                         </div>
                     </div>
                 </div>
@@ -138,9 +135,12 @@
                         </li>
                         <li><a href="/mate/all">후기</a>
                         </li>
-
-                        <li><a href="/contact">위치</a></li>
-                        <li><a href="/goldenlife">진료예약</a></li>
+                        <li><a href="/matelocation">위치</a>
+                            <ul class="dropdown">
+                                <li><a href="/matelocation">근처 메이트 찾기</a></li>
+                                <li><a href="/contact">사무실 위치 및 연락</a></li>
+                            </ul>
+                        <li><a href="/chatgpt">문의</a></li>
                     </ul>
                 </nav>
             </div>
@@ -179,6 +179,7 @@
     </div>
 </header>
 <!-- Header Section End -->
+
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-option">
     <div class="container">
@@ -327,17 +328,17 @@
 
 
 <!-- Js Plugins -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/jquery.countdown.min.js"></script>
-<script src="js/jquery.slicknav.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/main.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.magnific-popup.min.js"></script>
+<script src="../js/jquery.countdown.min.js"></script>
+<script src="../js/jquery.slicknav.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/main.js"></script>
 <!-- Js Plugins -->
-<script src="/js/jquery.nice-select.min.js"></script>
-<script src="/js/jquery.nicescroll.min.js"></script>
-<script src="/js/mixitup.min.js"></script>
+<script src="../js/jquery.nice-select.min.js"></script>
+<script src="../js/jquery.nicescroll.min.js"></script>
+<script src="../js/mixitup.min.js"></script>
 </body>
 
 </html>
