@@ -3,39 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <style>
-    @media (max-width: 768px) {
-        table {
-            font-size: 12px;
-        }
-    }
-
-    @media (max-width: 576px) {
-        table {
-            font-size: 8px;
-        }
-    }
-
-    .table th:nth-child(1),
-    .table td:nth-child(1) {
-        width: 11%;
-    }
-
-    .table th:nth-child(2),
-    .table td:nth-child(2) {
-        width: 22%;
-    }
-    .table th:nth-child(3),
-    .table td:nth-child(3) {
-        width: 13%;
-    }
-    .table th:nth-child(4),
-    .table td:nth-child(4) {
-        width: 15%;
-    }
-    .table th:nth-child(5),
-    .table td:nth-child(5) {
-        width: 13%;
-    }
     /*body{margin-top:20px;*/
     /*  color: #2e323c;*/
     /*  background: #f5f6fa;*/
@@ -187,7 +154,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>회원 매칭 내역</h4><span>*회원용</span>
+                    <h4>매칭 내역</h4><span>*회원용</span>
                     <div class="breadcrumb__links">
                         <a href="/">홈</a>
                         <a href="#">매칭</a>
@@ -208,23 +175,16 @@
                 <thead>
                 <tr>
                     <th scope="col">번호</th>
-                    <th scope="col">일자</th>
-                    <th scope="col">구분</th>
-                    <th scope="col">지역</th>
-                    <th scope="col">성별</th>
-                    <th scope="col">연령</th>
-                    <th scope="col">상태</th>
+                    <th scope="col">진행상황</th>
+                    <th scope="col">가격</th>
+                    <th scope="col">결제수단</th>
+                    <th scope="col">결제일자</th>
                 </tr>
                 </thead>
                 <c:forEach var="obj" items="${mlist}">
                     <tbody>
                     <tr>
                         <th scope="row">${obj.id}</th>
-                        <td>${obj.startDate} ~ ${obj.endDate}</td>
-                        <td>${obj.service}</td>
-                        <td>${obj.area}</td>
-                        <td>${obj.objectGender}</td>
-                        <td>${obj.objectBirth}</td>
                         <td>
                             <c:choose>
                                 <c:when test="${obj.status == '매칭완료'}">
@@ -239,6 +199,9 @@
                                 </c:otherwise>
                             </c:choose>
                         </td>
+                        <td>${obj.price}</td>
+                        <td>${obj.payment}</td>
+                        <td><fmt:formatDate value="${obj.payDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                     </tr>
                     </tbody>
                 </c:forEach>

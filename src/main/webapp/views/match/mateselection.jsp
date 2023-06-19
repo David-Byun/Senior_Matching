@@ -3,11 +3,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<style>
-    .button-container {
-        display: flex;
-    }
-</style>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
@@ -128,18 +123,12 @@
                     <c:forEach var="c" items="${mlist}">
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-
                                 <div class="product__item__pic set-bg" data-setbg="/uimg/${c.img}" style="cursor:pointer;" >
                                     <ul class="product__hover">
                                         <li><a href="/callchat"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
                                         <li><a href="https://172.16.20.74"><i class="fas fa-video"></i></a></li>
-<%--                                        <li><a href="#"><img id="add-reserve" class="add-reserve" role="button" aria-pressed="true" data-item-id="${c.id}" src="/img/icon/heart.png" alt=""><span>Reserve</span></a></li>--%>
-<%--                                        <li><a href="#"><img src="/img/icon/compare.png" alt=""> <span>Compare</span></a>--%>
-<%--                                        </li>--%>
-<%--                                        <li OnClick="location.href ='shop/${c.id}/detail'" ><a href="#"><img src="/img/icon/search.png" alt=""><span>Detail</span></a></li>--%>
                                     </ul>
                                 </div>
-
 
                                 <div class="product__item__text">
                                     <h6>${c.name}</h6>
@@ -164,63 +153,66 @@
 <%--                                    </c:forEach>--%>
 
                                     <h6> 경력 ${c.jobPeriod}년 | # ${c.license}</h6>
-<%--                                    <h5><fmt:formatNumber value="${c.price}" type="number" pattern="$#,###,###" /> </h5>--%>
                                 </div>
                             </div>
                         </div>
                     </c:forEach>
-
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="product__pagination m-lg-5" >
-                            <ul class="pagination">
-                                <c:choose>
-                                    <c:when test="${cpage.getPrePage() != 0}">
-                                        <li class="mx-5">
-                                            <a href="/shop?pageNo=${cpage.getPrePage()}">Previous</a>
-                                        </li>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <li class="disabled mx-5">
-                                            <a href="#">Previous</a>
-                                        </li>
-                                    </c:otherwise>
-                                </c:choose>
 
-                                <c:forEach begin="${cpage.getNavigateFirstPage() }" end="${cpage.getNavigateLastPage() }" var="page">
-                                    <c:choose>
-                                        <c:when test="${cpage.getPageNum() == page}">
-                                            <li class="active mx-5">
-                                                <a href="/shop?pageNo=${page}">${page }</a>
-                                            </li>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <li class="mx-5">
-                                                <a href="/shop?pageNo=${page}">${page }</a>
-                                            </li>
-                                        </c:otherwise>
-                                    </c:choose>
 
-                                </c:forEach>
-                                <c:choose>
-                                    <c:when test="${cpage.getNextPage() != 0}">
-                                        <li>
-                                            <a href="/shop?pageNo=${cpage.getNextPage()}">Next</a>
-                                        </li>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <li class="disabled">
-                                            <a href="#">Next</a>
-                                        </li>
-                                    </c:otherwise>
-                                </c:choose>
 
-                            </ul>
 
-                        </div>
-                    </div>
-                </div>
+<%--                <div class="row">--%>
+<%--                    <div class="col-lg-12">--%>
+<%--                        <div class="product__pagination m-lg-5" >--%>
+<%--                            <ul class="pagination">--%>
+<%--                                <c:choose>--%>
+<%--                                    <c:when test="${cpage.getPrePage() != 0}">--%>
+<%--                                        <li class="mx-5">--%>
+<%--                                            <a href="/shop?pageNo=${cpage.getPrePage()}">Previous</a>--%>
+<%--                                        </li>--%>
+<%--                                    </c:when>--%>
+<%--                                    <c:otherwise>--%>
+<%--                                        <li class="disabled mx-5">--%>
+<%--                                            <a href="#">Previous</a>--%>
+<%--                                        </li>--%>
+<%--                                    </c:otherwise>--%>
+<%--                                </c:choose>--%>
+
+<%--                                <c:forEach begin="${cpage.getNavigateFirstPage() }" end="${cpage.getNavigateLastPage() }" var="page">--%>
+<%--                                    <c:choose>--%>
+<%--                                        <c:when test="${cpage.getPageNum() == page}">--%>
+<%--                                            <li class="active mx-5">--%>
+<%--                                                <a href="/shop?pageNo=${page}">${page }</a>--%>
+<%--                                            </li>--%>
+<%--                                        </c:when>--%>
+<%--                                        <c:otherwise>--%>
+<%--                                            <li class="mx-5">--%>
+<%--                                                <a href="/shop?pageNo=${page}">${page }</a>--%>
+<%--                                            </li>--%>
+<%--                                        </c:otherwise>--%>
+<%--                                    </c:choose>--%>
+
+<%--                                </c:forEach>--%>
+<%--                                <c:choose>--%>
+<%--                                    <c:when test="${cpage.getNextPage() != 0}">--%>
+<%--                                        <li>--%>
+<%--                                            <a href="/shop?pageNo=${cpage.getNextPage()}">Next</a>--%>
+<%--                                        </li>--%>
+<%--                                    </c:when>--%>
+<%--                                    <c:otherwise>--%>
+<%--                                        <li class="disabled">--%>
+<%--                                            <a href="#">Next</a>--%>
+<%--                                        </li>--%>
+<%--                                    </c:otherwise>--%>
+<%--                                </c:choose>--%>
+<%--                            </ul>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+
+
+
             </div>
         </div>
     </div>

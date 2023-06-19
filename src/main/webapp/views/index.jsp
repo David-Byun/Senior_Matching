@@ -58,6 +58,12 @@
 <%--    캘린더--%>
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
+<%--    toast message--%>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/dist/toastr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/dist/toastr.min.js"></script>
+
+
+
 </head>
 <body>
 <script>
@@ -127,28 +133,54 @@
                 // 해당 onMessage는 데이터메시지로, 포그라운드인 상태에서
                 // FCM 메시지를 전송하는 경우 콘솔에 표기하도록 작성된 코드입니다.
 
+                //************************//
+                // messaging.onMessage(payload => {
+                //     Swal.fire({
+                //         title: payload.notification.title,
+                //         text: payload.notification.body,
+                //         imageUrl : 'https://help.miricanvas.com/hc/article_attachments/4403560627353/_____________4_.png',
+                //         // imageUrl: 'https://unsplash.it/400/200',
+                //         imageWidth: 400,
+                //         imageHeight: 200,
+                //         imageAlt: 'Custom image',
+                //         showClass: {
+                //             popup: 'animate__animated animate__fadeInDown'
+                //         },
+                //         hideClass: {
+                //             popup: 'animate__animated animate__fadeOutUp'
+                //         }
+                //     })
+                // })
+                //************************//
+
                 messaging.onMessage(payload => {
                     Swal.fire({
                         title: payload.notification.title,
                         text: payload.notification.body,
-                        imageUrl : 'https://help.miricanvas.com/hc/article_attachments/4403560627353/_____________4_.png',
-                        // imageUrl: 'https://unsplash.it/400/200',
+                        imageUrl: 'https://i.pinimg.com/564x/c3/6d/be/c36dbeb5a48f92d986cdd78927c9c5ff.jpg',
                         imageWidth: 400,
                         imageHeight: 200,
                         imageAlt: 'Custom image',
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 5000,
+                        timerProgressBar: true,
                         showClass: {
                             popup: 'animate__animated animate__fadeInDown'
                         },
                         hideClass: {
                             popup: 'animate__animated animate__fadeOutUp'
                         }
-                    })
-                })
+                    });
+                });
             })
         $('#logout').on("click", () => {
             location.href = "/logout"
         });
     });
+
+
 </script>
 <!-- Page Preloder -->
 <div id="preloder">
@@ -238,9 +270,8 @@
                         <li><a href="#">매칭</a>
                             <ul class="dropdown">
                                 <li><a href="/match">매칭신청</a></li>
-                                <li><a href="/listformember">매칭내역</a></li>
-                                <li><a href="/listformate">새로운매칭신청확인(향후개발)</a></li>
-                                <li><a href="/listformate">매칭내역</a></li>
+                                <li><a href="/listformember">회원 매칭내역</a></li>
+                                <li><a href="/listformate">메이트 매칭내역</a></li>
 
 <%--                                <c:if test="${loginmember != null}">--%>
 <%--                                    <li><a href="/match">매칭신청</a></li>--%>

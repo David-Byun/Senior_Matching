@@ -54,6 +54,10 @@ public class MatchController {
         int omId = orderMatch.getId();
         List<Mate> mateList = orderMatchService.myMateByDate(ms);
 
+        for(Mate obj : mateList ){
+            System.out.println(obj.getName());
+        }
+
         model.addAttribute("omId", omId);
         model.addAttribute("mlist", mateList);
         model.addAttribute("center",dir+"mateselection");

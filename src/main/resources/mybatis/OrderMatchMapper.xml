@@ -13,14 +13,39 @@
 
     <select id="findByDate" parameterType="MatchSearch" resultType="mate">
         <![CDATA[
-        SELECT m.ID AS id, m.NAME AS name, m.JOB_PERIOD AS jobPeriod, m.LICENSE AS license, m.IMG AS img
+        SELECT m.ID AS id,
+           m.NAME AS name,
+           m.JOB_PERIOD AS jobPeriod,
+           m.LICENSE AS license,
+           m.IMG AS img
         FROM MATE m
-        JOIN MATCH ch
-        ON m.ID = ch.MATE_ID
-        WHERE ( TO_DATE(ch.START_DATE, 'YYYY-MM-DD') < TO_DATE(#{startDate}, 'YYYY-MM-DD')  AND TO_DATE(ch.END_DATE, 'YYYY-MM-DD') < TO_DATE(#{startDate}, 'YYYY-MM-DD') )
-        OR TO_DATE(ch.START_DATE, 'YYYY-MM-DD') > TO_DATE(#{endDate}, 'YYYY-MM-DD')
+        LEFT JOIN (
+            SELECT MATE_ID
+            FROM MATCH
+            WHERE (TO_DATE(START_DATE, 'YYYY-MM-DD') < TO_DATE(#{startDate}, 'YYYY-MM-DD') AND TO_DATE(END_DATE, 'YYYY-MM-DD') > TO_DATE(#{startDate}, 'YYYY-MM-DD'))
+               OR (TO_DATE(START_DATE, 'YYYY-MM-DD') < TO_DATE(#{endDate}, 'YYYY-MM-DD') AND TO_DATE(END_DATE, 'YYYY-MM-DD') > TO_DATE(#{endDate}, 'YYYY-MM-DD'))
+            GROUP BY MATE_ID
+            HAVING COUNT(*) > 1
+        ) duplicate_schedule
+        ON m.ID = duplicate_schedule.MATE_ID
+        WHERE duplicate_schedule.MATE_ID IS NULL
         ]]>
     </select>
+
+<!--    <select id="findByDate" parameterType="MatchSearch" resultType="mate">-->
+<!--        <![CDATA[-->
+<!--        SELECT m.ID AS id,-->
+<!--               m.NAME AS name,-->
+<!--               m.JOB_PERIOD AS jobPeriod,-->
+<!--               m.LICENSE AS license,-->
+<!--               m.IMG AS img-->
+<!--        FROM MATE m-->
+<!--        JOIN MATCH ch-->
+<!--        ON m.ID = ch.MATE_ID-->
+<!--        WHERE ( TO_DATE(ch.START_DATE, 'YYYY-MM-DD') < TO_DATE(#{startDate}, 'YYYY-MM-DD')  AND TO_DATE(ch.END_DATE, 'YYYY-MM-DD') < TO_DATE(#{startDate}, 'YYYY-MM-DD') )-->
+<!--        OR TO_DATE(ch.START_DATE, 'YYYY-MM-DD') > TO_DATE(#{endDate}, 'YYYY-MM-DD')-->
+<!--        ]]>-->
+<!--    </select>-->
 
     <insert id="insert" parameterType="orderMatch">
         <selectKey keyProperty="id" resultType="int" order="AFTER">

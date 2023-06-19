@@ -17,6 +17,7 @@ import java.util.Optional;
 public class FirebaseConroller {
     private final FirebaseService firebaseService;
 
+
     @PostMapping("/token")
     public void putToken(FirebaseToken firebaseToken) {
         Optional<FirebaseToken> byToken = firebaseService.findByToken(firebaseToken.getToken());

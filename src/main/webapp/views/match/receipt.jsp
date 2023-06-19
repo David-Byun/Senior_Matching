@@ -146,7 +146,7 @@
     <div class="modal-content">
       <div class="container">
         <div class="row gutters">
-          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-3 col-12">
             <div class="card">
               <div class="card-body p-0">
                 <div class="invoice-container">

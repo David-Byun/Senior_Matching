@@ -32,7 +32,7 @@ public class Match {
         this.startDate = om.getStartDate();
         this.endDate = om.getEndDate();
         this.service = om.getService();
-        this.area = om.getService();
+        this.area = om.getArea();
         this.objectGender = om.getObjectGender();
         this.objectBirth = om.getObjectBirth();
     }

@@ -9,4 +9,7 @@
     <select id="findByToken" resultType="FirebaseToken">
         SELECT * FROM TOKEN WHERE TOKEN = #{token}
     </select>
+    <select id="findAllTokens" resultType="FirebaseToken">
+        SELECT * FROM TOKEN
+    </select>
 </mapper>
