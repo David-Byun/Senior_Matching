@@ -95,7 +95,7 @@ public class MatchController {
     public String listformate(Model model, HttpSession session) throws Exception {
 //        Mate user = (Mate) session.getAttribute("loginmate");
 //        int mateId = user.getId();
-        int mateId = 2001;
+        int mateId = 2000;
         List<Match> list = matchService.findByMateId(mateId);
         model.addAttribute("mlist",list);
         model.addAttribute("center", dir+"listformate");

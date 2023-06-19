@@ -15,6 +15,6 @@ public class PushController {
     @PostMapping("/notification")
     public String sendNotificationByToken(FCMNotificationRequestDto requestDto) {
         fcmNotificationService.sendNotificationByToken(requestDto);
-        return "redirect:/marketing";
+        return "redirect:/listformate";
     }
 }
