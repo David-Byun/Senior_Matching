@@ -129,7 +129,7 @@ public class MateController {
             e.printStackTrace();
             throw new RuntimeException("시스템 장애 잠시 후 다시 로그인 하세요.");
         }
-        return "redirect:/shop";
+        return "redirect:/";
     }
 
     @RequestMapping("/update")
