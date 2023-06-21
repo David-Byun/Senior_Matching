@@ -315,6 +315,7 @@
                                 <li><a href="/contact">사무실 위치 및 연락</a></li>
                             </ul>
                         <li><a href="/chatgpt">문의</a></li>
+                        <li><a href="/blog">AI 연령확인</a></li>
                     </ul>
                 </nav>
             </div>
