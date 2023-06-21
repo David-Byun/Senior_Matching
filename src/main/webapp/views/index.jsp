@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+
 <%--firebase 관련 키 변수화 셋팅--%>
 <%--<spring:eval expression="@environment.getProperty('firebase.apiKey')" var="apiKey"/>--%>
 <%--<spring:eval expression="@environment.getProperty('firebase.authDomain')" var="authDomain"/>--%>

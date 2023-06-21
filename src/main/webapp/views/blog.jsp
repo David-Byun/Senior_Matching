@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<spring:eval var="imgdir" expression="@environment.getProperty('imgdir')" />
+
 <script>
     $(function () {
         // 비디오 요소 및 버튼 가져오기
@@ -27,7 +30,7 @@
 
             // 이미지 데이터 URL 생성
             var photoDataUrl = canvas.toDataURL("image/png");
-            var downloadPath = "/user/david";
+
             // 다운로드 링크 생성하여 클릭
             var downloadLink = document.createElement("a");
             downloadLink.download = "photo.png";
