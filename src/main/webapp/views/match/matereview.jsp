@@ -261,7 +261,7 @@
                             <c:set var="halfStars" value="${halfStars - 1}" />
                         </c:if>
 
-                        <c:forEach begin="0" end="${halfStars-1}">
+                        <c:forEach begin="1" end="${halfStars}">
                             <small class="far fa-star" style="color:#FAD00E"></small>
                         </c:forEach>
                     </div>
