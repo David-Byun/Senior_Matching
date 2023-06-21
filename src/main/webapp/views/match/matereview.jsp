@@ -325,7 +325,7 @@
                                             <i class="fas fa-star" style="color:#FAD00E"></i>
                                             <i class="fas fa-star" style="color:#FAD00E"></i>
                                             <i class="fas fa-star" style="color:#FAD00E"></i>
-                                            <i class="fas fa-star-half-alt" style="color:#FAD00E"></i>
+                                            <i class="fas fa-star" style="color:#FAD00E"></i>
                                             <i class="far fa-star" style="color:#FAD00E"></i>
                                         </div>
                                         <p>${review.content}</p>

@@ -236,21 +236,20 @@
                                             <div class="text-primary mr-2">
                                                 <c:set var="fullStars" value="${mate.avgRate / 1}" />
                                                 <c:set var="halfStars" value="${5 - mate.avgRate}" />
-
                                                 <c:if test="${mate.avgRate > 0}">
                                                     <c:forEach begin="0" end="${fullStars-1}">
                                                         <small class="fas fa-star" style="color:#FAD00E"></small>
                                                     </c:forEach>
                                                 </c:if>
-
                                                 <c:if test="${mate.avgRate % 1 != 0}">
                                                     <small class="fas fa-star-half-alt" style="color:#FAD00E"></small>
                                                     <c:set var="halfStars" value="${halfStars - 1}" />
                                                 </c:if>
-
-                                                <c:forEach begin="0" end="${halfStars-1}">
-                                                    <small class="far fa-star" style="color:#FAD00E"></small>
-                                                </c:forEach>
+                                                <c:if test="${halfStars > 0}">
+                                                    <c:forEach begin="0" end="${halfStars-1}">
+                                                        <small class="far fa-star" style="color:#FAD00E"></small>
+                                                    </c:forEach>
+                                                </c:if>
                                             </div>
                                             <small class="pt-1" style="color: darkgray">(리뷰 ${mate.sum}개)</small>
                                         </div>
