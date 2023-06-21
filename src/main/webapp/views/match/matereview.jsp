@@ -336,7 +336,7 @@
                                         <input type="radio" name="rate" value="5" id="rate1"><label
                                             for="rate1">★</label>
                                         <input type="radio" name="rate" value="4" id="rate2"><label
-                                            for="rate2">★</label>
+                                            for="rate2" >★</label>
                                         <input type="radio" name="rate" value="3" id="rate3"><label
                                             for="rate3">★</label>
                                         <input type="radio" name="rate" value="2" id="rate4"><label

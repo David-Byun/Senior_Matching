@@ -6778,6 +6778,9 @@ button.bg-dark:focus {
 }
 
 @media (min-width: 768px) {
+    #labelrate1 {
+        font-size:18px;
+    }
     .flex-md-row {
         flex-direction: row !important;
     }
@@ -6988,6 +6991,7 @@ button.bg-dark:focus {
 }
 
 @media (min-width: 1200px) {
+
     .flex-xl-row {
         flex-direction: row !important;
     }
@@ -8440,6 +8444,9 @@ button.bg-dark:focus {
 }
 
 @media (min-width: 992px) {
+    #labelrate1 {
+        font-size:18px;
+    }
     .m-lg-0 {
         margin: 0 !important;
     }
@@ -9185,6 +9192,7 @@ button.bg-dark:focus {
     .text-sm-center {
         text-align: center !important;
     }
+
 }
 
 @media (min-width: 768px) {
@@ -9209,6 +9217,9 @@ button.bg-dark:focus {
     .text-lg-center {
         text-align: center !important;
     }
+    #labelrate1 {
+        font-size:18px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -9220,6 +9231,9 @@ button.bg-dark:focus {
     }
     .text-xl-center {
         text-align: center !important;
+    }
+    #labelrate1 {
+        font-size:18px;
     }
 }
 
