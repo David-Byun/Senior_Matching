@@ -53,6 +53,7 @@ public class MateController {
         model.addAttribute("mateReviewList", mateReviewList);
         model.addAttribute("mate", foundMate);
         model.addAttribute("avg", avg);
+        System.out.println("avg = " + avg);
         model.addAttribute("countReview", mateReviewList.size());
         return "match/matereview";
     }

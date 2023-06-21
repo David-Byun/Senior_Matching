@@ -154,13 +154,6 @@
                                 <li><a href="/listformember">매칭내역</a></li>
                                 <li><a href="/listformate">새로운매칭신청확인(향후개발)</a></li>
                                 <li><a href="/listformate">매칭내역</a></li>
-                                <%--                                <c:if test="${loginmember != null}">--%>
-                                <%--                                    <li><a href="/match">매칭신청</a></li>--%>
-                                <%--                                    <li><a href="/listformember">매칭내역(멤버기준)</a></li>--%>
-                                <%--                                </c:if>--%>
-                                <%--                                <c:if test="${loginmate != null}">--%>
-                                <%--                                    <li><a href="/listformate">매칭내역(메이트기준)</a></li>--%>
-                                <%--                                </c:if>--%>
                             </ul>
                         </li>
                         <li><a href="/shop">몰</a>
@@ -322,11 +315,13 @@
                                         <h6>${review.name} / ${review.email}<small> - <i>${review.rdate}</i></small></h6>
                                         <div class="text-primary mb-2">
 <%--                                            리뷰개수만큼 fas fa-star 그리고 나머지는 빈 별로 채우기--%>
-                                            <i class="fas fa-star" style="color:#FAD00E"></i>
-                                            <i class="fas fa-star" style="color:#FAD00E"></i>
-                                            <i class="fas fa-star" style="color:#FAD00E"></i>
-                                            <i class="fas fa-star" style="color:#FAD00E"></i>
-                                            <i class="far fa-star" style="color:#FAD00E"></i>
+                                            <c:forEach begin="1" end="${review.rate}">
+                                                <i class="fas fa-star" style="color:#FAD00E"></i>
+                                            </c:forEach>
+                                            <c:forEach begin="${review.rate}" end="4">
+                                                <i class="far fa-star" style="color:#FAD00E"></i>
+                                            </c:forEach>
+
                                         </div>
                                         <p>${review.content}</p>
                                     </div>
