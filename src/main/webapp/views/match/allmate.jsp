@@ -245,11 +245,11 @@
                                                     <small class="fas fa-star-half-alt" style="color:#FAD00E"></small>
                                                     <c:set var="halfStars" value="${halfStars - 1}" />
                                                 </c:if>
-                                                <c:if test="${halfStars > 0}">
-                                                    <c:forEach begin="0" end="${halfStars-1}">
+
+                                                    <c:forEach begin="1" end="${halfStars}">
                                                         <small class="far fa-star" style="color:#FAD00E"></small>
                                                     </c:forEach>
-                                                </c:if>
+</c:if>
                                             </div>
                                             <small class="pt-1" style="color: darkgray">(리뷰 ${mate.sum}개)</small>
                                         </div>
