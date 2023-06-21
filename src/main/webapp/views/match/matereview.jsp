@@ -314,7 +314,6 @@
                                     <div class="media-body">
                                         <h6>${review.name} / ${review.email}<small> - <i>${review.rdate}</i></small></h6>
                                         <div class="text-primary mb-2">
-<%--                                            리뷰개수만큼 fas fa-star 그리고 나머지는 빈 별로 채우기--%>
                                             <c:forEach begin="1" end="${review.rate}">
                                                 <i class="fas fa-star" style="color:#FAD00E"></i>
                                             </c:forEach>
