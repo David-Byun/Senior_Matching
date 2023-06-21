@@ -249,7 +249,7 @@
                                                     <c:forEach begin="1" end="${halfStars}">
                                                         <small class="far fa-star" style="color:#FAD00E"></small>
                                                     </c:forEach>
-</c:if>
+
                                             </div>
                                             <small class="pt-1" style="color: darkgray">(리뷰 ${mate.sum}개)</small>
                                         </div>
