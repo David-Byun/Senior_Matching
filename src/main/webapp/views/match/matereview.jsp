@@ -320,6 +320,8 @@
                                 <h4 class="mb-4">${mate.name} 님에 대한 리뷰</h4>
                                 <c:forEach items="${mateReviewList}" var="review">
                                 <div class="media mb-4">
+                                    https://images.pexels.com/photos/34761/old-people-couple-together-connected.jpg?auto=compress&cs=tinysrgb&w=1600
+
                                     <img src="https://cdn.pixabay.com/photo/2019/08/09/20/52/old-man-4395870_1280.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
                                     <div class="media-body">
                                         <h6>${review.name} / ${review.email}<small> - <i>${review.rdate}</i></small></h6>
