@@ -22,12 +22,40 @@
     <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body background="18.jpg"
       style="background-position: center; background-repeat: no-repeat; background-size: cover;">
 <noscript>
     <h2>Sorry! Your browser doesn't support Javascript</h2>
 </noscript>
+<script>
+    $(function(){
+        if(!("webkitSpeechRecognition") in window){
+            alert("Connect in Chrome Browser");
+        }else{
+            const speech = new webkitSpeechRecognition;
+
+            document.getElementById("rcdStart").addEventListener("click",()=>{
+                speech.start();
+            });
+            document.getElementById("rcdStop").addEventListener("click",()=>{
+                speech.stop();
+            });
+
+            speech.addEventListener("result", (event)=>{
+                console.log(event);
+                const { transcript } = event["results"][0][0];
+                console.log(transcript);
+                resultListView(transcript);
+            });
+
+            function resultListView(transcript){
+                document.getElementById("message").value = transcript;
+            }
+        }
+    })
+</script>
 <!-- Offcanvas Menu Begin -->
 <div class="offcanvas-menu-overlay"></div>
 <div class="offcanvas-menu-wrapper">
@@ -182,6 +210,8 @@
                 </div>
             </div>
         </form>
+        <button id="rcdStart" class="btn btn-warning">Record</button>
+        <button id="rcdStop" class="btn btn-danger">Stop</button>
     </div>
 </div>
 

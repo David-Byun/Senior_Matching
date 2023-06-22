@@ -3,6 +3,7 @@
 
 <link rel="stylesheet" href="/css/gpt.css" type="text/css">
 <script>
+
     function showLoadingIndicator() {
         let loadingTemplate = '<div id="loading-indicator" class="line"><p style="margin-left:15px"><i class="fa fa-spinner fa-pulse"></i> Loading...</p></div>';
         document.querySelector('.chat-content').insertAdjacentHTML('beforeend', loadingTemplate);
@@ -65,6 +66,29 @@
                 event.preventDefault();
             }
         });
+        if(!("webkitSpeechRecognition") in window){
+            alert("Connect in Chrome Browser");
+        }else{
+            const speech = new webkitSpeechRecognition;
+
+            document.getElementById("rcdStart").addEventListener("click",()=>{
+                speech.start();
+            });
+            document.getElementById("rcdStop").addEventListener("click",()=>{
+                speech.stop();
+            });
+
+            speech.addEventListener("result", (event)=>{
+                console.log(event);
+                const { transcript } = event["results"][0][0];
+                console.log(transcript);
+                resultListView(transcript);
+            });
+
+            function resultListView(transcript){
+                document.getElementById("input").value = transcript;
+            }
+        }
     })
 </script>
     <div id="chat-page">
@@ -86,5 +110,8 @@
                     </div>
                 </div>
             </form>
+            <button id="rcdStart" class="btn btn-warning">Record</button>
+            <button id="rcdStop" class="btn btn-danger">Stop</button>
+
         </div>
     </div>
