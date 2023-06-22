@@ -110,7 +110,7 @@
                                 </div>
                             </div>
                                 <div class="checkout__input__checkbox" style="margin-top: 20px">
-                                    <button type="submit" class="btn btn-primary" id="signin_btn">가입하기</button>
+                                    <button type="submit" class="btn btn-success" id="signin_btn" style="color: whitesmoke">가입하기</button>
                                 </div>
                             </form>
                         </div>

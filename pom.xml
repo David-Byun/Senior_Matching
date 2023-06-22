@@ -36,6 +36,17 @@
             <artifactId>gson</artifactId>
             <version>2.9.0</version>
         </dependency>
+        <!--        QR-->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.5.0</version>
+        </dependency>
         <!--        화상채팅 모듈-->
         <dependency>
             <groupId>com.corundumstudio.socketio</groupId>

@@ -116,21 +116,18 @@
                 <div class="col-lg-6 col-md-5">
                     <div class="header__top__right">
                         <div class="header__top__links">
+                            <a href="/api/qr/tistory">QR TO 봄생봄사</a>
                             <c:choose>
                                 <c:when test="${loginmember == null && loginmate == null}">
                                     <a href="/login">시니어 로그인</a>
                                     <a href="/signin">시니어 가입</a>
 
                                 </c:when>
-                                <c:otherwise>
-                                    <a href="/chatbot">챗봇문의</a>
-                                </c:otherwise>
                             </c:choose>
                             <c:if test="${loginmember != null || loginmate != null}">
-                                <a href="#" id="logout">로그아웃</a>
+                                <a href="/logout" id="logout">로그아웃</a>
                             </c:if>
                             <a href="/faq">FAQs</a>
-                            <a href="/websocket">챗봇문의</a>
                         </div>
                     </div>
                 </div>
@@ -140,20 +137,27 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-3">
-                <div class="header__logo">
-                    <a href="/"><img src="/img/logo.png" alt=""></a>
+                <div class="header__logo" style="height: 110px;">
+                    <a href="/"><img src="/img/logo.png" alt="" style="width: 170px; height: 50px"></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
                         <li><a href="/">홈</a></li>
-                        <li><a href="#">매칭</a>
+                        <li><a href="/match">매칭</a>
                             <ul class="dropdown">
                                 <li><a href="/match">매칭신청</a></li>
-                                <li><a href="/listformember">매칭내역</a></li>
-                                <li><a href="/listformate">새로운매칭신청확인(향후개발)</a></li>
-                                <li><a href="/listformate">매칭내역</a></li>
+                                <li><a href="/listformember">회원 매칭내역</a></li>
+                                <li><a href="/listformate">메이트 매칭내역</a></li>
+
+                                <%--                                <c:if test="${loginmember != null}">--%>
+                                <%--                                    <li><a href="/match">매칭신청</a></li>--%>
+                                <%--                                    <li><a href="/listformember">매칭내역(멤버기준)</a></li>--%>
+                                <%--                                </c:if>--%>
+                                <%--                                <c:if test="${loginmate != null}">--%>
+                                <%--                                    <li><a href="/listformate">매칭내역(메이트기준)</a></li>--%>
+                                <%--                                </c:if>--%>
                             </ul>
                         </li>
                         <li><a href="/shop">몰</a>
@@ -165,8 +169,13 @@
                         </li>
                         <li><a href="/mate/all">후기</a>
                         </li>
-                        <li><a href="/contact">위치</a></li>
-                        <li><a href="/goldenlife">진료예약</a></li>
+                        <li><a href="/matelocation">위치</a>
+                            <ul class="dropdown">
+                                <li><a href="/matelocation">근처 메이트 찾기</a></li>
+                                <li><a href="/contact">사무실 위치 및 연락</a></li>
+                            </ul>
+                        <li><a href="/chatgpt">문의</a></li>
+                        <li><a href="/video">AI 연령확인</a></li>
                     </ul>
                 </nav>
             </div>

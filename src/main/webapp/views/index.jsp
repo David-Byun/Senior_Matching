@@ -13,7 +13,7 @@
 <%--<spring:eval expression="@environment.getProperty('firebase.measurementId')" var="measurementId"/>--%>
 
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 
 <head>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -259,6 +259,7 @@
                 <div class="col-lg-6 col-md-5">
                     <div class="header__top__right">
                         <div class="header__top__links">
+                            <a href="/api/qr/tistory">QR TO 봄생봄사</a>
                             <c:choose>
                                 <c:when test="${loginmember == null && loginmate == null}">
                                     <a href="/login">시니어 로그인</a>
@@ -287,7 +288,7 @@
                 <nav class="header__menu mobile-menu">
                     <ul>
                         <li><a href="/">홈</a></li>
-                        <li><a href="#">매칭</a>
+                        <li><a href="/match">매칭</a>
                             <ul class="dropdown">
                                 <li><a href="/match">매칭신청</a></li>
                                 <li><a href="/listformember">회원 매칭내역</a></li>
