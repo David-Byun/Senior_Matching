@@ -158,7 +158,7 @@
                        autocomplete="off" class="form-control" />
             </div>
             <div class="form-group">
-                <button type="submit" class="accent username-submit" style="background-color: #ff85af">상담시작</button>
+                <button type="submit" class="accent username-submit" style="background-color: #64D6AB">상담시작</button>
             </div>
         </form>
     </div>

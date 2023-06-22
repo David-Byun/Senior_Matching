@@ -168,7 +168,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">닫기</button>
-                    <button type="button" class="btn btn-primary" onclick="location.href='/mate/all'">후기 보기</button>
+                    <button type="button" class="btn" onclick="location.href='/mate/all'" style="background-color: #64D6AB;color: whitesmoke">후기 보기</button>
                 </div>
             </div>
         </div>

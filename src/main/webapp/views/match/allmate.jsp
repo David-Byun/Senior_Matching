@@ -17,7 +17,7 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
 
-
+    <link href="/css/matereview.css" rel="stylesheet" type="text/css">
     <!-- Css Styles -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
@@ -324,7 +324,10 @@
     </div>
 </footer>
 <!-- Footer Section End -->
+<!-- Back to Top -->
+<a href="#" class="btn back-to-top" style="background-color: #64D6AB; color: whitesmoke;"><i class="fa fa-angle-double-up"></i></a>
 
+<!-- Footer Section End -->
 
 <!-- Js Plugins -->
 <script src="../js/jquery-3.3.1.min.js"></script>

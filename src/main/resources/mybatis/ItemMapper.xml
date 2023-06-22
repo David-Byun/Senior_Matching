@@ -6,12 +6,12 @@
     <select id="getItemById" parameterType="integer" resultType="Item">
         SELECT *
         FROM item
-        WHERE id = #{id} AND is_valid = 1
+        WHERE id = #{id} AND valid = 1
         ORDER BY id DESC
     </select>
     <select id="getAllItems" resultType="Item">
         SELECT *
         FROM item
-        WHERE is_valid = 1
+        WHERE valid = 1
     </select>
 </mapper>

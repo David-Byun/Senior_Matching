@@ -33,7 +33,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=877b72a4084b62dd3183b611e21359eb"></script>
-
+    <link href="/css/matereview.css" rel="stylesheet" type="text/css">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
           rel="stylesheet">
@@ -279,8 +279,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-3">
-                <div class="header__logo">
-                    <a href="/"><img src="/img/logo.png" alt=""></a>
+                <div class="header__logo" style="height: 110px;">
+                    <a href="/"><img src="/img/logo.png" alt="" style="width: 170px; height: 50px"></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -366,6 +366,8 @@
     </c:otherwise>
 </c:choose>
 
+
+
 <!-- Footer Section Begin -->
 <footer class="footer">
     <div class="container">
@@ -413,6 +415,8 @@
         </div>
     </div>
 </footer>
+<!-- Back to Top -->
+<a href="#" class="btn back-to-top" style="background-color: #64D6AB; color: whitesmoke;"><i class="fa fa-angle-double-up"></i></a>
 <!-- Footer Section End -->
 
 
