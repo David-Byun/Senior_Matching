@@ -63,6 +63,13 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/blog")
+    public String blog(Model model) {
+        model.addAttribute("center", "blog");
+        return "index";
+    }
+
+
 
     @RequestMapping("/shop")
     public String shop(Model model, Integer k) {

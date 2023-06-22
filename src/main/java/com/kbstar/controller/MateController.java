@@ -53,6 +53,7 @@ public class MateController {
         model.addAttribute("mateReviewList", mateReviewList);
         model.addAttribute("mate", foundMate);
         model.addAttribute("avg", avg);
+        System.out.println("avg = " + avg);
         model.addAttribute("countReview", mateReviewList.size());
         return "match/matereview";
     }
@@ -128,7 +129,7 @@ public class MateController {
             e.printStackTrace();
             throw new RuntimeException("시스템 장애 잠시 후 다시 로그인 하세요.");
         }
-        return "redirect:/shop";
+        return "redirect:/";
     }
 
     @RequestMapping("/update")
