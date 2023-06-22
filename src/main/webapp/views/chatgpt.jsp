@@ -3,11 +3,23 @@
 
 <link rel="stylesheet" href="/css/gpt.css" type="text/css">
 <script>
+    function showLoadingIndicator() {
+        let loadingTemplate = '<div id="loading-indicator" class="line"><p style="margin-left:15px"><i class="fa fa-spinner fa-pulse"></i> Loading...</p></div>';
+        document.querySelector('.chat-content').insertAdjacentHTML('beforeend', loadingTemplate);
+    }
 
+    function hideLoadingIndicator() {
+        let loadingIndicator = document.querySelector('#loading-indicator');
+        if (loadingIndicator) {
+            loadingIndicator.remove();
+        }
+    }
     function callAPI() {
         let question = document.querySelector('#input').value;
         let template = '<div class="line"><span class="chat-box mine" style="color:#3d3d3d">'+question+'</span></div>';
         document.querySelector('.chat-content').insertAdjacentHTML('beforeend', template);
+        showLoadingIndicator(); // Show loading indicator
+        $('#input').val('');
         $.ajax({
             type:'POST',
             url: '/chat-gpt/question',
@@ -16,14 +28,18 @@
             success : function (response) {
                 let template = '<div class="line"><p style="margin-left:15px">GPT : <span class="chat-box">'+ response + '</span></p></div>';
                 document.querySelector('.chat-content').insertAdjacentHTML('beforeend', template);
-                $('#input').val('');
+                hideLoadingIndicator(); // Hide loading indicator
             },
-            fail: function (response) {
+            fail: function(response) {
                 console.log(response);
+                hideLoadingIndicator(); // Hide loading indicator
             }
         })
     }
     $(function () {
+        function handleUserInput() {
+            callAPI();
+        }
         $('#chatBtn').click(function () {
             let question = document.querySelector('#input').value;
             let template = '<div class="line"><span class="chat-box mine" style="color:#3d3d3d">'+question+'</span></div>';
@@ -43,9 +59,12 @@
                 }
             })
         })
-        if (window.event.keyCode == 13) {
-            callAPI()
-        }
+        $('#input').keydown(function(event) {
+            if (event.keyCode === 13) {
+                handleUserInput();
+                event.preventDefault();
+            }
+        });
     })
 </script>
     <div id="chat-page">

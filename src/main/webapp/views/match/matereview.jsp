@@ -224,9 +224,10 @@
 </section>
 <!-- Breadcrumb Section End -->
 <!-- Shop Detail Start -->
-<div class="container-fluid pb-5">
-    <div class="row px-xl-5">
-        <div class="col-lg-5 mb-30">
+
+<div class="container-fluid">
+    <div class="row px-sm-10">
+        <div class="col-sm-6 mb-30">
             <div id="product-carousel" >
                 <div class="bg-light">
                     <c:choose>
@@ -241,7 +242,7 @@
             </div>
         </div>
 
-        <div class="col-lg-7 h-auto mb-30">
+        <div class="col-sm-6 h-auto mb-30">
             <div class="h-100 bg-light p-30">
                 <h3>${mate.name}</h3>
                 <h4>${mate.email}</h4>
@@ -297,7 +298,7 @@
             </div>
         </div>
     </div>
-    <div class="row px-xl-5">
+    <div class="row px-xl-3">
         <div class="col">
             <div class="bg-light p-30">
                 <div class="nav nav-tabs mb-4">
