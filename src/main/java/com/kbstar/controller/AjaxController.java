@@ -1,12 +1,10 @@
 package com.kbstar.controller;
 
-import com.google.api.client.json.Json;
 import com.kbstar.dto.Mate;
 import com.kbstar.service.MateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +16,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
-import static org.apache.logging.log4j.message.MapMessage.MapFormat.JSON;
-
 @RestController
 @Slf4j
 @RequiredArgsConstructor
@@ -28,6 +24,9 @@ public class AjaxController {
 
 
     private final MateService mateService;
+
+    @Value("${aiDir}")
+    private String aiDir;
 
     @PostMapping("/profile")
     public Mate mateProfile(@RequestParam int id, Model model) {
@@ -45,7 +44,7 @@ public class AjaxController {
 
         try {
             String paramName = "image"; // 파라미터명은 image로 지정
-            String imgFile = "/Users/david/Downloads/" + img;
+            String imgFile = aiDir + img;
             File uploadFile = new File(imgFile);
             String apiURL = "https://naveropenapi.apigw.ntruss.com/vision/v1/face"; // 얼굴 감지
             URL url = new URL(apiURL);
