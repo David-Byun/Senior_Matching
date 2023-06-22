@@ -352,7 +352,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer__about">
                     <div class="footer__logo">
-                        <a href="#"><img src="/img/footer-logo.png" alt=""></a>
+                        <a href="#"><img src="/img/logo-black.png" alt=""></a>
                     </div>
                     <p>당신의 삶을 응원합니다!</p>
                     <a href="#"><img src="/img/payment.png" alt=""></a>

@@ -129,7 +129,6 @@
                                         <li><a href="https://172.16.20.74"><i class="fas fa-video"></i></a></li>
                                     </ul>
                                 </div>
-
                                 <div class="product__item__text">
                                     <h6>${c.name}</h6>
                                     <form id="matchForm" action="/offer" method="POST">
