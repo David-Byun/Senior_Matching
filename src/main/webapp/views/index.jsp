@@ -13,7 +13,7 @@
 <%--<spring:eval expression="@environment.getProperty('firebase.measurementId')" var="measurementId"/>--%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
