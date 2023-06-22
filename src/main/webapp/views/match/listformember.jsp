@@ -339,7 +339,7 @@
                                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                         <div class="invoice-details">
                                                             <address>
-                                                                **결제자명 loginmember로 수정 **
+                                                                결제자명 : 김제니
                                                                 <br>
                                                                 결제수단 : ${obj.payment}
                                                             </address>
