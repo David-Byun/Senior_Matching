@@ -16,7 +16,7 @@ class generatePdfTests {
 
     @Test
     void contextLoads() throws Exception {
-        Match match = service.get(118);
+        Match match = service.get(112);
         try{
             pdfServiceImpl.createPdf(match);
         }catch (Exception e){

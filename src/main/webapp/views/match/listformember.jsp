@@ -174,11 +174,39 @@
     function showPopup() {
         window.open("popup.jsp");
     }
-
-
     function payMatchOffer(price) {
          window.location.href = "/kakaoPayImpl?price="+price;
      }
+
+     let receipt = {
+         init:function (){
+             $(document).on('click', 'a.btn-success', this.send);
+         },
+         send:function (e){
+             e.preventDefault();
+             // Extract the ID from the element ID
+             let id = $(this).attr('id').replace('generatePdf', '');
+             let dataToSend = {
+                 id: id,
+             };
+             // want to send data by ajax
+             $.ajax({
+                 url: '/generatepdf',
+                 type: 'POST',
+                 data: dataToSend,
+                 success: function(response) {
+                     alert("PDF가 다운완료되었습니다.");
+                     $('#myReceipt'+id).modal('hide');
+                 },
+                 error: function(xhr, status, error) {
+                 }
+             });
+         }
+     }
+
+     $(function (){
+         receipt.init();
+     })
 </script>
 
 <!-- Breadcrumb Section Begin -->
@@ -290,13 +318,6 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <!-- Modal content-->
-<%--                    <jsp:include page="receipt.jsp">--%>
-<%--                        <jsp:param name="obj" value="${obj}" />--%>
-<%--                    </jsp:include>--%>
-
-
-
-                        <%--<c:forEach var="x" items="${mlist}">--%>
                     <div class="container">
                         <div class="row gutters">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -311,7 +332,7 @@
                                                             <a href="#" class="btn btn-primary">
                                                                 <i class="fa fa-envelope"></i> 메일 전송
                                                             </a>
-                                                            <a href="/generate-pdf" class="btn btn-success" id="generatePdf" name="generatePdf">
+                                                            <a href="#" class="btn btn-success" id="generatePdf${obj.id}" name="generatePdf">
                                                                 <i class="fa fa-download"></i> PDF 다운
                                                             </a>
                                                         </div>
