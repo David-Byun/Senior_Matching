@@ -58,6 +58,7 @@
         FROM MATE m
                  LEFT JOIN MATE_REVIEW r ON r.MATE_ID = m.ID
                  LEFT JOIN MEMBER u ON r.MEMBER_ID = u.ID
+        WHERE m.valid = 1
         GROUP BY m.ID, m.NAME, m.email, m.JOB_PERIOD, m.LICENSE, m.IMG, m.AREA
         ORDER BY avgRate DESC
     </select>

@@ -147,12 +147,6 @@
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
-                    <c:if test="${loginmate != null}">
-                        <a href="/mate/profile/${loginmate.id}"><i class="fa-solid fa-user"></i></a>
-                    </c:if>
-                    <c:if test="${loginmember != null}">
-                        <a href="/memberdetail" class="search-switch"><i class="fa-solid fa-edit" style="color:black"></i></a>
-                    </c:if>
                     <a href="/reserve/${loginmember.id}">
                         <c:choose>
                             <c:when test="${myreserve == 0 || myreserve == null}">
