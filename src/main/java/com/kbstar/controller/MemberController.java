@@ -6,6 +6,7 @@ import com.kbstar.dto.SeniorSignInDto;
 import com.kbstar.exception.ErrorCode;
 import com.kbstar.exception.UserException;
 import com.kbstar.service.CartService;
+import com.kbstar.service.CouponService;
 import com.kbstar.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +28,7 @@ public class MemberController {
     private final MemberService memberService;
     private final CartService cartService;
     private final BCryptPasswordEncoder encoder;
+    private final CouponService couponService;
 
     @Valid
     @RequestMapping("/signinimpl")
@@ -55,12 +57,16 @@ public class MemberController {
         return "redirect:/";
     }
 
+
     @RequestMapping("/loginimpl")
     public String loginimpl(Model model, String email, String password, HttpSession session) {
         Member member = null;
         try {
             member = memberService.get(email);
             List<Item> items = cartService.myCart(member.getId());
+            if (!couponService.getMyCoupon(member.getId()).isEmpty()) {
+                session.setAttribute("coupon", "Y");
+            }
             if (!items.isEmpty()) {
                 session.setAttribute("mycart", 1);
             }
@@ -68,6 +74,7 @@ public class MemberController {
                 session.setMaxInactiveInterval(100000);// 한 session의 제한시간
                 session.setAttribute("loginmember", member); //session에 logincust라는 이름으로 cust를 넣어줌 --> login을 메모리에 제한시간만큼 유지
             }
+
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("시스템 장애 잠시 후 다시 로그인 하세요.");
