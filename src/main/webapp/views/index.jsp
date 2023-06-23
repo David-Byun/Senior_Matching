@@ -107,30 +107,9 @@
 <body>
 
 <script>
-    function speak(text, opt_prop) {
-        if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
-            alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
-            return
-        }
-
-        window.speechSynthesis.cancel() // 현재 읽고있다면 초기화
-
-        const prop = opt_prop || {}
-
-        const speechMsg = new SpeechSynthesisUtterance()
-        speechMsg.rate = prop.rate || 0.9 // 속도: 0.1 ~ 10
-        speechMsg.pitch = prop.pitch || 0.8 // 음높이: 0 ~ 2
-        speechMsg.lang = prop.lang || "ko-KR"
-        speechMsg.text = text
-
-        // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
-        window.speechSynthesis.speak(speechMsg)
-    }
-
     $(function () {
         function getBrowserName ()
         {
-            speak("안녕하세요 봄생봄사에 오신 것을 환영합니다. 간병인 매칭 및 건강식품 관련 샵이 있으니 많은 이용 부탁드립니다. 간병인 매칭 서비스를 원하신다면 매칭 메뉴를 클릭해주세요.");
             //agent에 브라우저 종류 삽입
             var agent = navigator.userAgent.toLowerCase();
             if(  (navigator.appName == 'Netscape'
@@ -238,8 +217,6 @@
         $('#logout').on("click", () => {
             location.href = "/logout"
         });
-
-
     });
 
 
