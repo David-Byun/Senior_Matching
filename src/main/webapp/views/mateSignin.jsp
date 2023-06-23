@@ -131,9 +131,7 @@
                                             <option selected>가능 지역을 선택해주세요</option>
                                             <option value="성동구">성동구</option>
                                             <option value="강남구">강남구</option>
-                                            <option value="서대문구">서대문구</option>
-                                            <option value="마포구">마포구</option>
-                                            <option value="강서구">강서구</option>
+                                            <option value="광진구">광진구</option>
                                         </select>
                                     </div>
                                     <div class="checkout__input">
