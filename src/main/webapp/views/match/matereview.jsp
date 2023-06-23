@@ -152,7 +152,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo" style="height: 110px;">
-                    <a href="/"><img src="/img/logo.png" alt="" style="width: 170px; height: 50px"></a>
+                    <a href="/"><img src="/img/logo.png" alt="" style="height: 50px;"></a>
                 </div>
             </div>
 
