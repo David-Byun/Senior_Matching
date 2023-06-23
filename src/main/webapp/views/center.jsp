@@ -5,6 +5,17 @@
 <link rel="stylesheet" href="/css/style.css" type="text/css">
 <link rel="stylesheet" href="/css/indexstyle.css" type="text/css">
 <script>
+    function shuffleGrid() {
+        const gridItems = Array.from(document.getElementsByClassName('animatedtrans');
+
+        setTimeout(() => {
+            gridItems.forEach(item => item.classList.remove('animatedtrans'));
+            gridItems.sort(() => Math.random() - 0.5);
+            gridItems.forEach(item => gridContainer.appendChild(item));
+        }, 3000);
+    }
+
+
     function speak(text, opt_prop) {
         if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
             alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
@@ -26,6 +37,7 @@
     }
 
     $(function(){
+        shuffleGrid();
         $('#closeBtn').click(function () {
             $("#modalCenter").modal('hide');
         })
@@ -148,7 +160,7 @@
                     <div class="row">
                         <c:forEach items="${allMates}" var="mate">
                             <a href="/mate/review/${mate.id}">
-                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="col-lg-4 col-md-6 col-sm-6 animatedtrans">
                                     <div class="product__item">
                                         <div class="product__item__pic set-bg" data-setbg="/uimg/${mate.img}" >
                                             <div class="ep">${mate.avgRate} / 5</div>

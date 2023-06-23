@@ -908,6 +908,28 @@ ol {
   Product
 -----------------------*/
 
+.animatedtrans {
+	animation: shuffle 3s infinite;
+}
+
+@keyframes shuffle {
+	0% {
+		transform: translate(0, 0);
+	}
+
+	33% {
+		transform: translate(0, 10px);
+	}
+
+	66% {
+		transform: translate(0, -10px);
+	}
+
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
 .spad {
 	margin-top:60px;
 }
