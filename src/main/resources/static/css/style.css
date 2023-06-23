@@ -142,10 +142,6 @@ ol {
 	background-position: top center;
 }
 
-.spad {
-	padding-top: 100px;
-	padding-bottom: 100px;
-}
 
 .text-white h1,
 .text-white h2,
@@ -484,7 +480,7 @@ ol {
 }
 
 .header__menu ul li a {
-	font-size: 18px;
+	font-size: 22px;
 	color: #111111;
 	display: block;
 	font-weight: 600;
@@ -912,9 +908,8 @@ ol {
   Product
 -----------------------*/
 
-.product {
-	padding-top: 0;
-	padding-bottom: 60px;
+.spad {
+	margin-top:60px;
 }
 
 .filter__controls {
@@ -978,7 +973,7 @@ ol {
 }
 
 .product__item__pic {
-	height: 260px;
+	height: 180px;
 	position: relative;
 	background-position: center center;
 }
@@ -3429,9 +3424,6 @@ ol {
 	.banner__item {
 		margin-bottom: 40px;
 	}
-	.banner {
-		padding-bottom: 60px;
-	}
 	.categories__text {
 		margin-bottom: 40px;
 	}
@@ -3690,9 +3682,6 @@ ol {
 	}
 	.banner__item {
 		margin-bottom: 40px;
-	}
-	.banner {
-		padding-bottom: 60px;
 	}
 	.banner__item__pic {
 		float: none;

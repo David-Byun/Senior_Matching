@@ -342,11 +342,7 @@
                             </ul>
                         </c:if>
                         </li>
-                        <li><a href="/matelocation">위치</a>
-                            <ul class="dropdown">
-                                <li><a href="/matelocation">근처 메이트 찾기</a></li>
-                                <li><a href="/contact">사무실 위치 및 연락</a></li>
-                            </ul>
+                        <li><a href="/contact">위치</a></li>
                         <li><a href="/chatgpt">문의</a></li>
                         <li><a href="/video">AI진단</a></li>
                     </ul>
@@ -474,6 +470,7 @@
 <script src="/js/main.js"></script>
 <script src="/js/jquery.marquee.min.js"></script>
 <script src="/js/jquery.marquee.js"></script>
+<script src="/js/player.js"></script>
 </body>
 
 </html>

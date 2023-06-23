@@ -1,14 +1,17 @@
 package com.kbstar.controller;
 
 import com.kbstar.dto.ItemReview;
+import com.kbstar.dto.MateReviewAllDto;
 import com.kbstar.dto.Notice;
 import com.kbstar.firebase.FirebaseInit;
+import com.kbstar.service.MateService;
 import com.kbstar.service.NoticeService;
 import com.kbstar.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
@@ -21,6 +24,7 @@ public class MainController {
 
     private final ReviewService reviewService;
     private final NoticeService noticeService;
+    private final MateService mateService;
     private final FirebaseInit init;
 
     @RequestMapping("/chat")
@@ -51,16 +55,23 @@ public class MainController {
     public String main(Model model, HttpSession session) {
         init.init();
         List<Notice> allNotice = noticeService.getAllNotice();
+        List<MateReviewAllDto> allMates = mateService.findAllMates();
         if ((session.getAttribute("mycart") == null)) {
             session.setAttribute("mycart", 0);
         }
         if ((session.getAttribute("myreserve") == null)) {
             session.setAttribute("myreserve", 0);
         }
+        model.addAttribute("allMates", allMates);
         model.addAttribute("allNotice", allNotice);
         return "index";
     }
 
+    @GetMapping("/newindex")
+    public String newindex(Model model) {
+        model.addAttribute("center", "newindex");
+        return "index";
+    }
 
     @RequestMapping("/404")
     public String errorPage(Model model) {

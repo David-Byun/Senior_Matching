@@ -227,7 +227,7 @@
         <div class="row">
             <c:forEach items="${mates}" var="mate">
 
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="speaker-item" style="margin-top:20px">
                         <div class="row">
                             <div class="col-lg-6">
