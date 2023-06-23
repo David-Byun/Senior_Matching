@@ -49,12 +49,9 @@
                     title: 2004,
                     latlng: new kakao.maps.LatLng(37.5456155, 127.0484245),
                 },
+
                 {
-                    title: 2005,
-                    latlng: new kakao.maps.LatLng(37.5456155, 127.0464245),
-                },
-                {
-                    title: 2006,
+                    title: 2011,
                     latlng: new kakao.maps.LatLng(37.5446155, 127.0434245),
                 }
             ];
