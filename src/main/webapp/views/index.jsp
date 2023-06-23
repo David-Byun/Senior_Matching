@@ -55,6 +55,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
+
 <%--    push 발송 관련--%>
 
 <%--    캘린더--%>
@@ -63,6 +64,7 @@
 <%--    toast message--%>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/dist/toastr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/dist/toastr.min.js"></script>
+
     <style>
         .fa-gift {
             transform-origin: 50% 0%;
@@ -102,8 +104,8 @@
         }
     </style>
 </head>
-
 <body>
+
 <script>
     function speak(text, opt_prop) {
         if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
@@ -237,14 +239,13 @@
             location.href = "/logout"
         });
 
+
     });
 
 
 </script>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
+<!-- Offcanvas Menu End -->
+
 
 <!-- Offcanvas Menu Begin -->
 <div class="offcanvas-menu-overlay"></div>
@@ -279,10 +280,10 @@
     </div>
 </div>
 
-<!-- Offcanvas Menu End -->
 
 <!-- Header Section Begin -->
 <header class="header">
+
     <div class="header__top">
         <div class="container">
             <div class="row">
@@ -311,11 +312,24 @@
                                 </c:if>
                             <a href="/faq">FAQs</a>
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+    <marquee scrolldelay="100" bgcolor="#259FF7" behavior="slide" style="color:whitesmoke" loop="100">
+        <c:forEach items="${allNotice}" var="notice">
+
+                <b>[${notice.title}]</b> ${notice.content} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </c:forEach>
+            </marquee>
+
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-3">
@@ -323,6 +337,7 @@
                     <a href="/"><img src="/img/logo.png" alt="" style="width: 170px; height: 50px"></a>
                 </div>
             </div>
+
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
@@ -330,6 +345,7 @@
                         <li><a href="/match">매칭</a>
                             <ul class="dropdown">
                                 <li><a href="/match">매칭신청</a></li>
+                                <li><a href="/mate/all">후기</a></li>
                                 <li><a href="/listformember">회원 매칭내역</a></li>
                                 <li><a href="/listformate">메이트 매칭내역</a></li>
 
@@ -349,18 +365,17 @@
                             </ul>
                         </c:if>
                         </li>
-                        <li><a href="/mate/all">후기</a>
-                        </li>
                         <li><a href="/matelocation">위치</a>
                             <ul class="dropdown">
                                 <li><a href="/matelocation">근처 메이트 찾기</a></li>
                                 <li><a href="/contact">사무실 위치 및 연락</a></li>
                             </ul>
                         <li><a href="/chatgpt">문의</a></li>
-                        <li><a href="/video">AI 연령확인</a></li>
+                        <li><a href="/video">AI진단</a></li>
                     </ul>
                 </nav>
             </div>
+
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
                     <c:if test="${loginmate != null}">
@@ -400,8 +415,10 @@
         </div>
         <div class="canvas__open"><i class="fa fa-bars"></i></div>
     </div>
+    <!-- Header Section End -->
+
 </header>
-<!-- Header Section End -->
+
 
 <c:choose>
     <c:when test="${center == null}">
@@ -461,6 +478,7 @@
         </div>
     </div>
 </footer>
+
 <!-- Back to Top -->
 <a href="#" class="btn back-to-top" style="background-color: #64D6AB; color: whitesmoke;"><i class="fa fa-angle-double-up"></i></a>
 <!-- Footer Section End -->
@@ -477,6 +495,8 @@
 <script src="/js/mixitup.min.js"></script>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="/js/jquery.marquee.min.js"></script>
+<script src="/js/jquery.marquee.js"></script>
 </body>
 
 </html>

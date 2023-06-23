@@ -1,7 +1,9 @@
 package com.kbstar.controller;
 
 import com.kbstar.dto.ItemReview;
+import com.kbstar.dto.Notice;
 import com.kbstar.firebase.FirebaseInit;
+import com.kbstar.service.NoticeService;
 import com.kbstar.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +20,7 @@ import java.util.List;
 public class MainController {
 
     private final ReviewService reviewService;
+    private final NoticeService noticeService;
     private final FirebaseInit init;
 
     @RequestMapping("/chat")
@@ -47,12 +50,14 @@ public class MainController {
     @RequestMapping("/")
     public String main(Model model, HttpSession session) {
         init.init();
+        List<Notice> allNotice = noticeService.getAllNotice();
         if ((session.getAttribute("mycart") == null)) {
             session.setAttribute("mycart", 0);
         }
         if ((session.getAttribute("myreserve") == null)) {
             session.setAttribute("myreserve", 0);
         }
+        model.addAttribute("allNotice", allNotice);
         return "index";
     }
 
