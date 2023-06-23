@@ -177,7 +177,7 @@
                                     <div class="checkout__input" >
                                         <p>전화번호<span>*</span></p>
                                         <input type="text" id="phoneNumber" name="tel" placeholder="전화번호">
-                                        <button type="button" class="btn btn-primary" id="phoneChk">인증 문자 요청</button>
+                                        <button type="button" class="btn btn-primary" id="phoneChk"  style="color: white;">인증 문자 요청</button>
                                     </div>
                                     <div class="checkout__input" >
                                         <p>인증번호<span>*</span></p>

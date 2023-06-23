@@ -2364,7 +2364,6 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-    color: #212529;
     background-color: #FFD333;
     border-color: #FFD333;
 }
@@ -9486,9 +9485,6 @@ a.text-dark:hover, a.text-dark:focus {
     padding: 30px;
 }
 
-.btn.btn-primary {
-    color: #3D464D !important;
-}
 
 .btn-square {
     width: 40px;
