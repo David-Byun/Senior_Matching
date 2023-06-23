@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="com.kbstar.util.DateUtil" %>
 <%@ page import="java.text.ParseException" %>
 
@@ -39,134 +39,151 @@
         width: 13%;
     }
 
+
 </style>
-<style>
-    @font-face {
-        font-family: 'GowunDodum';
-        src: url('static/fonts/GowunDodum-Regular.ttf') format('truetype');
-    }
-    @font-face {
-        font-family: 'Cute Font';
-        src: url('static/fonts/CuteFont-Regular.ttf') format('truetype');
-    }
-    @font-face {
-        font-family: 'Orbit';
-        src: url('static/fonts/Orbit-Regular.ttf') format('truetype');
+<script>
+
+     function acceptMatchOffer(id) {
+        window.location.href = "/yestomatch/"+id;
     }
 
-
-    #listformate_title{
-        font-family: 'Orbit', sans-serif;;
-        color: red;
+    $(function (){
+        yes.init();
+    })
+    let yes = {
+        init:function (){
+            $('#yesBtn').click(function (){
+                yes.send();
+            });
+        },
+        send : function (){
+            $('#answerForm').attr({
+                'action':'/notification',
+                'method':'post'
+            });
+            $('#answerForm').submit();
+            alert("성공!");
+        }
     }
-    body {
-        font-family: 'GowunDodum', sans-serif;
-    }
 
-    table {
-        font-family: 'GowunDodum', sans-serif;
-    }
-    th, td {
-        font-family: 'Orbit', sans-serif;;
-        color: red;
-    }
-</style>
-
-<head>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<%--    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>--%>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<%--    <link rel="stylesheet" href="css/style.css">--%>
-</head>
-
-
-<body>
-
-<section class="ftco-section">
+</script>
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-option">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center mb-5">
-                <h2 id="listformate_title" class="heading-section">메이트 매칭 내역</h2>
-            </div>
-        </div>
-
         <div class="row">
-            <div class="col-md-12">
-                <div class="table-wrap">
-
-                    <table id="listformate" class="table table-responsive-xl">
-                        <thead>
-                        <tr>
-                            <th scope="col">번호</th>
-                            <th scope="col">일자</th>
-                            <th scope="col">구분</th>
-                            <th scope="col">지역</th>
-                            <th scope="col">성별</th>
-                            <th scope="col">연령</th>
-                            <th scope="col">상태</th>
-                        </tr>
-                        </thead>
-                        <c:forEach var="obj" items="${mlist}">
-                            <tbody>
-                            <tr class="alert" role="alert">
-                                <th scope="row">${obj.id}</th>
-                                <td>${obj.startDate} ~ ${obj.endDate}</td>
-                                <td>${obj.service}</td>
-                                <td>${obj.area}</td>
-                                <td>${obj.objectGender}</td>
-                                <td>${obj.objectBirth}</td>
-                                <td>
-                                    <c:choose>
-                                        <c:when test="${obj.status == '매칭대기'}">
-                                            <a href="#" data-toggle="modal" data-target="#myModal${obj.id}">${obj.status}</a>
-                                        </c:when>
-                                        <c:when test="${obj.status == '매칭완료'}">
-                                            <a href="#" data-toggle="modal" data-target="#myMessageModal${obj.id}">${obj.status}</a>
-                                        </c:when>
-                                        <c:otherwise>
-                                            ${obj.status}
-                                        </c:otherwise>
-                                    </c:choose>
-                                </td>
-                                    <%--                                <td class="d-flex align-items-center">--%>
-                                    <%--                                    <div class="img" style="background-image: url(#);"></div>--%>
-                                    <%--                                    <div class="pl-3 email">--%>
-                                    <%--                                        <span>markotto@email.com</span>--%>
-                                    <%--                                        <span>Added: 01/03/2020</span>--%>
-                                    <%--                                    </div>--%>
-                                    <%--                                </td>--%>
-                                    <%--                                <td>Markotto89</td>--%>
-                                    <%--                                <td class="status"><span class="active">Active</span></td>--%>
-                                    <%--                                <td>--%>
-                                    <%--                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">--%>
-                                    <%--                                        <span aria-hidden="true"><i class="fa fa-close"></i></span>--%>
-                                    <%--                                    </button>--%>
-                                    <%--                                </td>--%>
-                            </tr>
-                            </tbody>
-                        </c:forEach>
-                    </table>
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>메이트 매칭 내역</h4><span>*메이트용</span>
+                    <div class="breadcrumb__links">
+                        <a href="/">홈</a>
+                        <a href="#">매칭</a>
+                        <span>매칭 내역</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+    <!-- Breadcrumb Section End -->
 
-<script src="/js/1_bootstrap.min.js"></script>
-<script src="/js/1_jquery.min.js"></script>
-<script src="/js/1_main.js"></script>
-<script src="/js/1_popper.js"></script>
+<!-- Checkout Section Begin -->
+<section class="checkout spad">
+    <div class="container">
+        <div class="checkout__form">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">일자</th>
+                    <th scope="col">구분</th>
+                    <th scope="col">지역</th>
+                    <th scope="col">성별</th>
+                    <th scope="col">연령</th>
+                    <th scope="col">상태</th>
+                </tr>
+                </thead>
+                <c:forEach var="obj" items="${mlist}">
+                    <tbody>
+                    <tr>
+                        <th scope="row">${obj.id}</th>
+                        <td>${obj.startDate} ~ ${obj.endDate}</td>
+                        <td>${obj.service}</td>
+                        <td>${obj.area}</td>
+                        <td>${obj.objectGender}</td>
+                        <td>${obj.objectBirth}</td>
+                        <td>
+                            <c:choose>
+                                <c:when test="${obj.status == '매칭대기'}">
+                                    <a href="#" data-toggle="modal" data-target="#myModal${obj.id}">${obj.status}</a>
+                                </c:when>
+                                <c:when test="${obj.status == '매칭완료'}">
+                                    <a href="#" data-toggle="modal" data-target="#myMessageModal${obj.id}">${obj.status}</a>
+                                </c:when>
+                                <c:otherwise>
+                                    ${obj.status}
+                                </c:otherwise>
+                            </c:choose>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <!-- Modal Begins-->
+                    <div id="myModal${obj.id}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">매칭 수락</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p> [확인요망] </p>
+                                    <p> ${obj.startDate}에 시작하여 ${obj.endDate}에 종료되는 </p>
+                                    <p> ${obj.id}번 매칭 건 </p>
+                                    <p> 수락하시겠습니까 ?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button"  onclick="acceptMatchOffer(${obj.id})" class="btn btn-primary">수락</button>
+                                    <button type="button" class="btn btn-danger">거절</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Ends-->
+                    <!-- Modal Begins-->
+                    <div id="myMessageModal${obj.id}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">메세지 발송</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <p> [확인요망] </p>
+                                    <p> ${obj.id}번 매칭 건 </p>
+                                    <p> 매칭완료 메세지를 발송하시겠습니까 ?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <form id="answerForm">
+                                        <input type="hidden" id="title" name="title" value="매칭완료되었습니다.">
+                                        <input type="hidden" id="body" name="body" value="48시간 내에 결제를 부탁드립니다.">
+                                        <button type="button" id="yesBtn" name="yesBtn" class="btn btn-primary">수락</button>
+                                        <button type="button" class="btn btn-danger">거절</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+                                    </form>
 
-<script src="js/popper.js"></script>
-<script src="/js/jquery-3.3.1.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.nice-select.min.js"></script>
-<script src="/js/jquery.nicescroll.min.js"></script>
-<script src="/js/jquery.magnific-popup.min.js"></script>
-<script src="/js/jquery.countdown.min.js"></script>
-<script src="/js/jquery.slicknav.js"></script>
-<script src="/js/mixitup.min.js"></script>
-<script src="/js/owl.carousel.min.js"></script>
-<script src="/js/main.js"></script>
-</body>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Ends-->
+                </c:forEach>
+            </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Checkout Section End -->
+

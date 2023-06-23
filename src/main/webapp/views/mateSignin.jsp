@@ -23,6 +23,62 @@
     })
 </script>
 
+<script>
+    let item_add = {
+        maxSize: 5242880,  // 5M
+        init:function(){
+            $('#register_btn').click(function(){
+                var formData = new FormData();
+
+                var inputFile = $("input[name='img']");
+                // console.log(inputFile);
+                var files = inputFile[0].files;
+                for(var i=0; i<files.length;i++){
+                    // 함수 호출(checkExtension)
+                    if(!item_add.checkExtension(files[i].name, files[i].size)){
+                        return;
+                    }
+                }
+                item_add.send();
+
+            });
+        },
+        checkExtension:function(fileName, fileSize){
+            var reg = new RegExp("(.*?)\.(exe|zip|alz)$"); // 이러한 확장자는 업로드 못시키게
+
+            // 파일크기 제한
+            // 실제파일의 크기 > 최대 크기
+            if(fileSize >= this.maxSize){
+                alert("파일 사이즈 초과");
+                return false;
+            }
+
+            // 확장자 제한
+            // 실제파일명의 확장자와 정규식 비교
+            // 정규식이면
+            if(reg.test(fileName)){
+                alert("해당 종류의 파일은 업로드 할 수 없습니다.");
+                return false;
+            }
+            return true;
+
+        },
+        send:function(){
+            $('#register_form').attr({
+                method:'post',
+                action:'/mate/signinimpl',
+                enctype: 'multipart/form-data'
+            });
+            $('#register_form').submit();
+        }
+    };
+
+    $(function(){
+        item_add.init();
+    });
+</script>
+
+
 <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
         <div class="container">
@@ -55,19 +111,19 @@
                                 <div class="col-lg-10">
                                     <div class="checkout__input" >
                                         <p>아이디<span>*</span></p>
-                                        <input type="text" id="email" name="email" placeholder="Enter Email Id">
+                                        <input type="text" id="email" name="email" placeholder="이메일을 입력하세요.">
                                     </div>
                                     <div class="checkout__input" >
                                         <p>이름<span>*</span></p>
-                                        <input type="text" id="name" name="name" placeholder="Enter Name">
+                                        <input type="text" id="name" name="name" placeholder="이름을 입력하세요.">
                                     </div>
                                     <div class="checkout__input" >
                                         <p>비밀번호<span>*</span></p>
-                                        <input type="password" id="password" name="password" placeholder="Enter password ( over 5 letters )">
+                                        <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요.(5글자 이상)">
                                     </div>
                                     <div class="checkout__input" >
                                         <p>비밀번호 확인<span>*</span></p>
-                                        <input type="password" id="valid_password" placeholder="Enter password ( checking... )">
+                                        <input type="password" id="valid_password" placeholder="비밀번호를 다시 한번 입력하세요.">
                                     </div>
 
                                     <div class="checkout__input">
@@ -101,6 +157,10 @@
                                             <option value="물리치료사">물리치료사</option>
                                             <option value="사회복지사">사회복지사</option>
                                         </select>
+                                    </div>
+                                    <div class="checkout__input" >
+                                        <p>이미지<span>*매칭기능 이외에는 사용되지 않습니다.</span></p>
+                                        <input type="file" id="img" name="img" placeholder="이미지를 첨부하세요.">
                                     </div>
                                     <div class="checkout__input">
                                             <div class="alert alert-danger" id="alert" style="display: none">
