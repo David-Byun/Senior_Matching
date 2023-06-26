@@ -1,9 +1,8 @@
 package com.kbstar.controller;
 
-import com.kbstar.dto.ItemReview;
-import com.kbstar.dto.MateReviewAllDto;
-import com.kbstar.dto.Notice;
+import com.kbstar.dto.*;
 import com.kbstar.firebase.FirebaseInit;
+import com.kbstar.service.MatchService;
 import com.kbstar.service.MateService;
 import com.kbstar.service.NoticeService;
 import com.kbstar.service.ReviewService;
@@ -26,6 +25,7 @@ public class MainController {
     private final NoticeService noticeService;
     private final MateService mateService;
     private final FirebaseInit init;
+    private final MatchService matchService;
 
     @RequestMapping("/chat")
     public String test1(Model model, HttpSession session) {
@@ -53,7 +53,7 @@ public class MainController {
 
 
     @RequestMapping("/")
-    public String main(Model model, HttpSession session) {
+    public String main(Model model, HttpSession session) throws Exception {
         init.init();
         List<Notice> allNotice = noticeService.getAllNotice();
         List<MateReviewAllDto> allMates = mateService.findAllMates();
@@ -63,8 +63,12 @@ public class MainController {
         if ((session.getAttribute("myreserve") == null)) {
             session.setAttribute("myreserve", 0);
         }
+
+        List<Match> mlist = matchService.findByMemberId(1000);
+
         model.addAttribute("allMates", allMates);
         model.addAttribute("allNotice", allNotice);
+        model.addAttribute("matchListExample", mlist);
         return "index";
     }
 
