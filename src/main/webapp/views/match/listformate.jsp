@@ -39,10 +39,106 @@
         width: 13%;
     }
 
+    .custom-table {
+        border: 1px solid #e0e3ec;
+    }
+    .custom-table thead {
+        background: #007ae1;
+    }
+    .custom-table thead th {
+        border: 0;
+        color: #ffffff;
+    }
+    .custom-table > tbody tr:hover {
+        background: #fafafa;
+    }
+    .custom-table > tbody tr:nth-of-type(even) {
+        background-color: #ffffff;
+    }
+    .custom-table > tbody td {
+        border: 1px solid #e6e9f0;
+    }
+
+
+    .card {
+        background: #ffffff;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border: 0;
+        margin-bottom: 1rem;
+    }
+
+    .text-success {
+        color: #00bb42 !important;
+    }
+
+    .text-muted {
+        color: #9fa8b9 !important;
+    }
+
+    .custom-actions-btns {
+        margin: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .custom-actions-btns .btn {
+        margin: .3rem 0 .3rem .3rem;
+    }
+    .table td{
+        vertical-align: middle;
+        padding: 10px;
+        border-bottom: 4px solid white;
+    }
+    .table th{
+        vertical-align: middle;
+        border-bottom: 4px solid white;
+    }
+    .table  tr th{
+        vertical-align: middle;
+        border-bottom: 8px solid white;
+    }
+    .table {
+        background-color: #F1F1F1;
+    }
+
+    button{
+        border-radius: 10px;
+        box-shadow: 0 0 0 0 !important;
+    }
+
+    .product__item__text .rating i {
+        color: #f7941d;
+    }
+
+    .product__item__text .rating i:nth-last-child(1) {
+        color: #b7b7b7;
+    }
+
+    .service-button {
+        padding: 2px 4px;
+        border: none;
+        background-color: #f2f2f2;
+        color: #333;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        /* Add any additional styling here */
+    }
+
+    .service-button:hover {
+        background-color: #e0e0e0;
+    }
+
+    .service-button:focus {
+        outline: none;
+        box-shadow: 0 0 3px #999;
+    }
+
 
 </style>
 <script>
-
      function acceptMatchOffer(id) {
         window.location.href = "/yestomatch/"+id;
     }
@@ -67,6 +163,8 @@
     }
 
 </script>
+
+
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-option">
     <div class="container">
@@ -87,11 +185,14 @@
     <!-- Breadcrumb Section End -->
 
 <!-- Checkout Section Begin -->
-<section class="checkout spad">
+<section class="checkout spad" style="padding-top: 20px;">
     <div class="container">
+        <div class="alert alert-danger" style="text-align: center;">
+            <strong>🍯매칭 꿀팁!</strong> 수락 후 매칭완료 메세지 📤️ 를 발송해보세요! 📮
+        </div>
         <div class="checkout__form">
             <div class="table-responsive">
-                <table class="table table-hover table-striped">
+                <table class="table table-hover table-striped" style="text-align: center;">
                 <thead>
                 <tr>
                     <th scope="col">번호</th>
@@ -106,19 +207,24 @@
                 <c:forEach var="obj" items="${mlist}">
                     <tbody>
                     <tr>
-                        <th scope="row">${obj.id}</th>
+                        <td>${obj.id}</td>
                         <td>${obj.startDate} ~ ${obj.endDate}</td>
-                        <td>${obj.service}</td>
+                        <td>
+                            <button class="service-button">${obj.service}</button>
+                        </td>
                         <td>${obj.area}</td>
                         <td>${obj.objectGender}</td>
                         <td>${obj.objectBirth}</td>
                         <td>
                             <c:choose>
                                 <c:when test="${obj.status == '매칭대기'}">
-                                    <a href="#" data-toggle="modal" data-target="#myModal${obj.id}">${obj.status}</a>
+                                    <button href="#" class="btn-danger" data-toggle="modal" data-target="#myModal${obj.id}">${obj.status}</button>
                                 </c:when>
                                 <c:when test="${obj.status == '매칭완료'}">
-                                    <a href="#" data-toggle="modal" data-target="#myMessageModal${obj.id}">${obj.status}</a>
+                                    <button href="#" class="btn-info" data-toggle="modal" data-target="#myMessageModal${obj.id}">${obj.status}</button>
+                                </c:when>
+                                <c:when test="${obj.status == '결제완료'}">
+                                    <button href="#" class="btn-default" data-toggle="modal" data-target="#myMessageModal${obj.id}">${obj.status}</button>
                                 </c:when>
                                 <c:otherwise>
                                     ${obj.status}
@@ -163,7 +269,7 @@
                                 <div class="modal-body">
                                     <p> [확인요망] </p>
                                     <p> ${obj.id}번 매칭 건 </p>
-                                    <p> 매칭완료 메세지를 발송하시겠습니까 ?</p>
+                                    <p> 매칭완료 메세지 📤️ 를 발송하시겠습니까? 📮</p>
                                 </div>
                                 <div class="modal-footer">
                                     <form id="answerForm">
