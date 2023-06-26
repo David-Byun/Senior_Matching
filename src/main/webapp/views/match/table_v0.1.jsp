@@ -60,20 +60,20 @@
                                         </c:otherwise>
                                     </c:choose>
                                 </td>
-<%--                                <td class="d-flex align-items-center">--%>
-<%--                                    <div class="img" style="background-image: url(#);"></div>--%>
-<%--                                    <div class="pl-3 email">--%>
-<%--                                        <span>markotto@email.com</span>--%>
-<%--                                        <span>Added: 01/03/2020</span>--%>
-<%--                                    </div>--%>
-<%--                                </td>--%>
-<%--                                <td>Markotto89</td>--%>
-<%--                                <td class="status"><span class="active">Active</span></td>--%>
-<%--                                <td>--%>
-<%--                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">--%>
-<%--                                        <span aria-hidden="true"><i class="fa fa-close"></i></span>--%>
-<%--                                    </button>--%>
-<%--                                </td>--%>
+                                <td class="d-flex align-items-center">
+                                    <div class="img" style="background-image: url(#);"></div>
+                                    <div class="pl-3 email">
+                                        <span>markotto@email.com</span>
+                                        <span>Added: 01/03/2020</span>
+                                    </div>
+                                </td>
+                                <td>Markotto89</td>
+                                <td class="status"><span class="active">Active</span></td>
+                                <td>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                                    </button>
+                                </td>
                             </tr>
                             </tbody>
                         </c:forEach>

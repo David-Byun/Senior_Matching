@@ -78,6 +78,48 @@
     });
 </script>
 
+<style>
+    .checkout__input p {
+        margin-bottom: 10px;
+        display: block;
+    }
+    .checkout__input label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .checkout__input .custom-file-label {
+        background-color: #e9ecef;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+    }
+    .checkout__input .custom-file-label::after {
+        content: "찾기";
+        background-color: #6c757d;
+        color: #ffffff;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+    }
+    .form-select {
+        display: block;
+        width: 100%;
+        height: 38px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555555;
+        background-color: #ffffff;
+        background-image: none;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+</style>
+
 
 <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
@@ -125,18 +167,17 @@
                                         <p>비밀번호 확인<span>*</span></p>
                                         <input type="password" id="valid_password" placeholder="비밀번호를 다시 한번 입력하세요.">
                                     </div>
-
                                     <div class="checkout__input">
+                                        <p>지역<span>*</span></p>
                                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="area">
                                             <option selected>가능 지역을 선택해주세요</option>
-                                            <option value="성동구">성동구</option>
                                             <option value="강남구">강남구</option>
-                                            <option value="서대문구">서대문구</option>
-                                            <option value="마포구">마포구</option>
-                                            <option value="강서구">강서구</option>
+                                            <option value="관악구">관악구</option>
+                                            <option value="광진구">광진구</option>
                                         </select>
                                     </div>
                                     <div class="checkout__input">
+                                        <p>경력<span>*</span></p>
                                         <select class="form-select form-select-lg mb-3" aria-label="Default select example" name="jobPeriod">
                                             <option selected>경력을 선택해주세요</option>
                                             <option value="0">0년</option>
@@ -148,6 +189,7 @@
                                         </select>
                                     </div>
                                     <div class="checkout__input" >
+                                        <p>자격증<span>*</span></p>
                                         <select class="form-select mb-3" aria-label="Default select example" name="license">
                                             <option selected>보유 자격증을 선택해주세요</option>
                                             <option value="간호사">간호사</option>
@@ -158,16 +200,21 @@
                                             <option value="사회복지사">사회복지사</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="col-lg-10 checkout__input">
+                                    <p>이미지<span>*</span></p>
+                                </div>
+                                <div class="col-lg-10">
                                     <div class="checkout__input" >
-                                        <p>이미지<span>*매칭기능 이외에는 사용되지 않습니다.</span></p>
-                                        <input type="file" id="img" name="img" placeholder="이미지를 첨부하세요.">
+                                        <input type="file" id="imgName" name="imgName" class="custom-file-input" placeholder="이미지를 첨부하세요.">
+                                        <label for="imgName" class="custom-file-label">파일 선택</label>
                                     </div>
+                                </div>
                                     <div class="checkout__input">
                                             <div class="alert alert-danger" id="alert" style="display: none">
                                                 <strong>Wrong!</strong> 아이디 혹은 비밀번호를 다시 확인해주세요!
                                             </div>
                                     </div>
-                                </div>
                             </div>
                                 <div class="checkout__input__checkbox" style="margin-top: 20px">
                                     <button type="submit" class="btn btn-success" id="signin_btn" style="color: whitesmoke">가입하기</button>

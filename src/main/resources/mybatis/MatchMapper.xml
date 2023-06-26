@@ -30,22 +30,16 @@
         SELECT * FROM Match WHERE id=#{id}
     </select>
 
-    <select id="findByMemberId" resultType="Match">
-        SELECT id,
-        mate_id,
-        start_date,
-        end_date,
-        service,
-        area,
-        object_gender,
-        object_birth,
-        status,
-        price,
-        payment,
-        pay_date
-        FROM MATCH
-        WHERE member_id=#{memberId}
-        ORDER BY id
+    <select id="findByMemberId" resultType="MatchImg">
+        SELECT DISTINCT h.ID, h.MATE_ID, h.START_DATE, h.END_DATE, h.SERVICE, h.AREA,
+        h.OBJECT_GENDER, h.OBJECT_BIRTH, h.STATUS, h.PRICE, h.PAYMENT, h.PAY_DATE,
+        (SELECT MAX(e.img) FROM MATE e WHERE e.ID = h.MATE_ID) AS mateImg,
+        (SELECT MAX(e.NAME) FROM MATE e WHERE e.ID = h.MATE_ID) AS mateName,
+        mr.Rate AS mateRate
+        FROM MATCH h
+        LEFT JOIN MATE_REVIEW mr ON mr.MATE_ID = h.MATE_ID
+        WHERE h.member_id=#{memberId}
+        ORDER BY h.id
     </select>
 
     <select id="findByMateId" resultType="Match">

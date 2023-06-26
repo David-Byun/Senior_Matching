@@ -26,7 +26,7 @@
     }
     .table th:nth-child(3),
     .table td:nth-child(3) {
-        width: 13%;
+        width: 11%;
     }
     .table th:nth-child(4),
     .table td:nth-child(4) {
@@ -34,6 +34,10 @@
     }
     .table th:nth-child(5),
     .table td:nth-child(5) {
+        width: 13%;
+    }
+    .table th:nth-child(6),
+    .table td:nth-child(6) {
         width: 13%;
     }
     /*body{margin-top:20px;*/
@@ -168,6 +172,35 @@
     .custom-actions-btns .btn {
         margin: .3rem 0 .3rem .3rem;
     }
+    .table td{
+        vertical-align: middle;
+        padding: 10px;
+        border-bottom: 4px solid white;
+    }
+    .table th{
+        vertical-align: middle;
+        border-bottom: 4px solid white;
+    }
+    .table  tr th{
+        vertical-align: middle;
+        border-bottom: 8px solid white;
+    }
+    .table {
+        background-color: #F1F1F1;
+    }
+
+    button{
+        border-radius: 10px;
+        box-shadow: 0 0 0 0 !important;
+    }
+
+    .product__item__text .rating i {
+        color: #f7941d;
+    }
+
+    .product__item__text .rating i:nth-last-child(1) {
+        color: #b7b7b7;
+    }
 </style>
 <script>
 
@@ -208,7 +241,6 @@
          receipt.init();
      })
 </script>
-
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-option">
     <div class="container">
@@ -227,40 +259,64 @@
     </div>
 </section>
     <!-- Breadcrumb Section End -->
-
 <!-- Checkout Section Begin -->
 <section class="checkout spad">
     <div class="container">
+        <div class="alert alert-info" style="text-align: center;">
+            <strong>🍯매칭 꿀팁!</strong> 48시간 내로 결제되지 않으면 취소되요!🐝
+        </div>
         <div class="checkout__form">
-            <table class="table table-hover table-striped">
+            <table class="table table-hover table-striped" style="text-align: center;">
                 <thead>
                 <tr>
                     <th scope="col">번호</th>
                     <th scope="col">일자</th>
                     <th scope="col">구분</th>
                     <th scope="col">지역</th>
-                    <th scope="col">성별</th>
-                    <th scope="col">연령</th>
+                    <th scope="col">메이트</th>
                     <th scope="col">상태</th>
                 </tr>
                 </thead>
                 <c:forEach var="obj" items="${mlist}">
                     <tbody>
                     <tr>
-                        <th scope="row">${obj.id}</th>
+                        <td>${obj.id}</td>
                         <td>${obj.startDate} ~ ${obj.endDate}</td>
                         <td>${obj.service}</td>
                         <td>${obj.area}</td>
-                        <td>${obj.objectGender}</td>
-                        <td>${obj.objectBirth}</td>
+                        <td style="align-items: center;text-align: center;">
+                            <div style="align-items: center;text-align: center;">
+                            <img src="/img/mate/${obj.mateImg}" style="border-radius: 50%; width:50px;">
+                            <div class="product__item__text" style="align-items:center;text-align: center;">
+                                <span style="background-color: yellow">${obj.mateName}</span>
+                                <span style="background-color: yellow">
+                                        <div class="rating" id="rate" class="rate">
+                                            <c:forEach begin="1" end="${obj.mateRate}">
+                                                <i class="fa fa-star"></i>
+                                            </c:forEach>
+                                            <c:forEach begin="${obj.mateRate + 1}" end="5">
+                                                <i class="fa fa-star-o"></i>
+                                            </c:forEach>
+                                        </div>
+                                </span>
+                            </div>
+                            </div>
+
+                        </td>
                         <td>
                             <c:choose>
                                 <c:when test="${obj.status == '매칭완료'}">
-                                    <a href="#" data-toggle="modal" data-target="#myModal${obj.id}">${obj.status}</a>
+<%--                                    <button href="#" class="btn-danger" data-toggle="modal" data-target="#myModal${obj.id}">${obj.status}</button>--%>
+                                    <button href="#" class="btn-danger" data-toggle="modal" data-target="#myModal${obj.id}">결제대기</button>
+
                                 </c:when>
                                 <c:when test="${obj.status == '결제완료'}">
                                     <button href="#" class="btn-success" data-toggle="modal" data-target="#myReceipt${obj.id}">${obj.status}</button>
 <%--                                    <button onclick="showPopup()" class="btn-success">${obj.status}</button>--%>
+                                </c:when>
+                                <c:when test="${obj.status == '매칭대기'}">
+                                    <button href="#" class="btn-default">${obj.status}</button>
+                                    <%--                                    <button onclick="showPopup()" class="btn-success">${obj.status}</button>--%>
                                 </c:when>
                                 <c:otherwise>
                                     ${obj.status}

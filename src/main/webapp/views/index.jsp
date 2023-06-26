@@ -147,6 +147,7 @@
                 return "firefox";
             }
         }
+
         let firebaseConfig = {
             //cloud 게시시 키 변수 셋팅으로 진행 예정
             <%--apiKey: "<c:out value='${apiKey}' />",--%>
@@ -168,7 +169,6 @@
         console.log(web);
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-
         // Show Notification
         // 메시지 기능 활성화를 알림
         const messaging = firebase.messaging();
@@ -233,10 +233,10 @@
                     });
                 });
             })
+
         $('#logout').on("click", () => {
             location.href = "/logout"
         });
-
     });
 
 

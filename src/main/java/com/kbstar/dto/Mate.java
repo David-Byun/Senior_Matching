@@ -18,7 +18,6 @@ public class Mate {
     private int jobPeriod;
     private String license;
     private String valid;
-
     private MultipartFile imgName;
 
     public Mate(int id, String email, String name, String password, String img, String area, int jobPeriod, String license) {
