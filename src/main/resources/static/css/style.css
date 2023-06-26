@@ -931,8 +931,10 @@ ol {
 }
 
 .spad {
-	margin-top:60px;
+	padding-top: 100px;
+	padding-bottom: 100px;
 }
+
 
 .filter__controls {
 	text-align: center;
@@ -956,7 +958,6 @@ ol {
 .filter__controls li.active {
 	color: #111111;
 }
-
 .product__item {
 	overflow: hidden;
 	margin-bottom: 40px;
@@ -995,7 +996,7 @@ ol {
 }
 
 .product__item__pic {
-	height: 180px;
+	height: 260px;
 	position: relative;
 	background-position: center center;
 }
@@ -1165,6 +1166,7 @@ ol {
 	position: absolute;
 	visibility: hidden;
 }
+
 
 /*---------------------
   Shop
