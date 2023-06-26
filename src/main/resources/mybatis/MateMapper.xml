@@ -34,6 +34,7 @@
     </update>
 
     <select id="findByMateId" resultType="MateReviewDto">
+
         SELECT r.rate,
                r.content,
                u.name,
@@ -43,9 +44,11 @@
                  LEFT JOIN member u ON r.member_id = u.id
                  LEFT JOIN mate m ON r.mate_id = m.id
         WHERE mate_id = #{mateId}
+
     </select>
 
     <select id="findAllMates" resultType="MateReviewAllDto">
+        <![CDATA[
         SELECT m.ID AS id,
                COALESCE(AVG(r.RATE), 0) AS avgRate,
                COUNT(r.RATE) AS sum,
@@ -59,7 +62,33 @@
                  LEFT JOIN MATE_REVIEW r ON r.MATE_ID = m.ID
                  LEFT JOIN MEMBER u ON r.MEMBER_ID = u.ID
         WHERE m.valid = 1
+        AND ROWNUM <= 10
         GROUP BY m.ID, m.NAME, m.email, m.JOB_PERIOD, m.LICENSE, m.IMG, m.AREA
         ORDER BY avgRate DESC
+        ]]>
+    </select>
+
+    <select id="getAllMates" resultType="MateReviewAllDto">
+        <![CDATA[
+        SELECT m.ID                     AS id,
+        COALESCE(AVG(r.RATE), 0)        AS avgRate,
+        COUNT(r.RATE)                   AS sum,
+        m.NAME                          AS name,
+        m.email                         AS email,
+        m.JOB_PERIOD                    AS jobPeriod,
+        m.LICENSE                       AS license,
+        m.IMG                           AS img,
+        m.AREA                          AS area
+        FROM MATE m
+            LEFT JOIN MATE_REVIEW r ON r.MATE_ID = m.ID
+            LEFT JOIN MEMBER u ON r.MEMBER_ID = u.ID
+        WHERE m.valid = 1
+        AND ROWNUM <= 5
+        GROUP BY m.ID, m.NAME, m.email, m.JOB_PERIOD, m.LICENSE, m.IMG, m.AREA
+        ORDER BY CASE WHEN #{orderKind} = 'REVIEW_COUNT_DESC' THEN COALESCE(AVG(r.RATE), 0) END DESC,
+                CASE WHEN #{orderKind} = 'AREA_DESC' THEN m.AREA END DESC,
+                CASE WHEN #{orderKind} = 'JOB_DESC' THEN m.JOB_PERIOD END DESC,
+                CASE WHEN #{orderKind} = 'LICENSE_DESC' THEN m.LICENSE END DESC
+        ]]>
     </select>
 </mapper>

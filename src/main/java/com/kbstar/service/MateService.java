@@ -60,4 +60,8 @@ public class MateService implements ShopService<String, Mate>{
         return mapper.findAllMates();
     }
 
+    public List<MateReviewAllDto> getAllMates(String orderKind) {
+        return mapper.getAllMates(orderKind);
+    }
+
 }

@@ -6,6 +6,8 @@ import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.kbstar.dto.Mate;
+import com.kbstar.dto.MateReview;
+import com.kbstar.dto.MateReviewAllDto;
 import com.kbstar.service.MateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +21,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -31,6 +34,12 @@ public class AjaxController {
 
     @Value("${aiDir}")
     private String aiDir;
+
+    @GetMapping("/mateall")
+    public List<MateReviewAllDto> getAllMates(String orderKind) {
+        List<MateReviewAllDto> allMates = mateService.getAllMates(orderKind);
+        return allMates;
+    }
 
     @PostMapping("/profile")
     public Mate mateProfile(@RequestParam int id, Model model) {

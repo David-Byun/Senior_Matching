@@ -21,4 +21,6 @@ public interface MateMapper extends ShopMapper<String, Mate> {
 
 
     List<MateReviewAllDto> findAllMates();
+
+    List<MateReviewAllDto> getAllMates(String orderKind);
 }

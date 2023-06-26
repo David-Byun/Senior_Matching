@@ -323,7 +323,7 @@
                         <li><a href="/match">매칭</a>
                             <ul class="dropdown">
                                 <li><a href="/match">매칭신청</a></li>
-                                <li><a href="/mate/all">후기</a></li>
+                                <li><a href="/mate/samplemate">후기</a></li>
                                 <li><a href="/listformember">회원 매칭내역</a></li>
                                 <li><a href="/listformate">메이트 매칭내역</a></li>
 
