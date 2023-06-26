@@ -192,6 +192,81 @@
     button{
         border-radius: 10px;
         box-shadow: 0 0 0 0 !important;
+    } .custom-table {
+          border: 1px solid #e0e3ec;
+      }
+    .custom-table thead {
+        background: #007ae1;
+    }
+    .custom-table thead th {
+        border: 0;
+        color: #ffffff;
+    }
+    .custom-table > tbody tr:hover {
+        background: #fafafa;
+    }
+    .custom-table > tbody tr:nth-of-type(even) {
+        background-color: #ffffff;
+    }
+    .custom-table > tbody td {
+        border: 1px solid #e6e9f0;
+    }
+
+
+    .card {
+        background: #ffffff;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border: 0;
+        margin-bottom: 1rem;
+    }
+
+    .text-success {
+        color: #00bb42 !important;
+    }
+
+    .text-muted {
+        color: #9fa8b9 !important;
+    }
+
+    .custom-actions-btns {
+        margin: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .custom-actions-btns .btn {
+        margin: .3rem 0 .3rem .3rem;
+    }
+    .table td{
+        vertical-align: middle;
+        padding: 10px;
+        border-bottom: 4px solid white;
+    }
+    .table th{
+        vertical-align: middle;
+        border-bottom: 4px solid white;
+    }
+    .table  tr th{
+        vertical-align: middle;
+        border-bottom: 8px solid white;
+    }
+    .table {
+        background-color: #F1F1F1;
+    }
+
+    button{
+        border-radius: 10px;
+        box-shadow: 0 0 0 0 !important;
+    }
+
+    .product__item__text .rating i {
+        color: #f7941d;
+    }
+
+    .product__item__text .rating i:nth-last-child(1) {
+        color: #b7b7b7;
     }
 
     .product__item__text .rating i {
@@ -260,10 +335,10 @@
 </section>
     <!-- Breadcrumb Section End -->
 <!-- Checkout Section Begin -->
-<section class="checkout spad">
+<section class="checkout spad" style="padding-top: 20px;">
     <div class="container">
         <div class="alert alert-info" style="text-align: center;">
-            <strong>🍯매칭 꿀팁!</strong> 48시간 내로 결제되지 않으면 취소되요!🐝
+            <strong>🍯매칭 꿀팁!</strong> 48시간 내로 결제되지 않으면 취소돼요!🐝
         </div>
         <div class="checkout__form">
             <table class="table table-hover table-striped" style="text-align: center;">
