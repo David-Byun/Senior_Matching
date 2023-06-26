@@ -75,47 +75,80 @@
 </section>
 <!-- Hero Section End -->
 
-<!-- Banner Section Begin -->
-<section class="banner spad">
+<!-- Testimonial Section Begin -->
+<section class="testimonial-section spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 offset-lg-4">
-                <div class="banner__item">
-                    <div class="banner__item__pic">
-                        <img src="/img/senior/slider-1.jpg" alt="">
-                    </div>
-                    <div class="banner__item__text">
-                        <h2>친구 같이</h2>
-                        <a href="/match">메이트 찾기</a>
-                    </div>
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Testimonials</h2>
+                    <p>Our customers are our biggest supporters. What do they think of us?</p>
                 </div>
             </div>
-            <div class="col-lg-5">
-                <div class="banner__item banner__item--middle">
-                    <div class="banner__item__pic">
-                        <img src="/img/senior/slider-2.jpg" alt="">
-                    </div>
-                    <div class="banner__item__text">
-                        <h2>가족 같이</h2>
-                        <a href="/match">메이트 찾기</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="banner__item banner__item--last">
-                    <div class="banner__item__pic">
-                        <img src="/img/senior/slider-3.jpg" alt="">
-                    </div>
-                    <div class="banner__item__text">
-                        <h2>따뜻한 인생</h2>
-                        <a href="/match">메이트 찾기</a>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="testimonial-slider owl-carousel">
+                        <div class="col-lg-6">
+                            <div class="testimonial-item">
+                                <div class="ti-author">
+                                    <div class="quote-pic">
+                                        <img src="img/quote.png" alt="">
+                                    </div>
+                                    <div class="ta-pic">
+                                        <img src="img/testimonial/testimonial-1.jpg" alt="">
+                                    </div>
+                                    <div class="ta-text">
+                                        <h5>Emma Sandoval</h5>
+                                        <span>Speaker Manager</span>
+                                    </div>
+                                </div>
+                                <p>“First impression is made by logo or its absence. To know the importance of a logo just answer one question: How many big, leading and famous companies don’t have logos?”</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="testimonial-item">
+                                <div class="ti-author">
+                                    <div class="quote-pic">
+                                        <img src="img/quote.png" alt="">
+                                    </div>
+                                    <div class="ta-pic">
+                                        <img src="img/testimonial/testimonial-2.jpg" alt="">
+                                    </div>
+                                    <div class="ta-text">
+                                        <h5>John Smith</h5>
+                                        <span>Speaker Manager</span>
+                                    </div>
+                                </div>
+                                <p>“There is no denying the fact that the success of an advertisement lies mostly in the headline. The headline should attract the reader and make him read the rest of the advertisement.”</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="testimonial-item">
+                                <div class="ti-author">
+                                    <div class="quote-pic">
+                                        <img src="/img/quote.png" alt="">
+                                    </div>
+                                    <div class="ta-pic">
+                                        <img src="/img/testimonial/testimonial-2.jpg" alt="">
+                                    </div>
+                                    <div class="ta-text">
+                                        <h5>John Smith</h5>
+                                        <span>Speaker Manager</span>
+                                    </div>
+                                </div>
+                                <p>“There is no denying the fact that the success of an advertisement lies mostly in the headline. The headline should attract the reader and make him read the rest of the advertisement.”</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Banner Section End -->
+<!-- Testimonial Section End -->
+
 
 <!-- Product Section Begin -->
 <section class="product spad">
