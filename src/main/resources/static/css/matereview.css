@@ -9712,11 +9712,12 @@ a.text-dark:hover, a.text-dark:focus {
     animation: action 1s infinite alternate;
 }
 
+
 .back-to-contact {
     position: fixed;
     display: none;
     right: 30px;
-    bottom: 200px;
+    bottom: 160px;
     z-index: 11;
     animation: action 1s infinite alternate;
 }

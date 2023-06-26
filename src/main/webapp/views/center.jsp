@@ -2,8 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- Hero Section Begin -->
 
-<link rel="stylesheet" href="/css/style.css" type="text/css">
-<link rel="stylesheet" href="/css/indexstyle.css" type="text/css">
 <script>
     function speak(text, opt_prop) {
         if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
