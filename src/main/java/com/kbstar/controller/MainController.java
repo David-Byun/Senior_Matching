@@ -51,6 +51,7 @@ public class MainController {
         return "callchat";
     }
 
+
     @RequestMapping("/")
     public String main(Model model, HttpSession session) {
         init.init();

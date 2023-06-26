@@ -71,6 +71,15 @@ public class MateController {
         return "match/allmate";
     }
 
+    @GetMapping("/samplemate")
+    public String samplemate(Model model) {
+        List<MateReviewAllDto> mates = service.findAllMates();
+        model.addAttribute("center", "samplemate");
+        model.addAttribute("mates", mates);
+        return "index";
+    }
+
+
 
     @RequestMapping("/signin")
     public String mateSignin(Model model, HttpSession session) {

@@ -226,11 +226,10 @@
     <div class="container">
         <div class="row">
             <c:forEach items="${mates}" var="mate">
-
                 <div class="col-sm-4">
                     <div class="speaker-item" style="margin-top:20px">
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <a href="/mate/review/${mate.id}">
                             <c:choose>
                                 <c:when test="${mate.img == null || mate.img == ''}">
@@ -247,8 +246,7 @@
                             </c:choose>
                             </a>
                             </div>
-
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="si-text">
                                     <div class="si-title">
                                         <a href="/mate/review/${mate.id}">
