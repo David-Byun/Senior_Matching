@@ -167,6 +167,7 @@
                                         <p>비밀번호 확인<span>*</span></p>
                                         <input type="password" id="valid_password" placeholder="비밀번호를 다시 한번 입력하세요.">
                                     </div>
+
                                     <div class="checkout__input">
                                         <p>지역<span>*</span></p>
                                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="area">
@@ -215,6 +216,7 @@
                                                 <strong>Wrong!</strong> 아이디 혹은 비밀번호를 다시 확인해주세요!
                                             </div>
                                     </div>
+                                </div>
                             </div>
                                 <div class="checkout__input__checkbox" style="margin-top: 20px">
                                     <button type="submit" class="btn btn-success" id="signin_btn" style="color: whitesmoke">가입하기</button>

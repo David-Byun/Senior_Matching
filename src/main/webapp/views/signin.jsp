@@ -99,9 +99,17 @@
                 cache: false,
                 success: function (data) {
                     if (data == "error") { //실패시
-                        Swal.fire("휴대폰 번호를 확인 후 인증번호를 다시 발급해주세요")
+                        Swal.fire({
+                            title: '휴대폰 번호를 확인해주세요',
+                            showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                            }
+                        })
                     } else {            //성공시
-                        Swal.fire("인증번호 발송이 완료되었습니다. 휴대폰에서 인증번호를 확인해주세요.")
+                        Swal.fire("인증 번호를 확인해주세요")
                         code2 = data;
                         $('#phoneChk2').attr('disabled', false);
                         // 해당 코드를 변수에 담아둠
@@ -116,7 +124,7 @@
             if($('#phone2').val() == code2){ // 위에서 저장한값을 비교함
                 Swal.fire('인증성공')
             }else{
-                Swal.fire('인증실패 : 휴대폰 인증을 다시 시도해주세요')
+                Swal.fire('인증실패')
                 $('#phone2').val('');
             }
         });
@@ -177,7 +185,7 @@
                                     <div class="checkout__input" >
                                         <p>전화번호<span>*</span></p>
                                         <input type="text" id="phoneNumber" name="tel" placeholder="전화번호">
-                                        <button type="button" class="btn btn-primary" id="phoneChk">인증 문자 요청</button>
+                                        <button type="button" class="btn btn-primary" id="phoneChk"  style="color: white;">인증 문자 요청</button>
                                     </div>
                                     <div class="checkout__input" >
                                         <p>인증번호<span>*</span></p>

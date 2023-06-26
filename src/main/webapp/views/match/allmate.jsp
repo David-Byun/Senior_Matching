@@ -67,6 +67,7 @@
 
 <!-- Header Section Begin -->
 <header class="header">
+
     <div class="header__top">
         <div class="container">
             <div class="row">
@@ -95,18 +96,32 @@
                             </c:if>
                             <a href="/faq">FAQs</a>
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+    <marquee scrolldelay="100" bgcolor="#259FF7" behavior="slide" style="color:whitesmoke" loop="100">
+        <c:forEach items="${allNotice}" var="notice">
+
+            <b>[${notice.title}]</b> ${notice.content} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </c:forEach>
+    </marquee>
+
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo" style="height: 110px;">
-                    <a href="/"><img src="/img/logo.png" alt="" style="width: 170px; height: 50px"></a>
+                    <a href="/"><img src="/img/logo.png" alt="" style="height: 50px;"></a>
                 </div>
             </div>
+
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
@@ -114,6 +129,7 @@
                         <li><a href="/match">매칭</a>
                             <ul class="dropdown">
                                 <li><a href="/match">매칭신청</a></li>
+                                <li><a href="/mate/all">후기</a></li>
                                 <li><a href="/listformember">회원 매칭내역</a></li>
                                 <li><a href="/listformate">메이트 매칭내역</a></li>
 
@@ -133,20 +149,30 @@
                                 </ul>
                             </c:if>
                         </li>
-                        <li><a href="/mate/all">후기</a>
-                        </li>
                         <li><a href="/matelocation">위치</a>
                             <ul class="dropdown">
                                 <li><a href="/matelocation">근처 메이트 찾기</a></li>
                                 <li><a href="/contact">사무실 위치 및 연락</a></li>
                             </ul>
                         <li><a href="/chatgpt">문의</a></li>
-                        <li><a href="/video">AI 연령확인</a></li>
+                        <li><a href="/video">AI진단</a></li>
                     </ul>
                 </nav>
             </div>
+
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
+                    <c:if test="${loginmate != null}">
+                        <a href="/mate/profile/${loginmate.id}"><i class="fa-solid fa-user"></i></a>
+                    </c:if>
+                    <c:if test="${loginmember != null}">
+                        <a href="/memberdetail" class="search-switch"><i class="fa-solid fa-edit" style="color:black"></i></a>
+                        <c:if test="${coupon == 'Y'}">
+                            <a href="/mycoupon">
+                                <i class="fas fa-gift"></i>
+                            </a>
+                        </c:if>
+                    </c:if>
                     <a href="/reserve/${loginmember.id}">
                         <c:choose>
                             <c:when test="${myreserve == 0 || myreserve == null}">
@@ -167,13 +193,15 @@
                             </c:when>
                         </c:choose>
                     </a>
+
                 </div>
             </div>
         </div>
         <div class="canvas__open"><i class="fa fa-bars"></i></div>
     </div>
+    <!-- Header Section End -->
+
 </header>
-<!-- Header Section End -->
 
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-option">
@@ -199,7 +227,7 @@
         <div class="row">
             <c:forEach items="${mates}" var="mate">
 
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="speaker-item" style="margin-top:20px">
                         <div class="row">
                             <div class="col-lg-6">

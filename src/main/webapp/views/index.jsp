@@ -55,6 +55,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
+
 <%--    push 발송 관련--%>
 
 <%--    캘린더--%>
@@ -63,6 +64,7 @@
 <%--    toast message--%>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/dist/toastr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/dist/toastr.min.js"></script>
+
     <style>
         .fa-gift {
             transform-origin: 50% 0%;
@@ -102,33 +104,12 @@
         }
     </style>
 </head>
-
 <body>
+
 <script>
-    function speak(text, opt_prop) {
-        if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
-            alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
-            return
-        }
-
-        window.speechSynthesis.cancel() // 현재 읽고있다면 초기화
-
-        const prop = opt_prop || {}
-
-        const speechMsg = new SpeechSynthesisUtterance()
-        speechMsg.rate = prop.rate || 0.9 // 속도: 0.1 ~ 10
-        speechMsg.pitch = prop.pitch || 0.8 // 음높이: 0 ~ 2
-        speechMsg.lang = prop.lang || "ko-KR"
-        speechMsg.text = text
-
-        // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
-        window.speechSynthesis.speak(speechMsg)
-    }
-
     $(function () {
         function getBrowserName ()
         {
-            speak("안녕하세요 봄생봄사에 오신 것을 환영합니다. 간병인 매칭 및 건강식품 관련 샵이 있으니 많은 이용 부탁드립니다. 간병인 매칭 서비스를 원하신다면 매칭 메뉴를 클릭해주세요.");
             //agent에 브라우저 종류 삽입
             var agent = navigator.userAgent.toLowerCase();
             if(  (navigator.appName == 'Netscape'
@@ -241,10 +222,8 @@
 
 
 </script>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
+<!-- Offcanvas Menu End -->
+
 
 <!-- Offcanvas Menu Begin -->
 <div class="offcanvas-menu-overlay"></div>
@@ -279,10 +258,10 @@
     </div>
 </div>
 
-<!-- Offcanvas Menu End -->
 
 <!-- Header Section Begin -->
 <header class="header">
+
     <div class="header__top">
         <div class="container">
             <div class="row">
@@ -311,18 +290,32 @@
                                 </c:if>
                             <a href="/faq">FAQs</a>
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+    <marquee scrolldelay="100" bgcolor="#259FF7" behavior="slide" style="color:whitesmoke" loop="100">
+        <c:forEach items="${allNotice}" var="notice">
+
+                <b>[${notice.title}]</b> ${notice.content} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        </c:forEach>
+            </marquee>
+
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-3">
-                <div class="header__logo" style="height: 110px;">
-                    <a href="/"><img src="/img/logo.png" alt="" style="width: 170px; height: 50px"></a>
+                <div class="header__logo">
+                    <a href="/"><img src="/img/logo.png" alt="" style="height: 50px;"></a>
                 </div>
             </div>
+
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
@@ -330,6 +323,7 @@
                         <li><a href="/match">매칭</a>
                             <ul class="dropdown">
                                 <li><a href="/match">매칭신청</a></li>
+                                <li><a href="/mate/all">후기</a></li>
                                 <li><a href="/listformember">회원 매칭내역</a></li>
                                 <li><a href="/listformate">메이트 매칭내역</a></li>
 
@@ -349,18 +343,13 @@
                             </ul>
                         </c:if>
                         </li>
-                        <li><a href="/mate/all">후기</a>
-                        </li>
-                        <li><a href="/matelocation">위치</a>
-                            <ul class="dropdown">
-                                <li><a href="/matelocation">근처 메이트 찾기</a></li>
-                                <li><a href="/contact">사무실 위치 및 연락</a></li>
-                            </ul>
+                        <li><a href="/contact">위치</a></li>
                         <li><a href="/chatgpt">문의</a></li>
-                        <li><a href="/video">AI 연령확인</a></li>
+                        <li><a href="/video">AI진단</a></li>
                     </ul>
                 </nav>
             </div>
+
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
                     <c:if test="${loginmate != null}">
@@ -400,8 +389,10 @@
         </div>
         <div class="canvas__open"><i class="fa fa-bars"></i></div>
     </div>
+    <!-- Header Section End -->
+
 </header>
-<!-- Header Section End -->
+
 
 <c:choose>
     <c:when test="${center == null}">
@@ -461,6 +452,7 @@
         </div>
     </div>
 </footer>
+
 <!-- Back to Top -->
 <a href="#" class="btn back-to-top" style="background-color: #64D6AB; color: whitesmoke;"><i class="fa fa-angle-double-up"></i></a>
 <!-- Footer Section End -->
@@ -477,6 +469,9 @@
 <script src="/js/mixitup.min.js"></script>
 <script src="/js/owl.carousel.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="/js/jquery.marquee.min.js"></script>
+<script src="/js/jquery.marquee.js"></script>
+<script src="/js/player.js"></script>
 </body>
 
 </html>
