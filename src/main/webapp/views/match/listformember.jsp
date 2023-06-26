@@ -287,9 +287,9 @@
                         <td style="align-items: center;text-align: center;">
                             <div style="align-items: center;text-align: center;">
                             <img src="/img/mate/${obj.mateImg}" style="border-radius: 50%; width:50px;">
-                            <div class="product__item__text" style="align-items:center;text-align: center;">
-                                <span style="background-color: yellow">${obj.mateName}</span>
-                                <span style="background-color: yellow">
+                            <div class="product__item__text" style="align-items:center;text-align: center;padding-top: 0;">
+                                <span style="background-color: yellow; border-radius: 10px;">${obj.mateName}</span>
+                                <span>
                                         <div class="rating" id="rate" class="rate">
                                             <c:forEach begin="1" end="${obj.mateRate}">
                                                 <i class="fa fa-star"></i>

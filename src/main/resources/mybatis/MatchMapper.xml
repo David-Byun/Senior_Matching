@@ -31,16 +31,42 @@
     </select>
 
     <select id="findByMemberId" resultType="MatchImg">
-        SELECT DISTINCT h.ID, h.MATE_ID, h.START_DATE, h.END_DATE, h.SERVICE, h.AREA,
-        h.OBJECT_GENDER, h.OBJECT_BIRTH, h.STATUS, h.PRICE, h.PAYMENT, h.PAY_DATE,
-        (SELECT MAX(e.img) FROM MATE e WHERE e.ID = h.MATE_ID) AS mateImg,
-        (SELECT MAX(e.NAME) FROM MATE e WHERE e.ID = h.MATE_ID) AS mateName,
-        mr.Rate AS mateRate
+        SELECT h.ID,
+               h.MATE_ID,
+               h.START_DATE,
+               h.END_DATE,
+               h.SERVICE,
+               h.AREA,
+               h.OBJECT_GENDER,
+               h.OBJECT_BIRTH,
+               h.STATUS,
+               h.PRICE,
+               h.PAYMENT,
+               h.PAY_DATE,
+               e.img AS mateImg,
+               e.NAME AS mateName,
+               COALESCE(mr.mateRate, 0) AS mateRate
         FROM MATCH h
-        LEFT JOIN MATE_REVIEW mr ON mr.MATE_ID = h.MATE_ID
+                 LEFT JOIN MATE e ON h.MATE_ID = e.ID
+                 LEFT JOIN (
+            SELECT MATE_ID, AVG(RATE) AS mateRate
+            FROM MATE_REVIEW
+            GROUP BY MATE_ID
+        ) mr ON mr.MATE_ID = h.MATE_ID
         WHERE h.member_id=#{memberId}
-        ORDER BY h.id
+        ORDER BY h.ID
     </select>
+
+<!--    <select id="findByMemberId" resultType="MatchImg">-->
+<!--        SELECT DISTINCT h.ID, h.MATE_ID, h.START_DATE, h.END_DATE, h.SERVICE, h.AREA,-->
+<!--        h.OBJECT_GENDER, h.OBJECT_BIRTH, h.STATUS, h.PRICE, h.PAYMENT, h.PAY_DATE,-->
+<!--        e.img AS mateImg, e.NAME AS mateName, mr.Rate AS mateRate-->
+<!--        FROM MATCH h-->
+<!--        LEFT JOIN Mate e ON e.ID = h.MATE_ID-->
+<!--        LEFT JOIN MATE_REVIEW mr ON mr.MATE_ID = h.MATE_ID-->
+<!--        WHERE h.member_id=#{memberId}-->
+<!--        ORDER BY h.id-->
+<!--    </select>-->
 
     <select id="findByMateId" resultType="Match">
         SELECT id,
