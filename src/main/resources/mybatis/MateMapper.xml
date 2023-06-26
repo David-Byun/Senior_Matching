@@ -83,7 +83,7 @@
             LEFT JOIN MATE_REVIEW r ON r.MATE_ID = m.ID
             LEFT JOIN MEMBER u ON r.MEMBER_ID = u.ID
         WHERE m.valid = 1
-        AND ROWNUM <= 5
+        AND ROWNUM <= 4
         GROUP BY m.ID, m.NAME, m.email, m.JOB_PERIOD, m.LICENSE, m.IMG, m.AREA
         ORDER BY CASE WHEN #{orderKind} = 'REVIEW_COUNT_DESC' THEN COALESCE(AVG(r.RATE), 0) END DESC,
                 CASE WHEN #{orderKind} = 'AREA_DESC' THEN m.AREA END DESC,
