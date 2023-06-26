@@ -1,21 +1,15 @@
 package com.kbstar.controller;
 
-import com.kbstar.dto.*;
+import com.kbstar.dto.Match;
+import com.kbstar.dto.MatchId;
 import com.kbstar.service.MatchService;
 import com.kbstar.service.OrderMatchService;
 import com.kbstar.util.PdfUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpSession;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j

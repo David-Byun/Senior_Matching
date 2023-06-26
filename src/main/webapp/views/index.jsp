@@ -344,7 +344,6 @@
                         </c:if>
                         </li>
                         <li><a href="/contact">위치</a></li>
-                        <li><a href="/chatgpt">문의</a></li>
                         <li><a href="/video">AI진단</a></li>
                     </ul>
                 </nav>
@@ -454,7 +453,8 @@
 </footer>
 
 <!-- Back to Top -->
-<a href="#" class="btn back-to-top" style="background-color: #64D6AB; color: whitesmoke;"><i class="fa fa-angle-double-up"></i></a>
+<a href="#" class="btn back-to-top" style="background-color: #64D6AB; color: whitesmoke;"><i class="fa fa-house"></i></a>
+<a href="/chatgpt" class="btn back-to-contact" style="background-color: #64D6AB; color: whitesmoke;"><i class="fa fa-phone-alt"></i></a>
 <!-- Footer Section End -->
 
 
