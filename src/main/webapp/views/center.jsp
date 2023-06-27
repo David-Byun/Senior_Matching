@@ -2,9 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- Hero Section Begin -->
 <style>
+    .spad{
+        padding-bottom: 50px;
+    }
     .hero__slider {
-        width: 1200px;
-        height: 300px;
+        width: 970px;
+        height: 280px;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -12,10 +15,11 @@
     }
 
     .hero__items.custom-slide {
-        width: 1200px;
-        height: 300px;
+        width: 970px;
+        height: 280px;
         display: flex;
         align-items: center;
+        border-radius: 10px;
     }
 
     .all_region > button , .center_match_btn{
@@ -40,8 +44,31 @@
     .all_region_section:nth-child(2){
         border:none;
     }
+
+    .all_icon {
+        display: flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
+    }
+    .all_icon > div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .all_icon > div > img {
+        width : 70px;
+    }
+    .all_icon > div > h5 {
+        margin-top : 8px;
+    }
+
+    .arrow_right::before {
+
+    }
 </style>
+
 <script>
+    //********speak 정의 ( 음성안내 서비스 )********//
     function speak(text, opt_prop) {
         if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
             alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
@@ -60,13 +87,18 @@
         // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
         window.speechSynthesis.speak(speechMsg)
     }
+    //****************************************//
+
 
     $(function(){
+
         speak("안녕하세요 봄생봄사에 오신 것을 환영합니다. 간병인 매칭 및 건강식품 관련 샵이 있으니 많은 이용 부탁드립니다. 간병인 매칭 서비스를 원하신다면 매칭 메뉴를 클릭해주세요.");
 
         $('#closeBtn').click(function () {
             $("#modalCenter").modal('hide');
         })
+
+
         //**********************Map(지도)*********************
         var mapContainer = document.querySelector('#map03 > #map'), // 지도를 표시할 div
             mapOption = {
@@ -115,14 +147,11 @@
             }
         ];
 
-        // 마커 이미지의 이미지 주소입니다
+        // 마커 이미지 ( 노란색 마커표시 )
         var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
-
         for (var i = 0; i < positions.length; i++) {
-
             // 마커 이미지의 이미지 크기 입니다
             var imageSize = new kakao.maps.Size(24, 35);
-
             // 마커 이미지를 생성합니다
             var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
             // 마커에 mouseover 이벤트를 등록합니다
@@ -169,14 +198,77 @@
 <section style="display:flex!important; align-items: center; justify-content: center;">
 <section class="hero" style="align-items: center;">
     <div class="hero__slider owl-carousel">
-        <div class="hero__items set-bg custom-slide" data-setbg="/img/senior/a.jpg">
+        <div class="hero__items set-bg custom-slide" data-setbg="/img/senior/banner_01.jpg">
         </div>
-        <div class="hero__items set-bg custom-slide" data-setbg="/img/senior/b.jpg">
+        <div class="hero__items set-bg custom-slide" data-setbg="/img/senior/banner_02.jpg">
         </div>
     </div>
 </section>
 </section>
 <!-- Hero Section End -->
+
+<%--아이콘모음 Begins--%>
+<section class="product spad">
+    <div class="container">
+        <section style="display:flex!important; align-items: center; justify-content: center;" class="all_region_section">
+            <div class="col-sm-12">
+                <div class="card col-sm-12" style="border: none;">
+                    <div class="card-body all_icon col-sm-12">
+                        <div>
+                            <img src="/img/center/healthcare.png"/>
+                            <h5> 요양 </h5>
+                        </div>
+                        <div>
+                            <img src="/img/center/communities.png"/>
+                            <h5> 매칭 </h5>
+                        </div>
+                        <div>
+                            <img src="/img/center/friends.png"/>
+                            <h5> 간병 </h5>
+                        </div>
+                        <div>
+                            <img src="/img/center/medicine.png"/>
+                            <h5> 의약 </h5>
+                        </div>
+                        <div>
+                            <img src="/img/center/shopping-cart.png"/>
+                            <h5> 상품 </h5>
+                        </div>
+                        <div>
+                            <img src="/img/center/customer-care.png"/>
+                            <h5> 문의 </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<%--아이콘모음 Ends--%>
+
+<%--홍보멘트라인 Begins--%>
+<section class="product spad"
+         style="
+         background-color: #64d6ab;
+         width: 100%;
+         display: flex!important;
+         justify-content: center!important;
+         align-items: center!important;
+">
+
+    <div style="
+                color: white;
+                font-size: x-large;
+                text-align: center;
+    "> 마음 맞는 간병인을 찾기 어려우신가요?
+        <span style="
+                     font: 40px solid white ;
+    ">봄생봄사</span>
+        가 찾아드립니다. 재방문율 99% ! </div>
+
+
+</section>
+<%--홍보멘트라인 Ends--%>
 
 <%--이달의메이트 Begins--%>
 <section class="product spad">
@@ -184,7 +276,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <ul class="filter__controls">
-                    <li class="active" data-filter="*">이달의 메이트</li>
+                    <li class="active" data-filter="*">봄생봄사와 함께하는 이달의 메이트</li>
                 </ul>
             </div>
         </div>
@@ -238,6 +330,7 @@
 </section>
 <%--이달의메이트 Ends--%>
 
+
 <%--지도 Begins--%>
 <section class="product spad">
     <div class="container">
@@ -270,7 +363,7 @@
         </section>
             <div class="col-lg-12 col-md-12">
                 <div class="container" id="map03">
-                    <div id="map"></div>
+                    <div id="map" style="border: none;"></div>
                 </div>
             </div>
         </div>
@@ -321,6 +414,31 @@
     </div>
 </div>
 <%--지도 Ends--%>
+
+
+<%--홍보멘트라인 Begins--%>
+<section class="product spad"
+         style="
+         background-color: #64d6ab;
+         width: 100%;
+         display: flex!important;
+         justify-content: center!important;
+         align-items: center!important;
+">
+
+    <div style="
+                color: white;
+                font-size: x-large;
+                text-align: center;
+    "> 간병인은  <span style="
+                     font: 40px solid white ;
+    ">봄생봄사</span>의 소울 메이트입니다. 메이트 추천1위 플랫폼 !
+    </div>
+
+
+</section>
+<%--홍보멘트라인 Ends--%>
+
 
 <!-- Product Section Begin -->
 <section class="product spad">
@@ -621,50 +739,50 @@
 </section>
 <!-- Product Section End -->
 
-<!-- Categories Section Begin -->
-<section class="categories spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="categories__text">
-                    <h2>바이오페린 <br /> <span>비맥스 메타</span> <br /> 비타민C</h2>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="categories__hot__deal">
-                    <img src="/img/product/m6.jpeg" alt="">
-                    <div class="hot__deal__sticker">
-                        <span>Sale Of</span>
-                        <h5>30,000원</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 offset-lg-1">
-                <div class="categories__deal__countdown">
-                    <span>오늘의 핫딜</span>
-                    <h2>락토핏 생유산균 골드</h2>
-                    <div class="categories__deal__countdown__timer" id="countdown">
-                        <div class="cd-item">
-                            <span>3</span>
-                            <p>Days</p>
-                        </div>
-                        <div class="cd-item">
-                            <span>1</span>
-                            <p>Hours</p>
-                        </div>
-                        <div class="cd-item">
-                            <span>50</span>
-                            <p>Minutes</p>
-                        </div>
-                        <div class="cd-item">
-                            <span>18</span>
-                            <p>Seconds</p>
-                        </div>
-                    </div>
-                    <a href="/shop" class="primary-btn">바로 구매하세요!</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<%--<!-- Categories Section Begin -->--%>
+<%--<section class="categories spad">--%>
+<%--    <div class="container">--%>
+<%--        <div class="row">--%>
+<%--            <div class="col-lg-3">--%>
+<%--                <div class="categories__text">--%>
+<%--                    <h2>바이오페린 <br /> <span>비맥스 메타</span> <br /> 비타민C</h2>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <div class="col-lg-4">--%>
+<%--                <div class="categories__hot__deal">--%>
+<%--                    <img src="/img/product/m6.jpeg" alt="">--%>
+<%--                    <div class="hot__deal__sticker">--%>
+<%--                        <span>Sale Of</span>--%>
+<%--                        <h5>30,000원</h5>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <div class="col-lg-4 offset-lg-1">--%>
+<%--                <div class="categories__deal__countdown">--%>
+<%--                    <span>오늘의 핫딜</span>--%>
+<%--                    <h2>락토핏 생유산균 골드</h2>--%>
+<%--                    <div class="categories__deal__countdown__timer" id="countdown">--%>
+<%--                        <div class="cd-item">--%>
+<%--                            <span>3</span>--%>
+<%--                            <p>Days</p>--%>
+<%--                        </div>--%>
+<%--                        <div class="cd-item">--%>
+<%--                            <span>1</span>--%>
+<%--                            <p>Hours</p>--%>
+<%--                        </div>--%>
+<%--                        <div class="cd-item">--%>
+<%--                            <span>50</span>--%>
+<%--                            <p>Minutes</p>--%>
+<%--                        </div>--%>
+<%--                        <div class="cd-item">--%>
+<%--                            <span>18</span>--%>
+<%--                            <p>Seconds</p>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <a href="/shop" class="primary-btn">바로 구매하세요!</a>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</section>--%>
 

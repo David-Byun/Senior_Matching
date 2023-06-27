@@ -102,6 +102,15 @@
                 transform: rotate(0deg);
             }
         }
+
+        /*header{*/
+        /*    position: fixed;*/
+        /*    top: 0;*/
+        /*    left: 0;*/
+        /*    width: 100%;*/
+        /*    background-color: #ffffff; !* Specify the background color you want *!*/
+        /*    z-index: 999;*/
+        /*}*/
     </style>
 </head>
 <body>
@@ -260,7 +269,7 @@
 
 
 <!-- Header Section Begin -->
-<header class="header">
+<header class="header" style="">
     <div class="header__top">
         <div class="container">
             <div class="row">
@@ -311,11 +320,11 @@
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo">
-                    <a href="/"><img src="/img/logo.png" alt="" style="height: 50px;"></a>
+                    <a href="/"><img src="/img/logo.png" alt="" style="height: 100%;"></a>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-6" style="padding-top: 25px;">
                 <nav class="header__menu mobile-menu">
                     <ul>
                         <li><a href="/">홈</a></li>
@@ -399,7 +408,6 @@
         <jsp:include page="${center}.jsp"/>
     </c:otherwise>
 </c:choose>
-
 
 
 <!-- Footer Section Begin -->
