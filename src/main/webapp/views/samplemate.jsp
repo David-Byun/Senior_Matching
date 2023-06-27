@@ -15,6 +15,7 @@
                     $('#mate_email' + i).html('<i class="fa fa-envelope"></i> ' + result[i].email);
                     $('#mate_name' + i).text(result[i].name);
                     $('#mate_img' + i).attr('src', '/uimg/' + result[i].img);
+                    $('#mate_link' + i).attr('href', '/mate/review/' + result[i].id);
                     $('#mate_period' + i).html('경력 : <i class="fa fa-clock-o"></i> ' + result[i].jobPeriod + '년');
                     $('#mate_area' + i).html('가능 지역 : <i class="fa fa-map-marker"></i> ' + result[i].area);
                 }
@@ -45,8 +46,8 @@
                 tab.changeTab('JOB_ASC');
                 $('#tabs3').css('background-color', '#1389FB');
                 $('#tabs3').css('color', 'white');
-                $('#tabs1, #tabs2, #tabs3').css('background-color', 'white');
-                $('#tabs1, #tabs2, #tabs3').css('color', 'black');
+                $('#tabs1, #tabs2, #tabs4').css('background-color', 'white');
+                $('#tabs1, #tabs2, #tabs4').css('color', 'black');
             });
 
             $('#tabs4').on('click', function () {
@@ -68,6 +69,7 @@
                 data: {orderKind: 'REVIEW_COUNT_DESC'},
                 success: function (result) {
                     for (let i = 0; i < result.length; i++) {
+                        $('#mate_link' + i).attr('href', '/mate/review/' + result[i].id);
                         $('#mate_license' + i).html('<i class="fa fa-user"></i> ' + result[i].license);
                         $('#mate_email' + i).html('<i class="fa fa-envelope"></i> ' + result[i].email);
                         $('#mate_name' + i).text(result[i].name);
@@ -148,12 +150,15 @@
                     </ul><!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                            <a id="mate_link0">
                             <div class="st-content">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-3">
                                             <div class="sc-pic">
+
                                                 <img id="mate_img0" src="img/schedule/schedule-1.jpg" alt="">
+
                                             </div>
                                         </div>
                                         <div class="col-lg-5">
@@ -176,6 +181,8 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
+                            <a id="mate_link1">
                             <div class="st-content">
                                 <div class="container">
                                     <div class="row">
@@ -204,6 +211,8 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
+                            <a id="mate_link2">
                             <div class="st-content">
                                 <div class="container">
                                     <div class="row">
@@ -232,6 +241,8 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
+                            <a id="mate_link3">
                             <div class="st-content">
                                 <div class="container">
                                     <div class="row">
@@ -260,7 +271,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            </a>
                         </div>
                     </div>
                 </div>
