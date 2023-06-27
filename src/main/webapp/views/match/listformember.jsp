@@ -361,7 +361,7 @@
                         <td>${obj.area}</td>
                         <td style="align-items: center;text-align: center;">
                             <div style="align-items: center;text-align: center;">
-                            <img src="/img/mate/${obj.mateImg}" style="border-radius: 50%; width:50px;">
+                            <img src="/uimg/${obj.mateImg}" style="border-radius: 50%; width:50px;">
                             <div class="product__item__text" style="align-items:center;text-align: center;padding-top: 0;">
                                 <span style="background-color: yellow; border-radius: 10px;">${obj.mateName}</span>
                                 <span>
