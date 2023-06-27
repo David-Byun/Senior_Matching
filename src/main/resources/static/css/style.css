@@ -294,9 +294,9 @@ ol {
 }
 
 .member-item {
-	width: 20%;
+	width: 15%;
 	float: left;
-	height: 420px;
+	height: 200px;
 	position: relative;
 	overflow: hidden;
 }

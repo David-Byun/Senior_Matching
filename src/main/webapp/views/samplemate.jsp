@@ -287,51 +287,55 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <h2>이번주 TOP 10 메이트</h2>
+                    <h2>이번주 TOP 5 메이트</h2>
                     <p>최고의 메이트가 당신과 함께해요!</p>
                 </div>
             </div>
         </div>
     </div>
-    <%-- 메이트 리스트 중 최근 10명만 추출 --%>
-    <c:forEach items="${mates}" var="mate">
-            <div class="member-item set-bg" data-setbg="/uimg/${mate.img}">
-                <div class="mi-social">
-                    <div class="mi-social-inner bg-gradient">
-                        <a href="/callchat"><i class="fa fa-comment"></i></a>
-                        <a href="https://172.16.20.74" target='_blank'><i class="fa fa-video-camera"></i></a>
-                    </div>
-                </div>
-                <a href="/mate/review/${mate.id}">
-                <div class="mi-text">
-                    <h5>${mate.name}</h5>
-                    <span>${mate.email}</span>
-                    <div class="d-flex mt-2">
-                        <div class="text-primary mr-2">
-                            <c:set var="fullStars" value="${mate.avgRate / 1}" />
-                            <c:set var="halfStars" value="${5 - mate.avgRate}" />
-                            <c:if test="${mate.avgRate > 0}">
-                                <c:forEach begin="0" end="${fullStars-1}">
-                                    <small class="fas fa-star" style="color:#FAD00E"></small>
-                                </c:forEach>
-                            </c:if>
-                            <c:if test="${mate.avgRate % 1 != 0}">
-                                <small class="fas fa-star-half-alt" style="color:#FAD00E"></small>
-                                <c:set var="halfStars" value="${halfStars - 1}" />
-                            </c:if>
-
-                            <c:forEach begin="1" end="${halfStars}">
-                                <small class="far fa-star" style="color:#FAD00E"></small>
-                            </c:forEach>
-
+    <div class="row">
+        <div class="col-lg-12" style="display: flex; justify-content: center; padding-bottom: 20px">
+            <c:forEach items="${mates}" var="mate">
+                <div class="member-item set-bg" data-setbg="/uimg/${mate.img}" style="width: 250px; height: 250px; background-position: center center;">
+                    <div class="mi-social">
+                        <div class="mi-social-inner bg-gradient">
+                            <a href="/callchat"><i class="fa fa-comment" style="color: #08BD8F"></i></a>
+                            <a href="https://172.16.20.74" target='_blank'><i class="fa fa-video-camera" style="color: #08BD8F"></i></a>
                         </div>
-                        <small class="pt-1" style="color: darkgray">(리뷰 ${mate.sum}개)</small>
                     </div>
-                </div>
-                </a>
-            </div>
+                    <a href="/mate/review/${mate.id}">
+                        <div class="mi-text">
+                            <h5>${mate.name}</h5>
+                            <span>${mate.email}</span>
+                            <div class="d-flex mt-2">
+                                <div class="text-primary mr-2">
+                                    <c:set var="fullStars" value="${mate.avgRate / 1}" />
+                                    <c:set var="halfStars" value="${5 - mate.avgRate}" />
+                                    <c:if test="${mate.avgRate > 0}">
+                                        <c:forEach begin="0" end="${fullStars-1}">
+                                            <small class="fas fa-star" style="color:#FAD00E"></small>
+                                        </c:forEach>
+                                    </c:if>
+                                    <c:if test="${mate.avgRate % 1 != 0}">
+                                        <small class="fas fa-star-half-alt" style="color:#FAD00E"></small>
+                                        <c:set var="halfStars" value="${halfStars - 1}" />
+                                    </c:if>
 
-    </c:forEach>
+                                    <c:forEach begin="1" end="${halfStars}">
+                                        <small class="far fa-star" style="color:#FAD00E"></small>
+                                    </c:forEach>
+
+                                </div>
+                                <small class="pt-1" style="color: darkgray">(리뷰 ${mate.sum}개)</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
+    <%-- 메이트 리스트 중 최근 10명만 추출 --%>
+
 
 </section>
 <!-- Team Member Section End -->

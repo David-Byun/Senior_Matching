@@ -254,24 +254,24 @@
 <!-- Shop Detail Start -->
 
 <div class="container-fluid">
-    <div class="row px-sm-10">
+    <div class="row px-sm-10" >
         <div class="col-sm-6 mb-30">
             <div id="product-carousel" >
-                <div class="bg-light">
+                <div >
                     <c:choose>
                         <c:when test="${mate.img == null || mate.img == ''}">
-                            <img class="w-100 h-60" src="https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_1280.jpg" alt="Image">
+                            <img class="w-40 h-25 d-block mx-auto" src="https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_1280.jpg" alt="Image">
                         </c:when>
                         <c:otherwise>
-                            <img class="w-100 h-60" src="/uimg/${mate.img}" alt="Image">
+                            <img class="w-40 h-25 d-block mx-auto pt-5" src="/uimg/${mate.img}" alt="Image">
                         </c:otherwise>
                     </c:choose>
                 </div>
             </div>
         </div>
 
-        <div class="col-sm-6 h-auto mb-30">
-            <div class="h-100 bg-light p-30">
+        <div class="col-sm-6 h-auto mb-30" >
+            <div class="h-100 p-30">
                 <h3>${mate.name}</h3>
                 <h4>${mate.email}</h4>
                 <div class="d-flex mt-3">
@@ -326,9 +326,9 @@
             </div>
         </div>
     </div>
-    <div class="row px-xl-3">
-        <div class="col">
-            <div class="bg-light p-30">
+    <div class="px-xl-5">
+        <div class="col px-xl-5">
+            <div class="px-xl-5">
                 <div class="nav nav-tabs mb-4">
                     <a class="nav-item nav-link text-dark active" data-toggle="tab" href="#tab-pane-3">리뷰 (${countReview})</a>
                 </div>
