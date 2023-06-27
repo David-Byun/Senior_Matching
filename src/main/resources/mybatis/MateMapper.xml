@@ -86,9 +86,9 @@
         AND ROWNUM <= 4
         GROUP BY m.ID, m.NAME, m.email, m.JOB_PERIOD, m.LICENSE, m.IMG, m.AREA
         ORDER BY CASE WHEN #{orderKind} = 'REVIEW_COUNT_DESC' THEN COALESCE(AVG(r.RATE), 0) END DESC,
-                CASE WHEN #{orderKind} = 'AREA_DESC' THEN m.AREA END DESC,
-                CASE WHEN #{orderKind} = 'JOB_DESC' THEN m.JOB_PERIOD END DESC,
-                CASE WHEN #{orderKind} = 'LICENSE_DESC' THEN m.LICENSE END DESC
+                CASE WHEN #{orderKind} = 'AREA_ASC' THEN m.AREA END ASC,
+                CASE WHEN #{orderKind} = 'JOB_ASC' THEN m.JOB_PERIOD END ASC,
+                CASE WHEN #{orderKind} = 'LICENSE_ASC' THEN m.LICENSE END ASC
         ]]>
     </select>
 </mapper>
