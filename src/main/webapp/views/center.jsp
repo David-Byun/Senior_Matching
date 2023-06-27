@@ -374,7 +374,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <div class="d-flex align-items-center mb-4 pt-2">
+                    <div class="d-flex align-items-center mb-4 pt-2" style="justify-content: center;">
                         <img src="https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_1280.jpg" alt="mateIamge" id="mateimg">
                     </div>
                     <h4 id="matename">이름 : 이현지</h4>
@@ -407,7 +407,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">닫기</button>
-                    <button type="button" class="btn" onclick="location.href='/mate/all'" style="background-color: #64D6AB;color: whitesmoke">후기 보기</button>
+                    <button type="button" class="btn" onclick="location.href='/mate/samplemate'" style="background-color: #64D6AB;color: whitesmoke">후기 보기</button>
                 </div>
             </div>
         </div>
