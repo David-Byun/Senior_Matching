@@ -343,11 +343,9 @@
                             </ul>
                         </c:if>
                         </li>
-                        <li><a href="/matelocation">위치</a>
-                            <ul class="dropdown">
-                                <li><a href="/matelocation">주변 메이트 찾기</a></li>
-                                <li><a href="/contact">이메일 문의</a></li></ul></li>
                         <li><a href="/video">AI진단</a></li>
+                        <li><a href="/contact">본사 문의</a>
+
                     </ul>
                 </nav>
             </div>
