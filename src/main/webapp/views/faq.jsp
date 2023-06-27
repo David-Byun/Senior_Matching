@@ -53,8 +53,8 @@
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>사이즈 교환은 제품 구매후 7일이내 신청 시 가능합니다.</strong>
-                                다만, 착용/착화후에는 교환이 되지 않으므로 이 점 유의하시기 바랍니다.
+                                <strong>제품 교환은 제품 구매후 7일이내 신청 시 가능합니다.</strong>
+                                다만, 사용 후에는 교환이 되지 않으므로 이 점 유의하시기 바랍니다.
                                 단체구매 시 구매 담당자에게 문의 하시면 정확한 처리가 가능합니다. </div>
                         </div>
                     </div>

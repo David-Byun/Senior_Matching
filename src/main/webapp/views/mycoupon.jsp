@@ -70,7 +70,7 @@
         </div>
     </div>
     <div class="col-12 mt-auto mb-5 text-center pt-5">
-        <a class="btn custom-btn smoothscroll" href="#section_2" id="captureButton" style="background-color: #178BFB">사용하러 가기</a>
+        <a class="btn custom-btn smoothscroll" href="/match" id="captureButton" style="background-color: #178BFB">사용하러 가기</a>
     </div>
 
 </div>
