@@ -193,7 +193,7 @@
         <div class="checkout__form">
             <div class="table-responsive">
                 <table class="table table-hover table-striped" style="text-align: center;">
-                <thead>
+                <thead style="background-color: floralwhite">
                 <tr>
                     <th scope="col">번호</th>
                     <th scope="col">일자</th>
@@ -205,7 +205,7 @@
                 </tr>
                 </thead>
                 <c:forEach var="obj" items="${mlist}">
-                    <tbody>
+                    <tbody style="background-color: floralwhite">
                     <tr>
                         <td>${obj.id}</td>
                         <td>${obj.startDate} ~ ${obj.endDate}</td>

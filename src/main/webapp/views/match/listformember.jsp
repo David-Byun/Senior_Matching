@@ -340,10 +340,10 @@
         <div class="alert alert-info" style="text-align: center;">
             <strong>🍯매칭 꿀팁!</strong> 48시간 내로 결제되지 않으면 취소돼요!🐝
         </div>
-        <div class="checkout__form">
-            <table class="table table-hover table-striped" style="text-align: center;">
-                <thead>
-                <tr>
+        <div class="checkout__form" >
+            <table class="table table-hover table-striped" style="text-align: center; background-color: floralwhite" >
+                <thead style="background-color: floralwhite">
+                <tr style="background-color: floralwhite">
                     <th scope="col">번호</th>
                     <th scope="col">일자</th>
                     <th scope="col">구분</th>
@@ -353,8 +353,8 @@
                 </tr>
                 </thead>
                 <c:forEach var="obj" items="${mlist}">
-                    <tbody>
-                    <tr>
+                    <tbody style="background-color: floralwhite">
+                    <tr style="background-color: floralwhite">
                         <td>${obj.id}</td>
                         <td>${obj.startDate} ~ ${obj.endDate}</td>
                         <td>${obj.service}</td>

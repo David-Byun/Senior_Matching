@@ -261,7 +261,6 @@
 
 <!-- Header Section Begin -->
 <header class="header">
-
     <div class="header__top">
         <div class="container">
             <div class="row">
@@ -306,7 +305,7 @@
                 <b>[${notice.title}]</b> ${notice.content} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
         </c:forEach>
-            </marquee>
+    </marquee>
 
     <div class="container">
         <div class="row">
@@ -390,9 +389,7 @@
         <div class="canvas__open"><i class="fa fa-bars"></i></div>
     </div>
     <!-- Header Section End -->
-
 </header>
-
 
 <c:choose>
     <c:when test="${center == null}">
