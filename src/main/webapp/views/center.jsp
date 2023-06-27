@@ -63,149 +63,107 @@
 
     $(function(){
         speak("안녕하세요 봄생봄사에 오신 것을 환영합니다. 간병인 매칭 및 건강식품 관련 샵이 있으니 많은 이용 부탁드립니다. 간병인 매칭 서비스를 원하신다면 매칭 메뉴를 클릭해주세요.");
+
+        $('#closeBtn').click(function () {
+            $("#modalCenter").modal('hide');
+        })
+        //**********************Map(지도)*********************
+        var mapContainer = document.querySelector('#map03 > #map'), // 지도를 표시할 div
+            mapOption = {
+                center: new kakao.maps.LatLng(37.5456285, 127.0501575), // 지도의 중심좌표
+                level: 4 // 지도의 확대 레벨
+            };
+        //map 생성
+        map = new kakao.maps.Map(mapContainer, mapOption);
+
+        var id = '';
+        //*********************Controller(컨트롤러)*********************
+        // 지도종류컨트롤 : 일반지도 or 스카이뷰지도
+        var mapTypeControl = new kakao.maps.MapTypeControl();
+        // 아래는 지도 + 컨트롤 --> 지도위에 컨트롤 표시
+        // kakao.maps.ControlPosition은 컨트롤이 표시될 위치 = topright
+        map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+        // 줌컨트롤 : 확대 or 축소
+        var zoomControl = new kakao.maps.ZoomControl();
+        map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+        //*********************Marker(마커)*********************
+        //map marker
+        // 마커를 표시할 위치와 title 객체 배열입니다
+        var positions = [
+            {
+                title: 2001,
+                latlng: new kakao.maps.LatLng(37.5456285, 127.0501575),
+            },
+            {
+                title: 2002,
+                latlng: new kakao.maps.LatLng(37.5435185, 127.0485565),
+            },
+            {
+                title: 2003,
+                latlng: new kakao.maps.LatLng(37.5455415, 127.0526375),
+
+            },
+            {
+                title: 2004,
+                latlng: new kakao.maps.LatLng(37.5456155, 127.0484245),
+            },
+
+            {
+                title: 2011,
+                latlng: new kakao.maps.LatLng(37.5446155, 127.0434245),
+            }
+        ];
+
+        // 마커 이미지의 이미지 주소입니다
+        var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+        for (var i = 0; i < positions.length; i++) {
+
+            // 마커 이미지의 이미지 크기 입니다
+            var imageSize = new kakao.maps.Size(24, 35);
+
+            // 마커 이미지를 생성합니다
+            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+            // 마커에 mouseover 이벤트를 등록합니다
+            // 마커를 지도에 표시합니다.
+            addMarker(positions[i], markerImage);
+        }
+
+        // 마커를 생성하고 지도 위에 표시하고, 마커에 mouseover, mouseout, click 이벤트를 등록하는 함수입니다
+        function addMarker(position, markerImage) {
+
+            // 마커를 생성하고 이미지는 기본 마커 이미지를 사용합니다
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                map: map, // 마커를 표시할 지도
+                position: positions[i].latlng, // 마커를 표시할 위치
+                title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                image: markerImage // 마커 이미지
+            });
+            // 마커에 click 이벤트를 등록합니다
+            kakao.maps.event.addListener(marker, 'click', function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/api/profile",
+                    data: {id: marker.Gb},
+                    cache: false,
+                    success: function (res) {
+                        console.log(res);
+                        $('#mateperiod').text("경력 : " + res.jobPeriod + " 년");
+                        $('#mateemail').text(res.email);
+                        $('#matelicensce').text("자격증 : " + res.license);
+                        $('#matename').text(res.name);
+                        $('#matearea').text("가능지역 : " + res.area);
+                        $('#mateimg').attr("src", "/uimg/" + res.img);
+                        $("#modalCenter").modal('show');
+                    }
+                })
+            });
+        }
     })
 </script>
-<script>
-    let map03 = {
-        map:null,
-        init: function () {
-            //다양한 초기화를 해주는 init
-            //여기서는 버튼에 대한 초기 값을 설정해주는 역할
-            //map이라는 변수가 선언된 이유는 전역적으로 사용하기 위함이므로 밖에서 선언
 
-            this.display();
-            // $('#s_btn').click(function () {
-            //     map03.go(37.5857825,126.9828019,'s' );
-            // });
-            // $('#b_btn').click(function () {
-            //     map03.go(35.1883491,129.2233197,'b');
-            // });
-            // $('#j_btn').click(function () {
-            //     map03.go(33.2501708,126.5636786,'j');
-            // });
-
-        },
-        display: function () {
-            //**********************Map(지도)*********************
-            var mapContainer = document.querySelector('#map03 > #map'); //지도를 표시할 div
-            var mapOption = {
-                center: new kakao.maps.LatLng(37.5456385, 127.0534575), // 지도의 중심좌표
-                level: 5 // 지도의 확대 레벨
-            };
-            //map 생성
-            map = new kakao.maps.Map(mapContainer, mapOption);
-
-            //*********************Controller(컨트롤러)*********************
-            // 지도종류컨트롤 : 일반지도 or 스카이뷰지도
-            var mapTypeControl = new kakao.maps.MapTypeControl();
-            // 아래는 지도 + 컨트롤 --> 지도위에 컨트롤 표시
-            // kakao.maps.ControlPosition은 컨트롤이 표시될 위치 = topright
-            map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-            // 줌컨트롤 : 확대 or 축소
-            var zoomControl = new kakao.maps.ZoomControl();
-            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-            //*********************Marker(마커)*********************
-            //map marker
-            var markerPosition  = new kakao.maps.LatLng(37.5456385, 127.0534575);
-            var marker = new kakao.maps.Marker({
-                position: markerPosition
-            });
-            marker.setMap(map);
-
-        },
-        go: function (lat,lng,loc) {
-            // 지역을 클릭 시
-            // 그 지역의 맛집만 나온다?
-
-            var mapContainer = document.querySelector('#map03 > #map');
-            var mapOption = {
-                center: new kakao.maps.LatLng(lat,lng), // 지도의 중심좌표
-                level: 5 // 지도의 확대 레벨
-            };
-            // map변수 최초 생성
-            map = new kakao.maps.Map(mapContainer, mapOption);
-
-            // map controller ( 지도 확대, 축소 )
-            var mapTypeControl = new kakao.maps.MapTypeControl();
-            map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-            var zoomControl = new kakao.maps.ZoomControl();
-            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-            //panTo라는 함수를 활용해서 지도가 이동
-            // var moveLatLon = new kakao.maps.LatLng(lat, lng);
-            // map.panTo(moveLatLon);
-
-            //marker 표시하는 함수
-            var markerPosition  = new kakao.maps.LatLng(lat, lng);
-            var marker = new kakao.maps.Marker({
-                position: markerPosition
-            });
-            marker.setMap(map);
-            //지도에 loc를 넣고 s,b,j 별 데이터 줘 !
-            map03.markers(loc); // loc 정보로 -> marker를 받고자 요청
-        },
-
-        markers:function (loc){
-            // $.ajax({
-            //     url:'/markers',
-            //     data:{'loc': loc}, // 서버에 s,b,j를 날리는 중
-            //     success: function (data) {
-            //         map03.displaymarkers(data);
-            //     },
-            // });
-        },
-        displaymarkers:function (positions) {
-            // 그 데이터를 지도에 뿌려라! 함수
-            // var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
-            // for (var i = 0; i < positions.length; i++) {
-            //     var imageSize = new kakao.maps.Size(20, 30);
-            //     var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-            //     var markerPosition = new kakao.maps.LatLng( positions[i].lat, positions[i].lng);
-            //
-            //     var marker = new kakao.maps.Marker({
-            //         map: map,
-            //         position : markerPosition,
-            //         title : positions[i].title,
-            //         image : markerImage
-            //     });
-            //     // infoWindow
-            //     var iwContent = '<h2>'+positions[i].title+'</h2>';
-            //     iwContent += '<img src="/img/'+positions[i].img+'" style="width:50px">';
-            //
-            //     var infowindow = new kakao.maps.InfoWindow({
-            //         // position : positions[i].latlng,
-            //         position : markerPosition,
-            //         content : iwContent
-            //     });
-            //
-            //     kakao.maps.event.addListener(marker, 'mouseover', mouseoverListener(marker, infowindow));
-            //     kakao.maps.event.addListener(marker, 'mouseout', mouseoutListener(marker, infowindow));
-            //     kakao.maps.event.addListener(marker, 'click', mouseclickListener(positions[i].id));
-            //
-            //
-            //     function mouseoverListener(marker, infowindow) {
-            //         return function(){
-            //             infowindow.open(map, marker);
-            //         };
-            //     }
-            //     function mouseoutListener(marker, infowindow) {
-            //         return function(){
-            //             infowindow.close();
-            //         };
-            //     }
-            //     function mouseclickListener(target) {
-            //         return function(){
-            //             location.href = '/map/detail?id='+target;
-            //         };
-            //     }
-            // } // end for
-        }
-    };
-    $(function(){
-        map03.init();
-    });
-</script>
 
 <!-- Hero Section Begin -->
 <section style="display:flex!important; align-items: center; justify-content: center;">
@@ -316,8 +274,52 @@
                 </div>
             </div>
         </div>
-    </div>
 </section>
+
+<div class="m-4">
+    <div id="modalCenter" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex align-items-center mb-4 pt-2">
+                        <img src="https://cdn.pixabay.com/photo/2018/01/21/14/16/woman-3096664_1280.jpg" alt="mateIamge" id="mateimg">
+                    </div>
+                    <h4 id="matename">이름 : 이현지</h4>
+                    <p id="mateemail">이메일 : hyunji@nate.com</p>
+                    <h5 id="matelicensce">자격증 : 요양관리사 보유</h5>
+                    <div class="d-flex align-items-center mb-4 pt-2">
+                        <h5 id="mateperiod">경력 : 5년</h5>
+
+                    </div>
+                    <div class="d-flex align-items-center mb-4 pt-2">
+                        <h5 id="matearea">가능지역 : 영등포구</h5>
+                    </div>
+                    <div class="d-flex pt-2">
+                        <strong class="text-dark mr-2">SNS :</strong>
+                        <div class="d-inline-flex">
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">닫기</button>
+                    <button type="button" class="btn" onclick="location.href='/mate/all'" style="background-color: #64D6AB;color: whitesmoke">후기 보기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <%--지도 Ends--%>
 
 <!-- Product Section Begin -->
