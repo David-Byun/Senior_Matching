@@ -290,7 +290,7 @@
                                 <div style="display: flex;align-items: center; justify-content: center; flex-direction: column;">
                                     <div><h3> 김제니</h3></div>
                                 </div>
-                                <img src="/img/mate/a.jpg" style="border-radius: 20px; width:80px;">
+                                <img src="/img/mate/a.jpg" style="border-radius: 50%; width:100px;">
                             </div>
                             <h5 class="card-title" style="margin-top: 20px;">경력6년, 강남구</h5>
                             <p class="card-text">"제 아버님을 너무 성심성의껏 간병해주셨어요!" - 박*선 님</p>
@@ -311,7 +311,7 @@
                                 <div style="display: flex;align-items: center; justify-content: center; flex-direction: column;">
                                     <div><h3> 김우기</h3></div>
                                 </div>
-                                <img src="/img/mate/b.jpg" style="border-radius: 20px; width:80px;">
+                                <img src="/img/mate/b.jpg" style="border-radius: 50%; width:100px;">
                             </div>
                             <h5 class="card-title" style="margin-top: 20px;">경력3년, 광진구</h5>
                             <p class="card-text">"제 어머님을 너무 성심성의껏 간병해주셨어요!" - 신*림 님</p>
