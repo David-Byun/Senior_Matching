@@ -10,6 +10,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 
     <!-- Favicon -->
     <link href="/img/favicon.ico" rel="icon">
@@ -63,6 +64,7 @@
         text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
     }
 </style>
+
 <body>
 
 <!-- Offcanvas Menu Begin -->
@@ -98,10 +100,9 @@
     </div>
 </div>
 
-<!-- Offcanvas Menu End -->
-<!-- Header Section Begin -->
-<header class="header">
 
+<!-- Header Section Begin -->
+<header class="header" style="">
     <div class="header__top">
         <div class="container">
             <div class="row">
@@ -152,18 +153,18 @@
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo">
-                    <a href="/"><img src="/img/logo.png" alt="" style="height: 50px;"></a>
+                    <a href="/"><img src="/img/logo.png" alt="" style="height: 100%;"></a>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-6 col-md-6" style="padding-top: 25px;">
                 <nav class="header__menu mobile-menu">
                     <ul>
                         <li><a href="/">홈</a></li>
                         <li><a href="/match">매칭</a>
                             <ul class="dropdown">
                                 <li><a href="/match">매칭신청</a></li>
-                                <li><a href="/mate/samplemate">후기</a></li>
+                                <li><a href="/mate/samplemate">메이트 리스트</a></li>
                                 <li><a href="/listformember">회원 매칭내역</a></li>
                                 <li><a href="/listformate">메이트 매칭내역</a></li>
 
@@ -230,7 +231,6 @@
         <div class="canvas__open"><i class="fa fa-bars"></i></div>
     </div>
     <!-- Header Section End -->
-
 </header>
 
 <!-- Breadcrumb Section Begin -->
@@ -339,7 +339,7 @@
                                 <h4 class="mb-4">${mate.name} 님에 대한 리뷰</h4>
                                 <c:forEach items="${mateReviewList}" var="review">
                                 <div class="media mb-4">
-                                    <img src="https://cdn.pixabay.com/photo/2016/11/21/12/54/man-1845259_1280.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px; border-radius: 60%">
+                                    <img src="/uimg/${mate.img}" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px; border-radius: 60%" id="senior_photo">
                                     <div class="media-body">
                                         <h6>${review.name} / ${review.email}<small> - <i>${review.rdate}</i></small></h6>
                                         <div class="text-primary mb-2">
