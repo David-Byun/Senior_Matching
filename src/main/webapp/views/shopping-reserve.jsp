@@ -67,11 +67,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Reserve List</h4>
+                        <h4>나의 찜 목록</h4>
                         <div class="breadcrumb__links">
-                            <a href="/">Home</a>
-                            <a href="/shop">Shop</a>
-                            <span>Reserve List</span>
+                            <a href="/">홈</a>
+                            <a href="/shop">몰</a>
+                            <span>나의 찜 목록</span>
                         </div>
                     </div>
                 </div>

@@ -96,11 +96,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Shopping Cart</h4>
+                        <h4>장바구니</h4>
                         <div class="breadcrumb__links">
-                            <a href="/">Home</a>
-                            <a href="/shop">Shop</a>
-                            <span>Shopping Cart</span>
+                            <a href="/">홈</a>
+                            <a href="/shop">몰</a>
+                            <span>장바구니</span>
                         </div>
                     </div>
                 </div>
@@ -161,12 +161,12 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn">
-                                <a href="/shop">Continue Shopping</a>
+                                <a href="/shop">쇼핑 계속하기</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn update__btn">
-                                <a href="#"><i class="fa fa-spinner"></i> Update cart</a>
+                                <a href="#"><i class="fa fa-spinner"></i>장바구니 새로고침</a>
                             </div>
                         </div>
                     </div>
@@ -175,17 +175,17 @@
                     <div class="cart__discount">
                         <h6>내 쿠폰</h6>
                         <form id="disForm">
-                            <input type="text" placeholder="Coupon code" name="code" id="code"/>
+                            <input type="text" placeholder="쿠폰 코드를 입력해주세요" name="code" id="code"/>
                             <button type="button" id="disBtn">확인하기</button>
                         </form>
                     </div>
                     <div class="cart__total">
-                        <h6>Cart total</h6>
+                        <h6>장바구니 총계</h6>
                         <ul>
                             <li>전체 상품 개수 <span id="totalCnt">${qnt}</span></li>
-                            <li>Subtotal <span id="totalSub"><fmt:formatNumber value="${total}" pattern="#,###,###원"/></span></li>
+                            <li>소계 <span id="totalSub"><fmt:formatNumber value="${total}" pattern="#,###,###원"/></span></li>
                             <li>쿠폰 <span id="totalCou">0원</span></li>
-                            <li>Total <span id="totalSum"><fmt:formatNumber value="${total}" pattern="#,###,###원"/></span></li>
+                            <li>총계 <span id="totalSum"><fmt:formatNumber value="${total}" pattern="#,###,###원"/></span></li>
                         </ul>
                         <a href="/order/${loginmember.id}" class="primary-btn" role="button">주문하기</a>
                     </div>
