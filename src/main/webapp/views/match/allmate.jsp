@@ -117,7 +117,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-3">
-                <div class="header__logo" style="height: 110px;">
+                <div class="header__logo">
                     <a href="/"><img src="/img/logo.png" alt="" style="height: 50px;"></a>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                         <li><a href="/match">매칭</a>
                             <ul class="dropdown">
                                 <li><a href="/match">매칭신청</a></li>
-                                <li><a href="/mate/all">후기</a></li>
+                                <li><a href="/mate/samplemate">후기</a></li>
                                 <li><a href="/listformember">회원 매칭내역</a></li>
                                 <li><a href="/listformate">메이트 매칭내역</a></li>
 
@@ -149,13 +149,9 @@
                                 </ul>
                             </c:if>
                         </li>
-                        <li><a href="/matelocation">위치</a>
-                            <ul class="dropdown">
-                                <li><a href="/matelocation">근처 메이트 찾기</a></li>
-                                <li><a href="/contact">사무실 위치 및 연락</a></li>
-                            </ul>
-                        <li><a href="/chatgpt">문의</a></li>
                         <li><a href="/video">AI진단</a></li>
+                        <li><a href="/contact">본사 문의</a>
+
                     </ul>
                 </nav>
             </div>
@@ -202,6 +198,7 @@
     <!-- Header Section End -->
 
 </header>
+
 
 <!-- Breadcrumb Section Begin -->
 <section class="breadcrumb-option">
