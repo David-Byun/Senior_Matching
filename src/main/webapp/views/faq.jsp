@@ -10,7 +10,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/css/faq.css" type="text/css">
+    <style>
+        a {
+            text-decoration-line: none;
+            /*   text-decoration-line: underline; */
+            /*   text-decoration-line: overline; */
+            /*   text-decoration-line: line-through; */
+            /*   text-decoration-line: underline line-through overline; */
+        }
+    </style>
 </head>
+
 <body>
 <section class="main-content">
     <div class="container">

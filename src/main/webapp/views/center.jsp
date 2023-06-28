@@ -288,11 +288,11 @@
                             <div style="display: flex; align-content: flex-end; justify-content: space-between;">
                                 <img src="/img/center/first_award.jpg" style="width: 100px;">
                                 <div style="display: flex;align-items: center; justify-content: center; flex-direction: column;">
-                                    <div><h3> 김제니</h3></div>
+                                    <div><h3> 이진만</h3></div>
                                 </div>
                                 <img src="/img/mate/a.jpg" style="border-radius: 50%; width:100px;">
                             </div>
-                            <h5 class="card-title" style="margin-top: 20px;">경력6년, 강남구</h5>
+                            <h5 class="card-title" style="margin-top: 20px;">경력5년, 관악구</h5>
                             <p class="card-text">"제 아버님을 너무 성심성의껏 간병해주셨어요!" - 박*선 님</p>
                             <button href="#" class="btn btn-success center_match_btn">
                                 <span>
@@ -309,7 +309,7 @@
                             <div style="display: flex; align-content: flex-end; justify-content: space-between;">
                                 <img src="/img/center/second_award.jpg" style="width: 90px;">
                                 <div style="display: flex;align-items: center; justify-content: center; flex-direction: column;">
-                                    <div><h3> 김우기</h3></div>
+                                    <div><h3> 김제니</h3></div>
                                 </div>
                                 <img src="/img/mate/b.jpg" style="border-radius: 50%; width:100px;">
                             </div>

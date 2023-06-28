@@ -87,31 +87,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-7">
-                    <div class="header__top__links">
-                        <a href="/mate/signin">메이트 가입</a>
-                        <a href="/mate/login">메이트 로그인</a>
-                    </div>
+
                 </div>
                 <div class="col-lg-6 col-md-5">
                     <div class="header__top__right">
                         <div class="header__top__links">
-                            <c:choose>
-                                <c:when test="${loginmember == null}">
-                                    <a href="/login">시니어 로그인</a>
-                                    <a href="/signin">시니어 가입</a>
+                                <a href="#" id="logout">로그아웃</a>
 
-                                </c:when>
-                                <c:otherwise>
-                                    <a href="/chatbot">챗봇문의</a>
-                                    <a href="/itemReview">리뷰</a>
-                                    <a href="/faq">자주하는 질문</a>
-                                    <a href="#" id="logout">로그아웃</a>
-                                </c:otherwise>
-
-                            </c:choose>
-                            <c:if test="${loginmate != null}">
-                                <a href="/mate/profile/${loginmate}">메이트 프로필</a>
-                            </c:if>
                             <a href="/faq">FAQs</a>
                         </div>
                     </div>
@@ -129,19 +111,33 @@
             <div class="col-lg-6 col-md-6">
                 <nav class="header__menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="/">홈</a></li>
-                        <li><a href="/match">매칭</a></li>
-                        <li><a href="/shop">몰</a></li>
-                        <li><a href="/matereviews">후기</a>
+                        <li><a href="/">홈</a></li>
+                        <li><a href="/match">매칭</a>
                             <ul class="dropdown">
-                                <c:if test="${loginmember != null}">
-                                    <li><a href="/itemReview">후기 작성</a></li>
-                                </c:if>
-                                <li><a href="/matereviews">후기 검색</a></li>
+                                <li><a href="/match">매칭신청</a></li>
+                                <li><a href="/mate/samplemate">메이트 리스트</a></li>
+                                <li><a href="/listformember">회원 매칭내역</a></li>
+                                <li><a href="/listformate">메이트 매칭내역</a></li>
+
+                                <%--                                <c:if test="${loginmember != null}">--%>
+                                <%--                                    <li><a href="/match">매칭신청</a></li>--%>
+                                <%--                                    <li><a href="/listformember">매칭내역(멤버기준)</a></li>--%>
+                                <%--                                </c:if>--%>
+                                <%--                                <c:if test="${loginmate != null}">--%>
+                                <%--                                    <li><a href="/listformate">매칭내역(메이트기준)</a></li>--%>
+                                <%--                                </c:if>--%>
                             </ul>
                         </li>
-                        <li><a href="/contact">문의</a></li>
-                        <li><a href="/goldenlife">요양소</a></li>
+                        <li><a href="/shop">몰</a>
+                            <c:if test="${loginmember != null}">
+                                <ul class="dropdown">
+                                    <li><a href="/order/confirm/${loginmember.id}">주문내역</a></li>
+                                </ul>
+                            </c:if>
+                        </li>
+                        <li><a href="/video">AI진단</a></li>
+                        <li><a href="/contact">본사 문의</a>
+
                     </ul>
                 </nav>
             </div>
