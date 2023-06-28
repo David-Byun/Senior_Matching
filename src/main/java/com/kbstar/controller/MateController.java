@@ -107,7 +107,11 @@ public class MateController {
         Mate signMate = null;
         try {
             mate.setPassword(encoder.encode(mate.getPassword()));
-            System.out.println("mate.getEmail() = " + mate.getEmail());
+//            System.out.println("mate.getImg() = " + mate.getImg());
+//            MultipartFile mf = mate.getImgName();
+//            String imgname = mf.getOriginalFilename();
+//            mate.setImg(imgname);
+
             service.register(mate);
             signMate = service.get(mate.getEmail());
             session.setMaxInactiveInterval(100000);

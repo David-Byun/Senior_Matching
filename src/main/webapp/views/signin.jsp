@@ -163,7 +163,7 @@
                                 <div class="col-lg-10">
                                     <div class="checkout__input" >
                                         <p>ID<span>*</span></p>
-                                        <input type="text" id="email" name="email" placeholder="아이디를 입력하세요.">
+                                        <input type="text" id="email" name="email" placeholder="이메일을 입력하세요.">
                                     </div>
                                     <div class="checkout__input" >
                                         <p> 성명 <span>*</span></p>

@@ -24,58 +24,58 @@
 </script>
 
 <script>
-    let item_add = {
-        maxSize: 5242880,  // 5M
-        init:function(){
-            $('#register_btn').click(function(){
-                var formData = new FormData();
-
-                var inputFile = $("input[name='img']");
-                // console.log(inputFile);
-                var files = inputFile[0].files;
-                for(var i=0; i<files.length;i++){
-                    // 함수 호출(checkExtension)
-                    if(!item_add.checkExtension(files[i].name, files[i].size)){
-                        return;
-                    }
-                }
-                item_add.send();
-
-            });
-        },
-        checkExtension:function(fileName, fileSize){
-            var reg = new RegExp("(.*?)\.(exe|zip|alz)$"); // 이러한 확장자는 업로드 못시키게
-
-            // 파일크기 제한
-            // 실제파일의 크기 > 최대 크기
-            if(fileSize >= this.maxSize){
-                alert("파일 사이즈 초과");
-                return false;
-            }
-
-            // 확장자 제한
-            // 실제파일명의 확장자와 정규식 비교
-            // 정규식이면
-            if(reg.test(fileName)){
-                alert("해당 종류의 파일은 업로드 할 수 없습니다.");
-                return false;
-            }
-            return true;
-
-        },
-        send:function(){
-            $('#register_form').attr({
-                method:'post',
-                action:'/mate/signinimpl',
-                enctype: 'multipart/form-data'
-            });
-            $('#register_form').submit();
-        }
-    };
-
-    $(function(){
-        item_add.init();
-    });
+    // let item_add = {
+    //     maxSize: 5242880,  // 5M
+    //     init:function(){
+    //         $('#register_btn').click(function(){
+    //             var formData = new FormData();
+    //
+    //             var inputFile = $("input[name='imgName']");
+    //             // console.log(inputFile);
+    //             var files = inputFile[0].files;
+    //             for(var i=0; i<files.length;i++){
+    //                 // 함수 호출(checkExtension)
+    //                 if(!item_add.checkExtension(files[i].name, files[i].size)){
+    //                     return;
+    //                 }
+    //             }
+    //             item_add.send();
+    //
+    //         });
+    //     },
+    //     checkExtension:function(fileName, fileSize){
+    //         var reg = new RegExp("(.*?)\.(exe|zip|alz)$"); // 이러한 확장자는 업로드 못시키게
+    //
+    //         // 파일크기 제한
+    //         // 실제파일의 크기 > 최대 크기
+    //         if(fileSize >= this.maxSize){
+    //             alert("파일 사이즈 초과");
+    //             return false;
+    //         }
+    //
+    //         // 확장자 제한
+    //         // 실제파일명의 확장자와 정규식 비교
+    //         // 정규식이면
+    //         if(reg.test(fileName)){
+    //             alert("해당 종류의 파일은 업로드 할 수 없습니다.");
+    //             return false;
+    //         }
+    //         return true;
+    //
+    //     },
+    //     send:function(){
+    //         $('#register_form').attr({
+    //             method:'post',
+    //             action:'/mate/signinimpl',
+    //             enctype: 'multipart/form-data'
+    //         });
+    //         $('#register_form').submit();
+    //     }
+    // };
+    //
+    // $(function(){
+    //     item_add.init();
+    // });
 </script>
 
 <style>
@@ -145,9 +145,6 @@
             <div class="checkout__form">
                     <div class="row">
                         <div class="col-lg-8 col-md-10">
-                            <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have no ID? <a href="#">Click
-                            here</a> to join us</h6>
-                            <h6 class="checkout__title">메이트 가입</h6>
                             <form id="register_form" name="register_form" action="/mate/signinimpl" method="post">
                             <div class="row">
                                 <div class="col-lg-10">
@@ -202,15 +199,15 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-10 checkout__input">
-                                    <p>이미지<span>*</span></p>
-                                </div>
-                                <div class="col-lg-10">
-                                    <div class="checkout__input" >
-                                        <input type="file" id="imgName" name="imgName" class="custom-file-input" placeholder="이미지를 첨부하세요.">
-                                        <label for="imgName" class="custom-file-label">파일 선택</label>
-                                    </div>
-                                </div>
+<%--                                <div class="col-lg-10 checkout__input">--%>
+<%--                                    <p>이미지<span>*</span></p>--%>
+<%--                                </div>--%>
+<%--                                <div class="col-lg-10">--%>
+<%--                                    <div class="checkout__input" >--%>
+<%--                                        <input type="file" id="imgName" name="imgName" class="custom-file-input" placeholder="이미지를 첨부하세요.">--%>
+<%--                                        <label for="imgName" class="custom-file-label">파일 선택</label>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
                                     <div class="checkout__input">
                                             <div class="alert alert-danger" id="alert" style="display: none">
                                                 <strong>Wrong!</strong> 아이디 혹은 비밀번호를 다시 확인해주세요!

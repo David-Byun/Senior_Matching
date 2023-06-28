@@ -239,15 +239,15 @@
 <div class="offcanvas-menu-wrapper">
     <div class="offcanvas__option">
         <div class="offcanvas__links">
-            <c:choose>
-                <c:when test="${loginmember == null}">
-                    <a href="/login">로그인</a><a href="/signin"> 회원가입</a>
-                </c:when>
-                <c:otherwise>
-                    <a href="#">${loginmember.name}님</a>
-                    <a href="/logout">로그아웃</a>
-                </c:otherwise>
-            </c:choose>
+<%--            <c:choose>--%>
+<%--                <c:when test="${loginmember == null}">--%>
+<%--                    <a href="/login">로그인</a><a href="/signin"> 회원가입</a>--%>
+<%--                </c:when>--%>
+<%--                <c:otherwise>--%>
+<%--                    <a href="#">${loginmember.name}님</a>--%>
+<%--                    <a href="/logout">로그아웃</a>--%>
+<%--                </c:otherwise>--%>
+<%--            </c:choose>--%>
         </div>
 
     </div>
@@ -285,7 +285,7 @@
                 <div class="col-lg-6 col-md-5">
                     <div class="header__top__right">
                         <div class="header__top__links">
-                            <a href="/api/qr/tistory">QR TO 봄생봄사</a>
+                            <a href="/api/qr/tistory">| QR접속 |</a>
                             <c:choose>
                                 <c:when test="${loginmember == null && loginmate == null}">
                                     <a href="/login">시니어 로그인</a>
@@ -293,10 +293,15 @@
 
                                 </c:when>
                             </c:choose>
-                                <c:if test="${loginmember != null || loginmate != null}">
+                                <c:if test="${loginmember != null}">
+                                    <a href="#">${loginmember.name} 회원 님 안녕하세요!</a>
                                     <a href="/logout" id="logout">로그아웃</a>
                                 </c:if>
-                            <a href="/faq">FAQs</a>
+                                <c:if test="${ loginmate != null}">
+                                    <a href="#">${loginmate.name} 메이트 님 안녕하세요!</a>
+                                    <a href="/logout" id="logout">로그아웃</a>
+                                </c:if>
+                            <a href="/faq">FAQs  </a>
                         </div>
 
                     </div>
@@ -330,18 +335,17 @@
                         <li><a href="/">홈</a></li>
                         <li><a href="/match">매칭</a>
                             <ul class="dropdown">
-                                <li><a href="/match">매칭신청</a></li>
+<%--                                <li><a href="/match">매칭신청</a></li>--%>
+<%--                                <li><a href="/listformember">회원 매칭내역</a></li>--%>
+<%--                                <li><a href="/listformate">메이트 매칭내역</a></li>--%>
+                                <c:if test="${loginmember != null}">
+                                    <li><a href="/match">매칭 신청</a></li>
+                                    <li><a href="/listformember">회원 매칭내역</a></li>
+                                </c:if>
+                                <c:if test="${loginmate != null}">
+                                    <li><a href="/listformate">메이트 매칭내역</a></li>
+                                </c:if>
                                 <li><a href="/mate/samplemate">메이트 리스트</a></li>
-                                <li><a href="/listformember">회원 매칭내역</a></li>
-                                <li><a href="/listformate">메이트 매칭내역</a></li>
-
-<%--                                <c:if test="${loginmember != null}">--%>
-<%--                                    <li><a href="/match">매칭신청</a></li>--%>
-<%--                                    <li><a href="/listformember">매칭내역(멤버기준)</a></li>--%>
-<%--                                </c:if>--%>
-<%--                                <c:if test="${loginmate != null}">--%>
-<%--                                    <li><a href="/listformate">매칭내역(메이트기준)</a></li>--%>
-<%--                                </c:if>--%>
                             </ul>
                         </li>
                         <li><a href="/shop">몰</a>
