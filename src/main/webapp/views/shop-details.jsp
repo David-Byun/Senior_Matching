@@ -41,7 +41,7 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
-                                <span> - 5 Reviews</span>
+                                <span> - 2 Reviews</span>
                             </div>
                             <h3><fmt:formatNumber value="${item.price}" pattern="#,###,###원" /> <span><fmt:formatNumber value="100000" pattern="#,###,###원" /></span></h3>
                             <p>${item.content}</p>

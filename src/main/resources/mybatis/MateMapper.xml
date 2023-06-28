@@ -34,7 +34,6 @@
     </update>
 
     <select id="findByMateId" resultType="MateReviewDto">
-
         SELECT r.rate,
                r.content,
                u.name,
@@ -44,7 +43,6 @@
                  LEFT JOIN member u ON r.member_id = u.id
                  LEFT JOIN mate m ON r.mate_id = m.id
         WHERE mate_id = #{mateId}
-
     </select>
 
     <select id="findAllMates" resultType="MateReviewAllDto">

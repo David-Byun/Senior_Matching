@@ -11,12 +11,10 @@ import lombok.ToString;
 public class NotificationRequest {
     private String title;
     private String message;
-    private String token;
 
     @Builder
-    public NotificationRequest(String title, String message, String token) {
+    public NotificationRequest(String title, String message) {
         this.title = title;
         this.message = message;
-        this.token = token;
     }
 }

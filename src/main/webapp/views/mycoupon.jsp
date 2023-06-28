@@ -49,7 +49,7 @@
                             <div class="d-flex flex-column align-items-center">
                                 <img
                                     src="https://i.imgur.com/XwBlVpS.png"><span class="d-block">할인쿠폰</span><span
-                                    class="text-black-50">메이트용</span></div>
+                                    class="text-black-50">건강몰</span></div>
                         </div>
                         <div class="col-md-8">
                             <div>
@@ -70,7 +70,7 @@
         </div>
     </div>
     <div class="col-12 mt-auto mb-5 text-center pt-5">
-        <a class="btn custom-btn smoothscroll" href="/match" id="captureButton" style="background-color: #178BFB">사용하러 가기</a>
+        <a class="btn custom-btn smoothscroll" href="/shop" id="captureButton" style="background-color: #178BFB">사용하러 가기</a>
     </div>
 
 </div>

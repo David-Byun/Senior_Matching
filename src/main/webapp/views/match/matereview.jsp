@@ -307,19 +307,13 @@
                     <h>가능지역 : ${mate.area}</h>
                 </div>
                 <div class="d-flex pt-2">
-                    <strong class="text-dark mr-2">SNS :</strong>
+                    <strong class="text-dark mr-2">상담 :</strong>
                     <div class="d-inline-flex">
-                        <a class="text-dark px-2" href="">
-                            <i class="fab fa-facebook-f"></i>
+                        <a class="text-dark px-2" href="/callchat">
+                            <i class="fa fa-comment"></i>
                         </a>
-                        <a class="text-dark px-2" href="">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="text-dark px-2" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a class="text-dark px-2" href="">
-                            <i class="fab fa-pinterest"></i>
+                        <a class="text-dark px-2" href="https://172.16.20.74" target='_blank'>
+                            <i class="fa fa-video-camera"></i>
                         </a>
                     </div>
                 </div>
