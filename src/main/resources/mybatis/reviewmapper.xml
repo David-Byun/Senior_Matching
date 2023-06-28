@@ -50,7 +50,9 @@
     </delete>
 
     <select id="getByItemId" parameterType="Integer" resultType="itemReview">
-        SELECT * FROM ITEM_REVIEW WHERE item_id=#{itemId}
+        SELECT name, title, review, rate
+        FROM ITEM_REVIEW r
+        left join MEMBER M on r.MEMBER_ID = M.ID
+        WHERE item_id = #{itemId}
     </select>
-
 </mapper>

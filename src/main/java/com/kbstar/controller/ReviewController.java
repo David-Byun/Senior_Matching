@@ -31,7 +31,7 @@ public class ReviewController {
         }
 
         model.addAttribute("rreview", itemReview);
-        return "redirect:/shop";
+        return "redirect:/shop/" + itemReview.getItemId()+"/detail";
     }
 
     @RequestMapping("/reviewsearch")

@@ -85,7 +85,7 @@
                         </div>
                         <div class="right">
                             <h4>
-                                ${obj.memberId}
+                                ${obj.name}
                                 <span class="gig-rating text-body-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15">
                                         <path
