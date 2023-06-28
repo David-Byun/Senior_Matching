@@ -140,7 +140,7 @@
                     <div class="breadcrumb__text">
                         <h4>시니어 가입</h4>
                         <div class="breadcrumb__links">
-                            <a href="/">Home</a>
+                            <a href="/">홈</a>
                             <span>시니어 가입</span>
                         </div>
                     </div>
@@ -156,27 +156,26 @@
                 <div class="checkout__form">
                     <div class="row">
                         <div class="col-lg-8 col-md-10">
-                            <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have no ID? <a href="#">Click
-                            here</a> to join us</h6>
+                            <h6 class="coupon__code"><span class="icon_tag_alt"></span> 아직회원이 아니신가요? <a href="#">이곳에서</a> 봄생봄사의 가족이 되어보세요 !</h6>
                             <h6 class="checkout__title">시니어 가입</h6>
                             <form id="register_form" name="register_form" action="/signinimpl" method="post">
                             <div class="row">
                                 <div class="col-lg-10">
                                     <div class="checkout__input" >
                                         <p>ID<span>*</span></p>
-                                        <input type="text" id="email" name="email" placeholder="Enter Email Id">
+                                        <input type="text" id="email" name="email" placeholder="아이디를 입력하세요.">
                                     </div>
                                     <div class="checkout__input" >
-                                        <p>Name<span>*</span></p>
-                                        <input type="text" id="name" name="name" placeholder="Enter Name">
+                                        <p> 성명 <span>*</span></p>
+                                        <input type="text" id="name" name="name" placeholder="이름을 입력하세요.">
                                     </div>
                                     <div class="checkout__input" >
-                                        <p>Password<span>*</span></p>
-                                        <input type="password" id="password" name="password" placeholder="Enter password ( over 5 letters )">
+                                        <p>비밀번호<span>*</span></p>
+                                        <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요. (5글자 이상) ">
                                     </div>
                                     <div class="checkout__input" >
-                                        <p>Password Check<span>*</span></p>
-                                        <input type="password" id="valid_password" placeholder="Enter password ( checking... )">
+                                        <p>비밀번호 확인<span>*</span></p>
+                                        <input type="password" id="valid_password" placeholder="비밀번호를 한번 더 입력해주세요.">
                                     </div>
                                     <div class="checkout__input" >
                                         <p>생년월일<span>*</span></p>

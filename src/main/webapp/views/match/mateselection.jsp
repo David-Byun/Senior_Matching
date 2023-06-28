@@ -123,7 +123,7 @@
                     <c:forEach var="c" items="${mlist}">
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="/uimg/${c.img}" style="cursor:pointer;" >
+                                <div class="product__item__pic set-bg" data-setbg="/uimg/${c.img}" style="cursor:pointer; width:200px; height: 200px;" >
                                     <ul class="product__hover">
                                         <li><a href="/callchat"><i class="fa-sharp fa-solid fa-comment"></i></a></li>
                                         <li><a href="https://172.16.20.74"><i class="fas fa-video"></i></a></li>
