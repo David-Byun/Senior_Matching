@@ -43,4 +43,25 @@ public class FCMNotificationService {
         }
     }
 
+
+//    public void sendNotificationByToken(FCMNotificationRequestDto requestDto) {
+//
+//        List<FirebaseToken> allTokens = firebaseMapper.findAllChrome();
+//
+//        for (FirebaseToken token : allTokens) {
+//            Notification notification = new Notification(requestDto.getTitle(), requestDto.getBody());
+//
+//            Message message = Message.builder()
+//                    .setToken(token.getToken())
+//                    .setNotification(notification)
+//                    .build();
+//
+//            try {
+//                firebaseMessaging.send(message);
+//            } catch (FirebaseMessagingException e) {
+//                log.info("=============에러 발생============={}", e.getMessage());
+//                throw new RuntimeException(e);
+//            }
+//        }
+//    }
 }

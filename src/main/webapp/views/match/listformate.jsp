@@ -138,17 +138,11 @@
 
 
 </style>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-     function acceptMatchOffer(id) {
-        window.location.href = "/yestomatch/"+id;
-    }
-
-    $(function (){
-        yes.init();
-    })
     let yes = {
         init:function (){
-            $('#yesBtn').click(function (){
+            $('.yesbtn').click(function (){
                 yes.send();
             });
         },
@@ -157,9 +151,23 @@
                 'action':'/notification',
                 'method':'post'
             });
-            $('#answerForm').submit();
-            alert("성공!");
+            try {
+                event.preventDefault();
+                $('#answerForm').submit();
+                // alert("Form submitted!");
+                swal("메세지가 발송되었습니다.");
+            } catch (error) {
+                alert("Error submitting form: " + error);
+            }
         }
+    };
+
+     $(function (){
+         yes.init();
+     });
+
+    function acceptMatchOffer(id) {
+        window.location.href = "/yestomatch/"+id;
     }
 
 </script>
@@ -275,7 +283,7 @@
                                     <form id="answerForm">
                                         <input type="hidden" id="title" name="title" value="매칭완료되었습니다.">
                                         <input type="hidden" id="body" name="body" value="48시간 내에 결제를 부탁드립니다.">
-                                        <button type="button" id="yesBtn" name="yesBtn" class="btn btn-primary">수락</button>
+                                        <button type="button" id="yes" class="btn btn-primary yesbtn">수락</button>
                                         <button type="button" class="btn btn-danger">거절</button>
                                         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
                                     </form>
