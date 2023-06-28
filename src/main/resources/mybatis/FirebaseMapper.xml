@@ -12,4 +12,7 @@
     <select id="findAllTokens" resultType="FirebaseToken">
         SELECT * FROM TOKEN
     </select>
+    <select id="findAllChrome" resultType="FirebaseToken">
+        SELECT * FROM TOKEN WHERE web = 'chrome'
+    </select>
 </mapper>

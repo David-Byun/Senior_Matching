@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -23,7 +24,7 @@ public class FCMNotificationService {
 
     public void sendNotificationByToken(FCMNotificationRequestDto requestDto) {
 
-        List<FirebaseToken> allTokens = firebaseMapper.findAllTokens();
+        List<FirebaseToken> allTokens = firebaseMapper.findAllChrome();
 
         for (FirebaseToken token : allTokens) {
             Notification notification = new Notification(requestDto.getTitle(), requestDto.getBody());
@@ -32,6 +33,7 @@ public class FCMNotificationService {
                     .setToken(token.getToken())
                     .setNotification(notification)
                     .build();
+
             try {
                 firebaseMessaging.send(message);
             } catch (FirebaseMessagingException e) {

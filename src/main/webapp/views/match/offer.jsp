@@ -26,10 +26,11 @@
         <div class="container">
             <div class="checkout__form">
                 <form action="#">
-                    <div class="row">
-                        <div id="success" class="alert alert-warning col-lg-8 col-md-10" style="font-size: large">
+                    <div class="row" style="display: flex;align-items: center;justify-content: center;flex-direction: column;">
+                        <div id="success" class="alert alert-warning col-lg-8 col-md-10" style="font-size: large;text-align: center;">
                             <strong>매칭 신청 완료 &#128079; !  </strong> </br></br> &#128071; 고객님을 위한 맞춤 상품도 확인해보세요!&#128071;
                         </div>
+                        <img src="/img/mate/done_coupon.png" style="width: 300px;">
                     </div>
                 </form>
             </div>

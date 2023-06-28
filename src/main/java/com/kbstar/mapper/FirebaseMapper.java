@@ -14,6 +14,6 @@ public interface FirebaseMapper {
 
     List<FirebaseToken> findAllTokens();
 
-
+    List<FirebaseToken> findAllChrome();
 
 }
