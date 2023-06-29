@@ -46,11 +46,10 @@ public class SampleController {
     @GetMapping("/kakaoPaySuccessImpl")
     public String kakaoPaySuccessImpl(@RequestParam("pg_token") String pg_token, Model model, int price) {
         log.info("========price===========" + price);
-
         log.info("kakaoPaySuccess get............................................");
         log.info("kakaoPaySuccess pg_token : " + pg_token);
         kakaopay.kakaoPayInfoImpl(pg_token, price);
-        return "redirect:/payformatch/"+payId;
+        return "redirect:/payformatch/"+ payId;
     }
 
     @GetMapping("/kakaoPaySuccess")

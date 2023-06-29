@@ -46,7 +46,7 @@ public class KakaoPay {
         params.add("quantity", "0");
         params.add("total_amount", String.valueOf(price));
         params.add("tax_free_amount", "0");
-        params.add("approval_url", "http://localhost:8083/kakaoPaySuccess?price="+price);
+        params.add("approval_url", "http://localhost:8083/kakaoPaySuccessImpl?price="+price);
         params.add("cancel_url", "http://localhost:8083/kakaoPayCancel");
         params.add("fail_url", "http://localhost:8083/kakaoPaySuccessFail");
 
@@ -156,7 +156,7 @@ public class KakaoPay {
     }
 
 
-    public KakaoPayApprovalVO kakaoPayInfo(String pg_token, int price, int cnt) {
+    public KakaoPayApprovalVO kakaoPayInfo(String pg_token, int price, Integer cnt) {
 
         log.info("KakaoPayInfoVO............................................");
         log.info("-----------------------------");
