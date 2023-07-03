@@ -3,3 +3,4 @@
 
 > # STACK
 <img src="https://img.shields.io/badge/Kakao-FFCD00?style=for-the-badge&logo=Kakao&logoColor=white">
+<img src="https://img.shields.io/badge/Firebase-C8332D?style=for-the-badge&logo=Firebase&logoColor=white">
