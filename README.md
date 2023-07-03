@@ -6,4 +6,4 @@
 <img src="https://img.shields.io/badge/Firebase-C8332D?style=for-the-badge&logo=Firebase&logoColor=white">
 <img src="https://img.shields.io/badge/NaverCloud-03C75A?style=for-the-badge&logo=NaverCloud&logoColor=white">
 <img src="https://img.shields.io/badge/WebSocket-010101?style=for-the-badge&logo=Websocket&logoColor=white">
-<img src="https://img.shields.io/badge/WebSocket-010101?style=for-the-badge&logo=Websocket&logoColor=white">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
