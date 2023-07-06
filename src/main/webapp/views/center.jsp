@@ -124,7 +124,7 @@
         // 마커를 표시할 위치와 title 객체 배열입니다
         var positions = [
             {
-                title: 2001,
+                title: 2000,
                 latlng: new kakao.maps.LatLng(37.5456285, 127.0501575),
             },
             {
@@ -294,7 +294,7 @@
                             </div>
                             <h5 class="card-title" style="margin-top: 20px;">경력5년, 관악구</h5>
                             <p class="card-text">"제 아버님을 너무 성심성의껏 간병해주셨어요!" - 박*선 님</p>
-                            <button href="#" class="btn btn-success center_match_btn">
+                            <button href="/match" class="btn btn-success center_match_btn">
                                 <span>
                                     매칭신청하러가기
                                     <i class="fa fa-arrow-circle-up"></i>
@@ -315,7 +315,7 @@
                             </div>
                             <h5 class="card-title" style="margin-top: 20px;">경력3년, 광진구</h5>
                             <p class="card-text">"제 어머님을 너무 성심성의껏 간병해주셨어요!" - 신*림 님</p>
-                            <a href="#" class="btn btn-success center_match_btn">
+                            <a href="/match" class="btn btn-success center_match_btn">
                                 <span>
                                     매칭신청하러가기
                                     <i class="fa fa-arrow-circle-up"></i>
@@ -407,7 +407,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">닫기</button>
-                    <button type="button" class="btn" onclick="location.href='/mate/samplemate'" style="background-color: #64D6AB;color: whitesmoke">후기 보기</button>
+                    <button type="button" class="btn" onclick="location.href='/match'" style="background-color: #64D6AB;color: whitesmoke">매칭 신청</button>
                 </div>
             </div>
         </div>

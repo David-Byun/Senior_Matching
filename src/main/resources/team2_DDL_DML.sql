@@ -1,0 +1,608 @@
+-- 테이블 드랍시 사용
+DROP TABLE ORDER_MALL;
+DROP TABLE MEMBER;
+DROP TABLE ITEM;
+DROP TABLE CART;
+DROP TABLE ADM;
+DROP TABLE MATE;
+DROP TABLE MATCH;
+DROP TABLE ORDER_MATCH;
+DROP TABLE COUPON;
+DROP TABLE RESERVE;
+DROP TABLE ITEM_REVIEW;
+DROP TABLE MATE_REVIEW;
+DROP TABLE NOTICE;
+
+-- 시퀀스 쿼리
+CREATE SEQUENCE ORDER_SEQ --시퀀스이름 WDRL_SEQ
+    INCREMENT BY 1 --증감숫자 1
+    START WITH 1 --시작숫자 1
+    MINVALUE 1 --최소값 1
+    MAXVALUE 9999999999 --최대값
+    NOCYCLE --순한하지않음
+    NOCACHE; --메모리에 시퀀스값 미리할당
+​
+CREATE SEQUENCE TOKEN_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+
+CREATE SEQUENCE MATE_REVIEW_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+
+CREATE SEQUENCE ORDER_MALL_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE NOTICE_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE MEMBER_SEQ
+    INCREMENT BY 1
+    START WITH 1000
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE CART_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE ADM_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE MATE_SEQ
+    INCREMENT BY 1
+    START WITH 2000
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE MATCH_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE ORDER_MATCH_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE COUPON_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE CART_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE ITEM_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE RESERVE_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE ITEM_REVIEW_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE ITEM_REVIEW_COMMENT_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+CREATE SEQUENCE MATE_REVIEW_COMMENT_SEQ
+    INCREMENT BY 1
+    START WITH 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    NOCYCLE
+    NOCACHE;
+
+-- 테이블 Create
+
+create table RESERVE
+(
+    ID  NUMBER,
+    MEMBER_ID NUMBER,
+    ITEM_ID   NUMBER
+);
+
+create table CART
+(
+    ID        NUMBER,
+    MEMBER_ID NUMBER,
+    ITEM_ID   NUMBER,
+    CNT       NUMBER,
+    RDATE     TIMESTAMP(6)
+);
+
+
+CREATE TABLE ORDER_MATCH (
+                             ID             NUMBER,
+                             MEMBER_ID      NUMBER,
+                             START_DATE     DATE,
+                             END_DATE       DATE,
+                             SERVICE        VARCHAR2(20),
+                             AREA           VARCHAR2(30),
+                             OBJECT_GENDER  VARCHAR2(10),
+                             OBJECT_BIRTH   DATE,
+                             RDATE          DATE
+);
+
+CREATE TABLE ORDER_MALL (
+                            ID  NUMBER,
+                            MEMBER_ID NUMBER,
+                            PRICE NUMBER,
+                            RDATE DATE DEFAULT SYSDATE,
+                            NAME VARCHAR2(20),
+                            ADDR VARCHAR2(100),
+                            TEL VARCHAR2(25),
+                            CNT NUMBER
+);
+
+create table MEMBER
+(
+    ID              NUMBER not null primary key,
+    EMAIL           VARCHAR2(45),
+    NAME            VARCHAR2(15),
+    PASSWORD        VARCHAR2(150),
+    BIRTH           VARCHAR2(15),
+    TEL             VARCHAR2(20),
+    ADDR            VARCHAR2(100),
+    IMG             VARCHAR2(200),
+    VALID           CHAR(1) DEFAULT 'N'
+);
+
+create table MATE
+(
+    ID              NUMBER not null primary key,
+    EMAIL           VARCHAR2(30),
+    NAME            VARCHAR2(15),
+    PASSWORD        VARCHAR2(150),
+    AREA            VARCHAR2(50),
+    JOB_PERIOD      NUMBER,
+    LICENSE         VARCHAR2(150),
+    IMG             VARCHAR2(200),
+    VALID           CHAR(1) DEFAULT 'N'
+);
+
+CREATE TABLE MATE_REVIEW
+(
+    ID          NUMBER,
+    RATE        NUMBER,
+    CONTENT     VARCHAR2(1000),
+    MATE_ID     NUMBER,
+    MEMBER_ID   NUMBER,
+    RDATE       DATE
+);
+
+CREATE TABLE NOTICE
+(
+    -ID          NUMBER,
+    -ADM_ID      NUMBER,
+    TITLE       VARCHAR2(200),
+    -WRITER      VARCHAR2(15),
+    IMG         VARCHAR2(600),
+    -HIT         NUMBER,
+    -RDATE       DATE DEFAULT SYSDATE
+);
+
+ALTER TABLE NOTICE
+MODIFY (HIT DEFAULT 0);
+
+create table ITEM
+(
+    ID          NUMBER not null primary key,
+    REGISTER_ID NUMBER,
+    NAME        VARCHAR2(150),
+    IMG         VARCHAR2(600),          
+    PRICE       NUMBER,
+    ITEM_SIZE   VARCHAR2(10),
+    COLOR       VARCHAR2(5),
+    RDATE       DATE DEFAULT SYSDATE,
+    UDATE       DATE DEFAULT SYSDATE,
+    IS_VALID    CHAR(1) DEFAULT 'Y'
+);
+
+create table ADM
+(
+    ID          NUMBER not null primary key,
+    ADMIN_ID    VARCHAR2(30),
+    PWD         VARCHAR2(60)
+);
+
+create table ITEM_REVIEW
+(
+    ID      NUMBER not null primary key,
+    MEMBER_ID NUMBER,
+    ITEM_ID NUMBER,
+    TITLE   VARCHAR2(100),
+    REVIEW  VARCHAR2(300),
+    RATE    NUMBER
+);
+
+create table MATCH
+(
+    ID              NUMBER,
+    MEMBER_ID       NUMBER,
+    MATE_ID         NUMBER,
+    START_DATE      DATE,
+    END_DATE        DATE,
+    SERVICE         VARCHAR2(20),
+    AREA            VARCHAR2(30),
+    OBJECT_GENDER   VARCHAR2(20),
+    OBJECT_BIRTH    DATE,
+    STATUS          VARCHAR2(20) DEFAULT '매칭대기',
+    PRICE           NUMBER,
+    PAYMENT         VARCHAR2(10),
+    PAY_DATE        DATE
+);
+
+create table COUPON
+(
+    ID          NUMBER,
+    MEMBER_ID   NUMBER,
+    NUM         NUMBER,
+    AMOUNT      NUMBER
+);
+ALTER TABLE COUPON ADD adm_comment VARCHAR2(100);
+
+CREATE TABLE ITEM_REVIEW_COMMENT (
+  id NUMBER PRIMARY KEY,
+  item_id NUMBER,
+  admin_id VARCHAR2(20),
+  rdate DATE,
+  item_comment VARCHAR2(1000)
+);
+
+CREATE TABLE MATE_REVIEW_COMMENT (
+  id NUMBER PRIMARY KEY,
+  mate_id NUMBER,
+  admin_id VARCHAR2(20),
+  rdate DATE,
+  mate_comment VARCHAR2(1000)
+);
+
+
+-- 샘플 데이터
+
+
+
+-- Item 테이블 데이터
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 1, 'product2', 'product-2.jpg', 3000, 'L', 'Black', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 1, 'product2', 'product-2.jpg', 3000, 'L', 'Black', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 2, 'product3', 'product-3.jpg', 3000, 'XL', 'Blue', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 2, 'product4', 'product-4.jpg', 3000, 'L', 'White', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 2, 'product5', 'product-5.jpg', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 2, 'product6', 'product-6.jpg', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 3, 'product7', 'product-7.jpg', 3000, 'M', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 3, 'product8', 'product-8.jpg', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 3, 'product9', 'product-9.jpg', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 4, 'product10', 'product-10.jpg',3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 4, 'product11', 'product-11.jpg', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 4, 'product12', 'product-12.jpg', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 5, 'product13', 'product-13.jpg', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 5, 'product14', 'product-14.jpg', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 6, 'product15', 'product-15.jpg', 3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 6, 'product15', 'product-15.jpg',3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 7, 'product15', 'product-15.jpg',3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 9, 'product15', 'product-15.jpg',3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 10, 'product15', 'product-15.jpg',3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 11, 'product15', 'product-15.jpg',3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 9, 'product15', 'product-15.jpg',3000, 'XL', 'Red', SYSDATE, 1);
+
+INSERT INTO Item (id, register_id, name, img, price, ITEM_SIZE, color, rdate, is_valid)
+VALUES (item_seq.NEXTVAL, 8, 'product15', 'product-15.jpg',3000, 'XL', 'Red', SYSDATE, 1);
+
+-- RESERVE 테이블 데이터
+INSERT INTO RESERVE (ID, MEMBER_ID, ITEM_ID)
+VALUES (RESERVE_SEQ.NEXTVAL, 1, 1);
+
+INSERT INTO RESERVE (ID, MEMBER_ID, ITEM_ID)
+VALUES (RESERVE_SEQ.NEXTVAL, 1, 2);
+
+INSERT INTO RESERVE (ID, MEMBER_ID, ITEM_ID)
+VALUES (RESERVE_SEQ.NEXTVAL, 2, 1);
+
+INSERT INTO RESERVE (ID, MEMBER_ID, ITEM_ID)
+VALUES (RESERVE_SEQ.NEXTVAL, 2, 3);
+
+INSERT INTO RESERVE (ID, MEMBER_ID, ITEM_ID)
+VALUES (RESERVE_SEQ.NEXTVAL, 3, 2);
+
+-- CART 테이블 데이터
+INSERT INTO CART (ID, MEMBER_ID, ITEM_ID, CNT, RDATE)
+VALUES (CART_SEQ.NEXTVAL, 1, 1, 2, CURRENT_TIMESTAMP);
+
+INSERT INTO CART (ID, MEMBER_ID, ITEM_ID, CNT, RDATE)
+VALUES (CART_SEQ.NEXTVAL, 1, 3, 1, CURRENT_TIMESTAMP);
+
+INSERT INTO CART (ID, MEMBER_ID, ITEM_ID, CNT, RDATE)
+VALUES (CART_SEQ.NEXTVAL, 2, 2, 3, CURRENT_TIMESTAMP);
+
+INSERT INTO CART (ID, MEMBER_ID, ITEM_ID, CNT, RDATE)
+VALUES (CART_SEQ.NEXTVAL, 3, 1, 1, CURRENT_TIMESTAMP);
+
+INSERT INTO CART (ID, MEMBER_ID, ITEM_ID, CNT, RDATE)
+VALUES (CART_SEQ.NEXTVAL, 3, 3, 2, CURRENT_TIMESTAMP);
+
+-- ORDER_MATCH 테이블에 데이터 삽입
+INSERT INTO ORDER_MATCH (ID, MEMBER_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, RDATE)
+VALUES (ORDER_MATCH_SEQ.NEXTVAL, 1001, TO_DATE('2023-05-01', 'YYYY-MM-DD'), TO_DATE('2023-05-05', 'YYYY-MM-DD'), 'CARE', '서울시 성동구', 'Male', TO_DATE('1965-01-01', 'YYYY-MM-DD'), CURRENT_DATE);
+
+INSERT INTO ORDER_MATCH (ID, MEMBER_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, RDATE)
+VALUES (ORDER_MATCH_SEQ.NEXTVAL, 1002, TO_DATE('2023-05-02', 'YYYY-MM-DD'), TO_DATE('2023-05-06', 'YYYY-MM-DD'), 'CARE', '서울시 금천구', 'Female', TO_DATE('1945-03-15', 'YYYY-MM-DD'), CURRENT_DATE);
+
+INSERT INTO ORDER_MATCH (ID, MEMBER_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, RDATE)
+VALUES (ORDER_MATCH_SEQ.NEXTVAL, 1003, TO_DATE('2023-05-03', 'YYYY-MM-DD'), TO_DATE('2023-05-07', 'YYYY-MM-DD'), 'DISEASE', '서울시 중구', 'Male', TO_DATE('1954-07-20', 'YYYY-MM-DD'), CURRENT_DATE);
+
+INSERT INTO ORDER_MATCH (ID, MEMBER_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, RDATE)
+VALUES (ORDER_MATCH_SEQ.NEXTVAL, 1004, TO_DATE('2023-05-04', 'YYYY-MM-DD'), TO_DATE('2023-05-08', 'YYYY-MM-DD'), 'DISABLED', '서울시 강남구', 'Female', TO_DATE('1948-09-10', 'YYYY-MM-DD'), CURRENT_DATE);
+
+INSERT INTO ORDER_MATCH (ID, MEMBER_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, RDATE)
+VALUES (ORDER_MATCH_SEQ.NEXTVAL, 1005, TO_DATE('2023-05-05', 'YYYY-MM-DD'), TO_DATE('2023-05-09', 'YYYY-MM-DD'), 'DISEASE', '서울시 광진구', 'Male', TO_DATE('1960-12-25', 'YYYY-MM-DD'), CURRENT_DATE);
+
+-- ORDER_MALL 테이블에 데이터 삽입
+INSERT INTO ORDER_MALL (ID, MEMBER_ID, PRICE, RDATE, NAME, ADDR, TEL, CNT)
+VALUES (ORDER_MALL_SEQ.NEXTVAL, 1001, 50000, CURRENT_DATE, '신혜림', 'Address 1', '123-456-7890', 2);
+
+INSERT INTO ORDER_MALL (ID, MEMBER_ID, PRICE, RDATE, NAME, ADDR, TEL, CNT)
+VALUES (ORDER_MALL_SEQ.NEXTVAL, 1002, 30000, CURRENT_DATE, '박효선', 'Address 2', '987-654-3210', 1);
+
+INSERT INTO ORDER_MALL (ID, MEMBER_ID, PRICE, RDATE, NAME, ADDR, TEL, CNT)
+VALUES (ORDER_MALL_SEQ.NEXTVAL, 1003, 150000, CURRENT_DATE, '변다윗', 'Address 3', '111-222-3333', 3);
+
+INSERT INTO ORDER_MALL (ID, MEMBER_ID, PRICE, RDATE, NAME, ADDR, TEL, CNT)
+VALUES (ORDER_MALL_SEQ.NEXTVAL, 1004, 250000, CURRENT_DATE, '권현진', 'Address 4', '444-555-6666', 1);
+
+INSERT INTO ORDER_MALL (ID, MEMBER_ID, PRICE, RDATE, NAME, ADDR, TEL, CNT)
+VALUES (ORDER_MALL_SEQ.NEXTVAL, 1005, 100000, CURRENT_DATE, '이진만', 'Address 5', '777-888-9999', 2);
+
+-- MEMBER 테이블에 데이터 삽입
+INSERT INTO MEMBER (ID, EMAIL, NAME, PASSWORD, BIRTH, TEL, ADDR, IMG, VALID)
+VALUES (MEMBER_SEQ.NEXTVAL, 'member1@example.com', '김희원', 'password1', '1980-01-01', '123-456-7890', '광진구', 'member-1.jpg', '1');
+
+INSERT INTO MEMBER (ID, EMAIL, NAME, PASSWORD, BIRTH, TEL, ADDR, IMG, VALID)
+VALUES (MEMBER_SEQ.NEXTVAL, 'member2@example.com', '권맨보', 'password2', '1988-03-15', '987-654-3210', '관악구', 'member-2.jpg', '1');
+
+INSERT INTO MEMBER (ID, EMAIL, NAME, PASSWORD, BIRTH, TEL, ADDR, IMG, VALID)
+VALUES (MEMBER_SEQ.NEXTVAL, 'member3@example.com', '황수정', 'password3', '1988-07-20', '111-222-3333', '금천구', 'member-3.jpg', '0');
+
+INSERT INTO MEMBER (ID, EMAIL, NAME, PASSWORD, BIRTH, TEL, ADDR, IMG, VALID)
+VALUES (MEMBER_SEQ.NEXTVAL, 'member4@example.com', '차인표', 'password4', '1992-09-10', '444-555-6666', '성동구', 'member-4.jpg', '1');
+
+INSERT INTO MEMBER (ID, EMAIL, NAME, PASSWORD, BIRTH, TEL, ADDR, IMG, VALID)
+VALUES (MEMBER_SEQ.NEXTVAL, 'member5@example.com', '황보숙', 'password5', '1974-12-25', '777-888-9999', '송파구', 'member-5.jpg', '1');
+
+-- MATE 테이블에 데이터 삽입
+INSERT INTO MATE (ID, EMAIL, NAME, PASSWORD, AREA, JOB_PERIOD, LICENSE, IMG, VALID)
+VALUES (MATE_SEQ.NEXTVAL, 'mate1@example.com', '김수수', 'password1', '서울시 성동구', 3, '사회복지사', 'mate-1.jpg', '1');
+
+INSERT INTO MATE (ID, EMAIL, NAME, PASSWORD, AREA, JOB_PERIOD, LICENSE, IMG, VALID)
+VALUES (MATE_SEQ.NEXTVAL, 'mate2@example.com', '황복순', 'password2', '서울시 은평구', 2, '요양보호사', 'mate-2.jpg', '1');
+
+INSERT INTO MATE (ID, EMAIL, NAME, PASSWORD, AREA, JOB_PERIOD, LICENSE, IMG, VALID)
+VALUES (MATE_SEQ.NEXTVAL, 'mate3@example.com', '김말자', 'password3', '서울시 광진구', 4, '간호조무사', 'mate-3.jpg', '0');
+
+INSERT INTO MATE (ID, EMAIL, NAME, PASSWORD, AREA, JOB_PERIOD, LICENSE, IMG, VALID)
+VALUES (MATE_SEQ.NEXTVAL, 'mate4@example.com', '차무식', 'password4', '서울시 금천구', 1, '사회복지사', 'mate-4.jpg', '1');
+
+INSERT INTO MATE (ID, EMAIL, NAME, PASSWORD, AREA, JOB_PERIOD, LICENSE, IMG, VALID)
+VALUES (MATE_SEQ.NEXTVAL, 'mate5@example.com', '곽태현', 'password5', '서울시 강북구', 3, '운전면허', 'mate-5.jpg', '1');
+
+-- MATE_REVIEW 테이블에 데이터 삽입
+
+INSERT INTO MATE_REVIEW (ID, RATE, CONTENT, MATE_ID, MEMBER_ID, RDATE) VALUES (MATE_REVIEW_SEQ.NEXTVAL,5,'정말 만족스러운 서비스였습니다!',2020,'1018',TO_DATE('2023-03-03', 'YYYY-MM-DD'));
+INSERT INTO MATE_REVIEW (ID, RATE, CONTENT, MATE_ID, MEMBER_ID, RDATE) VALUES (MATE_REVIEW_SEQ.NEXTVAL,4,'친절하고 신속한 응대에 감사합니다.',2001,'1012',TO_DATE('2023-03-04', 'YYYY-MM-DD'));
+INSERT INTO MATE_REVIEW (ID, RATE, CONTENT, MATE_ID, MEMBER_ID, RDATE) VALUES (MATE_REVIEW_SEQ.NEXTVAL,4,'최고의 서비스 품질을 경험했습니다.',2024,'1006',TO_DATE('2023-03-05', 'YYYY-MM-DD'));
+INSERT INTO MATE_REVIEW (ID, RATE, CONTENT, MATE_ID, MEMBER_ID, RDATE) VALUES (MATE_REVIEW_SEQ.NEXTVAL,5,'약간의 개선이 필요한 부분도 있었지만 전반적으로 만족스러웠습니다.',2007,'1014',TO_DATE('2023-03-06', 'YYYY-MM-DD'));
+
+
+
+-- NOTICE 테이블에 데이터 삽입
+INSERT INTO NOTICE (ID, ADM_ID, TITLE, WRITER, IMG, HIT, RDATE)
+VALUES (NOTICE_SEQ.NEXTVAL, 1, 'Notice 1', 'Admin 1', 'notice1.jpg', 10, CURRENT_DATE);
+
+INSERT INTO NOTICE (ID, ADM_ID, TITLE, WRITER, IMG, HIT, RDATE)
+VALUES (NOTICE_SEQ.NEXTVAL, 2, 'Notice 2', 'Admin 2', 'notice2.jpg', 8, CURRENT_DATE);
+
+INSERT INTO NOTICE (ID, ADM_ID, TITLE, WRITER, IMG, HIT, RDATE)
+VALUES (NOTICE_SEQ.NEXTVAL, 1, 'Notice 3', 'Admin 1', 'notice3.jpg', 12, CURRENT_DATE);
+
+INSERT INTO NOTICE (ID, ADM_ID, TITLE, WRITER, IMG, HIT, RDATE)
+VALUES (NOTICE_SEQ.NEXTVAL, 2, 'Notice 4', 'Admin 2', 'notice4.jpg', 6, CURRENT_DATE);
+
+INSERT INTO NOTICE (ID, ADM_ID, TITLE, WRITER, IMG, HIT, RDATE)
+VALUES (NOTICE_SEQ.NEXTVAL, 1, 'Notice 5', 'Admin 1', 'notice5.jpg', 15, CURRENT_DATE);
+
+
+-- ADM 테이블에 데이터 삽입
+INSERT INTO ADM (ID, ADMIN_ID, PWD)
+VALUES (ADM_SEQ.NEXTVAL, 'admin1', 'password1');
+
+-- ITEM_REVIEW 테이블에 데이터 삽입
+INSERT INTO ITEM_REVIEW (ID, MEMBER_ID, ITEM_ID, TITLE, REVIEW, RATE)
+VALUES (ITEM_REVIEW_SEQ.NEXTVAL, 1, 1, 'Review 1', 'This is the first review', 4);
+INSERT INTO ITEM_REVIEW (ID, MEMBER_ID, ITEM_ID, TITLE, REVIEW, RATE)
+VALUES (ITEM_REVIEW_SEQ.NEXTVAL, 2, 3, 'Review 2', 'nice very good', 3);
+INSERT INTO ITEM_REVIEW (ID, MEMBER_ID, ITEM_ID, TITLE, REVIEW, RATE)
+VALUES (ITEM_REVIEW_SEQ.NEXTVAL, 3, 4, 'Review 3', 'This is awesome', 5);
+INSERT INTO ITEM_REVIEW (ID, MEMBER_ID, ITEM_ID, TITLE, REVIEW, RATE)
+VALUES (ITEM_REVIEW_SEQ.NEXTVAL, 4, 5, 'Review 4', 'buy the dip', 2);
+
+-- MATCH 테이블 데이터
+"INSERT INTO MATCH (ID, MEMBER_ID, MATE_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, STATUS, PRICE, PAYMENT, PAY_DATE)
+VALUES (MATCH_SEQ.NEXTVAL,1013,2005,'2023-02-07','2023-02-12','요양','은평구','F','1935-01-01','결제완료',90000,'CARD',TO_DATE('2023-01-05', 'YYYY-MM-DD HH24:MI:SS'));"
+"INSERT INTO MATCH (ID, MEMBER_ID, MATE_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, STATUS, PRICE, PAYMENT, PAY_DATE)
+VALUES (MATCH_SEQ.NEXTVAL,1005,2015,'2023-01-13','2023-01-18','간병','광진구','F','1945-01-01','결제완료',120000,'CARD',TO_DATE('2023-01-06', 'YYYY-MM-DD HH24:MI:SS'));"
+"INSERT INTO MATCH (ID, MEMBER_ID, MATE_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, STATUS, PRICE, PAYMENT, PAY_DATE)
+VALUES (MATCH_SEQ.NEXTVAL,1008,2014,'2023-01-05','2023-01-10','장애','성동구','F','1935-01-01','결제완료',150000,'CARD',TO_DATE('2023-01-07', 'YYYY-MM-DD HH24:MI:SS'));"
+"INSERT INTO MATCH (ID, MEMBER_ID, MATE_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, STATUS, PRICE, PAYMENT, PAY_DATE)
+VALUES (MATCH_SEQ.NEXTVAL,1012,2023,'2022-12-26','2022-12-31','요양','강남구','F','1945-01-01','결제완료',180000,'CARD',TO_DATE('2023-01-08', 'YYYY-MM-DD HH24:MI:SS'));"
+"INSERT INTO MATCH (ID, MEMBER_ID, MATE_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, STATUS, PRICE, PAYMENT, PAY_DATE)
+VALUES (MATCH_SEQ.NEXTVAL,1016,2012,'2022-12-27','2023-01-01','간병','금천구','M','1935-01-01','결제완료',210000,'CARD',TO_DATE('2023-01-09', 'YYYY-MM-DD HH24:MI:SS'));"
+"INSERT INTO MATCH (ID, MEMBER_ID, MATE_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, STATUS, PRICE, PAYMENT, PAY_DATE)
+VALUES (MATCH_SEQ.NEXTVAL,1019,2004,'2023-03-10','2023-03-15','요양','강북구','M','1945-01-01','결제완료',240000,'CARD',TO_DATE('2023-01-10', 'YYYY-MM-DD HH24:MI:SS'));"
+"INSERT INTO MATCH (ID, MEMBER_ID, MATE_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, STATUS, PRICE, PAYMENT, PAY_DATE)
+VALUES (MATCH_SEQ.NEXTVAL,1010,2000,'2023-02-19','2023-02-24','요양','도봉구','M','1935-01-01','결제완료',270000,'CARD',TO_DATE('2023-01-11', 'YYYY-MM-DD HH24:MI:SS'));"
+
+
+INSERT INTO MATCH (ID, MEMBER_ID, MATE_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, STATUS, PRICE, PAYMENT, PAY_DATE)
+VALUES (MATCH_SEQ.NEXTVAL, 1101, 2101, '2023-05-28', '2023-06-05', '요양', '성동구', 'M', '1935-01-01', '매칭완료', 70000, 'CARD', TO_DATE('2023-06-15', 'YYYY-MM-DD'));
+
+INSERT INTO MATCH (ID, MEMBER_ID, MATE_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, STATUS, PRICE, PAYMENT, PAY_DATE)
+VALUES (MATCH_SEQ.NEXTVAL, 1102, 2102, '2023-04-28', '2023-05-05', '간병', '성동구', 'M', '1945-01-01', '매칭취소', null, null, null);
+
+INSERT INTO MATCH (ID, MEMBER_ID, MATE_ID, START_DATE, END_DATE, SERVICE, AREA, OBJECT_GENDER, OBJECT_BIRTH, STATUS, PRICE, PAYMENT, PAY_DATE)
+VALUES (MATCH_SEQ.NEXTVAL, 1103, 2103, '2023-04-28', '2023-05-05', '간병', '성동구', 'M', '1945-01-01', '매칭대기', null, null, null);
+
+
+
+-- COUPON 테이블에 데이터 삽입
+INSERT INTO COUPON (ID, MEMBER_ID, NUM, AMOUNT)
+VALUES (coupon_seq.NEXTVAL, 1019, 1234, 1000);
+
+INSERT INTO COUPON (ID, MEMBER_ID, NUM, AMOUNT)
+VALUES (coupon_seq.NEXTVAL, 1011, 5321, 1500);
+
+INSERT INTO COUPON (ID, MEMBER_ID, NUM, AMOUNT)
+VALUES (coupon_seq.NEXTVAL, 1004, 6789, 2000);
+
+INSERT INTO COUPON (ID, MEMBER_ID, NUM, AMOUNT)
+VALUES (coupon_seq.NEXTVAL, 1003, 9876, 25000);
+
+INSERT INTO COUPON (ID, MEMBER_ID, NUM, AMOUNT)
+VALUES (coupon_seq.NEXTVAL, 1014, 2468, 3000);
+
+-- coupon 컬럼 수정 후 데이터 (adm_comment 컬럼 추가)
+INSERT INTO COUPON (ID, MEMBER_ID, NUM, AMOUNT, adm_comment)
+VALUES (coupon_seq.NEXTVAL, 1002, 1245, 1000, '신규가입 쿠폰을 드립니다');
+
+INSERT INTO COUPON (ID, MEMBER_ID, NUM, AMOUNT, adm_comment)
+VALUES (coupon_seq.NEXTVAL, 1021, 6790, 2000, '지금 바로 매칭에 사용하실 수 있는 쿠폰을 드려요');
+
+INSERT INTO COUPON (ID, MEMBER_ID, NUM, AMOUNT, adm_comment)
+VALUES (coupon_seq.NEXTVAL, 1013, 5421, 1500, '이번 달 거래가 없으신 회원님께 드리는 할인쿠폰');
+
+
+-- 아이템/간병인 후기 댓글 데이터 삽입
+-- ITEM_REVIEW_COMMENT 테이블에 데이터 INSERT
+INSERT INTO ITEM_REVIEW_COMMENT (id, item_id, admin_id, rdate, item_comment)
+VALUES (ITEM_REVIEW_COMMENT_SEQ.NEXTVAL, 1, 'admin1', SYSDATE, 'Item comment 1');
+
+INSERT INTO ITEM_REVIEW_COMMENT (id, item_id, admin_id, rdate, item_comment)
+VALUES (ITEM_REVIEW_COMMENT_SEQ.NEXTVAL, 2, 'admin2', SYSDATE, 'Item comment 2');
+
+INSERT INTO ITEM_REVIEW_COMMENT (id, item_id, admin_id, rdate, item_comment)
+VALUES (ITEM_REVIEW_COMMENT_SEQ.NEXTVAL, 3, 'admin3', SYSDATE, 'Item comment 3');
+
+INSERT INTO ITEM_REVIEW_COMMENT (id, item_id, admin_id, rdate, item_comment)
+VALUES (ITEM_REVIEW_COMMENT_SEQ.NEXTVAL, 4, 'admin4', SYSDATE, 'Item comment 4');
+
+INSERT INTO ITEM_REVIEW_COMMENT (id, item_id, admin_id, rdate, item_comment)
+VALUES (ITEM_REVIEW_COMMENT_SEQ.NEXTVAL, 5, 'admin5', SYSDATE, 'Item comment 5');
+
+-- MATE_REVIEW_COMMENT 테이블에 데이터 INSERT
+INSERT INTO MATE_REVIEW_COMMENT (id, review_id, admin_id, rdate, mate_comment)
+VALUES (MATE_REVIEW_COMMENT_SEQ.NEXTVAL, 41, 'ad0623', SYSDATE, '선플 감사드립니다.');
+
+INSERT INTO MATE_REVIEW_COMMENT (id, review_id, admin_id, rdate, mate_comment)
+VALUES (MATE_REVIEW_COMMENT_SEQ.NEXTVAL, 45, 'ad0623', SYSDATE, '전화주시면 할인쿠폰 송부드릴게요');
+
+INSERT INTO MATE_REVIEW_COMMENT (id, review_id, admin_id, rdate, mate_comment)
+VALUES (MATE_REVIEW_COMMENT_SEQ.NEXTVAL, 13, 'ad0623', SYSDATE, '만족하셨다니 좋습니다');
+
+INSERT INTO MATE_REVIEW_COMMENT (id, review_id, admin_id, rdate, mate_comment)
+VALUES (MATE_REVIEW_COMMENT_SEQ.NEXTVAL, 1, 'ad0623', SYSDATE, '좋은 댓글 감사합니다');
+
+INSERT INTO MATE_REVIEW_COMMENT (id, review_id, admin_id, rdate, mate_comment)
+VALUES (2, 45, 'ad0619', SYSDATE, '더 나은 서비스로 보답하겠습니다');
+
+
